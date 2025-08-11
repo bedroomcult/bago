@@ -212,7 +212,7 @@
     {
         "name": "Danghe Table",
         "category": "Industrial",
-        "price": null,
+        "price": 2289000,
         "originalPrice": null,
         "image": "Industrial/Danghe/1.jpg"
     },
@@ -254,9 +254,10 @@
     {
         "name": "Mendi Table",
         "category": "Industrial",
-        "price": null,
+        "price": 4899000,
         "originalPrice": null,
-        "image": "Industrial/Mendi/1.jpg"
+        "image": "Industrial/Mendi/1.jpg",
+        "size": "L200 x T76 x P100"
     },
     {
         "name": "Nick Cabinet",
@@ -270,7 +271,8 @@
         "category": "Industrial",
         "price": 4289000,
         "originalPrice": null,
-        "image": "Industrial/Nikki/1.jpg"
+        "image": "Industrial/Nikki/1.jpg",
+        "size": "L180 x P95 x T73"
     },
     {
         "name": "Onica Table",
