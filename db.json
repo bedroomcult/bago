@@ -952,11 +952,13 @@
         "image": "Nakas/Gania/1.jpg"
     },
     {
-        "name": "Karoo",
+        "name": "Karo",
         "category": "Nakas",
         "price": "880000",
         "originalPrice": null,
-        "image": "Nakas/Karoo/1.jpg"
+        "image": "Nakas/Karo/1.jpg",
+        "desc": "Bahan Jati",
+        "size": "T60 x L50 x P40 / Laci L44 x T16"
     },
     {
         "name": "Limare Drawer",
@@ -984,7 +986,9 @@
         "category": "Nakas",
         "price": 870000,
         "originalPrice": 969000,
-        "image": "Nakas/Nayotan/1.jpg"
+        "image": "Nakas/Nayotan/1.jpg",
+        "desc": "Bahan Jati + Rotan",
+        "size": "T60 x L50 x P40 / Laci L44 x T16"
     },
     {
         "name": "Planc",
