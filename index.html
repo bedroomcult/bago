@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        /* Custom scrollbar styling for a nicer look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        /* Modal overlay styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+        }
+        /* Color swatch styling */
+        .color-swatch {
+            width: 24px;
+            height: 24px;
+            border-radius: 9999px; /* This makes it a perfect circle/rounded square */
+            border: 2px solid #e5e7eb; /* Light gray border */
+            cursor: pointer;
+            transition: transform 0.1s ease-in-out;
+        }
+        .color-swatch:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+
+    <!-- Main container -->
+    <div class="max-w-7xl mx-auto py-8">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800">Katalog Bago Home Decor</h1>
+            <p class="text-lg text-gray-500 mt-2">wkwkwkwk</p>
+        </header>
+        
+        <!-- Controls Section -->
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-6 space-y-4 sm:space-y-0">
+            <!-- Category Filter Cards -->
+            <div id="category-cards" class="flex flex-wrap gap-2 justify-center sm:justify-start w-full sm:w-auto">
+                <!-- Category cards will be dynamically added here by JavaScript -->
+            </div>
+            
+            <!-- Search Bar and Admin link -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <label for="search-input" class="sr-only">Search products</label>
+                <input type="text" id="search-input" placeholder="Search products..."
+                    class="block w-full sm:w-64 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+                
+                <a href="input.html"
+                    class="w-full sm:w-auto bg-indigo-600 text-white py-2 px-4 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-200 text-center">
+                    + Add New Item
+                </a>
+            </div>
+        </div>
+
+        <!-- Product Grid Container -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Product cards will be dynamically added here by JavaScript -->
+        </div>
+
+        <!-- Message for when there are no products -->
+        <div id="empty-message" class="hidden text-center text-gray-500 mt-16">
+            <p class="text-xl">No products found for this category. Please add some items from the admin page.</p>
+        </div>
+
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="modal-overlay hidden">
+        <div class="bg-white rounded-2xl shadow-2xl p-6 w-11/12 max-w-2xl relative max-h-full overflow-y-auto">
+            <!-- Close Button -->
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <!-- Modal Content -->
+            <div id="modal-content" class="flex flex-col md:flex-row gap-6">
+                <!-- Image Section -->
+                <div class="flex-shrink-0 w-full md:w-1/2">
+                    <img id="modal-image" src="" alt="" class="w-full rounded-xl object-cover">
+                </div>
+                <!-- Details Section -->
+                <div class="flex-grow md:w-1/2 space-y-4">
+                    <h2 id="modal-name" class="text-3xl font-bold text-gray-800"></h2>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <p id="modal-price" class="text-2xl font-bold text-indigo-600"></p>
+                        <p id="modal-original-price" class="text-gray-400 line-through text-lg"></p>
+                    </div>
+                    <p class="text-sm text-gray-500 capitalize">Category: <span id="modal-category" class="font-medium"></span></p>
+                    
+                    <div class="border-t border-gray-200 pt-4">
+                        <p class="text-gray-700 font-semibold">Details:</p>
+                        <ul class="text-sm text-gray-600 mt-2 space-y-1">
+                            <li><strong class="text-gray-800">Description:</strong> <span id="modal-desc"></span></li>
+                            <li><strong class="text-gray-800">Size:</strong> <span id="modal-size"></span></li>
+                            <li><strong class="text-gray-800">Stock:</strong> <span id="modal-stock"></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Colors Section -->
+                    <div>
+                        <p class="text-gray-700 font-semibold">Available Colors:</p>
+                        <div id="modal-colors" class="flex gap-2 mt-2">
+                            <!-- Color swatches will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. Variable Declarations ---
+        const productGrid = document.getElementById('product-grid');
+        const emptyMessage = document.getElementById('empty-message');
+        const categoryCardsContainer = document.getElementById('category-cards');
+        const searchInput = document.getElementById('search-input');
+        
+        // Modal elements
+        const productModal = document.getElementById('product-modal');
+        const closeModalButton = document.getElementById('close-modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalName = document.getElementById('modal-name');
+        const modalPrice = document.getElementById('modal-price');
+        const modalOriginalPrice = document.getElementById('modal-original-price');
+        const modalCategory = document.getElementById('modal-category');
+        const modalSize = document.getElementById('modal-size');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalStock = document.getElementById('modal-stock');
+        const modalColors = document.getElementById('modal-colors');
+
+        let allItems = [];
+        let currentFilter = 'all';
+
+        // --- 2. Function Definitions ---
+
+        /**
+         * Helper function to format numbers as Indonesian Rupiah (Rp) with dot separators.
+         * @param {number} number - The number to format.
+         * @returns {string} The formatted currency string.
+         */
+        function formatRupiah(number) {
+            if (number === null || number === undefined || isNaN(number)) {
+                return '';
+            }
+            const formatter = new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            });
+            // The formatter adds "Rp" and a non-breaking space, which is the standard format.
+            return formatter.format(number).replace(/\s/, ' ');
+        }
+
+        // Function to render category cards
+        function renderCategories(categories) {
+            categoryCardsContainer.innerHTML = '';
+            categories.forEach(category => {
+                const card = document.createElement('button');
+                card.dataset.category = category;
+                card.className = 'py-2 px-4 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer';
+                
+                // Set the text for the card
+                if (category === 'all') {
+                    card.textContent = 'All Categories';
+                } else if (category === 'discount') {
+                    card.textContent = 'Discount';
+                } else {
+                    card.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+                }
+                
+                // Add a class for the active card
+                if (category === currentFilter) {
+                    card.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
+                } else {
+                    card.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+                }
+                
+                card.addEventListener('click', () => {
+                    currentFilter = card.dataset.category;
+                    searchInput.value = ''; // Clear search bar on category change
+                    filterAndRenderProducts();
+                    
+                    // Update active card styling
+                    document.querySelectorAll('#category-cards button').forEach(c => {
+                        c.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
+                        c.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+                    });
+                    card.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
+                    card.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+                });
+                
+                categoryCardsContainer.appendChild(card);
+            });
+        }
+        
+        // Function to render products based on an array of items
+        function renderProducts(itemsToRender) {
+            if (itemsToRender.length > 0) {
+                productGrid.innerHTML = '';
+                itemsToRender.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer';
+                    card.dataset.id = item.id;
+
+                    const priceDisplay = item.originalPrice ?
+                        `<span class="text-gray-900 font-bold text-xl">${formatRupiah(item.price)}</span>
+                         <span class="text-red-400 line-through ml-2">${formatRupiah(item.originalPrice)}</span>` :
+                        `<span class="text-gray-900 font-bold text-xl">${formatRupiah(item.price)}</span>`;
+
+                    card.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800">${item.name}</h3>
+                            <p class="text-sm text-gray-500 capitalize">${item.category}</p>
+                            <div class="mt-2">
+                                ${priceDisplay}
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Add a click listener to each card to show the modal
+                    card.addEventListener('click', () => showProductDetails(item));
+                    productGrid.appendChild(card);
+                });
+                emptyMessage.classList.add('hidden');
+            } else {
+                productGrid.innerHTML = '';
+                emptyMessage.classList.remove('hidden');
+            }
+        }
+
+        // Function to filter and render products based on category and search
+        function filterAndRenderProducts() {
+            let filteredItems = allItems;
+            
+            // Filter by category
+            if (currentFilter === 'discount') {
+                // Filter for items that have an originalPrice (are discounted)
+                filteredItems = filteredItems.filter(item => item.originalPrice !== null);
+            } else if (currentFilter !== 'all') {
+                filteredItems = filteredItems.filter(item => item.category === currentFilter);
+            }
+
+            // Filter by search term
+            const searchTerm = searchInput.value.toLowerCase();
+            if (searchTerm) {
+                filteredItems = filteredItems.filter(item => 
+                    item.name.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            renderProducts(filteredItems);
+        }
+
+        // Function to show product details in the modal
+        function showProductDetails(item) {
+            modalImage.src = item.image;
+            modalImage.alt = item.name;
+            modalName.textContent = item.name;
+            modalPrice.textContent = formatRupiah(item.price);
+            modalCategory.textContent = item.category;
+            modalSize.textContent = item.size;
+            modalStock.textContent = item.stock;
+            modalDesc.textContent = item.desc;
+
+            if (item.originalPrice) {
+                modalOriginalPrice.textContent = formatRupiah(item.originalPrice);
+            } else {
+                modalOriginalPrice.textContent = '';
+            }
+
+            // Render color swatches
+            modalColors.innerHTML = '';
+            if (item.colors && item.colors.length > 0) {
+                item.colors.forEach(color => {
+                    const swatch = document.createElement('div');
+                    swatch.className = 'color-swatch';
+                    swatch.style.backgroundColor = color.hex;
+                    swatch.title = color.name;
+                    modalColors.appendChild(swatch);
+                });
+            } else {
+                const message = document.createElement('p');
+                message.className = 'text-sm text-gray-500';
+                message.textContent = 'No colors available.';
+                modalColors.appendChild(message);
+            }
+
+            productModal.classList.remove('hidden');
+        }
+
+        // Function to fetch all products from the JSON file
+        async function fetchProducts() {
+            try {
+                const response = await fetch('db.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                allItems = await response.json();
+                
+                // Extract unique categories, including the new 'discount' category
+                const uniqueCategories = ['all', 'discount', ...new Set(allItems.map(item => item.category))];
+                
+                // Render the category cards and the initial product grid
+                renderCategories(uniqueCategories);
+                renderProducts(allItems); 
+            } catch (error) {
+                console.error('Error fetching products:', error);
+                productGrid.innerHTML = `<div class="text-center col-span-full text-red-500 p-8">
+                    <p>Failed to load products. Please check that:</p>
+                    <ul class="list-disc list-inside mt-2 text-left inline-block">
+                        <li>Your XAMPP Apache server is running.</li>
+                        <li>'db.json' is in the same folder as this 'index.html' file.</li>
+                        <li>There are no typos in the 'db.json' filename.</li>
+                    </ul>
+                </div>`;
+                emptyMessage.classList.add('hidden');
+            }
+        }
+        
+        // --- 3. Event Listeners ---
+        closeModalButton.addEventListener('click', () => {
+            productModal.classList.add('hidden');
+        });
+        
+        productModal.addEventListener('click', (event) => {
+            if (event.target === productModal) {
+                productModal.classList.add('hidden');
+            }
+        });
+
+        searchInput.addEventListener('input', () => {
+            filterAndRenderProducts();
+        });
+
+        // Call the function to load products when the page loads
+        document.addEventListener('DOMContentLoaded', fetchProducts);
+    </script>
+</body>
+</html>

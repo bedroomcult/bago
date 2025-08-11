@@ -1,0 +1,1353 @@
+[
+  {
+    "name": "Manya Solid Chair",
+    "category": "Kursi",
+    "price": "629000",
+    "originalPrice": "",
+    "image": "Kursi/Manya Solid/1.jpg"
+  },
+  {
+    "name": "Amiku Chair",
+    "category": "Kursi",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Amiku/1.jpg"
+  },
+  {
+    "name": "Sikura Chair",
+    "category": "Kursi",
+    "price": "510000",
+    "originalPrice": "",
+    "image": "Kursi/Sikura/1.jpg"
+  },
+  {
+    "name": "Ahoop Chair",
+    "category": "Kursi",
+    "price": "480000",
+    "originalPrice": "",
+    "image": "Kursi/Ahoop/1.jpg"
+  },
+  {
+    "name": "Nopey Chair",
+    "category": "Kursi",
+    "price": "585000",
+    "originalPrice": "",
+    "image": "Kursi/Nopey/1.jpg"
+  },
+  {
+    "name": "Ropan Chair",
+    "category": "Kursi",
+    "price": "565000",
+    "originalPrice": "",
+    "image": "Kursi/Ropan/1.jpg"
+  },
+  {
+    "name": "Odai Chair",
+    "category": "Kursi",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Odai/1.jpg"
+  },
+  {
+    "name": "Manya Chair",
+    "category": "Kursi",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Manya/1.jpg"
+  },
+  {
+    "name": "Rotarota Chair",
+    "category": "Kursi",
+    "price": "815000",
+    "originalPrice": "",
+    "image": "Kursi/Rotarota/1.jpg"
+  },
+  {
+    "name": "Kurtampu Chair",
+    "category": "Kursi",
+    "price": "815000",
+    "originalPrice": "",
+    "image": "Kursi/Kurtampu/1.jpg"
+  },
+  {
+    "name": "Kleewa Chair",
+    "category": "Kursi",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Kleewa/1.jpg"
+  },
+  {
+    "name": "Seroshi Chair",
+    "category": "Kursi",
+    "price": "669000",
+    "originalPrice": "",
+    "image": "Kursi/Seroshi/1.jpg"
+  },
+  {
+    "name": "Khosim Chair",
+    "category": "Kursi",
+    "price": "599000",
+    "originalPrice": "",
+    "image": "Kursi/Khosim/1.jpg"
+  },
+  {
+    "name": "Sesareng Chair",
+    "category": "Kursi",
+    "price": "1315000",
+    "originalPrice": "",
+    "image": "Kursi/Sesareng/1.jpg"
+  },
+  {
+    "name": "Angsa Chair",
+    "category": "Kursi",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Angsa/1.jpg"
+  },
+  {
+    "name": "Lengsy Chair",
+    "category": "Kursi",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Lengsy/1.jpg"
+  },
+  {
+    "name": "Asoka Chair",
+    "category": "Kursi",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Asoka/1.jpg"
+  },
+  {
+    "name": "Dwilama Chair",
+    "category": "Kursi",
+    "price": "965000",
+    "originalPrice": "",
+    "image": "Kursi/Dwilama/1.jpg"
+  },
+  {
+    "name": "Mauri Chair",
+    "category": "Kursi",
+    "price": "1015000",
+    "originalPrice": "",
+    "image": "Kursi/Mauri/1.jpg"
+  },
+  {
+    "name": "Siepin Chair",
+    "category": "Kursi",
+    "price": "675000",
+    "originalPrice": "",
+    "image": "Kursi/Siepin/1.jpg"
+  },
+  {
+    "name": "Santee Chair",
+    "category": "Kursi",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Santee/1.jpg"
+  },
+  {
+    "name": "Gorya Chair",
+    "category": "Kursi",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Gorya/1.jpg"
+  },
+  {
+    "name": "Barere Chair",
+    "category": "Kursi",
+    "price": "980000",
+    "originalPrice": "",
+    "image": "Kursi/Barere/1.jpg"
+  },
+  {
+    "name": "Sicangku Chair",
+    "category": "Kursi",
+    "price": "649000",
+    "originalPrice": "",
+    "image": "Kursi/Sicangku/1.jpg"
+  },
+  {
+    "name": "Kacang Chair",
+    "category": "Kursi",
+    "price": "649000",
+    "originalPrice": "",
+    "image": "Kursi/Kacang/1.jpg"
+  },
+  {
+    "name": "Lendean Chair",
+    "category": "Kursi",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Lendean/1.jpg"
+  },
+  {
+    "name": "Banta Chair",
+    "category": "Kursi",
+    "price": "730000",
+    "originalPrice": "",
+    "image": "Kursi/Banta/1.jpg"
+  },
+  {
+    "name": "Tapang Chair",
+    "category": "Kursi",
+    "price": "730000",
+    "originalPrice": "",
+    "image": "Kursi/Tapang/1.jpg"
+  },
+  {
+    "name": "Roque Chair",
+    "category": "Kursi",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Roque/1.jpg"
+  },
+  {
+    "name": "Kakin Chair",
+    "category": "Kursi",
+    "price": "1079000",
+    "originalPrice": "",
+    "image": "Kursi/Kakin/1.jpg"
+  },
+  {
+    "name": "Linggoh Chair",
+    "category": "Kursi",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Linggoh/1.jpg"
+  },
+  {
+    "name": "Pinarak Chair",
+    "category": "Kursi",
+    "price": "1015000",
+    "originalPrice": "",
+    "image": "Kursi/Pinarak/1.jpg"
+  },
+  {
+    "name": "Mongga Chair",
+    "category": "Kursi",
+    "price": "740000",
+    "originalPrice": "",
+    "image": "Kursi/Mongga/1.jpg"
+  },
+  {
+    "name": "Joparo Chair",
+    "category": "Stool",
+    "price": "329000",
+    "originalPrice": "",
+    "image": "StoolBench/Joparo/1.jpg"
+  },
+  {
+    "name": "Ortama Chair",
+    "category": "Stool",
+    "price": "-",
+    "originalPrice": "",
+    "image": "StoolBench/Ortama/1.jpg"
+  },
+  {
+    "name": "Sikuth Chair",
+    "category": "Stool",
+    "price": "-",
+    "originalPrice": "",
+    "image": "StoolBench/Sikuth/1.jpg"
+  },
+  {
+    "name": "Jarken Chair",
+    "category": "Stool",
+    "price": "455000",
+    "originalPrice": "",
+    "image": "StoolBench/Jarken/1.jpg"
+  },
+  {
+    "name": "Stooya Chair",
+    "category": "Stool",
+    "price": "-",
+    "originalPrice": "",
+    "image": "StoolBench/Stooya/1.jpg"
+  },
+  {
+    "name": "Stool Chair",
+    "category": "Stool",
+    "price": "-",
+    "originalPrice": "",
+    "image": "StoolBench/Stool/1.jpg"
+  },
+  {
+    "name": "Arkoll Bench Chair",
+    "category": "Stool",
+    "price": "800000",
+    "originalPrice": "",
+    "image": "StoolBench/Arkoll Bench/1.jpg"
+  },
+  {
+    "name": "Inagi Chair",
+    "category": "Stool",
+    "price": "-",
+    "originalPrice": "",
+    "image": "StoolBench/Inagi/1.jpg"
+  },
+  {
+    "name": "Jopabench",
+    "category": "Stool",
+    "price": "615000",
+    "originalPrice": "",
+    "image": "StoolBench/Jopabench/1.jpg"
+  },
+  {
+    "name": "Liencak Chair",
+    "category": "Stool",
+    "price": "1250000",
+    "originalPrice": "",
+    "image": "StoolBench/Liencak/1.jpg"
+  },
+  {
+    "name": "Fuloro Chair",
+    "category": "Stool",
+    "price": "-",
+    "originalPrice": "",
+    "image": "StoolBench/Fuloro/1.jpg"
+  },
+  {
+    "name": "Sandro Chair",
+    "category": "Stool",
+    "price": "-",
+    "originalPrice": "",
+    "image": "StoolBench/Sandro/1.jpg"
+  },
+  {
+    "name": "Duklah Chair",
+    "category": "Stool",
+    "price": "965000",
+    "originalPrice": "",
+    "image": "StoolBench/Duklah/1.jpg"
+  },
+  {
+    "name": "Duksaja Chair",
+    "category": "Stool",
+    "price": "965000",
+    "originalPrice": "",
+    "image": "StoolBench/Duksaja/1.jpg"
+  },
+  {
+    "name": "Farmae Chair",
+    "category": "Stool",
+    "price": "649000",
+    "originalPrice": "",
+    "image": "StoolBench/Farmae/1.jpg"
+  },
+  {
+    "name": "Kamara Chair",
+    "category": "Stool",
+    "price": "-",
+    "originalPrice": "",
+    "image": "StoolBench/Kamara/1.jpg"
+  },
+  {
+    "name": "Barsi Chair",
+    "category": "Stool",
+    "price": "-",
+    "originalPrice": "",
+    "image": "StoolBench/Barsi/1.jpg"
+  },
+  {
+    "name": "Kacang Bar",
+    "category": "Stool",
+    "price": "965000",
+    "originalPrice": "",
+    "image": "StoolBench/Kacang Bar/1.jpg"
+  },
+  {
+    "name": "Noora Chair",
+    "category": "Kursi Cafe",
+    "price": "899000",
+    "originalPrice": "",
+    "image": "Kursi/Noora/1.jpg"
+  },
+  {
+    "name": "Jangra Sofa Chair",
+    "category": "Kursi Cafe",
+    "price": "1500000",
+    "originalPrice": "",
+    "image": "Kursi/Jangra Sofa/1.jpg"
+  },
+  {
+    "name": "Jangra Chair",
+    "category": "Kursi Cafe",
+    "price": "1475000",
+    "originalPrice": "",
+    "image": "Kursi/Jangra/1.jpg"
+  },
+  {
+    "name": "Mirano Chair",
+    "category": "Kursi Cafe",
+    "price": "945000",
+    "originalPrice": "",
+    "image": "Kursi/Mirano/1.jpg"
+  },
+  {
+    "name": "Kitora Chair",
+    "category": "Kursi Cafe",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Kitora/1.jpg"
+  },
+  {
+    "name": "Numpi Chair",
+    "category": "Kursi Cafe",
+    "price": "665000",
+    "originalPrice": "",
+    "image": "Kursi/Numpi/1.jpg"
+  },
+  {
+    "name": "Selica Chair",
+    "category": "Kursi Cafe",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Selica/1.jpg"
+  },
+  {
+    "name": "Sambrow Chair",
+    "category": "Kursi Cafe",
+    "price": "1305000",
+    "originalPrice": "",
+    "image": "Kursi/Sambrow/1.jpg"
+  },
+  {
+    "name": "Kane Chair",
+    "category": "Kursi Cafe",
+    "price": "1550000",
+    "originalPrice": "",
+    "image": "Kursi/Kane/1.jpg"
+  },
+  {
+    "name": "Ronoa Chair",
+    "category": "Kursi Cafe",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Ronoa/1.jpg"
+  },
+  {
+    "name": "Dipakne Chair",
+    "category": "Kursi Cafe",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Dipakne/1.jpg"
+  },
+  {
+    "name": "Ikaaf Chair",
+    "category": "Kursi Cafe",
+    "price": "1305000",
+    "originalPrice": "",
+    "image": "Kursi/Ikaaf/1.jpg"
+  },
+  {
+    "name": "Njonya Chair",
+    "category": "Kursi Cafe",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Njonya/1.jpg"
+  },
+  {
+    "name": "Saari Chair",
+    "category": "Kursi Cafe",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Saari/1.jpg"
+  },
+  {
+    "name": "Smalow Chair",
+    "category": "Kursi Cafe",
+    "price": "855000",
+    "originalPrice": "",
+    "image": "Kursi/Smalow/1.jpg"
+  },
+  {
+    "name": "Kirsa Chair",
+    "category": "Kursi Cafe",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Kirsa/1.jpg"
+  },
+  {
+    "name": "Gashbir Chair",
+    "category": "Kursi Cafe",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Gashbir/1.jpg"
+  },
+  {
+    "name": "Yhantoo Chair",
+    "category": "Kursi Cafe",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Yhantoo/1.jpg"
+  },
+  {
+    "name": "Klamari Chair",
+    "category": "Kursi Cafe",
+    "price": "639000",
+    "originalPrice": "",
+    "image": "Kursi/Klamari/1.jpg"
+  },
+  {
+    "name": "Rumaoma Chair",
+    "category": "Kursi Cafe",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Rumaoma/1.jpg"
+  },
+  {
+    "name": "Rope Chair",
+    "category": "Kursi Cafe",
+    "price": "980000",
+    "originalPrice": "",
+    "image": "Kursi/Rope/1.jpg"
+  },
+  {
+    "name": "Roxy Chair",
+    "category": "Kursi Cafe",
+    "price": "1149000",
+    "originalPrice": "",
+    "image": "Kursi/Roxy/1.jpg"
+  },
+  {
+    "name": "Kelawu Chair",
+    "category": "Kursi Cafe",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Kursi/Kelawu/1.jpg"
+  },
+  {
+    "name": "Yumma Table",
+    "category": "Meja",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Meja/Yumma/1.jpg"
+  },
+  {
+    "name": "Kanara Table",
+    "category": "Meja",
+    "price": "1680000",
+    "originalPrice": "",
+    "image": "Meja/Kanara/1.jpg"
+  },
+  {
+    "name": "Kadjo Table",
+    "category": "Meja",
+    "price": "980000",
+    "originalPrice": "",
+    "image": "Meja/Kadjo/1.jpg"
+  },
+  {
+    "name": "Rataya Table",
+    "category": "Meja",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Meja/Rataya/1.jpg"
+  },
+  {
+    "name": "Oled Table",
+    "category": "Meja",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Meja/Oled/1.jpg"
+  },
+  {
+    "name": "Teyko Table",
+    "category": "Meja",
+    "price": "1925000",
+    "originalPrice": "",
+    "image": "Meja/Teyko/1.jpg"
+  },
+  {
+    "name": "Mejoe Table",
+    "category": "Meja",
+    "price": "1570000",
+    "originalPrice": "",
+    "image": "Meja/Mejoe/1.jpg"
+  },
+  {
+    "name": "Doolar Table",
+    "category": "Meja",
+    "price": "1850000",
+    "originalPrice": "",
+    "image": "Meja/Doolar/1.jpg"
+  },
+  {
+    "name": "Menjang Table",
+    "category": "Meja",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Meja/Menjang/1.jpg"
+  },
+  {
+    "name": "Margini Table",
+    "category": "Meja",
+    "price": "1150000",
+    "originalPrice": "",
+    "image": "Meja/Margini/1.jpg"
+  },
+  {
+    "name": "Tooja Table",
+    "category": "Meja",
+    "price": "570000",
+    "originalPrice": "",
+    "image": "Meja/Tooja/1.jpg"
+  },
+  {
+    "name": "Rotjil Table",
+    "category": "Meja",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Meja/Rotjil/1.jpg"
+  },
+  {
+    "name": "Kyonan Table",
+    "category": "Meja",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Meja/Kyonan/1.jpg"
+  },
+  {
+    "name": "Jakyth Table",
+    "category": "Meja",
+    "price": "570000",
+    "originalPrice": "",
+    "image": "Meja/Jakyth/1.jpg"
+  },
+  {
+    "name": "Tlamak Table",
+    "category": "Meja",
+    "price": "598000",
+    "originalPrice": "",
+    "image": "Meja/Tlamak/1.jpg"
+  },
+  {
+    "name": "Konsul Table Oval",
+    "category": "Meja",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Meja/Konsul Table Oval/1.jpg"
+  },
+  {
+    "name": "Konsul Table Kotak",
+    "category": "Meja",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Meja/Konsul Table Kotak /1.jpg"
+  },
+  {
+    "name": "Pantes Table",
+    "category": "Meja",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Meja/Pantes/1.jpg"
+  },
+  {
+    "name": "Machak Table",
+    "category": "Meja",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Meja/Machak/1.jpg"
+  },
+  {
+    "name": "Riyaas Table",
+    "category": "Meja",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Meja/Riyaas/1.jpg"
+  },
+  {
+    "name": "Mekko Table",
+    "category": "Meja",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Meja/Mekko/1.jpg"
+  },
+  {
+    "name": "Mejia Table",
+    "category": "Meja",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Meja/Mejia/1.jpg"
+  },
+  {
+    "name": "Vinta",
+    "category": "Buffet",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Buffet/Vinta/1.jpg"
+  },
+  {
+    "name": "Lapit",
+    "category": "Buffet",
+    "price": "3500000",
+    "originalPrice": "",
+    "image": "Buffet/Lapit/1.jpg"
+  },
+  {
+    "name": "Rokku",
+    "category": "Buffet",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Buffet/Rokku/1.jpg"
+  },
+  {
+    "name": "Agogo",
+    "category": "Buffet",
+    "price": "4199000",
+    "originalPrice": "",
+    "image": "Buffet/Agogo/1.jpg"
+  },
+  {
+    "name": "Dauwi",
+    "category": "Buffet",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Buffet/Dauwi/1.jpg"
+  },
+  {
+    "name": "Triange",
+    "category": "Buffet",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Buffet/Triange/1.jpg"
+  },
+  {
+    "name": "Staku",
+    "category": "Buffet",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Buffet/Staku/1.jpg"
+  },
+  {
+    "name": "Kyfee",
+    "category": "Buffet",
+    "price": "3890000",
+    "originalPrice": "",
+    "image": "Buffet/Kyfee/1.jpg"
+  },
+  {
+    "name": "Dimsen",
+    "category": "Buffet",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Buffet/Dimsen/1.jpg"
+  },
+  {
+    "name": "Namas",
+    "category": "Buffet",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Buffet/Namas/1.jpg"
+  },
+  {
+    "name": "Dasly",
+    "category": "Buffet",
+    "price": "4350000",
+    "originalPrice": "",
+    "image": "Buffet/Dasly/1.jpg"
+  },
+  {
+    "name": "Hotori",
+    "category": "Buffet",
+    "price": "3420000",
+    "originalPrice": "",
+    "image": "Buffet/Hotori/1.jpg"
+  },
+  {
+    "name": "Delys",
+    "category": "Buffet",
+    "price": "3170000",
+    "originalPrice": "",
+    "image": "Buffet/Delys/1.jpg"
+  },
+  {
+    "name": "Siroko",
+    "category": "Buffet",
+    "price": "2850000",
+    "originalPrice": "",
+    "image": "Buffet/Siroko/1.jpg"
+  },
+  {
+    "name": "Bowie",
+    "category": "Buffet",
+    "price": "3100000",
+    "originalPrice": "",
+    "image": "Buffet/Bowie/1.jpg"
+  },
+  {
+    "name": "Namja",
+    "category": "Buffet",
+    "price": "3050000",
+    "originalPrice": "",
+    "image": "Buffet/Namja/1.jpg"
+  },
+  {
+    "name": "Donja",
+    "category": "Buffet",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Buffet/Donja/1.jpg"
+  },
+  {
+    "name": "Asimbi",
+    "category": "Buffet",
+    "price": "2940000",
+    "originalPrice": "3200000",
+    "image": "Buffet/Asimbi/1.jpg"
+  },
+  {
+    "name": "Ryngkes",
+    "category": "Buffet",
+    "price": "2550000",
+    "originalPrice": "",
+    "image": "Buffet/Ryngkes/1.jpg"
+  },
+  {
+    "name": "Dympan",
+    "category": "Buffet",
+    "price": "2600000",
+    "originalPrice": "",
+    "image": "Buffet/Dympan/1.jpg"
+  },
+  {
+    "name": "Ratton",
+    "category": "Buffet",
+    "price": "2600000",
+    "originalPrice": "",
+    "image": "Buffet/Ratton/1.jpg"
+  },
+  {
+    "name": "Dumata",
+    "category": "Buffet",
+    "price": "3050000",
+    "originalPrice": "",
+    "image": "Buffet/Dumata/1.jpg"
+  },
+  {
+    "name": "Denso",
+    "category": "Buffet",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Buffet/Denso/1.jpg"
+  },
+  {
+    "name": "Nayotan",
+    "category": "Nakas",
+    "price": "969000",
+    "originalPrice": "",
+    "image": "Nakas/Nayotan/1.jpg"
+  },
+  {
+    "name": "Karoo",
+    "category": "Nakas",
+    "price": "880000",
+    "originalPrice": "",
+    "image": "Nakas/Karoo/1.jpg"
+  },
+  {
+    "name": "Stoora",
+    "category": "Nakas",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Nakas/Stoora/1.jpg"
+  },
+  {
+    "name": "Lowes",
+    "category": "Nakas",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Nakas/Lowes/1.jpg"
+  },
+  {
+    "name": "Trobox",
+    "category": "Nakas",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Nakas/Trobox/1.jpg"
+  },
+  {
+    "name": "Tutug",
+    "category": "Nakas",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Nakas/Tutug/1.jpg"
+  },
+  {
+    "name": "Planc",
+    "category": "Nakas",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Nakas/Planc/1.jpg"
+  },
+  {
+    "name": "Locca",
+    "category": "Nakas",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Nakas/Locca/1.jpg"
+  },
+  {
+    "name": "Limare Drawer",
+    "category": "Nakas",
+    "price": "3300000",
+    "originalPrice": "",
+    "image": "Nakas/Limare Drawer/1.jpg"
+  },
+  {
+    "name": "Tatani Drawer",
+    "category": "Nakas",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Nakas/Tatani Drawer/1.jpg"
+  },
+  {
+    "name": "Djani Drawer",
+    "category": "Nakas",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Nakas/Djani Drawer/1.jpg"
+  },
+  {
+    "name": "Ghania Shoe Rack",
+    "category": "Nakas",
+    "price": "2415000",
+    "originalPrice": "",
+    "image": "Nakas/Ghania Shoe Rack/1.jpg"
+  },
+  {
+    "name": "Sofa L",
+    "category": "Sofa",
+    "price": "4200000",
+    "originalPrice": "",
+    "image": "Sofa/Sofa L/1.jpg"
+  },
+  {
+    "name": "Sofa Bed Mini",
+    "category": "Sofa",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Sofa/Sofa Bed Mini/1.jpg"
+  },
+  {
+    "name": "Sofa Bed Gembul",
+    "category": "Sofa",
+    "price": "3350000",
+    "originalPrice": "",
+    "image": "Sofa/Sofa Bed Gembul/1.jpg"
+  },
+  {
+    "name": "Vita Sofa 2 Seat",
+    "category": "Sofa",
+    "price": "2000000",
+    "originalPrice": "",
+    "image": "Sofa/Vita Sofa 2 Seat/1.jpg"
+  },
+  {
+    "name": "Amelia Sofa Set",
+    "category": "Sofa",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Sofa/Amelia Sofa Set/1.jpg"
+  },
+  {
+    "name": "Qilla Sofa",
+    "category": "Sofa",
+    "price": "2200000",
+    "originalPrice": "",
+    "image": "Sofa/Qilla Sofa/1.jpg"
+  },
+  {
+    "name": "American Sofa",
+    "category": "Sofa",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Sofa/American Sofa/1.jpg"
+  },
+  {
+    "name": "Marwah Sofa",
+    "category": "Sofa",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Sofa/Marwah Sofa/1.jpg"
+  },
+  {
+    "name": "Rajua Sofa Set",
+    "category": "Sofa",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Sofa/Rajua Sofa Set/1.jpg"
+  },
+  {
+    "name": "Serwood Sofa Set",
+    "category": "Sofa",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Sofa/Serwood Sofa Set/1.jpg"
+  },
+  {
+    "name": "Soopha Sofa",
+    "category": "Sofa",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Sofa/Soopha Sofa/1.jpg"
+  },
+  {
+    "name": "Mioji Double Sofa",
+    "category": "Sofa",
+    "price": "5289000",
+    "originalPrice": "",
+    "image": "Sofa/Mioji Double Sofa/1.jpg"
+  },
+  {
+    "name": "Mijoi Single Sofa",
+    "category": "Sofa",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Sofa/Mijoi Single Sofa/1.jpg"
+  },
+  {
+    "name": "Sandra Chair",
+    "category": "Rotan Sintetis",
+    "price": "659000",
+    "originalPrice": "",
+    "image": "Rotan Sintetis/Sandra/1.jpg"
+  },
+  {
+    "name": "Besante Chair Tinggi",
+    "category": "Rotan Sintetis",
+    "price": "659000",
+    "originalPrice": "",
+    "image": "Rotan Sintetis/Besante Tinggi/1.jpg"
+  },
+  {
+    "name": "Besante Chair Pendek",
+    "category": "Rotan Sintetis",
+    "price": "659000",
+    "originalPrice": "",
+    "image": "Rotan Sintetis/Besante Pendek/1.jpg"
+  },
+  {
+    "name": "Kakida Chair",
+    "category": "Rotan Sintetis",
+    "price": "560000",
+    "originalPrice": "",
+    "image": "Rotan Sintetis/Kakida/1.jpg"
+  },
+  {
+    "name": "Rosyong Chair",
+    "category": "Rotan Sintetis",
+    "price": "550000",
+    "originalPrice": "",
+    "image": "Rotan Sintetis/Rosyong/1.jpg"
+  },
+  {
+    "name": "Kai Chair",
+    "category": "Rotan Sintetis",
+    "price": "659000",
+    "originalPrice": "",
+    "image": "Rotan Sintetis/Kai/1.jpg"
+  },
+  {
+    "name": "Sumaar Chair",
+    "category": "Rotan Sintetis",
+    "price": "659000",
+    "originalPrice": "",
+    "image": "Rotan Sintetis/Sumaar/1.jpg"
+  },
+  {
+    "name": "Galar Chair Tinggi",
+    "category": "Rotan Sintetis",
+    "price": "1300000",
+    "originalPrice": "",
+    "image": "Rotan Sintetis/Galar Tinggi/1.jpg"
+  },
+  {
+    "name": "Galar Chair Pendek",
+    "category": "Rotan Sintetis",
+    "price": "1300000",
+    "originalPrice": "",
+    "image": "Rotan Sintetis/Galar Pendek/1.jpg"
+  },
+  {
+    "name": "Hifi Table",
+    "category": "Rotan Sintetis",
+    "price": "575000",
+    "originalPrice": "",
+    "image": "Rotan Sintetis/Hifi/1.jpg"
+  },
+  {
+    "name": "Rounded Table",
+    "category": "Rotan Sintetis",
+    "price": "415000",
+    "originalPrice": "",
+    "image": "Rotan Sintetis/Rounded/1.jpg"
+  },
+  {
+    "name": "Sonara",
+    "category": "Rotan Sintetis",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Rotan Sintetis/Sonara/1.jpg"
+  },
+  {
+    "name": "Maksi Table",
+    "category": "Sungkai",
+    "price": "2499000",
+    "originalPrice": "",
+    "image": "Sungkai/Maksi/1.jpg"
+  },
+  {
+    "name": "Sinu Chair",
+    "category": "Sungkai",
+    "price": "939000",
+    "originalPrice": "",
+    "image": "Sungkai/Sinu/1.jpg"
+  },
+  {
+    "name": "Dayan Chair",
+    "category": "Sungkai",
+    "price": "900000",
+    "originalPrice": "",
+    "image": "Sungkai/Dayan/1.jpg"
+  },
+  {
+    "name": "Pulos Chair",
+    "category": "Sungkai",
+    "price": "829000",
+    "originalPrice": "",
+    "image": "Sungkai/Pulos/1.jpg"
+  },
+  {
+    "name": "Buffet TV Gantung",
+    "category": "Mahoni",
+    "price": "1550000",
+    "originalPrice": "",
+    "image": "Mahoni/Buffet TV Gantung/1.jpg"
+  },
+  {
+    "name": "Tana Table Natural",
+    "category": "Mahoni",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Mahoni/Tana Table Natural/1.jpg"
+  },
+  {
+    "name": "Tana Table Wallnut",
+    "category": "Mahoni",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Mahoni/Tana Table Wallnut/1.jpg"
+  },
+  {
+    "name": "Tana Long Natural",
+    "category": "Mahoni",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Mahoni/Tana Long Natural/1.jpg"
+  },
+  {
+    "name": "Tana Long Wallnut",
+    "category": "Mahoni",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Mahoni/Tana Long Wallnut/1.jpg"
+  },
+  {
+    "name": "Divan Mahoni 90x200",
+    "category": "Mahoni",
+    "price": "1100000",
+    "originalPrice": "",
+    "image": "Mahoni/Divan Mahoni 90x200/1.jpg"
+  },
+  {
+    "name": "Divan Mahoni 160x200",
+    "category": "Mahoni",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Mahoni/Divan Mahoni 160x200/1.jpg"
+  },
+  {
+    "name": "Divan Mahoni 180x200",
+    "category": "Mahoni",
+    "price": "2050000",
+    "originalPrice": "",
+    "image": "Mahoni/Divan Mahoni 180x200/1.jpg"
+  },
+  {
+    "name": "Terias",
+    "category": "Industrial",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Industrial/Terias/1.jpg"
+  },
+  {
+    "name": "Karency",
+    "category": "Industrial",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Industrial/Karency/1.jpg"
+  },
+  {
+    "name": "Drawa",
+    "category": "Industrial",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Industrial/Drawa/1.jpg"
+  },
+  {
+    "name": "Nikki Table",
+    "category": "Industrial",
+    "price": "4289000",
+    "originalPrice": "",
+    "image": "Industrial/Nikki/1.jpg"
+  },
+  {
+    "name": "Astry Table",
+    "category": "Industrial",
+    "price": "2400000",
+    "originalPrice": "",
+    "image": "Industrial/Astry/1.jpg"
+  },
+  {
+    "name": "Pohra Table",
+    "category": "Industrial",
+    "price": "8900000",
+    "originalPrice": "",
+    "image": "Industrial/Pohra/1.jpg"
+  },
+  {
+    "name": "Onica Table",
+    "category": "Industrial",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Industrial/Onica/1.jpg"
+  },
+  {
+    "name": "Derima Table",
+    "category": "Industrial",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Industrial/Derima/1.jpg"
+  },
+  {
+    "name": "Mendi Table",
+    "category": "Industrial",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Industrial/Mendi/1.jpg"
+  },
+  {
+    "name": "Kayga Table",
+    "category": "Industrial",
+    "price": "2289000",
+    "originalPrice": "",
+    "image": "Industrial/Kayga/1.jpg"
+  },
+  {
+    "name": "Ayoe Table",
+    "category": "Industrial",
+    "price": "2289000",
+    "originalPrice": "",
+    "image": "Industrial/Ayoe/1.jpg"
+  },
+  {
+    "name": "Danghe Table",
+    "category": "Industrial",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Industrial/Danghe/1.jpg"
+  },
+  {
+    "name": "Ditampi Chair",
+    "category": "Industrial",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Industrial/Ditampi/1.jpg"
+  },
+  {
+    "name": "Nick Cabinet",
+    "category": "Industrial",
+    "price": "-",
+    "originalPrice": "",
+    "image": "Industrial/Nick Cabinet/1.jpg"
+  },
+  {
+    "name": "Hana  Lipat Chair",
+    "category": "Chair",
+    "price": "750000",
+    "originalPrice": "",
+    "image": "Chair/Hana  Lipat/1.jpg"
+  },
+  {
+    "name": "Jajeg Chair",
+    "category": "Chair",
+    "price": "699000",
+    "originalPrice": "",
+    "image": "Chair/Jajeg/1.jpg"
+  },
+  {
+    "name": "Kursi Anak Hewan",
+    "category": "Kursi",
+    "price": "449000",
+    "originalPrice": "",
+    "image": "Sungkai/Kursi Anak Hewan/1.jpg"
+  },
+  {
+    "name": "Kursi Sudut Letter L",
+    "category": "Kursi",
+    "price": "3900000",
+    "originalPrice": "",
+    "image": "Kursi/Kursi Sudut Letter L/1.jpg"
+  },
+  {
+    "name": "Kursi Anak Jari",
+    "category": "Kursi",
+    "price": "539000",
+    "originalPrice": "",
+    "image": "Sungkai/Kursi Anak Jari/1.jpg"
+  },
+  {
+    "name": "Mindie Table",
+    "category": "Meja",
+    "price": "599000",
+    "originalPrice": "",
+    "image": "Meja/Mindie/1.jpg"
+  },
+  {
+    "name": "Oosir",
+    "category": "Divan",
+    "price": "6700000",
+    "originalPrice": "",
+    "image": "Divan/Oosir /1.jpg"
+  },
+  {
+    "name": "Pulos Jok Chair",
+    "category": "Kursi",
+    "price": "929000",
+    "originalPrice": "",
+    "image": "Sungkai/Pulos Jok /1.jpg"
+  },
+  {
+    "name": "Serwood Table Mini",
+    "category": "Meja",
+    "price": "1350000",
+    "originalPrice": "",
+    "image": "Meja/Serwood Table Mini/1.jpg"
+  },
+  {
+    "name": "Swane",
+    "category": "Divan",
+    "price": "3750000",
+    "originalPrice": "",
+    "image": "Divan/Swane/1.jpg"
+  },
+  {
+    "name": "Talelap",
+    "category": "Divan",
+    "price": "4550000",
+    "originalPrice": "",
+    "image": "Divan/Talelap/1.jpg"
+  }
+]
