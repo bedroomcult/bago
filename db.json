@@ -1418,25 +1418,5 @@
         "originalPrice": null,
         "image": "Rotan/Santiz/1.png",
         "desc": ""
-    },
-    {
-        "id": "1754891165232",
-        "name": "test PHP server",
-        "category": "test",
-        "price": 50000,
-        "originalprice": 75000,
-        "stock": 1,
-        "size": "",
-        "image": "",
-        "colors": [
-            {
-                "name": "Black",
-                "hex": "#000000"
-            },
-            {
-                "name": "White",
-                "hex": "#ffffff"
-            }
-        ]
     }
-]
+    ]
