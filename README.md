@@ -1,5 +1,6 @@
 add SSH key to clone:
 ```
+eval "$(ssh-agent -s)"
 ssh-add bedroomcult
 ```
 
