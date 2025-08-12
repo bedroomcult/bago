@@ -1,6 +1,0 @@
-:80 {
-    root * /srv/public
-    encode
-    php_fastcgi localhost:9000
-    file_server
-}
