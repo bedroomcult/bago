@@ -1039,7 +1039,9 @@
         "category": "Rotan Sintetis",
         "price": 659000,
         "originalPrice": null,
-        "image": "Rotan/Besante/1.jpg"
+        "image": "Rotan/Besante/1.jpg",
+        "size": "L56 x P49 x T76"
+
     },
     {
         "name": "Karpi",
@@ -1053,14 +1055,16 @@
         "category": "Rotan Sintetis",
         "price": 1300000,
         "originalPrice": null,
-        "image": "Rotan/Galar/1.jpg"
+        "image": "Rotan/Galar/1.jpg",
+        "size": "L128 x P45 x T55"
     },
     {
         "name": "Hifi Table",
         "category": "Rotan Sintetis",
         "price": 575000,
         "originalPrice": null,
-        "image": "Rotan/Hifi/1.jpg"
+        "image": "Rotan/Hifi/1.jpg",
+        "size": "L80 x P50 x T55"
     },
     {
         "name": "Kai Chair",
@@ -1088,7 +1092,8 @@
         "category": "Rotan Sintetis",
         "price": 415000,
         "originalPrice": null,
-        "image": "Rotan/Rounded Table/1.jpg"
+        "image": "Rotan/Rounded Table/1.jpg",
+        "size": "T54 D55"
     },
     {
         "name": "Sandara Chair",
@@ -1425,7 +1430,8 @@
         "category": "Rotan Sintetis",
         "price": 659000,
         "originalPrice": null,
-        "image": "Rotan/Santiz/1.png",
-        "desc": ""
+        "image": "Rotan/Santiz/1.jpg",
+        "desc": "",
+        "size": "L56 x P44 x T49"
     }
     ]
