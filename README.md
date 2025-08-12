@@ -1,4 +1,4 @@
-add SSH key to clone:
+add SSH key to clone (go to bago-catalog directory):
 ```
 eval "$(ssh-agent -s)"
 ssh-add bedroomcult
