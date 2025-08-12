@@ -217,9 +217,16 @@
         "image": "Industrial/Danghe/1.jpg"
     },
     {
+        "name": "Kayga Table",
+        "category": "Industrial",
+        "price": 2100000,
+        "originalPrice": 2289000,
+        "image": "Industrial/Kayga/1.jpg"
+    },
+    {
         "name": "Derima Table",
         "category": "Industrial",
-        "price": null,
+        "price": 4699000,
         "originalPrice": null,
         "image": "Industrial/Derima/1.jpg"
     },
@@ -245,13 +252,6 @@
         "image": "Industrial/Karency/1.jpg"
     },
     {
-        "name": "Kayga Table",
-        "category": "Industrial",
-        "price": 2100000,
-        "originalPrice": 2289000,
-        "image": "Industrial/Kayga/1.jpg"
-    },
-    {
         "name": "Mendi Table",
         "category": "Industrial",
         "price": 4899000,
@@ -262,7 +262,7 @@
     {
         "name": "Nick Cabinet",
         "category": "Industrial",
-        "price": null,
+        "price": 6199000,
         "originalPrice": null,
         "image": "Industrial/Nick Cabinet/1.jpg"
     },
@@ -277,7 +277,7 @@
     {
         "name": "Onica Table",
         "category": "Industrial",
-        "price": null,
+        "price": 4500000,
         "originalPrice": null,
         "image": "Industrial/Onica/1.jpg"
     },
@@ -398,7 +398,7 @@
         "category": "Kursi",
         "price": 3900000,
         "originalPrice": null,
-        "image": "Kursi/Kursi Sudut L/1.jpg"
+        "image": "Kursi/Kursi Sudut L/1.png"
     },
     {
         "name": "Kurtampu Chair",
@@ -590,6 +590,13 @@
         "image": "Kursi/Jangra Sofa/1.jpg"
     },
     {
+        "name": "Serwood Single",
+        "category": "Sofa",
+        "price": 1500000,
+        "originalPrice": null,
+        "image": "Sofa/Serwood Single/1.jpg"
+    },
+    {
         "name": "Kane Chair",
         "category": "Kursi Cafe",
         "price": 1550000,
@@ -697,7 +704,7 @@
     {
         "name": "Selica Chair",
         "category": "Kursi Cafe",
-        "price": null,
+        "price": 1645000,
         "originalPrice": null,
         "image": "Kursi/Selica/1.jpg"
     },
@@ -837,7 +844,7 @@
     {
         "name": "Mejia Table",
         "category": "Meja",
-        "price": null,
+        "price": 775000,
         "originalPrice": null,
         "image": "Meja/Mejia/1.jpg"
     },
@@ -909,7 +916,7 @@
         "category": "Meja",
         "price": 1350000,
         "originalPrice": null,
-        "image": "Meja/Serwood Table Mini/1.jpg"
+        "image": "Meja/Serwood Mini Table/1.jpg"
     },
     {
         "name": "Teyko Table",
@@ -935,7 +942,7 @@
     {
         "name": "Yumma Table",
         "category": "Meja",
-        "price": null,
+        "price": 1200000,
         "originalPrice": null,
         "image": "Meja/Yumma/1.jpg"
     },
@@ -1105,9 +1112,9 @@
         "image": "Rotan/Sumaar/1.jpg"
     },
     {
-        "name": "Amelia Sofa Set",
+        "name": "Amelia Sofa Set (Tanpa Meja)",
         "category": "Set",
-        "price": null,
+        "price": 6800000,
         "originalPrice": null,
         "image": "Set/Amelia Sofa Set/1.jpg"
     },
@@ -1331,7 +1338,7 @@
     {
         "name": "Kamara Chair",
         "category": "Stool",
-        "price": null,
+        "price": 550000,
         "originalPrice": null,
         "image": "Stool/Kamara/1.jpg"
     },
@@ -1378,32 +1385,32 @@
         "image": "Stool/Stooya/1.jpg"
     },
     {
-        "name": "Dayan Chair",
-        "category": "Sungkai",
-        "price": 900000,
-        "originalPrice": null,
-        "image": "Sungkai/Dayan/1.jpg"
-    },
-    {
         "name": "Maksi Table",
         "category": "Sungkai",
         "price": 2499000,
         "originalPrice": null,
-        "image": "Sungkai/Maksi/1.jpg"
+        "image": "Meja/Maksi/1.jpg"
+    },
+    {
+        "name": "Dayan Chair",
+        "category": "Sungkai",
+        "price": 900000,
+        "originalPrice": null,
+        "image": "Kursi/Dayan/1.jpg"
     },
     {
         "name": "Pulos Chair",
         "category": "Sungkai",
         "price": 829000,
         "originalPrice": null,
-        "image": "Sungkai/Pulos/1.jpg"
+        "image": "Kursi/Pulos/1.jpg"
     },
     {
         "name": "Sinu Chair",
         "category": "Sungkai",
         "price": 939000,
         "originalPrice": null,
-        "image": "Sungkai/Sinu/1.jpg"
+        "image": "Kursi/Sinu/1.jpg"
     },
     {
         "name": "Set Rotan Besar",
