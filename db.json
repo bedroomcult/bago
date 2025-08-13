@@ -515,7 +515,8 @@
 		"category": "Cabinet",
 		"price": 4500000,
 		"originalPrice": null,
-		"image": "Cabinet/Katoon/1.jpg"
+		"image": "Cabinet/Katoon/1.jpg",
+        "size": "P100 x L50 x T200"
 	},
 	{
 		"name": "Kayga Table",
@@ -875,7 +876,8 @@
 		"category": "Cabinet",
 		"price": 6199000,
 		"originalPrice": null,
-		"image": "Cabinet/Nick/1.jpg"
+		"image": "Cabinet/Nick/1.jpg",
+        "size": "P100 x L45 x T148"
 	},
 	{
 		"name": "Nihi",
