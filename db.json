@@ -182,6 +182,20 @@
         "image": "Divan/Oosir/1.jpg"
     },
     {
+        "name": "Mimore",
+        "category": "Divan",
+        "price": 4800000,
+        "originalPrice": null,
+        "image": "Divan/Mimore/1.jpg"
+    },
+    {
+        "name": "Nihi",
+        "category": "Divan",
+        "price": 3750000,
+        "originalPrice": null,
+        "image": "Divan/Nihi/1.jpg"
+    },
+    {
         "name": "Swane",
         "category": "Divan",
         "price": 3750000,
@@ -261,12 +275,19 @@
     },
     {
         "name": "Nick Cabinet",
-        "category": "Industrial",
+        "category": "Cabinet",
         "price": 6199000,
         "originalPrice": null,
-        "image": "Industrial/Nick Cabinet/1.jpg"
+        "image": "Cabinet/Nick/1.jpg"
     },
     {
+        "name": "Katoon Cabinet",
+        "category": "Cabinet",
+        "price": 4500000,
+        "originalPrice": null,
+        "image": "Cabinet/Katoon/1.jpg"
+    },
+        {
         "name": "Nikki Table",
         "category": "Industrial",
         "price": 4289000,
@@ -394,9 +415,16 @@
         "image": "Sungkai/Kursi Anak Jari/1.jpg"
     },
     {
-        "name": "Kursi Sudut Letter L",
+        "name": "Kursi Sudut Letter L (Tanpa Spons)",
         "category": "Kursi",
         "price": 3900000,
+        "originalPrice": null,
+        "image": "Kursi/Kursi Sudut L/1.png"
+    },
+        {
+        "name": "Kursi Sudut Letter L (Dengan Spons)",
+        "category": "Kursi",
+        "price": 4700000,
         "originalPrice": null,
         "image": "Kursi/Kursi Sudut L/1.png"
     },
@@ -793,11 +821,25 @@
         "image": "Meja/Jakyth/1.jpg"
     },
     {
-        "name": "Kadjo Table",
+        "name": "Trantul Table",
         "category": "Meja",
-        "price": 980000,
+        "price": 918000,
         "originalPrice": null,
-        "image": "Meja/Kadjo/1.jpg"
+        "image": "Meja/Trantul/1.jpg"
+    },
+   {
+        "name": "Jlentik Table",
+        "category": "Meja",
+        "price": 1335000,
+        "originalPrice": null,
+        "image": "Meja/Jlentik/1.jpg"
+    },
+    {
+        "name": "Kajetis Table",
+        "category": "Meja",
+        "price": 575000,
+        "originalPrice": null,
+        "image": "Meja/Kajetis/1.jpg"
     },
     {
         "name": "Kanara Table",
@@ -1268,7 +1310,7 @@
         "category": "Stool",
         "price": 800000,
         "originalPrice": null,
-        "image": "Stool/Arkoll Bench/1.jpg"
+        "image": "Stool/Arkoll/1.jpg"
     },
     {
         "name": "Barsi Chair",
@@ -1290,6 +1332,13 @@
         "price": 965000,
         "originalPrice": null,
         "image": "Stool/Duksaja/1.jpg"
+    },
+        {
+        "name": "Duklah Chair",
+        "category": "Stool",
+        "price": 965000,
+        "originalPrice": null,
+        "image": "Stool/Duklah/1.jpg"
     },
     {
         "name": "Farmae Chair",
