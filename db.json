@@ -53,7 +53,7 @@
 		"name": "Asimbi",
 		"category": "Buffet",
 		"price": 2940000,
-		"originalprice": 3200000,
+		"originalPrice": 3200000,
 		"image": "Buffet/Asimbi.jpg"
 	},
 	{
@@ -1295,19 +1295,19 @@
 		"image": "Sofa/Sofa L.jpg",
 		"colors": [
 			{
-				"name": "Cream",
+				"name": "Cream 182",
 				"hex": "#d7c796"
 			},
 			{
-				"name": "Cream Coklat",
+				"name": "Cream Coklat 183",
 				"hex": "#b5a26e"
 			},
 			{
-				"name": "Abu Muda",
+				"name": "Abu Muda 162",
 				"hex": "#373430"
 			},
 			{
-				"name": "Hitam",
+				"name": "Hitam 090",
 				"hex": "#000000"
 			}
 		]
