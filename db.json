@@ -791,7 +791,7 @@
 		"category": "Sofa",
 		"price": 5289000,
 		"originalPrice": null,
-		"image": "Sofa/Mioji/2.jpg",
+		"image": "Sofa/Mioji Double.jpg",
 		"size": "L165 x T40 x P75"
 	},
 	{
@@ -799,7 +799,7 @@
 		"category": "Sofa",
 		"price": 3215000,
 		"originalPrice": null,
-		"image": "Sofa/Mioji.jpg",
+		"image": "Sofa/Mioji Single.jpg",
 		"size": "L95 x T40 x P75"
 	},
 	{
@@ -807,7 +807,7 @@
 		"category": "Sofa",
 		"price": 6305000,
 		"originalPrice": null,
-		"image": "Sofa/Mioji/3.jpg",
+		"image": "Sofa/Mioji Triple.jpg",
 		"size": "L205 x T40 x P75"
 	},
 	{
@@ -822,7 +822,7 @@
 		"category": "Sofa",
 		"price": 5289000,
 		"originalPrice": null,
-		"image": "Sofa/Moeji/2.jpg",
+		"image": "Sofa/Moeji Double.jpg",
 		"size": "L165 x T40 x P75"
 	},
 	{
@@ -830,7 +830,7 @@
 		"category": "Sofa",
 		"price": 3215000,
 		"originalPrice": null,
-		"image": "Sofa/Moeji.jpg",
+		"image": "Sofa/Moeji Single.jpg",
 		"size": "L95 x T40 x P75"
 	},
 	{
@@ -838,7 +838,7 @@
 		"category": "Sofa",
 		"price": 6305000,
 		"originalPrice": null,
-		"image": "Sofa/Moeji/3.jpg",
+		"image": "Sofa/Moeji Triple.jpg",
 		"size": "L205 x T40 x P75"
 	},
 	{
