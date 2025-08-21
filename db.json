@@ -1004,7 +1004,22 @@
 		"category": "Sofa",
 		"price": 2200000,
 		"originalPrice": null,
-		"image": "Sofa/Qilla Sofa.jpg"
+		"desc": "Kain Kimmy/Linen",
+		"image": "Sofa/Qilla Sofa.jpg",
+		"colors": [
+			{
+				"name": "Cream 145",
+				"hex": "#FFECB3"
+			},
+			{
+				"name": "Cream 182",
+				"hex": "#d7c796"
+			},
+			{
+				"name": "Hitam 090",
+				"hex": "#000000"
+			}
+		]
 	},
 	{
 		"name": "Rajua Sofa Set",
@@ -1013,6 +1028,15 @@
 		"originalPrice": null,
 		"image": "Set/Rajua Sofa Set.jpg",
 		"size": "P200 x L80 x T65"
+	},
+	{
+		"name": "Dwilama + Tooja set",
+		"category": "Set",
+		"price": 2500000,
+		"originalPrice": null,
+		"image": "Set/Set Dwilama Tooja.jpg",
+		"size": "",
+		"desc": "2 Dwilama Chair + Tooja Table"
 	},
 	{
 		"name": "Rataya Table",
