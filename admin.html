@@ -44,48 +44,73 @@
 </head>
 <body class="bg-gray-100">
 
-    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
-        <header class="mb-8">
-            <h1 class="text-3xl font-bold text-gray-800">Product Management</h1>
-            <p class="text-gray-500">Add, edit, or delete products from the catalog.</p>
-        </header>
-
-        <div class="flex flex-col sm:flex-row justify-between items-center mb-4 gap-4">
-            <div class="relative w-full sm:w-auto">
-                <input type="search" id="search-input" placeholder="Search by name or category..." class="pl-10 pr-4 py-2 border rounded-lg w-full sm:w-64 focus:ring-indigo-500 focus:border-indigo-500">
-                <svg class="w-5 h-5 text-gray-400 absolute top-1/2 left-3 transform -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-            </div>
-            <div class="flex gap-2 sm:gap-4">
-                 <a href="index.html" class="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
-                    Homepage
-                </a>
-                <button id="add-product-btn" class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">
-                    Add New
-                </button>
-                <button id="save-to-server-btn" class="bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
-                    Save Changes
-                </button>
-            </div>
+    <div id="login-container" class="fixed inset-0 bg-gray-200 flex items-center justify-center z-50 p-4">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
+            <h2 class="text-2xl font-bold text-center mb-6">Admin Login</h2>
+            <form id="login-form">
+                <div class="mb-4">
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="username" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2" required>
+                </div>
+                <div class="mb-6">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2" required>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700">Login</button>
+                <p id="login-error" class="text-red-500 text-sm text-center mt-4"></p>
+            </form>
         </div>
+    </div>
 
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-            <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-50">
-                        <tr>
-                            <th scope="col" data-sort-key="name" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Name <span class="sort-indicator"></span></th>
-                            <th scope="col" data-sort-key="category" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Category <span class="sort-indicator"></span></th>
-                            <th scope="col" data-sort-key="price" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Price <span class="sort-indicator"></span></th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Discount Status</th>
-                            <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="product-table-body" class="bg-white divide-y divide-gray-200">
-                        <!-- Product rows will be inserted here -->
-                    </tbody>
-                </table>
+    <div id="admin-panel" class="hidden">
+        <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+            <header class="mb-8">
+                <h1 class="text-2xl sm:text-3xl font-bold text-gray-800">Product Management</h1>
+                <p class="text-gray-500">Add, edit, or delete products from the catalog.</p>
+            </header>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center mb-4 gap-4">
+                <div class="relative w-full sm:w-auto">
+                    <input type="search" id="search-input" placeholder="Search by name or category..." class="pl-10 pr-4 py-2 border rounded-lg w-full sm:w-64 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
+                    <svg class="w-5 h-5 text-gray-400 absolute top-1/2 left-3 transform -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+                <div class="flex gap-2 sm:gap-4 w-full sm:w-auto">
+                     <a href="index.html" class="flex-1 sm:flex-none justify-center bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
+                        Homepage
+                    </a>
+                    <button id="add-product-btn" class="flex-1 sm:flex-none justify-center bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">
+                        Add New
+                    </button>
+                    <button id="save-to-server-btn" class="flex-1 sm:flex-none justify-center bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
+                        Save
+                    </button>
+                    <button id="logout-btn" class="flex-1 sm:flex-none justify-center bg-red-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700 transition-colors">
+                        Logout
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" data-sort-key="name" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Name <span class="sort-indicator"></span></th>
+                                <th scope="col" data-sort-key="category" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Category <span class="sort-indicator"></span></th>
+                                <th scope="col" data-sort-key="price" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Price <span class="sort-indicator"></span></th>
+                                <th scope="col" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
+                                <th scope="col" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Discount Status</th>
+                                <th scope="col" data-sort-key="hidden" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Status <span class="sort-indicator"></span></th>
+                                <th scope="col" class="px-2 py-3 sm:px-6 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="product-table-body" class="bg-white divide-y divide-gray-200">
+                            <!-- Product rows will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -96,34 +121,34 @@
             <h2 id="modal-title" class="text-2xl font-bold mb-4">Add New Product</h2>
             <form id="product-form">
                 <input type="hidden" id="product-id">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="md:col-span-2">
                         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                        <input type="text" id="name" class="mt-1 block w-full bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm" required>
+                        <input type="text" id="name" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2" required>
                     </div>
                     <div>
                         <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
-                        <input type="text" id="category" class="mt-1 block w-full bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm" required>
+                        <input type="text" id="category" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2" required>
                     </div>
                     <div>
                         <label for="image" class="block text-sm font-medium text-gray-700">Image Path</label>
-                        <input type="text" id="image" class="mt-1 block w-full bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm" required>
+                        <input type="text" id="image" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2" required>
                     </div>
                     <div>
                         <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
-                        <input type="number" id="price" class="mt-1 block w-full bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                        <input type="number" id="price" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2">
                     </div>
                     <div>
                         <label for="originalPrice" class="block text-sm font-medium text-gray-700">Original Price</label>
-                        <input type="number" id="originalPrice" class="mt-1 block w-full bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                        <input type="number" id="originalPrice" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2">
                     </div>
                      <div class="md:col-span-2">
                         <label for="desc" class="block text-sm font-medium text-gray-700">Description</label>
-                        <textarea id="desc" rows="3" class="mt-1 block w-full bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"></textarea>
+                        <textarea id="desc" rows="3" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2"></textarea>
                     </div>
                     <div>
                         <label for="size" class="block text-sm font-medium text-gray-700">Size</label>
-                        <input type="text" id="size" class="mt-1 block w-full bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                        <input type="text" id="size" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2">
                     </div>
                      <div class="md:col-span-2">
                         <label class="block text-sm font-medium text-gray-700">Colors</label>
@@ -134,7 +159,12 @@
                     </div>
                     <div class="md:col-span-2">
                         <label for="period" class="block text-sm font-medium text-gray-700">Discount Period (e.g., 01/08/2025-31/08/2025)</label>
-                        <input type="text" id="period" class="mt-1 block w-full bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                        <input type="text" id="period" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2">
+                    </div>
+                    <div class="md:col-span-2 flex items-center gap-4 pt-2">
+                        <label for="hidden" class="block text-sm font-medium text-gray-700">Hide Product</label>
+                        <input type="checkbox" id="hidden" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                        <span class="text-xs text-gray-500">If checked, this product will not appear in the public catalog.</span>
                     </div>
                 </div>
                 <div class="mt-6 flex justify-end space-x-3">
@@ -152,7 +182,7 @@
             <div id="color-picker-wheel" class="mx-auto"></div>
             <div class="mt-4">
                 <label for="color-desc" class="block text-sm font-medium text-gray-700">Color Description (e.g., "Matte Black")</label>
-                <input type="text" id="color-desc" class="mt-1 block w-full bg-gray-200 border-gray-300 rounded-md shadow-sm text-sm">
+                <input type="text" id="color-desc" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm text-sm p-2">
             </div>
             <div class="mt-6 flex justify-end gap-3">
                 <button type="button" id="cancel-color-btn" class="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg">Cancel</button>
@@ -185,6 +215,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Auth Elements
+            const loginContainer = document.getElementById('login-container');
+            const adminPanel = document.getElementById('admin-panel');
+            const loginForm = document.getElementById('login-form');
+            const loginError = document.getElementById('login-error');
+            const logoutBtn = document.getElementById('logout-btn');
+
+            // App Elements
             const productTableBody = document.getElementById('product-table-body');
             const addProductBtn = document.getElementById('add-product-btn');
             const saveToServerBtn = document.getElementById('save-to-server-btn');
@@ -216,6 +254,36 @@
             let currentSortKey = 'name';
             let currentSortDir = 'asc';
 
+            function initApp() {
+                loginContainer.classList.add('hidden');
+                adminPanel.classList.remove('hidden');
+                fetchProducts();
+            }
+
+            // --- Auth Logic ---
+            if (sessionStorage.getItem('isLoggedIn') === 'true') {
+                initApp();
+            }
+
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                if (username === 'admin' && password === 'bago') {
+                    sessionStorage.setItem('isLoggedIn', 'true');
+                    initApp();
+                } else {
+                    loginError.textContent = 'Invalid username or password.';
+                }
+            });
+
+            logoutBtn.addEventListener('click', () => {
+                sessionStorage.removeItem('isLoggedIn');
+                location.reload();
+            });
+
+            // --- App Logic ---
             function getChanges() {
                 const added = allItems.filter(item => !originalItems.some(orig => orig._tempId === item._tempId));
                 const deleted = originalItems.filter(orig => !allItems.some(item => item._tempId === orig._tempId));
@@ -293,6 +361,23 @@
                 }
             }
 
+            async function checkImageExists(url, element) {
+                if (!url || url.trim() === '' || url.trim() === '/') {
+                    element.innerHTML = `<span class="text-yellow-600 font-semibold">No Path</span>`;
+                    return;
+                }
+                try {
+                    const response = await fetch(url, { method: 'HEAD', cache: 'no-cache' });
+                    if (response.ok) {
+                        element.innerHTML = `<span class="text-green-600 font-bold">✔ Found</span>`;
+                    } else {
+                        element.innerHTML = `<span class="text-red-600 font-bold">✖ Not Found</span>`;
+                    }
+                } catch (error) {
+                    element.innerHTML = `<span class="text-red-600 font-bold">✖ Error</span>`;
+                }
+            }
+
             function renderTable() {
                 const searchTerm = searchInput.value.toLowerCase();
                 let filteredItems = allItems.filter(item => {
@@ -308,6 +393,9 @@
                     if (currentSortKey === 'price') {
                         valA = valA === null ? -Infinity : valA;
                         valB = valB === null ? -Infinity : valB;
+                    } else if (currentSortKey === 'hidden') {
+                        valA = valA ? 1 : 0;
+                        valB = valB ? 1 : 0;
                     } else {
                         valA = (valA || '').toString().toLowerCase();
                         valB = (valB || '').toString().toLowerCase();
@@ -320,7 +408,7 @@
 
                 productTableBody.innerHTML = '';
                 if (filteredItems.length === 0) {
-                    productTableBody.innerHTML = `<tr><td colspan="5" class="text-center text-gray-500 py-8">No products found.</td></tr>`;
+                    productTableBody.innerHTML = `<tr><td colspan="7" class="text-center text-gray-500 py-8">No products found.</td></tr>`;
                     return;
                 }
 
@@ -328,27 +416,44 @@
                     const originalIndex = allItems.findIndex(originalItem => originalItem._tempId === item._tempId);
                     const discountState = getDiscountState(item);
                     const row = document.createElement('tr');
+                    row.id = `product-row-${item._tempId}`;
                     row.innerHTML = `
-                        <td class="px-6 py-4 whitespace-nowrap">
+                        <td class="px-2 py-3 sm:px-6 whitespace-nowrap">
                             <div class="text-sm font-medium text-gray-900">${item.name}</div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
+                        <td class="px-2 py-3 sm:px-6 whitespace-nowrap">
                             <div class="text-sm text-gray-500">${item.category}</div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
+                        <td class="px-2 py-3 sm:px-6 whitespace-nowrap">
                             <div class="text-sm text-gray-900">${formatRupiah(item.price)}</div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
+                        <td class="px-2 py-3 sm:px-6 whitespace-nowrap text-sm image-status-cell">
+                            <span class="text-gray-400">Checking...</span>
+                        </td>
+                        <td class="px-2 py-3 sm:px-6 whitespace-nowrap">
                             <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${discountState.color}">
                                 ${discountState.text}
                             </span>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <td class="px-2 py-3 sm:px-6 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${item.hidden ? 'bg-gray-400 text-white' : 'bg-green-200 text-green-800'}">
+                                ${item.hidden ? 'Hidden' : 'Visible'}
+                            </span>
+                        </td>
+                        <td class="px-2 py-3 sm:px-6 whitespace-nowrap text-right text-sm font-medium">
                             <button data-index="${originalIndex}" class="edit-btn text-indigo-600 hover:text-indigo-900 mr-4">Edit</button>
                             <button data-index="${originalIndex}" class="delete-btn text-red-600 hover:text-red-900">Delete</button>
                         </td>
                     `;
                     productTableBody.appendChild(row);
+                });
+
+                // After rendering rows, perform the async image checks
+                filteredItems.forEach(item => {
+                    const statusCell = productTableBody.querySelector(`#product-row-${item._tempId} .image-status-cell`);
+                    if (statusCell) {
+                        checkImageExists(item.image, statusCell);
+                    }
                 });
 
                 tableHead.querySelectorAll('[data-sort-key]').forEach(th => {
@@ -377,12 +482,14 @@
                     document.getElementById('period').value = item.period || '';
                     document.getElementById('desc').value = item.desc || '';
                     document.getElementById('size').value = item.size || '';
+                    document.getElementById('hidden').checked = item.hidden || false;
                     if (Array.isArray(item.colors)) {
                         renderColorSwatches(item.colors);
                     }
                 } else {
                     modalTitle.textContent = 'Add New Product';
                     document.getElementById('image').value = '/';
+                    document.getElementById('hidden').checked = false;
                 }
                 productModal.classList.remove('hidden');
             }
@@ -412,7 +519,7 @@
                     updateUnsavedStatus();
                 } catch (error) {
                     console.error('Error fetching products:', error);
-                    productTableBody.innerHTML = `<tr><td colspan="5" class="text-center text-red-500 py-8">Error loading products. Please check console.</td></tr>`;
+                    productTableBody.innerHTML = `<tr><td colspan="7" class="text-center text-red-500 py-8">Error loading products. Please check console.</td></tr>`;
                 }
             }
 
@@ -439,6 +546,7 @@
                     desc: document.getElementById('desc').value || null,
                     size: document.getElementById('size').value || null,
                     colors: colors,
+                    hidden: document.getElementById('hidden').checked,
                 };
 
                 if (editingIndex !== null) {
@@ -648,7 +756,7 @@
                 }
             });
 
-            fetchProducts();
+            // fetchProducts() is now called by initApp after successful login
         });
     </script>
 </body>

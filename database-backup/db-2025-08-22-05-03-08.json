@@ -558,12 +558,7 @@
         "category": "Kursi Cafe",
         "price": null,
         "originalPrice": null,
-        "period": null,
-        "image": "Kursi/Kitora.jpg",
-        "desc": null,
-        "size": null,
-        "colors": [],
-        "hidden": true
+        "image": "Kursi/Kitora.jpg"
     },
     {
         "name": "Klamari Chair",
@@ -782,12 +777,7 @@
         "category": "Meja",
         "price": null,
         "originalPrice": null,
-        "period": null,
-        "image": "Meja/Menjang.jpg",
-        "desc": null,
-        "size": null,
-        "colors": [],
-        "hidden": true
+        "image": "Meja/Menjang.jpg"
     },
     {
         "name": "Mimore",
@@ -1362,12 +1352,7 @@
         "category": "Rotan Sintetis",
         "price": null,
         "originalPrice": null,
-        "period": null,
-        "image": "Rotan/Sonara.jpg",
-        "desc": null,
-        "size": null,
-        "colors": [],
-        "hidden": true
+        "image": "Rotan/Sonara.jpg"
     },
     {
         "name": "Soopha",
