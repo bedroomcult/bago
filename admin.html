@@ -132,7 +132,14 @@
                     </div>
                     <div>
                         <label for="image" class="block text-sm font-medium text-gray-700">Image Path</label>
-                        <input type="text" id="image" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2" required>
+                        <div class="mt-1 flex rounded-md shadow-sm">
+                            <input type="text" id="image" class="flex-1 block w-full rounded-none rounded-l-md bg-white border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2" required>
+                            <input type="file" id="image-upload" class="hidden" accept="image/png, image/jpeg, image/gif, image/webp">
+                            <button type="button" id="image-upload-btn" class="relative -ml-px inline-flex items-center space-x-2 rounded-r-md border border-gray-300 bg-gray-50 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">
+                                Upload
+                            </button>
+                        </div>
+                        <p id="upload-status" class="text-sm text-gray-500 mt-1"></p>
                     </div>
                     <div>
                         <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
@@ -248,11 +255,21 @@
             const colorsContainer = document.getElementById('colors-container');
             let colorPicker;
 
+            // Image Upload Elements
+            const imageUploadBtn = document.getElementById('image-upload-btn');
+            const imageUploadInput = document.getElementById('image-upload');
+            const imagePathInput = document.getElementById('image');
+            const uploadStatus = document.getElementById('upload-status');
+
             let allItems = [];
             let originalItems = []; // A pristine copy of the fetched data
             let editingIndex = null;
             let currentSortKey = 'name';
             let currentSortDir = 'asc';
+
+            // New state variables for staged upload
+            let stagedFile = null;
+            let stagedFileProductName = null;
 
             function initApp() {
                 loginContainer.classList.add('hidden');
@@ -470,6 +487,13 @@
                 productForm.reset();
                 renderColorSwatches([]);
                 editingIndex = index;
+
+                // Reset image staging on modal open
+                stagedFile = null;
+                stagedFileProductName = null;
+                uploadStatus.textContent = '';
+                imagePathInput.disabled = false;
+
                 if (index !== null) {
                     modalTitle.textContent = 'Edit Product';
                     const item = allItems[index];
@@ -496,6 +520,7 @@
 
             function closeModal() {
                 productModal.classList.add('hidden');
+                uploadStatus.textContent = ''; // Clear upload status on close
             }
 
             function deleteProduct(index) {
@@ -535,6 +560,13 @@
                         name: swatch.dataset.name
                     });
                 });
+
+                const finalProductName = document.getElementById('name').value;
+                // If an image was staged, ensure its associated name is up-to-date
+                // with what's being saved in the modal.
+                if (stagedFile) {
+                    stagedFileProductName = finalProductName;
+                }
 
                 const productData = {
                     name: document.getElementById('name').value,
@@ -620,25 +652,40 @@
                 confirmSaveBtn.disabled = true;
                 confirmSaveBtn.textContent = 'Saving...';
 
+                // Prepare data for saving. We send the whole database state.
                 const itemsToSave = allItems.map(item => {
                     const { _tempId, ...rest } = item;
                     return rest;
                 });
 
+                // Use FormData to handle both JSON data and a potential file upload.
+                const formData = new FormData();
+                formData.append('dbData', JSON.stringify(itemsToSave));
+
+                // If a file was staged, add it and its associated product name to the request.
+                if (stagedFile && stagedFileProductName) {
+                    formData.append('productImage', stagedFile);
+                    formData.append('productName', stagedFileProductName);
+                }
+
                 try {
+                    // When sending FormData, we DO NOT set the Content-Type header.
+                    // The browser does it automatically with the correct boundary.
                     const response = await fetch('update-db.php', {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(itemsToSave),
+                        body: formData,
                     });
                     const result = await response.json();
                     if (!response.ok || result.status !== 'success') {
                         throw new Error(result.message || 'An unknown error occurred.');
                     }
+                    // On successful save, clear the staged file
+                    stagedFile = null;
+                    stagedFileProductName = null;
                     showChangesSummary(false);
                 } catch (error) {
                     console.error('Error saving data:', error);
-                    alert('Error: ' + error.message);
+                    alert('Save Error: ' + error.message);
                 } finally {
                     confirmSaveBtn.disabled = false;
                     confirmSaveBtn.textContent = 'Confirm & Save';
@@ -654,6 +701,32 @@
                 if (cancelSummaryBtn.textContent === 'Close') {
                     fetchProducts(); 
                 }
+            });
+
+            // --- Image Upload Logic ---
+            imageUploadBtn.addEventListener('click', () => {
+                imageUploadInput.click();
+            });
+
+            imageUploadInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                const productName = document.getElementById('name').value;
+                if (!productName) {
+                    alert('Please enter a product name before selecting an image.');
+                    e.target.value = ''; // Clear the input
+                    return;
+                }
+
+                // With the new flow, we only stage the file. 
+                // The upload happens with the main "Confirm & Save" button.
+                stagedFile = file;
+                stagedFileProductName = productName; // Store the name at time of selection
+                
+                uploadStatus.textContent = `Staged for upload: ${file.name}`;
+                imagePathInput.value = 'Will be auto-generated on save.';
+                imagePathInput.disabled = true;
             });
 
             changesSummaryDiv.addEventListener('click', (e) => {

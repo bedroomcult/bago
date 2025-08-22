@@ -1,71 +1,239 @@
 <?php
+// Simple logging function to write to a local debug.log file.
+function write_log($message) {
+    // Prepend a timestamp to the message.
+    $log_message = date('Y-m-d H:i:s') . ' - ' . $message . PHP_EOL;
+    // Append the message to the log file.
+    file_put_contents('debug.log', $log_message, FILE_APPEND);
+}
+
+// This function will run when the script is about to terminate.
+register_shutdown_function('handleFatalError');
+
+function handleFatalError() {
+    $error = error_get_last();
+    if ($error !== null && in_array($error['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR]) && !headers_sent()) {
+        write_log("Fatal Error: " . json_encode($error));
+        http_response_code(500);
+        header('Content-Type: application/json');
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'A fatal server error occurred. Check server error logs or debug.log for details.',
+            'php_error' => $error
+        ]);
+    }
+}
+
 // Set the content type of the response to JSON
 header('Content-Type: application/json');
 
-// Define file and directory paths
-$dbFile = 'db.json';
-$backupDir = 'database-backup';
+// The script now primarily handles DB updates, which may include an image upload.
+handleDbUpdate();
 
-// Check if the request method is POST
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405); // Method Not Allowed
-    echo json_encode(['status' => 'error', 'message' => 'Invalid request method.']);
-    exit;
-}
+/**
+ * Processes and saves an uploaded image.
+ *
+ * @param array $file The file array from $_FILES.
+ * @param string $productName The name of the product to associate the image with.
+ * @param string &$errorMsg A variable to hold any error message.
+ * @return string|false The path to the saved image on success, false on failure.
+ */
+function processAndSaveImage($file, $productName, &$errorMsg)
+{
+    write_log("--- Starting Image Upload ---");
+    
+    // Attempt to increase memory limit for larger images.
+    @ini_set('memory_limit', '256M');
+    write_log("Memory limit set to 256M.");
 
-// --- 1. Backup the original db.json file ---
+    if (!function_exists('exif_imagetype') || !function_exists('imagecreatefromjpeg')) {
+        $errorMsg = 'Server Configuration Error: Required PHP extensions (exif, GD) are not enabled.';
+        write_log("Error: " . $errorMsg);
+        return false;
+    }
+    write_log("Server extensions checked successfully.");
 
-// Create the backup directory if it doesn't exist
-if (!is_dir($backupDir)) {
-    if (!mkdir($backupDir, 0777, true)) {
-        http_response_code(500);
-        echo json_encode(['status' => 'error', 'message' => 'Failed to create backup directory.']);
-        exit;
+    $uploadDir = 'uploaded/';
+
+    if (!is_dir($uploadDir)) {
+        write_log("Upload directory does not exist. Attempting to create.");
+        if (!mkdir($uploadDir, 0777, true) || !is_writable($uploadDir)) {
+            $errorMsg = 'Failed to create or write to upload directory. Check folder permissions.';
+            write_log("Error: " . $errorMsg);
+            return false;
+        }
+    }
+    write_log("Upload directory is writable.");
+
+    $detectedType = @exif_imagetype($file['tmp_name']);
+    $allowedImageTypes = [IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_GIF, IMAGETYPE_WEBP];
+
+    if (!in_array($detectedType, $allowedImageTypes)) {
+        $errorMsg = 'Invalid file type. Server rejected file content.';
+        write_log("Error: " . $errorMsg);
+        return false;
+    }
+    write_log("File type detected as: " . image_type_to_mime_type($detectedType));
+
+    $sourceImage = null;
+    switch ($detectedType) {
+        case IMAGETYPE_JPEG: $sourceImage = @imagecreatefromjpeg($file['tmp_name']); break;
+        case IMAGETYPE_PNG: $sourceImage = @imagecreatefrompng($file['tmp_name']); break;
+        case IMAGETYPE_GIF: $sourceImage = @imagecreatefromgif($file['tmp_name']); break;
+        case IMAGETYPE_WEBP: $sourceImage = @imagecreatefromwebp($file['tmp_name']); break;
+    }
+
+    if (!$sourceImage) {
+        $errorMsg = 'Failed to process image. It may be corrupt or too large for server memory.';
+        write_log("Error: " . $errorMsg);
+        return false;
+    }
+    write_log("Image resource created successfully.");
+
+    $maxWidth = 800;
+    $quality = 75;
+    $width = imagesx($sourceImage);
+    $height = imagesy($sourceImage);
+    write_log("Original image dimensions: {$width}x{$height}.");
+
+    $newWidth = $width > $maxWidth ? $maxWidth : $width;
+    $newHeight = $width > $maxWidth ? floor($height * ($maxWidth / $width)) : $height;
+    
+    $resizedImage = imagecreatetruecolor($newWidth, $newHeight);
+    write_log("Resized canvas created with dimensions: {$newWidth}x{$newHeight}.");
+
+    // Handle transparency for formats that support it by filling with a white background
+    if (in_array($detectedType, [IMAGETYPE_PNG, IMAGETYPE_GIF, IMAGETYPE_WEBP])) {
+        $white = imagecolorallocate($resizedImage, 255, 255, 255);
+        imagefill($resizedImage, 0, 0, $white);
+        write_log("Filled transparent background with white.");
+    }
+    
+    imagecopyresampled($resizedImage, $sourceImage, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+    write_log("Image resampled.");
+
+    $safeName = preg_replace('/[^a-zA-Z0-9_-]/', '', str_replace(' ', '_', $productName));
+    $fileName = $safeName . '.jpg';
+    $filePath = $uploadDir . $fileName;
+
+    if (imagejpeg($resizedImage, $filePath, $quality)) {
+        write_log("Image saved successfully to: " . $filePath);
+        imagedestroy($sourceImage);
+        imagedestroy($resizedImage);
+        return $filePath;
+    } else {
+        $errorMsg = 'Failed to save the processed image.';
+        write_log("Error: " . $errorMsg);
+        imagedestroy($sourceImage);
+        imagedestroy($resizedImage);
+        return false;
     }
 }
 
-// Create a timestamped backup file name
-$backupFile = $backupDir . '/db-' . date('Y-m-d-H-i-s') . '.json';
+/**
+ * Handles backing up and updating the db.json file.
+ * This function now also handles an optional image upload.
+ */
+function handleDbUpdate() {
+    write_log("--- Starting DB Update ---");
 
-// Copy the existing db.json to the backup location if it exists
-if (file_exists($dbFile)) {
-    if (!copy($dbFile, $backupFile)) {
-        http_response_code(500);
-        echo json_encode(['status' => 'error', 'message' => 'Failed to create database backup.']);
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        write_log("Error: Invalid request method for DB update.");
+        http_response_code(405);
+        echo json_encode(['status' => 'error', 'message' => 'Invalid request method for DB update.']);
         exit;
     }
-}
 
-// --- 2. Update the db.json file ---
+    // The JSON payload is now expected in a POST field, e.g., 'dbData'
+    // because the request is multipart/form-data when an image is included.
+    if (!isset($_POST['dbData'])) {
+        write_log("Error: dbData payload is missing.");
+        http_response_code(400);
+        echo json_encode(['status' => 'error', 'message' => 'Required dbData payload is missing from the request.']);
+        exit;
+    }
 
-// Get the JSON payload from the request body
-$jsonPayload = file_get_contents('php://input');
-if ($jsonPayload === false) {
-    http_response_code(400);
-    echo json_encode(['status' => 'error', 'message' => 'Failed to read request data.']);
+    $jsonPayload = $_POST['dbData'];
+    $data = json_decode($jsonPayload);
+
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        write_log("Error: Invalid JSON data received. Error: " . json_last_error_msg());
+        http_response_code(400);
+        echo json_encode(['status' => 'error', 'message' => 'Invalid JSON data received: ' . json_last_error_msg()]);
+        exit;
+    }
+
+    // Check if an image file is being uploaded
+    if (isset($_FILES['productImage']) && $_FILES['productImage']['error'] === UPLOAD_ERR_OK) {
+        write_log("Image file detected in request: " . $_FILES['productImage']['name']);
+
+        if (!isset($_POST['productName']) || empty($_POST['productName'])) {
+            write_log("Error: Product name is missing for image upload.");
+            http_response_code(400);
+            echo json_encode(['status' => 'error', 'message' => 'Product name is required when uploading an image.']);
+            exit;
+        }
+        $productName = $_POST['productName'];
+        write_log("Processing image for product: " . $productName);
+
+        $errorMsg = '';
+        $newImagePath = processAndSaveImage($_FILES['productImage'], $productName, $errorMsg);
+
+        if ($newImagePath === false) {
+            http_response_code(500);
+            echo json_encode(['status' => 'error', 'message' => $errorMsg]);
+            exit;
+        }
+
+        // Update the image path in the data object
+        $productFound = false;
+        foreach ($data as $product) {
+            if (isset($product->name) && $product->name === $productName) {
+                $product->image = $newImagePath;
+                $productFound = true;
+                write_log("Updated image path for product '{$productName}' to '{$newImagePath}'.");
+                break;
+            }
+        }
+
+        if (!$productFound) {
+            write_log("Warning: Product '{$productName}' not found in dbData to update image path. The product might be new. The frontend should ensure the product exists in the payload.");
+        }
+    }
+
+    $dbFile = 'db.json';
+    $backupDir = 'database-backup';
+
+    if (!is_dir($backupDir)) {
+        if (!mkdir($backupDir, 0777, true)) {
+            write_log("Error: Failed to create backup directory.");
+            http_response_code(500);
+            echo json_encode(['status' => 'error', 'message' => 'Failed to create backup directory.']);
+            exit;
+        }
+    }
+
+    $backupFile = $backupDir . '/db-' . date('Y-m-d-H-i-s') . '.json';
+
+    if (file_exists($dbFile)) {
+        if (!copy($dbFile, $backupFile)) {
+            write_log("Error: Failed to create database backup.");
+            http_response_code(500);
+            echo json_encode(['status' => 'error', 'message' => 'Failed to create database backup.']);
+            exit;
+        }
+    }
+
+    $newJsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+
+    if (file_put_contents($dbFile, $newJsonData) === false) {
+        write_log("Error: Failed to write to database file.");
+        http_response_code(500);
+        echo json_encode(['status' => 'error', 'message' => 'Failed to write to database file. Check permissions.']);
+        exit;
+    }
+
+    echo json_encode(['status' => 'success', 'message' => 'Products updated successfully. Backup created at ' . $backupFile]);
     exit;
 }
-
-// Decode the JSON to ensure it's valid
-$data = json_decode($jsonPayload);
-if (json_last_error() !== JSON_ERROR_NONE) {
-    http_response_code(400);
-    echo json_encode(['status' => 'error', 'message' => 'Invalid JSON data received.']);
-    exit;
-}
-
-// Re-encode the data with pretty printing to keep the file readable
-// JSON_UNESCAPED_SLASHES prevents escaping slashes in image paths
-$newJsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-
-// Write the new data to db.json
-if (file_put_contents($dbFile, $newJsonData) === false) {
-    http_response_code(500);
-    echo json_encode(['status' => 'error', 'message' => 'Failed to write to database file. Check permissions.']);
-    exit;
-}
-
-// --- 3. Send success response ---
-echo json_encode(['status' => 'success', 'message' => 'Products updated successfully. Backup created at ' . $backupFile]);
-
 ?>

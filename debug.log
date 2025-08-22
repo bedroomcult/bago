@@ -1,0 +1,57 @@
+2025-08-22 06:25:43 - --- Starting Image Upload ---
+2025-08-22 06:25:43 - Memory limit set to 256M.
+2025-08-22 06:25:43 - Server extensions checked successfully.
+2025-08-22 06:25:43 - File received: 1.jpg
+2025-08-22 06:25:43 - Upload directory is writable.
+2025-08-22 06:25:43 - Fatal Error: {"type":1,"message":"Uncaught ValueError: Path must not be empty in D:\\catalog\\bago-catalog\\update-db.php:110\nStack trace:\n#0 D:\\catalog\\bago-catalog\\update-db.php(110): exif_imagetype()\n#1 D:\\catalog\\bago-catalog\\update-db.php(37): handleImageUpload()\n#2 {main}\n  thrown","file":"D:\\catalog\\bago-catalog\\update-db.php","line":110}
+2025-08-22 06:27:49 - --- Starting Image Upload ---
+2025-08-22 06:27:49 - Memory limit set to 256M.
+2025-08-22 06:27:49 - Server extensions checked successfully.
+2025-08-22 06:27:49 - File received: 1.jpg
+2025-08-22 06:27:49 - Upload directory is writable.
+2025-08-22 06:27:49 - File type detected as: image/jpeg
+2025-08-22 06:27:49 - Image resource created successfully.
+2025-08-22 06:27:49 - Original image dimensions: 3024x4032.
+2025-08-22 06:27:49 - Resized canvas created.
+2025-08-22 06:27:50 - Image resampled.
+2025-08-22 06:27:50 - Image saved successfully to: uploaded/prod_68a80de6df651.jpg
+2025-08-22 06:27:50 - --- Image Upload Finished ---
+2025-08-22 06:31:45 - --- Starting Image Upload ---
+2025-08-22 06:31:45 - Memory limit set to 256M.
+2025-08-22 06:31:45 - Server extensions checked successfully.
+2025-08-22 06:31:45 - Error: Product name is missing from the request.
+2025-08-22 06:32:00 - --- Starting Image Upload ---
+2025-08-22 06:32:00 - Memory limit set to 256M.
+2025-08-22 06:32:00 - Server extensions checked successfully.
+2025-08-22 06:32:00 - Error: Product name is missing from the request.
+2025-08-22 06:32:03 - --- Starting Image Upload ---
+2025-08-22 06:32:03 - Memory limit set to 256M.
+2025-08-22 06:32:03 - Server extensions checked successfully.
+2025-08-22 06:32:03 - Error: Product name is missing from the request.
+2025-08-22 06:32:21 - --- Starting Image Upload ---
+2025-08-22 06:32:21 - Memory limit set to 256M.
+2025-08-22 06:32:21 - Server extensions checked successfully.
+2025-08-22 06:32:21 - Error: Product name is missing from the request.
+2025-08-22 06:32:38 - --- Starting Image Upload ---
+2025-08-22 06:32:38 - Memory limit set to 256M.
+2025-08-22 06:32:38 - Server extensions checked successfully.
+2025-08-22 06:32:38 - Error: Product name is missing from the request.
+2025-08-22 06:39:38 - --- Starting DB Update ---
+2025-08-22 06:39:38 - Error: dbData payload is missing.
+2025-08-22 06:39:51 - --- Starting DB Update ---
+2025-08-22 06:39:51 - Error: dbData payload is missing.
+2025-08-22 06:43:29 - --- Starting DB Update ---
+2025-08-22 06:43:29 - Image file detected in request: 1.jpg
+2025-08-22 06:43:29 - Processing image for product: test upload
+2025-08-22 06:43:29 - --- Starting Image Upload ---
+2025-08-22 06:43:29 - Memory limit set to 256M.
+2025-08-22 06:43:29 - Server extensions checked successfully.
+2025-08-22 06:43:29 - Upload directory is writable.
+2025-08-22 06:43:29 - File type detected as: image/jpeg
+2025-08-22 06:43:29 - Image resource created successfully.
+2025-08-22 06:43:29 - Original image dimensions: 3024x4032.
+2025-08-22 06:43:29 - Resized canvas created with dimensions: 800x1066.
+2025-08-22 06:43:30 - Image resampled.
+2025-08-22 06:43:30 - Image saved successfully to: uploaded/test_upload.jpg
+2025-08-22 06:43:30 - Updated image path for product 'test upload' to 'uploaded/test_upload.jpg'.
+2025-08-22 06:43:51 - --- Starting DB Update ---
