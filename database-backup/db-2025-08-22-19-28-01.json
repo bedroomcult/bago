@@ -1315,12 +1315,7 @@
         "category": "Sofa",
         "price": 3350000,
         "originalPrice": null,
-        "period": null,
-        "image": "Sofa/Sofa Bed Gembul.jpg",
-        "desc": "Kain Bludru Vegas, Isian Dacron kombinasi Silikon",
-        "size": null,
-        "colors": [],
-        "hidden": false
+        "image": "Sofa/Sofa Bed Gembul.jpg"
     },
     {
         "name": "Sofa Bed Mini",
