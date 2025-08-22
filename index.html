@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalog</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -50,25 +49,18 @@
 </head>
 <body class="bg-gray-100 p-4">
 
-    <!-- Main container -->
     <div class="max-w-7xl mx-auto py-8">
         
-        <!-- Header Section -->
         <header class="text-center mb-8">
             <h1 class="text-4xl font-bold text-gray-800">Katalog Bago Home Decor</h1>
             <p class="text-lg text-gray-500 mt-2">wkwkwkwk</p>
         </header>
         
-        <!-- Controls Section -->
         <div class="flex flex-col sm:flex-row justify-between items-center mb-6 space-y-4 sm:space-y-0">
-            <!-- Category Filter Cards -->
             <div id="category-cards" class="flex flex-wrap gap-2 justify-center sm:justify-start w-full sm:w-auto">
-                <!-- Category cards will be dynamically added here by JavaScript -->
-            </div>
+                </div>
             
-            <!-- Search Bar and Admin link -->
             <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                <!-- Sort By Dropdown -->
                 <div class="relative inline-block text-left">
                 <button id="sort-button" type="button"
                     class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
@@ -80,7 +72,6 @@
                     </svg>
                 </button>
 
-                <!-- Dropdown menu -->
                 <div id="sort-menu"
                     class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden z-10">
                     <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="sort-button">
@@ -96,42 +87,34 @@
                 <input type="text" id="search-input" placeholder="Search products..."
                     class="block w-full sm:w-64 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
                 
-                <a href="input.html"
+                <a href="admin.html"
                     class="w-full sm:w-auto bg-indigo-600 text-white py-2 px-4 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-200 text-center">
-                    + Add New Item
+                    🖉 Edit Products
                 </a>
             </div>
         </div>
 
-        <!-- Product Grid Container -->
         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Product cards will be dynamically added here by JavaScript -->
-        </div>
+            </div>
 
-        <!-- Message for when there are no products -->
         <div id="empty-message" class="hidden text-center text-gray-500 mt-16">
             <p class="text-xl">No products found for this category. Please add some items from the admin page.</p>
         </div>
 
     </div>
 
-    <!-- Product Detail Modal -->
     <div id="product-modal" class="modal-overlay hidden">
         <div class="bg-white rounded-2xl shadow-2xl p-6 w-11/12 max-w-2xl relative max-h-full overflow-y-auto">
-            <!-- Close Button -->
             <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
             
-            <!-- Modal Content -->
             <div id="modal-content" class="flex flex-col md:flex-row gap-6">
-                <!-- Image Section -->
                 <div class="flex-shrink-0 w-full md:w-1/2">
                     <img id="modal-image" src="" alt="" class="w-full rounded-xl object-cover">
                 </div>
-                <!-- Details Section -->
                 <div class="flex-grow md:w-1/2 space-y-4">
                     <h2 id="modal-name" class="text-3xl font-bold text-gray-800"></h2>
                     <div class="flex flex-col sm:flex-row sm:items-center gap-2">
@@ -149,12 +132,10 @@
                         </ul>
                     </div>
 
-                    <!-- Colors Section -->
                     <div>
                         <p class="text-gray-700 font-semibold">Available Colors:</p>
                         <div id="modal-colors" class="mt-2 space-y-2">
-                        <!-- Each color row will be injected here -->
-                    </div>
+                        </div>
                 </div>
 
                 </div>
@@ -186,7 +167,6 @@
         let currentFilter = 'all';
 
         // --- 2. Function Definitions ---
-
         /**
          * Helper function to format numbers as Indonesian Rupiah (Rp) with dot separators.
          * @param {number} number - The number to format.
@@ -204,177 +184,170 @@
             // The formatter adds "Rp" and a non-breaking space, which is the standard format.
             return formatter.format(number).replace(/\s/, ' ');
         }
+        
+        /**
+         * Check if current date is within the discount period.
+         * @param {string} period - Format "dd/mm/yyyy-dd/mm/yyyy"
+         * @returns {boolean}
+         */
+        function isDiscountActive(period) {
+            if (!period) return false;
+            const [start, end] = period.split('-');
+            const [sd, sm, sy] = start.split('/').map(Number);
+            const [ed, em, ey] = end.split('/').map(Number);
+            const startDate = new Date(sy, sm - 1, sd);
+            const endDate = new Date(ey, em - 1, ed);
+            // Set time to end of day for endDate
+            endDate.setHours(23, 59, 59, 999);
+            const now = new Date();
+            return now >= startDate && now <= endDate;
+        }
 
-        // Function to render category cards
-        function renderCategories(categories) {
-            categoryCardsContainer.innerHTML = '';
-            categories.forEach(category => {
-                const card = document.createElement('button');
-                card.dataset.category = category;
-                card.className = 'py-2 px-4 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer';
-                
-                // Set the text for the card
-                if (category === 'all') {
-                    card.textContent = 'All Categories';
-                } else if (category === 'discount') {
-                    card.textContent = 'Discount';
-                } else {
-                    card.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-                }
-                
-                // Add a class for the active card
-                if (category === currentFilter) {
-                    card.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
-                } else {
-                    card.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-100');
-                }
-                
-                card.addEventListener('click', () => {
-                    currentFilter = card.dataset.category;
-                    searchInput.value = ''; // Clear search bar on category change
-                    filterAndRenderProducts();
-                    
-                    // Update active card styling
-                    document.querySelectorAll('#category-cards button').forEach(c => {
-                        c.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
-                        c.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-100');
-                    });
-                    card.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
-                    card.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-100');
-                });
-                
-                categoryCardsContainer.appendChild(card);
-            });
+        /**
+         * Determines if an item is currently on discount.
+         * @param {object} item - The product item.
+         * @returns {boolean}
+         */
+        function isCurrentlyDiscounted(item) {
+            // Rule 2 & 3: Must have originalPrice > price to be considered for any discount.
+            const hasValidPrices = item.originalPrice && item.originalPrice > item.price;
+            if (!hasValidPrices) {
+                return false;
+            }
+            // Rule 3: If a period exists, the discount is only active if the current date is within that period.
+            if (item.period) {
+                return isDiscountActive(item.period);
+            }
+            // Rule 2: If no period, it's a permanent discount.
+            return true;
         }
         
-        // Function to render products based on an array of items
-        function renderProducts(itemsToRender) {
-            if (itemsToRender.length > 0) {
-                productGrid.innerHTML = '';
-                itemsToRender.forEach(item => {
-                    // Added 'relative' class to the card for proper ribbon positioning
-                    const card = document.createElement('div');
-                    card.className = 'bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer relative';
-                    card.dataset.id = item.id;
-                    
-                    // Initialize the ribbon HTML string as empty
-                    let discountRibbon = '';
-                    
-                    // Check if there is a discount by seeing if originalPrice exists
-                    if (item.originalPrice) {
-                        // Calculate the discount percentage
-                        const discount = Math.floor(((item.originalPrice - item.price) / item.originalPrice) * 100);
-                        
-                        // Create the HTML for the discount ribbon using Tailwind classes
-                        discountRibbon = `
-                            <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold py-1 px-3 rounded-full shadow-md">
-                                -${discount}%
-                            </div>
-                        `;
-                    }
-                    
-                    // Determine the price display HTML
-                    const priceDisplay = item.originalPrice ?
-                        `<span class="text-gray-900 font-bold text-xl">${formatRupiah(item.price)}</span>
-                         <span class="text-red-400 line-through ml-2">${formatRupiah(item.originalPrice)}</span>` :
-                        `<span class="text-gray-900 font-bold text-xl">${formatRupiah(item.price)}</span>`;
+        // Function to create a single product card element
+        function renderProductCard(item) {
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300 cursor-pointer';
 
-                    card.innerHTML = `
-                        ${discountRibbon} <!-- The ribbon HTML is inserted here -->
-                        <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-800">${item.name}</h3>
-                            <p class="text-sm text-gray-500 capitalize">${item.category}</p>
-                            <div class="mt-2">
-                                ${priceDisplay}
-                            </div>
+            const isDiscounted = isCurrentlyDiscounted(item);
+            
+            // Rule 1, 2, 3: Determine the correct price to display.
+            // If discounted, show 'price'. If not (e.g., expired sale), show 'originalPrice'. Otherwise, show 'price'.
+            const displayedPrice = isDiscounted ? item.price : (item.originalPrice || item.price);
+            
+            let discountBadge = '';
+            if (isDiscounted) {
+                const discountPercent = Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100);
+                discountBadge = `<span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">${discountPercent}% OFF</span>`;
+            }
+
+            card.innerHTML = `
+                <div class="relative w-full h-48 sm:h-64">
+                    <img src="${item.image}" alt="${item.name}"
+                        class="w-full h-full object-cover">
+                        ${discountBadge}
+                </div>
+                <div class="p-4 flex-grow flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800">${item.name}</h3>
+                        <p class="text-sm text-gray-500 capitalize">${item.category}</p>
+                    </div>
+                    <div class="mt-auto">
+                        <div class="flex items-center gap-2">
+                            <p class="text-xl font-bold text-indigo-600">${formatRupiah(displayedPrice)}</p>
+                            ${isDiscounted ? `<p class="text-gray-400 line-through text-md">${formatRupiah(item.originalPrice)}</p>` : ''}
                         </div>
-                    `;
-                    
-                    // Add a click listener to each card to show the modal
-                    card.addEventListener('click', () => showProductDetails(item));
-                    productGrid.appendChild(card);
+                    </div>
+                </div>
+            `;
+
+            card.addEventListener('click', () => showModal(item));
+            return card;
+        }
+
+        // Function to filter and render products based on the current filter and search input
+        function filterAndRenderProducts() {
+            productGrid.innerHTML = '';
+            const searchText = searchInput.value.toLowerCase();
+
+            let filteredItems = allItems.filter(item => {
+                const matchesSearch = item.name.toLowerCase().includes(searchText) || (item.category && item.category.toLowerCase().includes(searchText));
+
+                // Rule 2 & 3: Special filtering for the 'discount' category.
+                if (currentFilter === 'discount') {
+                    return isCurrentlyDiscounted(item) && matchesSearch;
+                }
+                
+                // Rule 1 & 5: Filter by category or show all.
+                // This ensures discounted items also appear in their respective category filters.
+                const matchesCategory = currentFilter === 'all' || (item.category && item.category.toLowerCase() === currentFilter.toLowerCase());
+                
+                return matchesCategory && matchesSearch;
+            });
+            
+            if (currentSort) {
+                filteredItems = sortItems(filteredItems, currentSort);
+            }
+            
+            if (filteredItems.length > 0) {
+                filteredItems.forEach(item => {
+                    productGrid.appendChild(renderProductCard(item));
                 });
                 emptyMessage.classList.add('hidden');
             } else {
-                productGrid.innerHTML = '';
                 emptyMessage.classList.remove('hidden');
             }
         }
 
-        // Function to filter and render products based on category and search
-        function filterAndRenderProducts() {
-            let filteredItems = allItems;
-
-            if (currentFilter === 'discount') {
-                filteredItems = filteredItems.filter(item => item.originalPrice !== null);
-            } else if (currentFilter !== 'all') {
-                filteredItems = filteredItems.filter(item => item.category === currentFilter);
-            }
-
-            const searchTerm = searchInput.value.toLowerCase();
-            if (searchTerm) {
-                filteredItems = filteredItems.filter(item =>
-                item.name.toLowerCase().includes(searchTerm)
-                );
-            }
-
-            if (currentSort) {
-                filteredItems = sortItems(filteredItems, currentSort);
-            }
-
-            renderProducts(filteredItems);
-            }
-
-
-        // Function to show product details in the modal
-        function showProductDetails(item) {
+        // Function to handle the display of the modal
+        function showModal(item) {
             modalImage.src = item.image;
-            modalImage.alt = item.name;
+            const isDiscounted = isCurrentlyDiscounted(item);
+            // Rule 1, 2, 3: Determine the correct price to display in the modal.
+            const displayedPrice = isDiscounted ? item.price : (item.originalPrice || item.price);
+            
             modalName.textContent = item.name;
-            modalPrice.textContent = formatRupiah(item.price);
             modalCategory.textContent = item.category;
-            modalSize.textContent = item.size;
-            modalStock.textContent = item.stock;
-            modalDesc.textContent = item.desc;
-
-            if (item.originalPrice) {
+            modalDesc.textContent = item.desc || 'No description available.';
+            modalSize.textContent = item.size || 'N/A';
+            modalStock.textContent = item.stock || 'In Stock';
+            modalPrice.textContent = formatRupiah(displayedPrice);
+            if (isDiscounted) {
                 modalOriginalPrice.textContent = formatRupiah(item.originalPrice);
+                modalOriginalPrice.classList.remove('hidden');
             } else {
                 modalOriginalPrice.textContent = '';
+                modalOriginalPrice.classList.add('hidden');
             }
-
-            // Render color swatches
-// Render color swatches as stacked list with names
+            
+            // Handle colors
             modalColors.innerHTML = '';
             if (item.colors && item.colors.length > 0) {
                 item.colors.forEach(color => {
-                    const row = document.createElement('div');
-                    row.className = 'flex items-center gap-3';
-
-                    const swatch = document.createElement('div');
-                    swatch.className = 'w-6 h-6 rounded-full border border-gray-300';
-                    swatch.style.backgroundColor = color.hex;
-
-                    const label = document.createElement('span');
-                    label.className = 'text-sm text-gray-700';
-                    label.textContent = color.name;
-
-                    row.appendChild(swatch);
-                    row.appendChild(label);
-                    modalColors.appendChild(row);
+                    const colorDiv = document.createElement('div');
+                    colorDiv.className = 'flex items-center gap-2';
+                    colorDiv.innerHTML = `<span class="color-swatch" style="background-color: ${color.hex};"></span><span>${color.name}</span>`;
+                    modalColors.appendChild(colorDiv);
                 });
             } else {
-                const message = document.createElement('p');
-                message.className = 'text-sm text-gray-500';
-                message.textContent = 'No colors available.';
-                modalColors.appendChild(message);
+                modalColors.innerHTML = '<p class="text-sm text-gray-600">No color options available.</p>';
             }
-            // Show the modal
+
             productModal.classList.remove('hidden');
         }
 
-        // Function to fetch all products from the JSON file
+        // --- 3. Event Listeners and Initial Load ---
+        searchInput.addEventListener('input', filterAndRenderProducts);
+
+        closeModalButton.addEventListener('click', () => {
+            productModal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (event) => {
+            if (event.target === productModal) {
+                productModal.classList.add('hidden');
+            }
+        });
+
         async function fetchProducts() {
             try {
                 const response = await fetch('db.json');
@@ -383,61 +356,72 @@
                 }
                 allItems = await response.json();
                 
-                // Extract unique categories, including the new 'discount' category
-                const uniqueCategories = ['all', 'discount', ...new Set(allItems.map(item => item.category))];
+                // Extract unique categories
+                const categories = ['all', 'discount', ...new Set(allItems.map(item => item.category))].filter(Boolean);
+                renderCategories(categories);
                 
-                // Render the category cards and the initial product grid
-                renderCategories(uniqueCategories);
-                renderProducts(allItems); 
+                filterAndRenderProducts();
             } catch (error) {
-                console.error('Error fetching products:', error);
-                productGrid.innerHTML = `<div class="text-center col-span-full text-red-500 p-8">
-                    <p>Failed to load products. Please check that:</p>
-                    <ul class="list-disc list-inside mt-2 text-left inline-block">
-                        <li>Your XAMPP Apache server is running.</li>
-                        <li>'db.json' is in the same folder as this 'index.html' file.</li>
-                        <li>There are no typos in the 'db.json' filename.</li>
-                    </ul>
-                </div>`;
-                emptyMessage.classList.add('hidden');
+                console.error('Could not fetch products:', error);
+                emptyMessage.classList.remove('hidden');
+                emptyMessage.textContent = 'Failed to load products. Please ensure db.json is available.';
             }
         }
-        
-        // --- 3. Event Listeners ---
-        closeModalButton.addEventListener('click', () => {
-            productModal.classList.add('hidden');
-        });
-        
-        productModal.addEventListener('click', (event) => {
-            if (event.target === productModal) {
-                productModal.classList.add('hidden');
-            }
-        });
 
-        searchInput.addEventListener('input', () => {
-            filterAndRenderProducts();
-        });
+        // Function to render category cards
+        function renderCategories(categories) {
+            categoryCardsContainer.innerHTML = '';
+            categories.forEach(category => {
+                const card = document.createElement('button');
+                card.dataset.category = category;
+                card.className = 'py-2 px-4 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer';
+
+                // Set the text for the card
+                if (category === 'all') {
+                    card.textContent = 'All Categories';
+                } else if (category === 'discount') {
+                    card.textContent = 'Discount';
+                } else {
+                    card.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+                }
+
+                // Add a class for the active card
+                if (category === currentFilter) {
+                    card.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
+                } else {
+                    card.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+                }
+
+                card.addEventListener('click', () => {
+                    currentFilter = category;
+                    renderCategories(categories); // Re-render to update active state
+                    filterAndRenderProducts();
+                });
+                categoryCardsContainer.appendChild(card);
+            });
+        }
+        
         const sortButton = document.getElementById('sort-button');
         const sortMenu = document.getElementById('sort-menu');
 
         sortButton.addEventListener('click', () => {
-        sortMenu.classList.toggle('hidden');
+            sortMenu.classList.toggle('hidden');
         });
 
         // Close dropdown if clicked outside
         document.addEventListener('click', (e) => {
-        if (!sortButton.contains(e.target) && !sortMenu.contains(e.target)) {
-            sortMenu.classList.add('hidden');
-        }
+            if (!sortButton.contains(e.target) && !sortMenu.contains(e.target)) {
+                sortMenu.classList.add('hidden');
+            }
         });
 
         // Handle sort option click
         sortMenu.querySelectorAll('button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            currentSort = btn.dataset.sort;
-            filterAndRenderProducts();
-            sortMenu.classList.add('hidden');
-        });
+            btn.addEventListener('click', () => {
+                currentSort = btn.dataset.sort;
+                filterAndRenderProducts();
+                sortMenu.classList.add('hidden');
+            });
         });
 
 
@@ -447,18 +431,18 @@
         let currentSort = null;
 
         function sortItems(items, sortType) {
-        switch (sortType) {
-            case 'name-asc':
-            return items.sort((a, b) => a.name.localeCompare(b.name));
-            case 'name-desc':
-            return items.sort((a, b) => b.name.localeCompare(a.name));
-            case 'price-asc':
-            return items.sort((a, b) => a.price - b.price);
-            case 'price-desc':
-            return items.sort((a, b) => b.price - a.price);
-            default:
-            return items;
-        }
+            switch (sortType) {
+                case 'name-asc':
+                    return items.sort((a, b) => a.name.localeCompare(b.name));
+                case 'name-desc':
+                    return items.sort((a, b) => b.name.localeCompare(a.name));
+                case 'price-asc':
+                    return items.sort((a, b) => a.price - b.price);
+                case 'price-desc':
+                    return items.sort((a, b) => b.price - a.price);
+                default:
+                    return items;
+            }
         }
 
     </script>

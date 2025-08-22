@@ -1537,5 +1537,13 @@
         "price": 1200000,
         "originalPrice": null,
         "image": "Meja/Yumma.jpg"
+    },
+    {
+        "name": "Test",
+        "category": "Test",
+        "price": 10000,
+        "originalPrice": 5000,
+        "period": null,
+        "image": "/"
     }
 ]
