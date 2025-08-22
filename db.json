@@ -15,7 +15,7 @@
     },
     {
         "name": "Amelia Sofa Set (Tanpa Meja)",
-        "category": "Set",
+        "category": "Set, Sofa",
         "price": 6800000,
         "originalPrice": null,
         "image": "Set/Amelia Sofa Set.jpg",
@@ -67,14 +67,14 @@
     },
     {
         "name": "Astry Table",
-        "category": "Industrial",
+        "category": "Meja, Industrial",
         "price": 2400000,
         "originalPrice": null,
         "image": "Industrial/Astry.jpg"
     },
     {
         "name": "Ayoe Table",
-        "category": "Industrial",
+        "category": "Meja, Industrial",
         "price": 2289000,
         "originalPrice": null,
         "image": "Industrial/Ayoe.jpg"
@@ -102,7 +102,7 @@
     },
     {
         "name": "Besante Chair",
-        "category": "Rotan Sintetis",
+        "category": "Kursi, Rotan Sintetis",
         "price": 659000,
         "originalPrice": null,
         "image": "Rotan/Besante.jpg",
@@ -118,14 +118,14 @@
     },
     {
         "name": "Buffet TV Gantung",
-        "category": "Mahoni",
+        "category": "Buffet, Mahoni",
         "price": 1550000,
         "originalPrice": null,
         "image": "Mahoni/Buffet TV Gantung.jpg"
     },
     {
         "name": "Danghe Table",
-        "category": "Industrial",
+        "category": "Meja, Industrial",
         "price": 2289000,
         "originalPrice": null,
         "image": "Industrial/Danghe.jpg"
@@ -147,7 +147,7 @@
     },
     {
         "name": "Dayan Chair",
-        "category": "Sungkai",
+        "category": "Kursi, Sungkai",
         "price": 900000,
         "originalPrice": null,
         "image": "Kursi/Dayan.jpg"
@@ -168,7 +168,7 @@
     },
     {
         "name": "Derima Table",
-        "category": "Industrial",
+        "category": "Meja, Industrial",
         "price": 4699000,
         "originalPrice": null,
         "image": "Industrial/Derima.jpg"
@@ -197,28 +197,28 @@
     },
     {
         "name": "Ditampi Chair",
-        "category": "Industrial",
+        "category": "Kursi, Industrial",
         "price": 629000,
         "originalPrice": null,
         "image": "Industrial/Ditampi.jpg"
     },
     {
         "name": "Divan Mahoni 160x200",
-        "category": "Mahoni",
+        "category": "Divan, Mahoni",
         "price": null,
         "originalPrice": null,
         "image": "Mahoni/Divan Mahoni 160x200.jpg"
     },
     {
         "name": "Divan Mahoni 180x200",
-        "category": "Mahoni",
+        "category": "Divan, Mahoni",
         "price": 2050000,
         "originalPrice": null,
         "image": "Mahoni/Divan Mahoni 180x200.jpg"
     },
     {
         "name": "Divan Mahoni 90x200",
-        "category": "Mahoni",
+        "category": "Divan, Mahoni",
         "price": 1100000,
         "originalPrice": null,
         "image": "Mahoni/Divan Mahoni 90x200.jpg"
@@ -246,7 +246,7 @@
     },
     {
         "name": "Drawa",
-        "category": "Industrial",
+        "category": "Buffet, Industrial",
         "price": 5750000,
         "originalPrice": null,
         "image": "Industrial/Drawa.jpg"
@@ -309,7 +309,7 @@
     },
     {
         "name": "Galar Chair",
-        "category": "Rotan Sintetis",
+        "category": "Kursi, Rotan Sintetis",
         "price": 1300000,
         "originalPrice": null,
         "image": "Rotan/Galar.jpg",
@@ -346,7 +346,7 @@
     },
     {
         "name": "Hifi Table",
-        "category": "Rotan Sintetis",
+        "category": "Meja, Rotan Sintetis",
         "price": 575000,
         "originalPrice": null,
         "image": "Rotan/Hifi.jpg",
@@ -446,7 +446,7 @@
     },
     {
         "name": "Kai Chair",
-        "category": "Rotan Sintetis",
+        "category": "Kursi, Rotan Sintetis",
         "price": 659000,
         "originalPrice": null,
         "image": "Rotan/Kai.jpg"
@@ -460,7 +460,7 @@
     },
     {
         "name": "Kakida Chair",
-        "category": "Rotan Sintetis",
+        "category": "Kursi, Rotan Sintetis",
         "price": 560000,
         "originalPrice": null,
         "image": "Rotan/Kakida.jpg"
@@ -495,7 +495,7 @@
     },
     {
         "name": "Karency",
-        "category": "Industrial",
+        "category": "Buffet, Industrial",
         "price": 3750000,
         "originalPrice": null,
         "image": "Industrial/Karency.jpg"
@@ -511,7 +511,7 @@
     },
     {
         "name": "Karpi",
-        "category": "Rotan Sintetis",
+        "category": "Kursi, Rotan Sintetis",
         "price": 659000,
         "originalPrice": null,
         "image": "Rotan/Karpi.jpg"
@@ -526,7 +526,7 @@
     },
     {
         "name": "Kayga Table",
-        "category": "Industrial",
+        "category": "Meja, Industrial",
         "price": 2100000,
         "originalPrice": 2289000,
         "period": "01/08/2025-31/08/2025",
@@ -590,14 +590,14 @@
     },
     {
         "name": "Kursi Anak Hewan",
-        "category": "Kursi",
+        "category": "Kursi, Sungkai",
         "price": 449000,
         "originalPrice": null,
         "image": "Sungkai/Kursi Anak Hewan.jpg"
     },
     {
         "name": "Kursi Anak Jari",
-        "category": "Kursi",
+        "category": "Kursi, Sungkai",
         "price": 539000,
         "originalPrice": null,
         "image": "Sungkai/Kursi Anak Jari.jpg"
@@ -702,14 +702,14 @@
     },
     {
         "name": "Maksi Table",
-        "category": "Sungkai",
+        "category": "Meja, Sungkai",
         "price": 2499000,
         "originalPrice": null,
         "image": "Meja/Maksi.jpg"
     },
     {
         "name": "Manya Chair",
-        "category": "Kursi",
+        "category": "Kursi, Sungkai",
         "price": 629000,
         "originalPrice": null,
         "image": "Kursi/Manya.jpg"
@@ -766,7 +766,7 @@
     },
     {
         "name": "Mendi Table",
-        "category": "Industrial",
+        "category": "Meja, Industrial",
         "price": 4899000,
         "originalPrice": null,
         "image": "Industrial/Mendi.jpg",
@@ -896,7 +896,7 @@
     },
     {
         "name": "Nikki Table",
-        "category": "Industrial",
+        "category": "Meja, Industrial",
         "price": 4289000,
         "originalPrice": null,
         "image": "Industrial/Nikki.jpg",
@@ -946,7 +946,7 @@
     },
     {
         "name": "Onica Table",
-        "category": "Industrial",
+        "category": "Meja, Industrial",
         "price": 4500000,
         "originalPrice": null,
         "image": "Industrial/Onica.jpg"
@@ -988,21 +988,21 @@
     },
     {
         "name": "Pohra Table",
-        "category": "Industrial",
+        "category": "Meja, Industrial",
         "price": 8900000,
         "originalPrice": null,
         "image": "Industrial/Pohra.jpg"
     },
     {
         "name": "Pulos Chair",
-        "category": "Sungkai",
+        "category": "Kursi, Sungkai",
         "price": 829000,
         "originalPrice": null,
         "image": "Kursi/Pulos.jpg"
     },
     {
         "name": "Pulos Jok Chair",
-        "category": "Kursi",
+        "category": "Kursi, Sungkai",
         "price": 929000,
         "originalPrice": null,
         "image": "Sungkai/Pulos Jok .jpg"
@@ -1032,7 +1032,7 @@
     },
     {
         "name": "Rajua Sofa Set",
-        "category": "Set",
+        "category": "Set, Sofa",
         "price": 9100000,
         "originalPrice": null,
         "image": "Set/Rajua Sofa Set.jpg",
@@ -1106,7 +1106,7 @@
     },
     {
         "name": "Rosyong Chair",
-        "category": "Rotan Sintetis",
+        "category": "Kursi, Rotan Sintetis",
         "price": 550000,
         "originalPrice": null,
         "image": "Rotan/Rosyong.jpg"
@@ -1127,7 +1127,7 @@
     },
     {
         "name": "Rounded Table",
-        "category": "Rotan Sintetis",
+        "category": "Meja, Rotan Sintetis",
         "price": 415000,
         "originalPrice": null,
         "image": "Rotan/Rounded Table.jpg",
@@ -1170,7 +1170,7 @@
     },
     {
         "name": "Sandara Chair",
-        "category": "Rotan Sintetis",
+        "category": "Kursi, Rotan Sintetis",
         "price": 659000,
         "originalPrice": null,
         "image": "Rotan/Sandara.jpg"
@@ -1191,7 +1191,7 @@
     },
     {
         "name": "Santiz Chair",
-        "category": "Rotan Sintetis",
+        "category": "Kursi, Rotan Sintetis",
         "price": 659000,
         "originalPrice": null,
         "image": "Rotan/Santiz.jpg",
@@ -1221,7 +1221,7 @@
     },
     {
         "name": "Serwood Sofa Set",
-        "category": "Set",
+        "category": "Set, Sofa",
         "price": 7855000,
         "originalPrice": null,
         "image": "Set/Serwood Sofa Set.jpg",
@@ -1243,7 +1243,7 @@
     },
     {
         "name": "Set Rotan Besar",
-        "category": "Set",
+        "category": "Set, Rotan Sintetis",
         "price": 3193000,
         "originalPrice": null,
         "image": "Set/Rotan Besar.jpg",
@@ -1251,7 +1251,7 @@
     },
     {
         "name": "Set Rotan Kecil",
-        "category": "Set",
+        "category": "Set, Rotan Sintetis",
         "price": 1600000,
         "originalPrice": 1733000,
         "period": "01/08/2025-31/08/2025",
@@ -1288,7 +1288,7 @@
     },
     {
         "name": "Sinu Chair",
-        "category": "Sungkai",
+        "category": "Sungkai, Kursi",
         "price": 939000,
         "originalPrice": null,
         "image": "Kursi/Sinu.jpg"
@@ -1392,7 +1392,7 @@
     },
     {
         "name": "Sumaar Chair",
-        "category": "Rotan Sintetis",
+        "category": "Kursi, Rotan Sintetis",
         "price": 659000,
         "originalPrice": null,
         "image": "Rotan/Sumaar.jpg"
@@ -1414,28 +1414,28 @@
     },
     {
         "name": "Tana Long Natural",
-        "category": "Mahoni",
+        "category": "Meja, Mahoni",
         "price": null,
         "originalPrice": null,
         "image": "Mahoni/Tana Long Natural.jpg"
     },
     {
         "name": "Tana Long Wallnut",
-        "category": "Mahoni",
+        "category": "Meja, Mahoni",
         "price": null,
         "originalPrice": null,
         "image": "Mahoni/Tana Long Wallnut.jpg"
     },
     {
         "name": "Tana Table Natural",
-        "category": "Mahoni",
+        "category": "Meja, Mahoni",
         "price": 660000,
         "originalPrice": null,
         "image": "Mahoni/Tana Table Natural.jpg"
     },
     {
         "name": "Tana Table Wallnut",
-        "category": "Mahoni",
+        "category": "Meja, Mahoni",
         "price": 660000,
         "originalPrice": null,
         "image": "Mahoni/Tana Table Wallnut.jpg"
