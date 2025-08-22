@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Product Management</title>
+    <title>Admin - Manajemen Produk</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
@@ -65,26 +65,26 @@
     <div id="admin-panel" class="hidden">
         <div class="container mx-auto p-4 sm:p-6 lg:p-8">
             <header class="mb-8">
-                <h1 class="text-2xl sm:text-3xl font-bold text-gray-800">Product Management</h1>
-                <p class="text-gray-500">Add, edit, or delete products from the catalog.</p>
+                <h1 class="text-2xl sm:text-3xl font-bold text-gray-800">Manajemen Produk</h1>
+                <p class="text-gray-500">Tambah, edit atau hapus produk dari katalog.</p>
             </header>
 
             <div class="flex flex-col sm:flex-row justify-between items-center mb-4 gap-4">
                 <div class="relative w-full sm:w-auto">
-                    <input type="search" id="search-input" placeholder="Search by name or category..." class="pl-10 pr-4 py-2 border rounded-lg w-full sm:w-64 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
+                    <input type="search" id="search-input" placeholder="Cari nama/kategori" class="pl-10 pr-4 py-2 border rounded-lg w-full sm:w-64 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
                     <svg class="w-5 h-5 text-gray-400 absolute top-1/2 left-3 transform -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </div>
                 <div class="flex gap-2 sm:gap-4 w-full sm:w-auto">
                      <a href="index.html" class="flex-1 sm:flex-none justify-center bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
-                        Homepage
+                        Home
                     </a>
                     <button id="add-product-btn" class="flex-1 sm:flex-none justify-center bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">
-                        Add New
+                        Tambah Baru
                     </button>
                     <button id="save-to-server-btn" class="flex-1 sm:flex-none justify-center bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
-                        Save
+                        Simpan
                     </button>
                     <button id="logout-btn" class="flex-1 sm:flex-none justify-center bg-red-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700 transition-colors">
                         Logout
@@ -97,13 +97,13 @@
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
                             <tr>
-                                <th scope="col" data-sort-key="name" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Name <span class="sort-indicator"></span></th>
-                                <th scope="col" data-sort-key="category" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Category <span class="sort-indicator"></span></th>
-                                <th scope="col" data-sort-key="price" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Price <span class="sort-indicator"></span></th>
-                                <th scope="col" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
-                                <th scope="col" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Discount Status</th>
+                                <th scope="col" data-sort-key="name" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Nama Produk <span class="sort-indicator"></span></th>
+                                <th scope="col" data-sort-key="category" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Kategori <span class="sort-indicator"></span></th>
+                                <th scope="col" data-sort-key="price" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Harga <span class="sort-indicator"></span></th>
+                                <th scope="col" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Foto Produk</th>
+                                <th scope="col" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Diskon </th>
                                 <th scope="col" data-sort-key="hidden" class="px-2 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer">Status <span class="sort-indicator"></span></th>
-                                <th scope="col" class="px-2 py-3 sm:px-6 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                <th scope="col" class="px-2 py-3 sm:px-6 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
                             </tr>
                         </thead>
                         <tbody id="product-table-body" class="bg-white divide-y divide-gray-200">
@@ -123,15 +123,15 @@
                 <input type="hidden" id="product-id">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="md:col-span-2">
-                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
                         <input type="text" id="name" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2" required>
                     </div>
                     <div>
-                        <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+                        <label for="category" class="block text-sm font-medium text-gray-700">Kategori</label>
                         <input type="text" id="category" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2" required>
                     </div>
                     <div>
-                        <label for="image" class="block text-sm font-medium text-gray-700">Image Path</label>
+                        <label for="image" class="block text-sm font-medium text-gray-700">Direktori Gambar</label>
                         <div class="mt-1 flex rounded-md shadow-sm">
                             <input type="text" id="image" class="flex-1 block w-full rounded-none rounded-l-md bg-white border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2" required>
                             <input type="file" id="image-upload" class="hidden" accept="image/png, image/jpeg, image/gif, image/webp">
@@ -142,41 +142,41 @@
                         <p id="upload-status" class="text-sm text-gray-500 mt-1"></p>
                     </div>
                     <div>
-                        <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
+                        <label for="price" class="block text-sm font-medium text-gray-700">Harga</label>
                         <input type="number" id="price" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2">
                     </div>
                     <div>
-                        <label for="originalPrice" class="block text-sm font-medium text-gray-700">Original Price</label>
+                        <label for="originalPrice" class="block text-sm font-medium text-gray-700">Harga Awal</label>
                         <input type="number" id="originalPrice" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2">
                     </div>
                      <div class="md:col-span-2">
-                        <label for="desc" class="block text-sm font-medium text-gray-700">Description</label>
+                        <label for="desc" class="block text-sm font-medium text-gray-700">Deskripsi</label>
                         <textarea id="desc" rows="3" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2"></textarea>
                     </div>
                     <div>
-                        <label for="size" class="block text-sm font-medium text-gray-700">Size</label>
+                        <label for="size" class="block text-sm font-medium text-gray-700">Ukuran</label>
                         <input type="text" id="size" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2">
                     </div>
                      <div class="md:col-span-2">
-                        <label class="block text-sm font-medium text-gray-700">Colors</label>
+                        <label class="block text-sm font-medium text-gray-700">Warna</label>
                         <div id="colors-container" class="mt-1 flex items-center gap-2 flex-wrap">
                             <!-- Color swatches will be added here -->
                             <button type="button" id="add-color-btn" class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 text-xl font-bold">+</button>
                         </div>
                     </div>
                     <div class="md:col-span-2">
-                        <label for="period" class="block text-sm font-medium text-gray-700">Discount Period (e.g., 01/08/2025-31/08/2025)</label>
+                        <label for="period" class="block text-sm font-medium text-gray-700">Periode Diskon (format: 01/08/2025-31/08/2025)</label>
                         <input type="text" id="period" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2">
                     </div>
                     <div class="md:col-span-2 flex items-center gap-4 pt-2">
-                        <label for="hidden" class="block text-sm font-medium text-gray-700">Hide Product</label>
+                        <label for="hidden" class="block text-sm font-medium text-gray-700">Sembunyikan Produk</label>
                         <input type="checkbox" id="hidden" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                        <span class="text-xs text-gray-500">If checked, this product will not appear in the public catalog.</span>
+                        <span class="text-xs text-gray-500">Jika dicentang, produk akan disembunyikan dari katalog.</span>
                     </div>
                 </div>
                 <div class="mt-6 flex justify-end space-x-3">
                     <button type="button" id="cancel-btn" class="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg hover:bg-gray-400">Cancel</button>
-                    <button type="submit" class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700">Save Product</button>
+                    <button type="submit" class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700">Save</button>
                 </div>
             </form>
         </div>
@@ -185,15 +185,15 @@
     <!-- Color Picker Modal -->
     <div id="color-picker-modal" class="modal-overlay hidden">
         <div class="modal-content bg-white rounded-lg shadow-xl p-6 w-11/12 max-w-sm">
-            <h2 class="text-xl font-bold mb-4">Add Color</h2>
+            <h2 class="text-xl font-bold mb-4">Tambah Warna</h2>
             <div id="color-picker-wheel" class="mx-auto"></div>
             <div class="mt-4">
-                <label for="color-desc" class="block text-sm font-medium text-gray-700">Color Description (e.g., "Matte Black")</label>
+                <label for="color-desc" class="block text-sm font-medium text-gray-700">Deskripsi Warna (Contoh: "Cream")</label>
                 <input type="text" id="color-desc" class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm text-sm p-2">
             </div>
             <div class="mt-6 flex justify-end gap-3">
-                <button type="button" id="cancel-color-btn" class="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg">Cancel</button>
-                <button type="button" id="save-color-btn" class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg">Add Color</button>
+                <button type="button" id="cancel-color-btn" class="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg">Batal</button>
+                <button type="button" id="save-color-btn" class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg">Tambah Warna</button>
             </div>
         </div>
     </div>
@@ -215,8 +215,8 @@
     </div>
 
     <!-- Unsaved Changes Status -->
-    <div id="unsaved-status" class="hidden fixed bottom-6 right-6 bg-yellow-500 text-white font-bold py-3 px-5 rounded-lg shadow-lg z-40">
-        <span id="unsaved-count">0</span> unsaved changes.
+    <div id="unsaved-status" class="hidden fixed bottom-6 right-6 bg-yellow-700 text-white font-bold py-3 px-5 rounded-lg shadow-lg z-40">
+        <span id="unsaved-count">0</span> data belum disimpan.
     </div>
 
 
@@ -352,11 +352,11 @@
             function getDiscountState(item) {
                 const hasValidPrices = item.originalPrice && item.originalPrice > item.price;
                 if (!hasValidPrices) {
-                    return { text: 'No Discount', color: 'bg-gray-200 text-gray-800' };
+                    return { text: 'Tidak Diskon', color: 'bg-gray-200 text-gray-800' };
                 }
 
                 if (!item.period) {
-                    return { text: 'Permanent Sale', color: 'bg-red-500 text-white' };
+                    return { text: 'Diskon Permanen', color: 'bg-red-500 text-white' };
                 }
 
                 const [startStr, endStr] = item.period.split('-');
@@ -370,11 +370,11 @@
                 const now = new Date();
 
                 if (now >= startDate && now <= endDate) {
-                    return { text: 'Active Sale', color: 'bg-green-500 text-white' };
+                    return { text: 'Sedang Diskon', color: 'bg-green-500 text-white' };
                 } else if (now < startDate) {
-                    return { text: 'Scheduled Sale', color: 'bg-blue-500 text-white' };
+                    return { text: 'Diskon Dijadwalkan', color: 'bg-blue-500 text-white' };
                 } else {
-                    return { text: 'Expired Sale', color: 'bg-yellow-500 text-white' };
+                    return { text: 'Diskon Berakhir', color: 'bg-yellow-500 text-white' };
                 }
             }
 
@@ -386,9 +386,9 @@
                 try {
                     const response = await fetch(url, { method: 'HEAD', cache: 'no-cache' });
                     if (response.ok) {
-                        element.innerHTML = `<span class="text-green-600 font-bold">✔ Found</span>`;
+                        element.innerHTML = `<span class="text-green-600 font-bold">✔ Ditemukan</span>`;
                     } else {
-                        element.innerHTML = `<span class="text-red-600 font-bold">✖ Not Found</span>`;
+                        element.innerHTML = `<span class="text-red-600 font-bold">✖ Tidak Ditemukan</span>`;
                     }
                 } catch (error) {
                     element.innerHTML = `<span class="text-red-600 font-bold">✖ Error</span>`;
