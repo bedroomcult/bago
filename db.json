@@ -703,7 +703,12 @@
         "category": "Meja, Sungkai",
         "price": 2499000,
         "originalPrice": null,
-        "image": "Meja/Maksi.jpg"
+        "period": null,
+        "image": "Meja/Maksi.jpg",
+        "desc": "Bahan Sungkai (Warna Cerah)",
+        "size": "P160 L80 T75",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Manya Chair",
@@ -753,7 +758,12 @@
         "category": "Meja",
         "price": 1570000,
         "originalPrice": null,
-        "image": "Meja/Mejoe.jpg"
+        "period": null,
+        "image": "Meja/Mejoe.jpg",
+        "desc": "Bahan Jati",
+        "size": "P120 L80 T75",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Mekko Table",
@@ -1483,7 +1493,12 @@
         "category": "Meja",
         "price": 1925000,
         "originalPrice": null,
-        "image": "Meja/Teyko.jpg"
+        "period": null,
+        "image": "Meja/Teyko.jpg",
+        "desc": "Bahan Jati",
+        "size": "P150 L80 T75",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Tlamak Table",
