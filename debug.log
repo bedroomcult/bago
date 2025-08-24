@@ -57,3 +57,17 @@
 2025-08-22 06:43:51 - --- Starting DB Update ---
 2025-08-22 19:28:01 - --- Starting DB Update ---
 2025-08-22 19:30:41 - --- Starting DB Update ---
+2025-08-24 03:33:49 - --- Starting DB Update ---
+2025-08-24 03:33:49 - Image file detected in request: BUFFET GANTUNG.jpg
+2025-08-24 03:33:49 - Processing image for product: Buffet TV Gantung
+2025-08-24 03:33:49 - --- Starting Image Upload ---
+2025-08-24 03:33:49 - Memory limit set to 256M.
+2025-08-24 03:33:49 - Server extensions checked successfully.
+2025-08-24 03:33:49 - Upload directory is writable.
+2025-08-24 03:33:49 - File type detected as: image/jpeg
+2025-08-24 03:33:49 - Image resource created successfully.
+2025-08-24 03:33:49 - Original image dimensions: 633x633.
+2025-08-24 03:33:49 - Resized canvas created with dimensions: 633x633.
+2025-08-24 03:33:49 - Image resampled.
+2025-08-24 03:33:49 - Image saved successfully to: uploaded/Buffet_TV_Gantung.jpg
+2025-08-24 03:33:49 - Updated image path for product 'Buffet TV Gantung' to 'uploaded/Buffet_TV_Gantung.jpg'.
