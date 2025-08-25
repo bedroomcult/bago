@@ -53,10 +53,14 @@
     {
         "name": "Asimbi",
         "category": "Buffet",
-        "price": 2940000,
+        "price": 2880000,
         "originalPrice": 3200000,
         "period": "01/08/2025-31/08/2025",
-        "image": "Buffet/Asimbi.jpg"
+        "image": "Buffet/Asimbi.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Asoka Chair",
@@ -122,7 +126,7 @@
         "price": 1550000,
         "originalPrice": null,
         "period": null,
-        "image": "uploaded/Buffet_TV_Gantung.jpg",
+        "image": "Buffet/Buffet_TV_Gantung.jpg",
         "desc": null,
         "size": null,
         "colors": [],
@@ -1270,11 +1274,14 @@
     {
         "name": "Set Rotan Kecil",
         "category": "Set, Rotan Sintetis",
-        "price": 1600000,
+        "price": 1559000,
         "originalPrice": 1733000,
         "period": "01/08/2025-31/08/2025",
         "image": "Set/Rotan Kecil.jpg",
-        "desc": "2 Santiz Chair + Round Table Rotan"
+        "desc": "2 Santiz Chair + Round Table Rotan",
+        "size": null,
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Sicangku Chair",

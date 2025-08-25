@@ -121,7 +121,12 @@
         "category": "Buffet, Mahoni",
         "price": 1550000,
         "originalPrice": null,
-        "image": "Mahoni/Buffet TV Gantung.jpg"
+        "period": null,
+        "image": "uploaded/Buffet_TV_Gantung.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Danghe Table",
