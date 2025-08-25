@@ -9,8 +9,12 @@ cloning
 git clone ssh://git@github.com/bedroomcult/bago-catalog
 ```
 
-Start the server:
+Start the server with PHP built in webserver:
 ```
 cd D:/catalog
 php -S 0.0.0.0:80
+```
+OR with Apache web server:
+```
+httpd
 ```
