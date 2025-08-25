@@ -88,13 +88,13 @@
                 <input type="text" id="search-input" placeholder="Cari Produk..."
                     class="block w-full sm:w-64 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
                 
-                <a href="admin"
+                <button id="edit-button" type="button"
                     class="w-full sm:w-auto bg-indigo-600 text-white py-2 px-4 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-200 flex items-center justify-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" />
                     </svg>
                     <span>Edit</span>
-                </a>
+                </button>
             </div>
         </div>
 
@@ -165,6 +165,7 @@
             const sortMenu = document.getElementById('sort-menu');
             const productModal = document.getElementById('product-modal');
             const closeModalButton = document.getElementById('close-modal');
+            const editButton = document.getElementById('edit-button');
 
             let allProducts = [];
             let selectedCategory = 'All';
@@ -532,6 +533,10 @@
                     filterAndDisplayProducts();
                     sortMenu.classList.add('hidden');
                 });
+            });
+
+            editButton.addEventListener('click', () => {
+                alert('Fitur edit dinonaktifkan pada versi publik ini.');
             });
 
             fetchProducts();
