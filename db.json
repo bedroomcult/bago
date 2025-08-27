@@ -55,7 +55,7 @@
         "category": "Buffet",
         "price": 2880000,
         "originalPrice": 3200000,
-        "period": "01/08/2025-31/08/2025",
+        "period": "01/08/2025-05/09/2025",
         "image": "Buffet/Asimbi.webp",
         "desc": null,
         "size": null,
@@ -117,7 +117,7 @@
         "category": "Buffet",
         "price": 2850000,
         "originalPrice": 3100000,
-        "period": "01/08/2025-31/08/2025",
+        "period": "01/08/2025-05/09/2025",
         "image": "Buffet/Bowie.webp"
     },
     {
@@ -144,7 +144,7 @@
         "category": "Buffet",
         "price": 4000000,
         "originalPrice": 4350000,
-        "period": "01/08/2025-31/08/2025",
+        "period": "01/08/2025-05/09/2025",
         "image": "Buffet/Dasly.webp"
     },
     {
@@ -322,7 +322,7 @@
         "category": "Nakas",
         "price": 2170000,
         "originalPrice": 2415000,
-        "period": "01/08/2025-31/08/2025",
+        "period": "01/08/2025-05/09/2025",
         "image": "Nakas/Gania.webp"
     },
     {
@@ -359,7 +359,7 @@
         "category": "Buffet",
         "price": 3140000,
         "originalPrice": 3420000,
-        "period": "01/08/2025-31/08/2025",
+        "period": "01/08/2025-05/09/2025",
         "image": "Buffet/Hotori.webp"
     },
     {
@@ -531,7 +531,7 @@
         "category": "Meja, Industrial",
         "price": 2100000,
         "originalPrice": 2289000,
-        "period": "01/08/2025-31/08/2025",
+        "period": "01/08/2025-05/09/2025",
         "image": "Industrial/Kayga.webp"
     },
     {
@@ -898,7 +898,7 @@
         "originalPrice": 969000,
         "image": "Nakas/Nayotan.webp",
         "desc": "Bahan Jati + Rotan",
-        "period": "01/08/2025-31/08/2025",
+        "period": "01/08/2025-05/09/2025",
         "size": "T60 x L50 x P40 / Laci L44 x T16"
     },
     {
@@ -1034,7 +1034,7 @@
         "category": "Sofa",
         "price": 1980000,
         "originalPrice": 2200000,
-        "period": "25/08/2025-31/08/2025",
+        "period": "25/08/2025-05/09/2025",
         "desc": "Kain Kimmy/Linen",
         "image": "Sofa/Qilla Sofa.webp",
         "colors": [
@@ -1065,7 +1065,7 @@
         "category": "Set",
         "price": 2250000,
         "originalPrice": 2500000,
-        "period": "25/08/2025-31/08/2025",
+        "period": "25/08/2025-05/09/2025",
         "image": "Set/Set Dwilama Tooja.webp",
         "size": "",
         "desc": "2 Dwilama Chair + Tooja Table"
@@ -1276,7 +1276,7 @@
         "category": "Set, Rotan Sintetis",
         "price": 1559000,
         "originalPrice": 1733000,
-        "period": "01/08/2025-31/08/2025",
+        "period": "01/08/2025-05/09/2025",
         "image": "Set/Rotan Kecil.webp",
         "desc": "2 Santiz Chair + Round Table Rotan",
         "size": null,
@@ -1437,7 +1437,7 @@
         "category": "Divan",
         "price": 3500000,
         "originalPrice": 3750000,
-        "period": "25/08/2025-31/08/2025",
+        "period": "25/08/2025-05/09/2025",
         "image": "Divan/Swane.webp"
     },
     {
