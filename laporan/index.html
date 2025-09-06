@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto Laporan Kirim</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8 flex items-center justify-center min-h-screen">
+
+<div class="max-w-4xl w-full bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Foto Laporan Kirim</h1>
+    <p class="text-center text-gray-600 mb-8">Upload file foto laporan disini.</p>
+
+    <!-- Upload Form -->
+    <div class="flex flex-col items-center space-y-4">
+        <div id="upload-area" class="w-full flex flex-col items-center justify-center p-6 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200">
+            <div id="upload-content" class="flex flex-col items-center">
+                <svg id="upload-icon" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>
+                <span id="upload-text" class="mt-2 text-center text-gray-600 font-medium">Click to upload or drag and drop images here.</span>
+            </div>
+            <input id="image-upload" type="file" multiple accept="image/*" class="hidden">
+        </div>
+        <button id="process-button" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+            Process Images
+        </button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div id="progress-container" class="mt-8 hidden">
+        <div class="text-sm text-gray-600 mb-2">Processing...</div>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+            <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+    </div>
+
+    <!-- Results Display -->
+    <div id="results-container" class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Processed images will be appended here -->
+    </div>
+</div>
+
+<script>
+    // Constants and DOM elements
+    const imageUpload = document.getElementById('image-upload');
+    const processButton = document.getElementById('process-button');
+    const progressContainer = document.getElementById('progress-container');
+    const progressBar = document.getElementById('progress-bar');
+    const resultsContainer = document.getElementById('results-container');
+    const uploadArea = document.getElementById('upload-area');
+    const uploadContent = document.getElementById('upload-content');
+    
+    // Global array to store all selected files
+    let selectedFiles = [];
+    
+    // Using a placeholder image for the overlay, as a local 'overlay.png' cannot be accessed directly from a web page.
+    const OVERLAY_IMAGE_URL = '/overlay.png'; // Replace with the actual URL of your overlay image
+
+    // A simple function to show a custom message box instead of 'alert'
+    function showMessageBox(message) {
+        const existingBox = document.getElementById('message-box');
+        if (existingBox) existingBox.remove();
+        
+        const messageBox = document.createElement('div');
+        messageBox.id = 'message-box';
+        messageBox.className = 'fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50';
+        messageBox.innerHTML = `
+            <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm mx-auto text-center">
+                <p class="text-lg text-gray-800 font-semibold mb-4">${message}</p>
+                <button onclick="document.getElementById('message-box').remove()" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none">OK</button>
+            </div>
+        `;
+        document.body.appendChild(messageBox);
+    }
+    
+    // Function to render thumbnails of all selected files
+    function renderThumbnails() {
+        uploadContent.innerHTML = '';
+        if (selectedFiles.length === 0) {
+            uploadContent.innerHTML = `
+                <svg id="upload-icon" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>
+                <span id="upload-text" class="mt-2 text-center text-gray-600 font-medium">Click to upload or drag and drop images here.</span>
+            `;
+            return;
+        }
+
+        const thumbnailContainer = document.createElement('div');
+        thumbnailContainer.className = 'flex flex-wrap gap-2 justify-center';
+        uploadContent.appendChild(thumbnailContainer);
+
+        selectedFiles.forEach((file, index) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const thumbnailWrapper = document.createElement('div');
+                thumbnailWrapper.className = 'relative w-16 h-16';
+
+                const thumbnail = document.createElement('img');
+                thumbnail.src = e.target.result;
+                thumbnail.className = 'w-full h-full object-cover rounded-md border border-gray-300';
+                
+                const deleteButton = document.createElement('button');
+                deleteButton.className = 'absolute -top-2 -right-2 bg-red-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs font-bold hover:bg-red-600 transition-colors duration-200 focus:outline-none';
+                deleteButton.innerHTML = '&times;'; // HTML entity for 'x'
+                
+                deleteButton.onclick = (event) => {
+                    event.stopPropagation(); // Prevents the parent label click event
+                    selectedFiles.splice(index, 1);
+                    renderThumbnails(); // Re-render the thumbnails
+                };
+
+                thumbnailWrapper.appendChild(thumbnail);
+                thumbnailWrapper.appendChild(deleteButton);
+                thumbnailContainer.appendChild(thumbnailWrapper);
+            };
+            reader.readAsDataURL(file);
+        });
+
+        const fileCountText = document.createElement('span');
+        fileCountText.className = 'mt-4 text-center text-gray-600 font-medium';
+        fileCountText.textContent = `${selectedFiles.length} file(s) selected`;
+        uploadContent.appendChild(fileCountText);
+    }
+    
+    // Manual click listener for the upload area
+    uploadArea.addEventListener('click', (event) => {
+        // Check if the click was on the delete button itself
+        if (event.target.closest('button')) {
+            return;
+        }
+        imageUpload.click();
+    });
+
+    // Event listener for file selection via input change
+    imageUpload.addEventListener('change', (event) => {
+        const files = Array.from(event.target.files);
+        selectedFiles = selectedFiles.concat(files);
+        renderThumbnails();
+    });
+
+    // Event listeners for drag and drop functionality
+    uploadArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadArea.classList.add('border-blue-500', 'bg-gray-50');
+    });
+
+    uploadArea.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadArea.classList.remove('border-blue-500', 'bg-gray-50');
+    });
+
+    uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadArea.classList.remove('border-blue-500', 'bg-gray-50');
+        const files = Array.from(e.dataTransfer.files);
+        if (files.length > 0) {
+            selectedFiles = selectedFiles.concat(files);
+            renderThumbnails();
+        }
+    });
+
+    // Event listener for the "Process" button click
+    processButton.addEventListener('click', () => {
+        if (selectedFiles.length === 0) {
+            showMessageBox('Please select at least one image to process.');
+            return;
+        }
+        processImages(selectedFiles);
+    });
+
+    /**
+     * Main function to handle the processing of all uploaded images.
+     * @param {FileList} files - The list of image files to process.
+     */
+    async function processImages(files) {
+        resultsContainer.innerHTML = '';
+        progressContainer.classList.remove('hidden');
+        progressBar.style.width = '0%';
+        
+        const overlayImage = new Image();
+        overlayImage.crossOrigin = 'anonymous'; // Required for CORS on some servers
+        overlayImage.src = OVERLAY_IMAGE_URL;
+
+        overlayImage.onload = async () => {
+            let processedCount = 0;
+            for (let i = 0; i < files.length; i++) {
+                try {
+                    const processedDataUrl = await processSingleImage(files[i], overlayImage);
+                    displayProcessedImage(processedDataUrl, files[i].name);
+                } catch (error) {
+                    console.error('Error processing image:', files[i].name, error);
+                    showMessageBox(`Failed to process image: ${files[i].name}. Please try again.`);
+                } finally {
+                    processedCount++;
+                    const progress = (processedCount / files.length) * 100;
+                    progressBar.style.width = `${progress}%`;
+                }
+            }
+            progressContainer.classList.add('hidden');
+        };
+
+        overlayImage.onerror = () => {
+            console.error('Failed to load the overlay image.');
+            showMessageBox('Failed to load the overlay image. Please check the network connection.');
+            progressContainer.classList.add('hidden');
+        };
+    }
+
+    /**
+     * Processes a single image file: crops it, adds the overlay, and returns a data URL.
+     * @param {File} file - The image file to process.
+     * @param {HTMLImageElement} overlayImage - The pre-loaded overlay image.
+     * @returns {Promise<string>} A promise that resolves with the data URL of the processed image.
+     */
+    function processSingleImage(file, overlayImage) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = new Image();
+                img.onload = () => {
+                    // Create a canvas for cropping and overlaying
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    
+                    const originalWidth = img.naturalWidth;
+                    const originalHeight = img.naturalHeight;
+                    const targetRatio = 9 / 16;
+                    
+                    let newWidth, newHeight, startX, startY;
+                    
+                    // Determine the cropping dimensions to fit the 9:16 ratio
+                    if (originalWidth / originalHeight > targetRatio) {
+                        // Image is too wide, crop width
+                        newHeight = originalHeight;
+                        newWidth = originalHeight * targetRatio;
+                        startX = (originalWidth - newWidth) / 2;
+                        startY = 0;
+                    } else {
+                        // Image is too tall, crop height
+                        newWidth = originalWidth;
+                        newHeight = originalWidth / targetRatio;
+                        startX = 0;
+                        startY = (originalHeight - newHeight) / 2;
+                    }
+                    
+                    // Set canvas dimensions to the new cropped size
+                    canvas.width = newWidth;
+                    canvas.height = newHeight;
+                    
+                    // Draw the cropped portion of the original image
+                    ctx.drawImage(img, startX, startY, newWidth, newHeight, 0, 0, newWidth, newHeight);
+                    
+                    // Draw the overlay image scaled to the exact canvas size
+                    ctx.drawImage(overlayImage, 0, 0, newWidth, newHeight);
+                    
+                    // Resolve with the final image's data URL
+                    resolve(canvas.toDataURL('image/png'));
+                };
+                img.onerror = reject;
+                img.src = e.target.result;
+            };
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+        });
+    }
+
+    /**
+     * Displays a processed image with a download button in the results container.
+     * @param {string} dataUrl - The data URL of the processed image.
+     * @param {string} originalFileName - The name of the original file.
+     */
+    function displayProcessedImage(dataUrl, originalFileName) {
+        const downloadName = `processed-${originalFileName.replace(/\.[^/.]+$/, "")}.png`;
+        
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-lg shadow-md p-4 border border-gray-200 flex flex-col items-center';
+        
+        const img = document.createElement('img');
+        img.src = dataUrl;
+        img.className = 'w-full h-auto rounded-md mb-4 object-contain';
+        
+        const downloadLink = document.createElement('a');
+        downloadLink.href = dataUrl;
+        downloadLink.download = downloadName;
+        downloadLink.className = 'w-full px-4 py-2 text-center bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 transition-colors duration-200';
+        downloadLink.textContent = 'Download';
+        
+        card.appendChild(img);
+        card.appendChild(downloadLink);
+        
+        resultsContainer.appendChild(card);
+    }
+</script>
+
+</body>
+</html>
