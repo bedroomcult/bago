@@ -2,58 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>sblur Web</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 20px;
-      background: #f2f2f2;
-      color: #333;
-    }
-    .controls {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    label { font-size: 14px; }
-    input, select { width: 100%; }
-    canvas { display: none; }
-    .preview {
-      margin-top: 20px;
-    }
-    .preview img {
-      max-width: 200px;
-      margin: 5px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-  </style>
+  <title>sblur Web (Tailwind)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h2>sblur Web (Self-Hosted)</h2>
+<body class="bg-gray-100 text-gray-800 p-4">
+  <div class="max-w-5xl mx-auto">
+    <h1 class="text-2xl font-bold mb-6 text-center">sblur Web</h1>
 
-  <div class="controls">
-    <label>Canvas Width <input type="number" id="width" value="900"></label>
-    <label>Canvas Height <input type="number" id="height" value="1600"></label>
-    <label>DPI <input type="number" id="dpi" value="300"></label>
-    <label>Background Color <input type="color" id="bgColor" value="#ffffff"></label>
-    <label>Margin (px) <input type="number" id="margin" value="100"></label>
-    <label>Corner Radius (px) <input type="number" id="radius" value="25"></label>
-    <label>Shadow Offset (px) <input type="number" id="shadowOffset" value="12"></label>
-    <label>Shadow Blur (px) <input type="number" id="shadowBlur" value="12"></label>
-    <label>Shadow Opacity (0–1) <input type="number" step="0.1" id="shadowOpacity" value="0.4"></label>
-    <label>Blur Strength (BG) <input type="number" id="blurStrength" value="25"></label>
-    <label>Brightness Factor (BG) <input type="number" step="0.1" id="brightnessFactor" value="0.5"></label>
-    <label><input type="checkbox" id="useBg"> Use image as background</label>
+    <!-- Controls -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div class="bg-white p-4 rounded-xl shadow">
+        <label class="block text-sm font-medium">Canvas Width</label>
+        <input type="number" id="width" value="900"
+          class="w-full border rounded-lg p-2 mt-1">
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow">
+        <label class="block text-sm font-medium">Canvas Height</label>
+        <input type="number" id="height" value="1600"
+          class="w-full border rounded-lg p-2 mt-1">
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow">
+        <label class="block text-sm font-medium">DPI</label>
+        <input type="number" id="dpi" value="300"
+          class="w-full border rounded-lg p-2 mt-1">
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow">
+        <label class="block text-sm font-medium">Background Color</label>
+        <input type="color" id="bgColor" value="#ffffff"
+          class="w-full h-10 border rounded-lg mt-1">
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow">
+        <label class="block text-sm font-medium">Margin (px)</label>
+        <input type="number" id="margin" value="100"
+          class="w-full border rounded-lg p-2 mt-1">
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow">
+        <label class="block text-sm font-medium">Corner Radius (px)</label>
+        <input type="number" id="radius" value="25"
+          class="w-full border rounded-lg p-2 mt-1">
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow">
+        <label class="block text-sm font-medium">Shadow Offset (px)</label>
+        <input type="number" id="shadowOffset" value="12"
+          class="w-full border rounded-lg p-2 mt-1">
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow">
+        <label class="block text-sm font-medium">Shadow Blur (px)</label>
+        <input type="number" id="shadowBlur" value="12"
+          class="w-full border rounded-lg p-2 mt-1">
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow">
+        <label class="block text-sm font-medium">Shadow Opacity (0–1)</label>
+        <input type="number" step="0.1" id="shadowOpacity" value="0.4"
+          class="w-full border rounded-lg p-2 mt-1">
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow">
+        <label class="block text-sm font-medium">Blur Strength (BG)</label>
+        <input type="number" id="blurStrength" value="25"
+          class="w-full border rounded-lg p-2 mt-1">
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow">
+        <label class="block text-sm font-medium">Brightness Factor (BG)</label>
+        <input type="number" step="0.1" id="brightnessFactor" value="0.5"
+          class="w-full border rounded-lg p-2 mt-1">
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow flex items-center space-x-2">
+        <input type="checkbox" id="useBg" class="h-4 w-4">
+        <label for="useBg" class="text-sm font-medium">Use image as background</label>
+      </div>
+    </div>
+
+    <!-- File input -->
+    <div class="flex flex-col items-center mb-6">
+      <input type="file" id="fileInput" multiple accept="image/*"
+        class="mb-3 text-sm">
+      <button onclick="processAll()"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg shadow">
+        Process Images
+      </button>
+    </div>
+
+    <!-- Preview -->
+    <div id="preview" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+
+    <canvas id="canvas" class="hidden"></canvas>
   </div>
-
-  <input type="file" id="fileInput" multiple accept="image/*">
-  <button onclick="processAll()">Process Images</button>
-
-  <div class="preview" id="preview"></div>
-
-  <canvas id="canvas"></canvas>
 
   <script>
     async function processImage(file, settings) {
@@ -91,14 +124,13 @@
             let fx = (width - fw) / 2;
             let fy = (height - fh) / 2;
 
-            // --- Shadow ---
+            // --- Shadow + Rounded corners ---
             ctx.save();
             ctx.shadowOffsetX = shadowOffset;
             ctx.shadowOffsetY = shadowOffset;
             ctx.shadowBlur = shadowBlur;
             ctx.shadowColor = `rgba(0,0,0,${shadowOpacity})`;
 
-            // Rounded rect clip
             ctx.beginPath();
             const r = radius;
             ctx.moveTo(fx + r, fy);
@@ -113,11 +145,9 @@
             ctx.closePath();
             ctx.clip();
 
-            // Draw main image
             ctx.drawImage(img, fx, fy, fw, fh);
             ctx.restore();
 
-            // Output PNG
             const out = canvas.toDataURL("image/png");
             resolve(out);
           };
@@ -135,7 +165,7 @@
       const settings = {
         width: parseInt(document.getElementById("width").value),
         height: parseInt(document.getElementById("height").value),
-        dpi: parseInt(document.getElementById("dpi").value), // browser ignores dpi, but stored in filename
+        dpi: parseInt(document.getElementById("dpi").value),
         margin: parseInt(document.getElementById("margin").value),
         radius: parseInt(document.getElementById("radius").value),
         shadowOffset: parseInt(document.getElementById("shadowOffset").value),
@@ -151,16 +181,22 @@
         const file = files[i];
         const out = await processImage(file, settings);
 
+        const container = document.createElement("div");
+        container.className = "flex flex-col items-center";
+
         const imgTag = document.createElement("img");
         imgTag.src = out;
-        preview.appendChild(imgTag);
+        imgTag.className = "rounded-lg shadow";
+        container.appendChild(imgTag);
 
         const a = document.createElement("a");
         a.href = out;
         a.download = `processed_${settings.width}x${settings.height}_${file.name.replace(/\.[^/.]+$/, "")}.png`;
-        a.innerText = `Download ${file.name}`;
-        preview.appendChild(a);
-        preview.appendChild(document.createElement("br"));
+        a.innerText = "Download";
+        a.className = "mt-2 text-sm text-blue-600 underline";
+        container.appendChild(a);
+
+        preview.appendChild(container);
       }
     }
   </script>
