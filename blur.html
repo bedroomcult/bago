@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sblur Web</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f2f2f2;
+      color: #333;
+    }
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    label { font-size: 14px; }
+    input, select { width: 100%; }
+    canvas { display: none; }
+    .preview {
+      margin-top: 20px;
+    }
+    .preview img {
+      max-width: 200px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>sblur Web (Self-Hosted)</h2>
+
+  <div class="controls">
+    <label>Canvas Width <input type="number" id="width" value="900"></label>
+    <label>Canvas Height <input type="number" id="height" value="1600"></label>
+    <label>DPI <input type="number" id="dpi" value="300"></label>
+    <label>Background Color <input type="color" id="bgColor" value="#ffffff"></label>
+    <label>Margin (px) <input type="number" id="margin" value="100"></label>
+    <label>Corner Radius (px) <input type="number" id="radius" value="25"></label>
+    <label>Shadow Offset (px) <input type="number" id="shadowOffset" value="12"></label>
+    <label>Shadow Blur (px) <input type="number" id="shadowBlur" value="12"></label>
+    <label>Shadow Opacity (0–1) <input type="number" step="0.1" id="shadowOpacity" value="0.4"></label>
+    <label>Blur Strength (BG) <input type="number" id="blurStrength" value="25"></label>
+    <label>Brightness Factor (BG) <input type="number" step="0.1" id="brightnessFactor" value="0.5"></label>
+    <label><input type="checkbox" id="useBg"> Use image as background</label>
+  </div>
+
+  <input type="file" id="fileInput" multiple accept="image/*">
+  <button onclick="processAll()">Process Images</button>
+
+  <div class="preview" id="preview"></div>
+
+  <canvas id="canvas"></canvas>
+
+  <script>
+    async function processImage(file, settings) {
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const img = new Image();
+          img.onload = () => {
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            const {width, height, margin, radius,
+                   shadowOffset, shadowBlur, shadowOpacity,
+                   useBg, bgColor, blurStrength, brightnessFactor} = settings;
+
+            canvas.width = width;
+            canvas.height = height;
+
+            // --- Background ---
+            if (useBg) {
+              ctx.drawImage(img, 0, 0, width, height);
+              ctx.filter = `blur(${blurStrength}px) brightness(${brightnessFactor})`;
+              ctx.drawImage(canvas, 0, 0);
+              ctx.filter = "none";
+            } else {
+              ctx.fillStyle = bgColor;
+              ctx.fillRect(0, 0, width, height);
+            }
+
+            // --- Foreground scaling ---
+            const maxW = width - margin * 2;
+            const maxH = height - margin * 2;
+            let scale = Math.min(maxW / img.width, maxH / img.height);
+            let fw = img.width * scale;
+            let fh = img.height * scale;
+            let fx = (width - fw) / 2;
+            let fy = (height - fh) / 2;
+
+            // --- Shadow ---
+            ctx.save();
+            ctx.shadowOffsetX = shadowOffset;
+            ctx.shadowOffsetY = shadowOffset;
+            ctx.shadowBlur = shadowBlur;
+            ctx.shadowColor = `rgba(0,0,0,${shadowOpacity})`;
+
+            // Rounded rect clip
+            ctx.beginPath();
+            const r = radius;
+            ctx.moveTo(fx + r, fy);
+            ctx.lineTo(fx + fw - r, fy);
+            ctx.quadraticCurveTo(fx + fw, fy, fx + fw, fy + r);
+            ctx.lineTo(fx + fw, fy + fh - r);
+            ctx.quadraticCurveTo(fx + fw, fy + fh, fx + fw - r, fy + fh);
+            ctx.lineTo(fx + r, fy + fh);
+            ctx.quadraticCurveTo(fx, fy + fh, fx, fy + fh - r);
+            ctx.lineTo(fx, fy + r);
+            ctx.quadraticCurveTo(fx, fy, fx + r, fy);
+            ctx.closePath();
+            ctx.clip();
+
+            // Draw main image
+            ctx.drawImage(img, fx, fy, fw, fh);
+            ctx.restore();
+
+            // Output PNG
+            const out = canvas.toDataURL("image/png");
+            resolve(out);
+          };
+          img.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function processAll() {
+      const files = document.getElementById("fileInput").files;
+      const preview = document.getElementById("preview");
+      preview.innerHTML = "";
+
+      const settings = {
+        width: parseInt(document.getElementById("width").value),
+        height: parseInt(document.getElementById("height").value),
+        dpi: parseInt(document.getElementById("dpi").value), // browser ignores dpi, but stored in filename
+        margin: parseInt(document.getElementById("margin").value),
+        radius: parseInt(document.getElementById("radius").value),
+        shadowOffset: parseInt(document.getElementById("shadowOffset").value),
+        shadowBlur: parseInt(document.getElementById("shadowBlur").value),
+        shadowOpacity: parseFloat(document.getElementById("shadowOpacity").value),
+        useBg: document.getElementById("useBg").checked,
+        bgColor: document.getElementById("bgColor").value,
+        blurStrength: parseInt(document.getElementById("blurStrength").value),
+        brightnessFactor: parseFloat(document.getElementById("brightnessFactor").value)
+      };
+
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const out = await processImage(file, settings);
+
+        const imgTag = document.createElement("img");
+        imgTag.src = out;
+        preview.appendChild(imgTag);
+
+        const a = document.createElement("a");
+        a.href = out;
+        a.download = `processed_${settings.width}x${settings.height}_${file.name.replace(/\.[^/.]+$/, "")}.png`;
+        a.innerText = `Download ${file.name}`;
+        preview.appendChild(a);
+        preview.appendChild(document.createElement("br"));
+      }
+    }
+  </script>
+</body>
+</html>
