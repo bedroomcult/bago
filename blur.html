@@ -1,204 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>sblur Web (Tailwind)</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #1a202c;
+        }
+
+        /* Basic slider thumb styling */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #4a90e2;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #4a90e2;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: #3b82f6;
+        }
+
+        /* General element animations */
+        .animated-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .animated-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .animated-button {
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        .animated-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .animated-button:active {
+            transform: translateY(0);
+        }
+
+        .animated-placeholder {
+            transition: opacity 0.5s ease;
+        }
+
+        /* Hide the temporary background canvas */
+        #bgCanvas {
+            display: none;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-800 p-4">
-  <div class="max-w-5xl mx-auto">
-    <h1 class="text-2xl font-bold mb-6 text-center">sblur Web</h1>
+<body class="p-4 sm:p-6 lg:p-8 flex flex-col items-center min-h-screen">
+    <div class="container mx-auto max-w-4xl p-4 bg-white rounded-xl shadow-lg border border-gray-200">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-center mb-6">Social Image Creator</h1>
 
-    <!-- Controls -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-      <div class="bg-white p-4 rounded-xl shadow">
-        <label class="block text-sm font-medium">Canvas Width</label>
-        <input type="number" id="width" value="900"
-          class="w-full border rounded-lg p-2 mt-1">
-      </div>
-      <div class="bg-white p-4 rounded-xl shadow">
-        <label class="block text-sm font-medium">Canvas Height</label>
-        <input type="number" id="height" value="1600"
-          class="w-full border rounded-lg p-2 mt-1">
-      </div>
-      <div class="bg-white p-4 rounded-xl shadow">
-        <label class="block text-sm font-medium">DPI</label>
-        <input type="number" id="dpi" value="300"
-          class="w-full border rounded-lg p-2 mt-1">
-      </div>
-      <div class="bg-white p-4 rounded-xl shadow">
-        <label class="block text-sm font-medium">Background Color</label>
-        <input type="color" id="bgColor" value="#ffffff"
-          class="w-full h-10 border rounded-lg mt-1">
-      </div>
-      <div class="bg-white p-4 rounded-xl shadow">
-        <label class="block text-sm font-medium">Margin (px)</label>
-        <input type="number" id="margin" value="100"
-          class="w-full border rounded-lg p-2 mt-1">
-      </div>
-      <div class="bg-white p-4 rounded-xl shadow">
-        <label class="block text-sm font-medium">Corner Radius (px)</label>
-        <input type="number" id="radius" value="25"
-          class="w-full border rounded-lg p-2 mt-1">
-      </div>
-      <div class="bg-white p-4 rounded-xl shadow">
-        <label class="block text-sm font-medium">Shadow Offset (px)</label>
-        <input type="number" id="shadowOffset" value="12"
-          class="w-full border rounded-lg p-2 mt-1">
-      </div>
-      <div class="bg-white p-4 rounded-xl shadow">
-        <label class="block text-sm font-medium">Shadow Blur (px)</label>
-        <input type="number" id="shadowBlur" value="12"
-          class="w-full border rounded-lg p-2 mt-1">
-      </div>
-      <div class="bg-white p-4 rounded-xl shadow">
-        <label class="block text-sm font-medium">Shadow Opacity (0–1)</label>
-        <input type="number" step="0.1" id="shadowOpacity" value="0.4"
-          class="w-full border rounded-lg p-2 mt-1">
-      </div>
-      <div class="bg-white p-4 rounded-xl shadow">
-        <label class="block text-sm font-medium">Blur Strength (BG)</label>
-        <input type="number" id="blurStrength" value="25"
-          class="w-full border rounded-lg p-2 mt-1">
-      </div>
-      <div class="bg-white p-4 rounded-xl shadow">
-        <label class="block text-sm font-medium">Brightness Factor (BG)</label>
-        <input type="number" step="0.1" id="brightnessFactor" value="0.5"
-          class="w-full border rounded-lg p-2 mt-1">
-      </div>
-      <div class="bg-white p-4 rounded-xl shadow flex items-center space-x-2">
-        <input type="checkbox" id="useBg" class="h-4 w-4">
-        <label for="useBg" class="text-sm font-medium">Use image as background</label>
-      </div>
+        <!-- File Upload Section -->
+        <div class="mb-6 p-4 border border-gray-300 rounded-lg bg-gray-50 flex flex-col items-center justify-center animated-card">
+            <label for="imageUpload" class="text-lg font-semibold mb-2 text-gray-700">1. Upload an Image</label>
+            <input type="file" id="imageUpload" accept="image/*" class="w-full text-center p-2 rounded-lg border border-gray-400 cursor-pointer">
+            <p id="fileName" class="text-sm mt-2 text-gray-500"></p>
+        </div>
+
+        <!-- Options Section -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+            <!-- Background Options -->
+            <div class="p-4 border border-gray-300 rounded-lg bg-gray-50 animated-card">
+                <h2 class="text-lg font-semibold mb-3 text-gray-700">Background Options</h2>
+                <div class="flex items-center mb-3">
+                    <input type="checkbox" id="useImageBg" class="rounded-lg text-blue-500 focus:ring-blue-500">
+                    <label for="useImageBg" class="ml-2">Use blurred image as background</label>
+                </div>
+                <div id="solidBgOptions" class="space-y-3 transition-opacity duration-500 ease-in-out">
+                    <label class="block">
+                        <div class="flex justify-between items-center text-sm font-medium text-gray-600">
+                            <span>Background Color</span>
+                        </div>
+                        <input type="color" id="bgColor" value="#FFFFFF" class="w-full rounded-lg h-10 border border-gray-400 mt-1">
+                    </label>
+                </div>
+                <div id="imageBgOptions" class="space-y-3 opacity-0 transition-opacity duration-500 ease-in-out hidden">
+                    <label class="block">
+                        <div class="flex justify-between items-center text-sm font-medium text-gray-600">
+                            <span>Blur Strength</span>
+                            <span id="blurStrengthValue" class="text-gray-500">25</span>
+                        </div>
+                        <input type="range" id="blurStrength" min="0" max="100" value="25" class="w-full mt-1">
+                    </label>
+                    <label class="block">
+                        <div class="flex justify-between items-center text-sm font-medium text-gray-600">
+                            <span>Brightness Factor</span>
+                            <span id="brightnessFactorValue" class="text-gray-500">0.5</span>
+                        </div>
+                        <input type="range" id="brightnessFactor" min="0.1" max="1.0" step="0.1" value="0.5" class="w-full mt-1">
+                    </label>
+                </div>
+            </div>
+
+            <!-- Image and Shadow Options -->
+            <div class="p-4 border border-gray-300 rounded-lg bg-gray-50 animated-card">
+                <h2 class="text-lg font-semibold mb-3 text-gray-700">Image & Shadow Options</h2>
+                <div class="space-y-3">
+                    <label class="block">
+                        <div class="flex justify-between items-center text-sm font-medium text-gray-600">
+                            <span>Margin (px)</span>
+                            <span id="marginValue" class="text-gray-500">100</span>
+                        </div>
+                        <input type="range" id="margin" min="0" max="200" value="100" class="w-full mt-1">
+                    </label>
+                    <label class="block">
+                        <div class="flex justify-between items-center text-sm font-medium text-gray-600">
+                            <span>Corner Radius (px)</span>
+                            <span id="radiusValue" class="text-gray-500">25</span>
+                        </div>
+                        <input type="range" id="radius" min="0" max="100" value="25" class="w-full mt-1">
+                    </label>
+                    <label class="block">
+                        <div class="flex justify-between items-center text-sm font-medium text-gray-600">
+                            <span>Shadow Blur (px)</span>
+                            <span id="shadowBlurValue" class="text-gray-500">12</span>
+                        </div>
+                        <input type="range" id="shadowBlur" min="0" max="50" value="12" class="w-full mt-1">
+                    </label>
+                    <label class="block">
+                        <div class="flex justify-between items-center text-sm font-medium text-gray-600">
+                            <span>Shadow Opacity (%)</span>
+                            <span id="shadowOpacityValue" class="text-gray-500">39</span>
+                        </div>
+                        <input type="range" id="shadowOpacity" min="0" max="100" value="39" class="w-full mt-1">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview and Download Section -->
+        <div class="flex flex-col items-center">
+            <h2 class="text-lg font-semibold mb-3 text-gray-700">2. Preview & Download</h2>
+            <div id="canvas-container" class="relative w-full aspect-[9/16] rounded-xl shadow-inner border-2 border-dashed border-gray-400 bg-gray-100 flex items-center justify-center overflow-hidden">
+                <canvas id="imageCanvas" class="w-full h-full rounded-xl"></canvas>
+                <div id="placeholder" class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 animated-placeholder">
+                    <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l-4.586-4.586a2 2 0 00-2.828 0L4 14m7 6h2m1-6a2 2 0 11-4 0 2 2 0 014 0zM12 21a9 9 100 009-9 9 9 100 00-9-9 9 9 100 00-9 9 9 9 100 009 9z"></path></svg>
+                    <p class="mt-2 text-center">Your processed image will appear here</p>
+                </div>
+            </div>
+            <button id="downloadBtn" class="mt-6 w-full sm:w-1/2 md:w-1/3 py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 shadow-md disabled:bg-gray-400 disabled:cursor-not-allowed animated-button">
+                Download Image
+            </button>
+        </div>
     </div>
-
-    <!-- File input -->
-    <div class="flex flex-col items-center mb-6">
-      <input type="file" id="fileInput" multiple accept="image/*"
-        class="mb-3 text-sm">
-      <button onclick="processAll()"
-        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg shadow">
-        Process Images
-      </button>
+    
+    <!-- Toast/Alert Message Box -->
+    <div id="messageBox" class="fixed bottom-4 right-4 bg-red-500 text-white p-3 rounded-lg shadow-xl hidden transition-opacity duration-300 z-50">
+        <p id="messageText"></p>
     </div>
+    
+    <!-- Temporary canvas for background processing -->
+    <canvas id="bgCanvas"></canvas>
 
-    <!-- Preview -->
-    <div id="preview" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+    <script>
+        const canvas = document.getElementById('imageCanvas');
+        const ctx = canvas.getContext('2d');
+        const imageUpload = document.getElementById('imageUpload');
+        const useImageBgCheckbox = document.getElementById('useImageBg');
+        const solidBgOptions = document.getElementById('solidBgOptions');
+        const imageBgOptions = document.getElementById('imageBgOptions');
+        const placeholder = document.getElementById('placeholder');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const fileNameDisplay = document.getElementById('fileName');
+        const messageBox = document.getElementById('messageBox');
+        const messageText = document.getElementById('messageText');
+        const bgCanvas = document.getElementById('bgCanvas');
+        const bgCtx = bgCanvas.getContext('2d');
 
-    <canvas id="canvas" class="hidden"></canvas>
-  </div>
+        let originalImage = null;
+        let originalImageFile = null;
 
-  <script>
-    async function processImage(file, settings) {
-      return new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.onload = () => {
-          const img = new Image();
-          img.onload = () => {
-            const canvas = document.getElementById("canvas");
-            const ctx = canvas.getContext("2d");
-            const {width, height, margin, radius,
-                   shadowOffset, shadowBlur, shadowOpacity,
-                   useBg, bgColor, blurStrength, brightnessFactor} = settings;
+        const settings = {
+            bgColor: '#FFFFFF',
+            useImageBg: false,
+            margin: 100,
+            radius: 25,
+            shadowOffset: 12,
+            shadowBlur: 12,
+            shadowOpacity: 39,
+            blurStrength: 25,
+            brightnessFactor: 0.5
+        };
 
-            canvas.width = width;
-            canvas.height = height;
+        // --- Core Image Processing Functions ---
 
-            // --- Background ---
-            if (useBg) {
-              ctx.drawImage(img, 0, 0, width, height);
-              ctx.filter = `blur(${blurStrength}px) brightness(${brightnessFactor})`;
-              ctx.drawImage(canvas, 0, 0);
-              ctx.filter = "none";
-            } else {
-              ctx.fillStyle = bgColor;
-              ctx.fillRect(0, 0, width, height);
+        function rgbaToHex([r, g, b]) {
+            return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+        }
+
+        function hexToRgba(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? [
+                parseInt(result[1], 16),
+                parseInt(result[2], 16),
+                parseInt(result[3], 16),
+                255
+            ] : [255, 255, 255, 255];
+        }
+
+        function showMessage(message, type = 'error') {
+            messageText.textContent = message;
+            messageBox.style.backgroundColor = type === 'success' ? '#10B981' : '#EF4444';
+            messageBox.style.display = 'block';
+            messageBox.style.opacity = '1';
+            setTimeout(() => {
+                messageBox.style.opacity = '0';
+                setTimeout(() => messageBox.style.display = 'none', 300);
+            }, 3000);
+        }
+
+        function drawShadow(context, x, y, w, h, radius, offset, blur, opacity) {
+            context.save();
+            context.shadowColor = `rgba(0, 0, 0, ${opacity / 100})`;
+            context.shadowBlur = blur;
+            context.shadowOffsetX = offset;
+            context.shadowOffsetY = offset;
+            context.fillStyle = 'black';
+            context.beginPath();
+            context.roundRect(x, y, w, h, radius);
+            context.fill();
+            context.restore();
+        }
+        
+        // Main rendering function
+        function renderImage() {
+            if (!originalImage) {
+                placeholder.classList.remove('hidden');
+                canvas.width = 900;
+                canvas.height = 1600;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                downloadBtn.disabled = true;
+                return;
             }
 
-            // --- Foreground scaling ---
-            const maxW = width - margin * 2;
-            const maxH = height - margin * 2;
-            let scale = Math.min(maxW / img.width, maxH / img.height);
-            let fw = img.width * scale;
-            let fh = img.height * scale;
-            let fx = (width - fw) / 2;
-            let fy = (height - fh) / 2;
+            placeholder.classList.add('hidden');
+            downloadBtn.disabled = false;
 
-            // --- Shadow + Rounded corners ---
-            ctx.save();
-            ctx.shadowOffsetX = shadowOffset;
-            ctx.shadowOffsetY = shadowOffset;
-            ctx.shadowBlur = shadowBlur;
-            ctx.shadowColor = `rgba(0,0,0,${shadowOpacity})`;
+            const targetWidth = 900;
+            const targetHeight = 1600;
 
-            ctx.beginPath();
-            const r = radius;
-            ctx.moveTo(fx + r, fy);
-            ctx.lineTo(fx + fw - r, fy);
-            ctx.quadraticCurveTo(fx + fw, fy, fx + fw, fy + r);
-            ctx.lineTo(fx + fw, fy + fh - r);
-            ctx.quadraticCurveTo(fx + fw, fy + fh, fx + fw - r, fy + fh);
-            ctx.lineTo(fx + r, fy + fh);
-            ctx.quadraticCurveTo(fx, fy + fh, fx, fy + fh - r);
-            ctx.lineTo(fx, fy + r);
-            ctx.quadraticCurveTo(fx, fy, fx + r, fy);
-            ctx.closePath();
-            ctx.clip();
+            canvas.width = targetWidth;
+            canvas.height = targetHeight;
+            
+            // 1. Create background on the main canvas
+            if (settings.useImageBg) {
+                // Use a temporary canvas for the background to apply filters
+                bgCanvas.width = targetWidth;
+                bgCanvas.height = targetHeight;
+                bgCtx.filter = `blur(${settings.blurStrength}px) brightness(${settings.brightnessFactor})`;
+                bgCtx.drawImage(originalImage, 0, 0, targetWidth, targetHeight);
+                bgCtx.filter = 'none'; // Reset filter
 
-            ctx.drawImage(img, fx, fy, fw, fh);
-            ctx.restore();
+                // Draw the processed background onto the main canvas
+                ctx.drawImage(bgCanvas, 0, 0);
+            } else {
+                ctx.fillStyle = rgbaToHex(hexToRgba(settings.bgColor));
+                ctx.fillRect(0, 0, targetWidth, targetHeight);
+            }
 
-            const out = canvas.toDataURL("image/png");
-            resolve(out);
-          };
-          img.src = reader.result;
+            // 2. Prepare foreground image
+            let img = new Image();
+            img.src = originalImage.src;
+
+            img.onload = () => {
+                const max_w = targetWidth - settings.margin * 2;
+                const max_h = targetHeight - settings.margin * 2;
+
+                let ratio = Math.min(max_w / img.width, max_h / img.height);
+                let finalWidth = img.width * ratio;
+                let finalHeight = img.height * ratio;
+
+                const pos_x = (targetWidth - finalWidth) / 2;
+                const pos_y = (targetHeight - finalHeight) / 2;
+
+                // 3. Draw shadow first
+                drawShadow(ctx, pos_x, pos_y, finalWidth, finalHeight, settings.radius, settings.shadowOffset, settings.shadowBlur, settings.shadowOpacity);
+                
+                // 4. Draw rounded image (now it will be sharp)
+                ctx.save();
+                ctx.beginPath();
+                ctx.roundRect(pos_x, pos_y, finalWidth, finalHeight, settings.radius);
+                ctx.clip();
+                ctx.drawImage(img, pos_x, pos_y, finalWidth, finalHeight);
+                ctx.restore();
+            };
+        }
+
+        // --- Event Listeners and UI Logic ---
+
+        document.getElementById('imageUpload').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                originalImageFile = file;
+                fileNameDisplay.textContent = file.name;
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    originalImage = new Image();
+                    originalImage.src = event.target.result;
+                    originalImage.onload = () => {
+                        renderImage();
+                    };
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        useImageBgCheckbox.addEventListener('change', (e) => {
+            settings.useImageBg = e.target.checked;
+            
+            if (e.target.checked) {
+                // Show image options, hide solid color options
+                solidBgOptions.classList.add('opacity-0');
+                solidBgOptions.classList.add('hidden');
+
+                imageBgOptions.classList.remove('hidden');
+                setTimeout(() => {
+                    imageBgOptions.classList.remove('opacity-0');
+                }, 10);
+            } else {
+                // Show solid color options, hide image options
+                imageBgOptions.classList.add('opacity-0');
+                imageBgOptions.classList.add('hidden');
+
+                solidBgOptions.classList.remove('hidden');
+                setTimeout(() => {
+                    solidBgOptions.classList.remove('opacity-0');
+                }, 10);
+            }
+            renderImage();
+        });
+
+        const sliderValues = {
+            'margin': 'marginValue',
+            'radius': 'radiusValue',
+            'shadowBlur': 'shadowBlurValue',
+            'shadowOpacity': 'shadowOpacityValue',
+            'blurStrength': 'blurStrengthValue',
+            'brightnessFactor': 'brightnessFactorValue'
         };
-        reader.readAsDataURL(file);
-      });
-    }
 
-    async function processAll() {
-      const files = document.getElementById("fileInput").files;
-      const preview = document.getElementById("preview");
-      preview.innerHTML = "";
+        Object.keys(sliderValues).forEach(id => {
+            const slider = document.getElementById(id);
+            const valueDisplay = document.getElementById(sliderValues[id]);
+            
+            slider.addEventListener('input', (e) => {
+                settings[id] = parseFloat(e.target.value);
+                if (id === 'brightnessFactor') {
+                    valueDisplay.textContent = parseFloat(e.target.value).toFixed(1);
+                } else {
+                    valueDisplay.textContent = e.target.value;
+                }
+                renderImage();
+            });
+        });
 
-      const settings = {
-        width: parseInt(document.getElementById("width").value),
-        height: parseInt(document.getElementById("height").value),
-        dpi: parseInt(document.getElementById("dpi").value),
-        margin: parseInt(document.getElementById("margin").value),
-        radius: parseInt(document.getElementById("radius").value),
-        shadowOffset: parseInt(document.getElementById("shadowOffset").value),
-        shadowBlur: parseInt(document.getElementById("shadowBlur").value),
-        shadowOpacity: parseFloat(document.getElementById("shadowOpacity").value),
-        useBg: document.getElementById("useBg").checked,
-        bgColor: document.getElementById("bgColor").value,
-        blurStrength: parseInt(document.getElementById("blurStrength").value),
-        brightnessFactor: parseFloat(document.getElementById("brightnessFactor").value)
-      };
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            if (!originalImage) {
+                showMessage("Please upload an image first.");
+                return;
+            }
+            
+            // Create a final canvas for download to ensure all layers are correctly composited
+            const finalCanvas = document.createElement('canvas');
+            const finalCtx = finalCanvas.getContext('2d');
+            finalCanvas.width = 900;
+            finalCanvas.height = 1600;
 
-      for (let i = 0; i < files.length; i++) {
-        const file = files[i];
-        const out = await processImage(file, settings);
+            if (settings.useImageBg) {
+                finalCtx.filter = `blur(${settings.blurStrength}px) brightness(${settings.brightnessFactor})`;
+                finalCtx.drawImage(originalImage, 0, 0, finalCanvas.width, finalCanvas.height);
+                finalCtx.filter = 'none'; // Reset filter
+            } else {
+                finalCtx.fillStyle = rgbaToHex(hexToRgba(settings.bgColor));
+                finalCtx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
+            }
 
-        const container = document.createElement("div");
-        container.className = "flex flex-col items-center";
+            let finalImage = new Image();
+            finalImage.src = originalImage.src;
 
-        const imgTag = document.createElement("img");
-        imgTag.src = out;
-        imgTag.className = "rounded-lg shadow";
-        container.appendChild(imgTag);
+            finalImage.onload = () => {
+                const max_w = finalCanvas.width - settings.margin * 2;
+                const max_h = finalCanvas.height - settings.margin * 2;
+                let ratio = Math.min(max_w / finalImage.width, max_h / finalImage.height);
+                let finalWidth = finalImage.width * ratio;
+                let finalHeight = finalImage.height * ratio;
+                const pos_x = (finalCanvas.width - finalWidth) / 2;
+                const pos_y = (finalCanvas.height - finalHeight) / 2;
 
-        const a = document.createElement("a");
-        a.href = out;
-        a.download = `processed_${settings.width}x${settings.height}_${file.name.replace(/\.[^/.]+$/, "")}.png`;
-        a.innerText = "Download";
-        a.className = "mt-2 text-sm text-blue-600 underline";
-        container.appendChild(a);
+                drawShadow(finalCtx, pos_x, pos_y, finalWidth, finalHeight, settings.radius, settings.shadowOffset, settings.shadowBlur, settings.shadowOpacity);
+                
+                finalCtx.save();
+                finalCtx.beginPath();
+                finalCtx.roundRect(pos_x, pos_y, finalWidth, finalHeight, settings.radius);
+                finalCtx.clip();
+                finalCtx.drawImage(finalImage, pos_x, pos_y, finalWidth, finalHeight);
+                finalCtx.restore();
 
-        preview.appendChild(container);
-      }
-    }
-  </script>
+                const link = document.createElement('a');
+                link.download = `processed_${originalImageFile.name}`;
+                link.href = finalCanvas.toDataURL('image/jpeg', 0.95);
+                link.click();
+                showMessage("Image downloaded successfully!", 'success');
+            };
+        });
+
+        // Initial render
+        renderImage();
+    </script>
 </body>
 </html>
+
