@@ -18,8 +18,12 @@
         "category": "Set, Sofa",
         "price": 6800000,
         "originalPrice": null,
+        "period": null,
         "image": "Set/Amelia Sofa Set.jpg",
-        "size": "3S: P180, 2S: P135, 3S: P75. L75 T80"
+        "desc": null,
+        "size": "3 Seat: P180, 2 Seat: P135, 2 Seat: P75. L75 T80",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "American",
@@ -625,14 +629,24 @@
         "category": "Kursi, Sungkai",
         "price": 449000,
         "originalPrice": null,
-        "image": "Sungkai/Kursi Anak Hewan.jpg"
+        "period": null,
+        "image": "uploaded/Kursi_Anak_Hewan.jpg",
+        "desc": null,
+        "size": "P30 L30 T50",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Kursi Anak Jari",
         "category": "Kursi, Sungkai",
         "price": 539000,
         "originalPrice": null,
-        "image": "Sungkai/Kursi Anak Jari.jpg"
+        "period": null,
+        "image": "uploaded/Kursi_Anak_Jari.jpg",
+        "desc": null,
+        "size": "P45 L35 T57",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Kursi Sudut Letter L (Dengan Spons)",
@@ -1635,5 +1649,29 @@
         "price": 1200000,
         "originalPrice": null,
         "image": "Meja/Yumma.jpg"
+    },
+    {
+        "name": "Kursi Anak Sungkai (Motif Tegak)",
+        "category": "Kursi, Sungkai",
+        "price": 449000,
+        "originalPrice": null,
+        "period": null,
+        "image": "uploaded/Kursi_Anak_Sungkai_Motif_Tegak.jpg",
+        "desc": null,
+        "size": "P30 L30 T60",
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Kursi Anak Sungkai (Motif Kupu Kupu)",
+        "category": "Kursi, Sungkai",
+        "price": 449000,
+        "originalPrice": null,
+        "period": null,
+        "image": "uploaded/Kursi_Anak_Sungkai_Motif_Kupu_Kupu.jpg",
+        "desc": null,
+        "size": "P30 L30 T50",
+        "colors": [],
+        "hidden": false
     }
 ]
