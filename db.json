@@ -4,14 +4,24 @@
         "category": "Buffet",
         "price": 4199000,
         "originalPrice": null,
-        "image": "Buffet/Agogo.jpg"
+        "period": null,
+        "image": "Buffet/Agogo.jpg",
+        "desc": null,
+        "size": "P 180 CM X L 45 CM X T 60 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Ahoop Chair",
         "category": "Kursi",
         "price": 480000,
         "originalPrice": null,
-        "image": "Kursi/Ahoop.jpg"
+        "period": null,
+        "image": "Kursi/Ahoop.jpg",
+        "desc": null,
+        "size": "P 47 CM X L 43 CM X T 41 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Amelia Sofa Set (Tanpa Meja)",
@@ -38,21 +48,36 @@
         "category": "Kursi",
         "price": 769000,
         "originalPrice": null,
-        "image": "Kursi/Amiku.jpg"
+        "period": null,
+        "image": "Kursi/Amiku.jpg",
+        "desc": null,
+        "size": "P 54 CM X L 50 CM X T 44 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Angsa Chair",
         "category": "Kursi",
         "price": 675000,
         "originalPrice": null,
-        "image": "Kursi/Angsa.jpg"
+        "period": null,
+        "image": "Kursi/Angsa.jpg",
+        "desc": null,
+        "size": "P 55 CM X L 47 CM X T 50 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Arkoll Bench Chair",
         "category": "Stool",
         "price": 800000,
         "originalPrice": null,
-        "image": "Stool/Arkoll.jpg"
+        "period": null,
+        "image": "Stool/Arkoll.jpg",
+        "desc": null,
+        "size": "P 120 CM X L 40 CM X T 45 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Asimbi",
@@ -62,7 +87,7 @@
         "period": "01/08/2025-05/09/2025",
         "image": "Buffet/Asimbi.jpg",
         "desc": null,
-        "size": null,
+        "size": "P 150 CM X L 45 CM X T 70 CM",
         "colors": [],
         "hidden": false
     },
@@ -71,7 +96,12 @@
         "category": "Kursi",
         "price": 649000,
         "originalPrice": null,
-        "image": "Kursi/Asoka.jpg"
+        "period": null,
+        "image": "Kursi/Asoka.jpg",
+        "desc": null,
+        "size": "P 55 CM X L 50 CM X T 44 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Astry Table",
@@ -90,28 +120,48 @@
         "category": "Meja, Industrial",
         "price": 2289000,
         "originalPrice": null,
-        "image": "Industrial/Ayoe.jpg"
+        "period": null,
+        "image": "Industrial/Ayoe.jpg",
+        "desc": null,
+        "size": "P 120 CM X L 70 CM X T 41 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Banta Chair",
         "category": "Kursi",
         "price": 730000,
         "originalPrice": null,
-        "image": "Kursi/Banta.jpg"
+        "period": null,
+        "image": "Kursi/Banta.jpg",
+        "desc": null,
+        "size": "P 53 CM X L 47 CM X T 45 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Barere Chair",
         "category": "Kursi",
         "price": 980000,
         "originalPrice": null,
-        "image": "Kursi/Barere.jpg"
+        "period": null,
+        "image": "Kursi/Barere.jpg",
+        "desc": null,
+        "size": "P 75 CM X L 63 CM X T 30 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Barsi Chair",
         "category": "Stool",
         "price": 1025000,
         "originalPrice": null,
-        "image": "Stool/Barsi.jpg"
+        "period": null,
+        "image": "Stool/Barsi.jpg",
+        "desc": null,
+        "size": "P 47 CM X L 40 CM X T 76 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Besante Chair",
@@ -127,7 +177,11 @@
         "price": 2850000,
         "originalPrice": 3100000,
         "period": "01/08/2025-05/09/2025",
-        "image": "Buffet/Bowie.jpg"
+        "image": "Buffet/Bowie.jpg",
+        "desc": null,
+        "size": "P 150 CM X L 45 CM X T 60 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Buffet TV Gantung",
@@ -154,14 +208,23 @@
         "price": 4000000,
         "originalPrice": 4350000,
         "period": "01/08/2025-05/09/2025",
-        "image": "Buffet/Dasly.jpg"
+        "image": "Buffet/Dasly.jpg",
+        "desc": null,
+        "size": "P 200 CM X L 45 CM X T 67 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Dauwi",
         "category": "Buffet",
         "price": 3169000,
         "originalPrice": null,
-        "image": "Buffet/Dauwi.jpg"
+        "period": null,
+        "image": "Buffet/Dauwi.jpg",
+        "desc": null,
+        "size": "P 150 CM X L 45 CM X T 60 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Dayan Chair",
@@ -175,14 +238,24 @@
         "category": "Buffet",
         "price": 3170000,
         "originalPrice": null,
-        "image": "Buffet/Delys.jpg"
+        "period": null,
+        "image": "Buffet/Delys.jpg",
+        "desc": null,
+        "size": "P 120 CM X L 45 CM X T 66 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Denso",
         "category": "Buffet",
         "price": 3850000,
         "originalPrice": null,
-        "image": "Buffet/Denso.jpg"
+        "period": null,
+        "image": "Buffet/Denso.jpg",
+        "desc": null,
+        "size": "P 200 CM X L 45 CM X T 60 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Derima Table",
@@ -272,7 +345,12 @@
         "category": "Buffet, Industrial",
         "price": 5750000,
         "originalPrice": null,
-        "image": "Industrial/Drawa.jpg"
+        "period": null,
+        "image": "Industrial/Drawa.jpg",
+        "desc": null,
+        "size": "P 200 CM X L 45 CM X T 54 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Duklah Chair",
@@ -296,7 +374,7 @@
         "period": "01/09/2025-30/09/2025",
         "image": "Buffet/Dumata.jpg",
         "desc": null,
-        "size": null,
+        "size": "P 145 CM X L 45 CM X T 60 CM",
         "colors": [],
         "hidden": false
     },
@@ -312,7 +390,12 @@
         "category": "Buffet",
         "price": 2600000,
         "originalPrice": null,
-        "image": "Buffet/Dympan.jpg"
+        "period": null,
+        "image": "Buffet/Dympan.jpg",
+        "desc": null,
+        "size": "P 150 CM X L 45 CM X T 60 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Farmae Chair",
@@ -529,7 +612,12 @@
         "category": "Buffet, Industrial",
         "price": 3750000,
         "originalPrice": null,
-        "image": "Industrial/Karency.jpg"
+        "period": null,
+        "image": "Industrial/Karency.jpg",
+        "desc": null,
+        "size": "P 150 CM X L 45 CM X T 54 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Karo",
@@ -849,7 +937,12 @@
         "category": "Divan",
         "price": 4800000,
         "originalPrice": null,
-        "image": "Divan/Mimore.jpg"
+        "period": null,
+        "image": "Divan/Mimore.jpg",
+        "desc": null,
+        "size": "P 221 CM X L 185 CM X T 38 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Mindie Table",
@@ -925,14 +1018,24 @@
         "category": "Buffet",
         "price": 2870000,
         "originalPrice": null,
-        "image": "Buffet/Namas.jpg"
+        "period": null,
+        "image": "Buffet/Namas.jpg",
+        "desc": null,
+        "size": "P 150 CM X L 45 CM X T 65 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Namja",
         "category": "Buffet",
         "price": 3050000,
         "originalPrice": null,
-        "image": "Buffet/Namja.jpg"
+        "period": null,
+        "image": "Buffet/Namja.jpg",
+        "desc": null,
+        "size": "P 150 CM X L 45 CM X T 60 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Nayotan",
@@ -1085,7 +1188,7 @@
         "period": "01/09/2025-30/09/2025",
         "image": "Sofa/Qilla Sofa.jpg",
         "desc": "Kain Kimmy/Linen",
-        "size": null,
+        "size": "P 140 CM X L 75 CM X T 80 CM, Stool: : D 43 CM x T 43 CM",
         "colors": [
             {
                 "hex": "#FFECB3",
@@ -1135,7 +1238,7 @@
         "period": "01/09/2025-30/09/2025",
         "image": "Buffet/Ratton.jpg",
         "desc": null,
-        "size": null,
+        "size": "P 150 CM X L 45 CM X T 60 CM",
         "colors": [],
         "hidden": false
     },
@@ -1151,7 +1254,12 @@
         "category": "Buffet",
         "price": 3169000,
         "originalPrice": null,
-        "image": "Buffet/Rokku.jpg"
+        "period": null,
+        "image": "Buffet/Rokku.jpg",
+        "desc": null,
+        "size": "P 150 CM X L 45 CM X T 60 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Ronoa Chair",
@@ -1229,7 +1337,12 @@
         "category": "Buffet",
         "price": 2550000,
         "originalPrice": null,
-        "image": "Buffet/Ryngkes.jpg"
+        "period": null,
+        "image": "Buffet/Ryngkes.jpg",
+        "desc": null,
+        "size": "P 150 CM X L 45 CM X T 60 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Saari Chair",
@@ -1378,7 +1491,12 @@
         "category": "Buffet",
         "price": 2850000,
         "originalPrice": null,
-        "image": "Buffet/Siroko.jpg"
+        "period": null,
+        "image": "Buffet/Siroko.jpg",
+        "desc": null,
+        "size": "P 150 CM X L 45 CM X T 60 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Smalow Chair",
@@ -1395,7 +1513,7 @@
         "period": null,
         "image": "Sofa/Sofa Bed Gembul.jpg",
         "desc": "Kain Bludru Vegas, Isian Dacron kombinasi Silikon",
-        "size": null,
+        "size": "P 175 CM X L 90 CM X T 100 CM, Buka: 120 CM",
         "colors": [],
         "hidden": false
     },
@@ -1407,7 +1525,7 @@
         "period": "01/09/2025-30/09/2025",
         "image": "Sofa/Sofa Bed Mini.jpg",
         "desc": null,
-        "size": null,
+        "size": "P 160 CM X L 83 CM X T 80 CM, Buka: L 106 CM",
         "colors": [],
         "hidden": false
     },
@@ -1419,7 +1537,7 @@
         "period": "01/09/2025-30/09/2025",
         "image": "Sofa/Sofa L.jpg",
         "desc": "Kain Kimmy/Linen",
-        "size": null,
+        "size": "P 200 CM X L 80 CM X T 80 CM, Side: P 100 CM L 80 CM T 50 CM",
         "colors": [
             {
                 "hex": "#d7c796",
@@ -1465,7 +1583,12 @@
         "category": "Buffet",
         "price": 4250000,
         "originalPrice": null,
-        "image": "Buffet/Staku.jpg"
+        "period": null,
+        "image": "Buffet/Staku.jpg",
+        "desc": null,
+        "size": "P 200 CM X L 45 CM X T 60 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Stool Chair",
@@ -1561,7 +1684,12 @@
         "category": "Buffet",
         "price": 4599000,
         "originalPrice": null,
-        "image": "Buffet/Terias.jpg"
+        "period": null,
+        "image": "Buffet/Terias.jpg",
+        "desc": null,
+        "size": "P 145 CM X L 45 CM X T 54 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Teyko Table",
@@ -1601,7 +1729,12 @@
         "category": "Buffet",
         "price": 3600000,
         "originalPrice": null,
-        "image": "Buffet/Triange.jpg"
+        "period": null,
+        "image": "Buffet/Triange.jpg",
+        "desc": null,
+        "size": "P 150 CM X L 45 CM X T 60 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Trobox",
@@ -1632,7 +1765,7 @@
         "period": "01/09/2025-30/09/2025",
         "image": "Sofa/Vita.jpg",
         "desc": null,
-        "size": null,
+        "size": "P 140 CM X L 75 CM X T 65 CM",
         "colors": [],
         "hidden": false
     },
