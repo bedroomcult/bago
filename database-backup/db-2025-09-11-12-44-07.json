@@ -1680,12 +1680,11 @@
         "price": 2400000,
         "originalPrice": 2830000,
         "period": "01/09/2025-30/09/2025",
-        "image": "uploaded/Dining_Set_Mejoe__Ropan.jpg",
+        "image": "",
         "desc": "Set Mejoe Table 120cm + 4 pcs Ropan Chair",
         "size": null,
         "colors": [],
-        "hidden": false,
-        "_stagedImage": "uploaded/Dining_Set_Mejoe__Ropan.jpg"
+        "hidden": false
     },
     {
         "name": "Dining Set Teyko + Kacang",
@@ -1693,11 +1692,10 @@
         "price": 4068000,
         "originalPrice": 4521000,
         "period": "01/09/2025-30/09/2025",
-        "image": "uploaded/Dining_Set_Teyko__Kacang.jpg",
+        "image": "",
         "desc": "Dining Set Teyko Table 150cm + 4 Kacang Chair",
         "size": null,
         "colors": [],
-        "hidden": false,
-        "_stagedImage": "uploaded/Dining_Set_Teyko__Kacang.jpg"
+        "hidden": false
     }
 ]
