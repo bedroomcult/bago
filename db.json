@@ -40,8 +40,12 @@
         "category": "Sofa",
         "price": 4500000,
         "originalPrice": null,
+        "period": null,
         "image": "Sofa/American.jpg",
-        "size": "P 145 CM X L 45 CM X T 54 CM"
+        "desc": null,
+        "size": "P 145 CM X L 45 CM X T 54 CM, Dudukan: 45 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Amiku Chair",
@@ -660,9 +664,12 @@
         "category": "Nakas",
         "price": 880000,
         "originalPrice": null,
+        "period": null,
         "image": "Nakas/Karo.jpg",
         "desc": "Bahan Jati",
-        "size": "P 150 CM X L 45 CM X T 54 CM"
+        "size": "P 50 CM X L 45 CM X T 54 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Karpi",
@@ -932,8 +939,12 @@
         "category": "Sofa",
         "price": 7800000,
         "originalPrice": null,
+        "period": null,
         "image": "Sofa/Marwah Sofa.jpg",
-        "size": "P 200 CM X L 80 CM X T 45 CM"
+        "desc": null,
+        "size": "P 200 CM X L 80 CM X T 80 CM, Dudukan: 45 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Mauri Chair",
@@ -1020,24 +1031,36 @@
         "category": "Sofa",
         "price": 5289000,
         "originalPrice": null,
+        "period": null,
         "image": "Sofa/Mioji Double.jpg",
-        "size": "P 165 CM X L 76 CM X T 40 CM"
+        "desc": null,
+        "size": "P 165 CM X L 76 CM X T 80 CM, Dudukan: 40 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Mioji Single",
         "category": "Sofa",
         "price": 3215000,
         "originalPrice": null,
+        "period": null,
         "image": "Sofa/Mioji Single.jpg",
-        "size": "P 95 CM X L 75 CM X T 40 CM"
+        "desc": null,
+        "size": "P 95 CM X L 75 CM X T 80 CM, Dudukan: 40 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Mioji Triple",
         "category": "Sofa",
         "price": 6305000,
         "originalPrice": null,
+        "period": null,
         "image": "Sofa/Mioji Triple.jpg",
-        "size": "P 205 CM X L 76 CM X T 40 CM"
+        "desc": null,
+        "size": "P 205 CM X L 76 CM X T 80 CM, Dudukan: 40 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Mirano Chair",
@@ -1052,24 +1075,36 @@
         "category": "Sofa",
         "price": 5289000,
         "originalPrice": null,
+        "period": null,
         "image": "Sofa/Moeji Double.jpg",
-        "size": "P 165 CM X L 76 CM X T 40 CM"
+        "desc": null,
+        "size": "P 165 CM X L 76 CM X T 80 CM, Dudukan: 40 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Moeji Single",
         "category": "Sofa",
         "price": 3215000,
         "originalPrice": null,
+        "period": null,
         "image": "Sofa/Moeji Single.jpg",
-        "size": "P 95 CM X L 75 CM X T 40 CM"
+        "desc": null,
+        "size": "P 95 CM X L 75 CM X T 80 CM, Dudukan: 40 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Moeji Triple",
         "category": "Sofa",
         "price": 6305000,
         "originalPrice": null,
+        "period": null,
         "image": "Sofa/Moeji Triple.jpg",
-        "size": "P 205 CM X L 76 CM X T 40 CM"
+        "desc": null,
+        "size": "P 205 CM X L 76 CM X T 80 CM, Dudukan: 40 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Mongga Chair",
@@ -1108,10 +1143,12 @@
         "category": "Nakas",
         "price": 870000,
         "originalPrice": 969000,
+        "period": "01/08/2025-05/09/2025",
         "image": "Nakas/Nayotan.jpg",
         "desc": "Bahan Jati + Rotan",
-        "period": "01/08/2025-05/09/2025",
-        "size": "P 150 CM X L 45 CM X T 60 CM"
+        "size": "P 50 CM X L 45 CM X T 60 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Nick Cabinet",
@@ -1269,7 +1306,7 @@
         "period": "01/09/2025-30/09/2025",
         "image": "Sofa/Qilla Sofa.jpg",
         "desc": "Kain Kimmy/Linen",
-        "size": "P 130 CM X L 70 CM X T 80 CM, Stool: : D 43 CM x T 43 CM",
+        "size": "P 130 CM X L 70 CM X T 80 CM, Stool: D 43 CM x T 43 CM, Dudukan: 45 CM",
         "colors": [
             {
                 "hex": "#FFECB3",
@@ -1291,8 +1328,12 @@
         "category": "Set, Sofa",
         "price": 9100000,
         "originalPrice": null,
+        "period": null,
         "image": "Set/Rajua Sofa Set.jpg",
-        "size": "P 200 CM X L 80 CM X T 65 CM"
+        "desc": null,
+        "size": "P 200 CM X L 80 CM X T 65 CM, Dudukan: 45 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Dwilama + Tooja set",
@@ -1506,16 +1547,24 @@
         "category": "Sofa",
         "price": 1500000,
         "originalPrice": null,
+        "period": null,
         "image": "Sofa/Serwood Single.jpg",
-        "size": "P 120 CM X L 60 CM X T 45 CM"
+        "desc": null,
+        "size": "P 120 CM X L 60 CM X T 80 CM, Dudukan: 45 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Serwood Sofa Set",
         "category": "Set, Sofa",
         "price": 7855000,
         "originalPrice": null,
+        "period": null,
         "image": "Set/Serwood Sofa Set.jpg",
-        "size": "P 120 CM X L 60 CM X T 45 CM"
+        "desc": null,
+        "size": "P 120 CM X L 60 CM X T 80 CM, Dudukan: 45 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Serwood Table Mini",
@@ -1645,7 +1694,7 @@
         "period": "01/09/2025-30/09/2025",
         "image": "Sofa/Sofa L.jpg",
         "desc": "Kain Kimmy/Linen",
-        "size": "P 200 CM X L 45 CM X T 60 CM",
+        "size": "P 200 CM X L 45 CM X T 80 CM, Dudukan: 45 CM",
         "colors": [
             {
                 "hex": "#d7c796",
@@ -1683,8 +1732,12 @@
         "category": "Sofa",
         "price": 7800000,
         "originalPrice": null,
+        "period": null,
         "image": "Sofa/Soopha.jpg",
-        "size": "P 150 CM X L 45 CM X T 60 CM"
+        "desc": null,
+        "size": "P 150 CM X L 45 CM X T 60 CM, Dudukan: 45 CM",
+        "colors": [],
+        "hidden": false
     },
     {
         "name": "Staku",
@@ -1887,7 +1940,7 @@
         "period": "01/09/2025-30/09/2025",
         "image": "Sofa/Vita.jpg",
         "desc": null,
-        "size": "P 140 CM X L 75 CM X 90CM",
+        "size": "P 140 CM X L 75 CM X 80CM, Dudukan T 45CM",
         "colors": [],
         "hidden": false
     },
@@ -1956,5 +2009,18 @@
         "colors": [],
         "hidden": false,
         "_stagedImage": "uploaded/Dining_Set_Teyko__Kacang.jpg"
+    },
+    {
+        "name": "Sofa 2 Seat",
+        "category": "Sofa",
+        "price": 2650000,
+        "originalPrice": null,
+        "period": null,
+        "image": "uploaded/Sofa_2_Seat.jpg",
+        "desc": null,
+        "size": "P 140 x L 75 x T 80 cm, Dudukan: T 45 cm",
+        "colors": [],
+        "hidden": false,
+        "_stagedImage": "uploaded/Sofa_2_Seat.jpg"
     }
 ]
