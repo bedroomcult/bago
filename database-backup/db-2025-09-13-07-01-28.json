@@ -1,0 +1,1703 @@
+[
+    {
+        "name": "Agogo",
+        "category": "Buffet",
+        "price": 4199000,
+        "originalPrice": null,
+        "image": "Buffet/Agogo.jpg"
+    },
+    {
+        "name": "Ahoop Chair",
+        "category": "Kursi",
+        "price": 480000,
+        "originalPrice": null,
+        "image": "Kursi/Ahoop.jpg"
+    },
+    {
+        "name": "Amelia Sofa Set (Tanpa Meja)",
+        "category": "Set, Sofa",
+        "price": 6800000,
+        "originalPrice": null,
+        "period": null,
+        "image": "Set/Amelia Sofa Set.jpg",
+        "desc": null,
+        "size": "3 Seat: P180, 2 Seat: P135, 2 Seat: P75. L75 T80",
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "American",
+        "category": "Sofa",
+        "price": 4500000,
+        "originalPrice": null,
+        "image": "Sofa/American.jpg",
+        "size": "L150 x T80 x P80"
+    },
+    {
+        "name": "Amiku Chair",
+        "category": "Kursi",
+        "price": 769000,
+        "originalPrice": null,
+        "image": "Kursi/Amiku.jpg"
+    },
+    {
+        "name": "Angsa Chair",
+        "category": "Kursi",
+        "price": 675000,
+        "originalPrice": null,
+        "image": "Kursi/Angsa.jpg"
+    },
+    {
+        "name": "Arkoll Bench Chair",
+        "category": "Stool",
+        "price": 800000,
+        "originalPrice": null,
+        "image": "Stool/Arkoll.jpg"
+    },
+    {
+        "name": "Asimbi",
+        "category": "Buffet",
+        "price": 2880000,
+        "originalPrice": 3200000,
+        "period": "01/08/2025-05/09/2025",
+        "image": "Buffet/Asimbi.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Asoka Chair",
+        "category": "Kursi",
+        "price": 649000,
+        "originalPrice": null,
+        "image": "Kursi/Asoka.jpg"
+    },
+    {
+        "name": "Astry Table",
+        "category": "Meja, Industrial",
+        "price": 2400000,
+        "originalPrice": null,
+        "period": null,
+        "image": "Industrial/Astry.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": true
+    },
+    {
+        "name": "Ayoe Table",
+        "category": "Meja, Industrial",
+        "price": 2289000,
+        "originalPrice": null,
+        "image": "Industrial/Ayoe.jpg"
+    },
+    {
+        "name": "Banta Chair",
+        "category": "Kursi",
+        "price": 730000,
+        "originalPrice": null,
+        "image": "Kursi/Banta.jpg"
+    },
+    {
+        "name": "Barere Chair",
+        "category": "Kursi",
+        "price": 980000,
+        "originalPrice": null,
+        "image": "Kursi/Barere.jpg"
+    },
+    {
+        "name": "Barsi Chair",
+        "category": "Stool",
+        "price": 1025000,
+        "originalPrice": null,
+        "image": "Stool/Barsi.jpg"
+    },
+    {
+        "name": "Besante Chair",
+        "category": "Kursi, Rotan Sintetis",
+        "price": 659000,
+        "originalPrice": null,
+        "image": "Rotan/Besante.jpg",
+        "size": "L56 x P49 x T76"
+    },
+    {
+        "name": "Bowie",
+        "category": "Buffet",
+        "price": 2850000,
+        "originalPrice": 3100000,
+        "period": "01/08/2025-05/09/2025",
+        "image": "Buffet/Bowie.jpg"
+    },
+    {
+        "name": "Buffet TV Gantung",
+        "category": "Buffet, Mahoni",
+        "price": 1550000,
+        "originalPrice": null,
+        "period": null,
+        "image": "Buffet/Buffet_TV_Gantung.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Danghe Table",
+        "category": "Meja, Industrial",
+        "price": 2289000,
+        "originalPrice": null,
+        "image": "Industrial/Danghe.jpg"
+    },
+    {
+        "name": "Dasly",
+        "category": "Buffet",
+        "price": 4000000,
+        "originalPrice": 4350000,
+        "period": "01/08/2025-05/09/2025",
+        "image": "Buffet/Dasly.jpg"
+    },
+    {
+        "name": "Dauwi",
+        "category": "Buffet",
+        "price": 3169000,
+        "originalPrice": null,
+        "image": "Buffet/Dauwi.jpg"
+    },
+    {
+        "name": "Dayan Chair",
+        "category": "Kursi, Sungkai",
+        "price": 900000,
+        "originalPrice": null,
+        "image": "Kursi/Dayan.jpg"
+    },
+    {
+        "name": "Delys",
+        "category": "Buffet",
+        "price": 3170000,
+        "originalPrice": null,
+        "image": "Buffet/Delys.jpg"
+    },
+    {
+        "name": "Denso",
+        "category": "Buffet",
+        "price": 3850000,
+        "originalPrice": null,
+        "image": "Buffet/Denso.jpg"
+    },
+    {
+        "name": "Derima Table",
+        "category": "Meja, Industrial",
+        "price": 4699000,
+        "originalPrice": null,
+        "image": "Industrial/Derima.jpg"
+    },
+    {
+        "name": "Dimsen",
+        "category": "Buffet",
+        "price": 2700000,
+        "originalPrice": null,
+        "period": null,
+        "image": "Buffet/Dimsen.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": true
+    },
+    {
+        "name": "Dining Set Seroshi",
+        "category": "Set",
+        "price": 4200000,
+        "originalPrice": null,
+        "image": "Set/Set Seroshi Tekyo.jpg",
+        "desc": "4 Seroshi Chair + Tekyo Table (Harga Normal 4.601.000)"
+    },
+    {
+        "name": "Dipakne Chair",
+        "category": "Kursi Cafe",
+        "price": 1315000,
+        "originalPrice": null,
+        "image": "Kursi/Dipakne.jpg"
+    },
+    {
+        "name": "Ditampi Chair",
+        "category": "Kursi, Industrial",
+        "price": 629000,
+        "originalPrice": null,
+        "image": "Industrial/Ditampi.jpg"
+    },
+    {
+        "name": "Divan Mahoni 160x200",
+        "category": "Divan, Mahoni",
+        "price": null,
+        "originalPrice": null,
+        "image": "Mahoni/Divan Mahoni 160x200.jpg"
+    },
+    {
+        "name": "Divan Mahoni 180x200",
+        "category": "Divan, Mahoni",
+        "price": 2050000,
+        "originalPrice": null,
+        "image": "Mahoni/Divan Mahoni 180x200.jpg"
+    },
+    {
+        "name": "Divan Mahoni 90x200",
+        "category": "Divan, Mahoni",
+        "price": 1100000,
+        "originalPrice": null,
+        "image": "Mahoni/Divan Mahoni 90x200.jpg"
+    },
+    {
+        "name": "Djani Drawer",
+        "category": "Nakas",
+        "price": 3199000,
+        "originalPrice": null,
+        "image": "Nakas/Djani.jpg"
+    },
+    {
+        "name": "Donja",
+        "category": "Buffet",
+        "price": 3050000,
+        "originalPrice": null,
+        "image": "Buffet/Donja.jpg"
+    },
+    {
+        "name": "Doolar Table",
+        "category": "Meja",
+        "price": 1850000,
+        "originalPrice": null,
+        "image": "Meja/Doolar.jpg"
+    },
+    {
+        "name": "Drawa",
+        "category": "Buffet, Industrial",
+        "price": 5750000,
+        "originalPrice": null,
+        "image": "Industrial/Drawa.jpg"
+    },
+    {
+        "name": "Duklah Chair",
+        "category": "Stool",
+        "price": 965000,
+        "originalPrice": null,
+        "image": "Stool/Duklah.jpg"
+    },
+    {
+        "name": "Duksaja Chair",
+        "category": "Stool",
+        "price": 965000,
+        "originalPrice": null,
+        "image": "Stool/Duksaja.jpg"
+    },
+    {
+        "name": "Dumata",
+        "category": "Buffet",
+        "price": 2800000,
+        "originalPrice": 3050000,
+        "period": "01/09/2025-30/09/2025",
+        "image": "Buffet/Dumata.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Dwilama Chair",
+        "category": "Kursi",
+        "price": 965000,
+        "originalPrice": null,
+        "image": "Kursi/Dwilama.jpg"
+    },
+    {
+        "name": "Dympan",
+        "category": "Buffet",
+        "price": 2600000,
+        "originalPrice": null,
+        "image": "Buffet/Dympan.jpg"
+    },
+    {
+        "name": "Farmae Chair",
+        "category": "Stool",
+        "price": 649000,
+        "originalPrice": null,
+        "image": "Stool/Farmae.jpg"
+    },
+    {
+        "name": "Fuloro Chair",
+        "category": "Stool",
+        "price": 2750000,
+        "originalPrice": null,
+        "image": "Stool/Fuloro.jpg"
+    },
+    {
+        "name": "Galar Chair",
+        "category": "Kursi, Rotan Sintetis",
+        "price": 1300000,
+        "originalPrice": null,
+        "image": "Rotan/Galar.jpg",
+        "size": "L128 x P45 x T55"
+    },
+    {
+        "name": "Gania Shoe Rack",
+        "category": "Nakas",
+        "price": 2170000,
+        "originalPrice": 2415000,
+        "period": "01/08/2025-05/09/2025",
+        "image": "Nakas/Gania.jpg"
+    },
+    {
+        "name": "Gashbir Chair",
+        "category": "Kursi Cafe",
+        "price": 1315000,
+        "originalPrice": null,
+        "image": "Kursi/Gashbir.jpg"
+    },
+    {
+        "name": "Gorya Chair",
+        "category": "Kursi",
+        "price": 765000,
+        "originalPrice": null,
+        "image": "Kursi/Gorya.jpg"
+    },
+    {
+        "name": "Hana Lipat Chair",
+        "category": "Kursi",
+        "price": 750000,
+        "originalPrice": null,
+        "image": "Kursi/Hana Lipat.jpg"
+    },
+    {
+        "name": "Hifi Table",
+        "category": "Meja, Rotan Sintetis",
+        "price": 575000,
+        "originalPrice": null,
+        "image": "Rotan/Hifi.jpg",
+        "size": "L80 x P50 x T55"
+    },
+    {
+        "name": "Hotori",
+        "category": "Buffet",
+        "price": 3140000,
+        "originalPrice": 3420000,
+        "period": "01/08/2025-05/09/2025",
+        "image": "Buffet/Hotori.jpg"
+    },
+    {
+        "name": "Ikaaf Chair",
+        "category": "Kursi Cafe",
+        "price": 1305000,
+        "originalPrice": null,
+        "image": "Kursi/Ikaaf.jpg"
+    },
+    {
+        "name": "Inagi Chair",
+        "category": "Stool",
+        "price": 1450000,
+        "originalPrice": null,
+        "image": "Stool/Inagi.jpg"
+    },
+    {
+        "name": "Jajeg Chair",
+        "category": "Kursi",
+        "price": 699000,
+        "originalPrice": null,
+        "image": "Kursi/Jajeg.jpg"
+    },
+    {
+        "name": "Jakyth Table",
+        "category": "Meja",
+        "price": 570000,
+        "originalPrice": null,
+        "image": "Meja/Jakyth.jpg"
+    },
+    {
+        "name": "Jangra Chair",
+        "category": "Kursi Cafe",
+        "price": 1475000,
+        "originalPrice": null,
+        "image": "Kursi/Jangra.jpg"
+    },
+    {
+        "name": "Jangra Sofa Chair",
+        "category": "Kursi Cafe",
+        "price": 1500000,
+        "originalPrice": null,
+        "period": null,
+        "image": "Kursi/Jangra Sofa.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": true
+    },
+    {
+        "name": "Jarken Chair",
+        "category": "Stool",
+        "price": 455000,
+        "originalPrice": null,
+        "image": "Stool/Jarken.jpg"
+    },
+    {
+        "name": "Jlentik Table",
+        "category": "Meja",
+        "price": 1335000,
+        "originalPrice": null,
+        "image": "Meja/Jlentik.jpg"
+    },
+    {
+        "name": "Jopabench",
+        "category": "Stool",
+        "price": 615000,
+        "originalPrice": null,
+        "image": "Stool/Jopabench.jpg"
+    },
+    {
+        "name": "Joparo Chair",
+        "category": "Stool",
+        "price": 329000,
+        "originalPrice": null,
+        "image": "Stool/Joparo.jpg"
+    },
+    {
+        "name": "Kacang Bar",
+        "category": "Stool",
+        "price": 965000,
+        "originalPrice": null,
+        "image": "Stool/Kacang Bar.jpg"
+    },
+    {
+        "name": "Kacang Chair",
+        "category": "Kursi",
+        "price": 649000,
+        "originalPrice": null,
+        "image": "Kursi/Kacang.jpg"
+    },
+    {
+        "name": "Kai Chair",
+        "category": "Kursi, Rotan Sintetis",
+        "price": 659000,
+        "originalPrice": null,
+        "period": null,
+        "image": "Rotan/Kai.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": true
+    },
+    {
+        "name": "Kajetis Table",
+        "category": "Meja",
+        "price": 575000,
+        "originalPrice": null,
+        "image": "Meja/Kajetis.jpg"
+    },
+    {
+        "name": "Kakida Chair",
+        "category": "Kursi, Rotan Sintetis",
+        "price": 560000,
+        "originalPrice": null,
+        "image": "Rotan/Kakida.jpg"
+    },
+    {
+        "name": "Kakin Chair",
+        "category": "Kursi",
+        "price": 1079000,
+        "originalPrice": null,
+        "image": "Kursi/Kakin.jpg"
+    },
+    {
+        "name": "Kamara Chair",
+        "category": "Stool",
+        "price": 550000,
+        "originalPrice": null,
+        "image": "Stool/Kamara.jpg"
+    },
+    {
+        "name": "Kanara Table",
+        "category": "Meja",
+        "price": 1680000,
+        "originalPrice": null,
+        "image": "Meja/Kanara.jpg"
+    },
+    {
+        "name": "Kane Chair",
+        "category": "Kursi Cafe",
+        "price": 1550000,
+        "originalPrice": null,
+        "image": "Kursi/Kane.jpg"
+    },
+    {
+        "name": "Karency",
+        "category": "Buffet, Industrial",
+        "price": 3750000,
+        "originalPrice": null,
+        "image": "Industrial/Karency.jpg"
+    },
+    {
+        "name": "Karo",
+        "category": "Nakas",
+        "price": 880000,
+        "originalPrice": null,
+        "image": "Nakas/Karo.jpg",
+        "desc": "Bahan Jati",
+        "size": "T60 x L50 x P40 / Laci L44 x T16"
+    },
+    {
+        "name": "Karpi",
+        "category": "Kursi, Rotan Sintetis",
+        "price": 659000,
+        "originalPrice": null,
+        "image": "Rotan/Karpi.jpg"
+    },
+    {
+        "name": "Katoon Cabinet",
+        "category": "Cabinet",
+        "price": 4500000,
+        "originalPrice": null,
+        "image": "Cabinet/Katoon.jpg",
+        "size": "P100 x L50 x T200"
+    },
+    {
+        "name": "Kayga Table",
+        "category": "Meja, Industrial",
+        "price": 2100000,
+        "originalPrice": 2289000,
+        "period": "01/08/2025-05/09/2025",
+        "image": "Industrial/Kayga.jpg"
+    },
+    {
+        "name": "Kelawu Chair",
+        "category": "Kursi Cafe",
+        "price": 980000,
+        "originalPrice": null,
+        "image": "Kursi/Kelawu.jpg"
+    },
+    {
+        "name": "Khosim Chair",
+        "category": "Kursi",
+        "price": 599000,
+        "originalPrice": null,
+        "image": "Kursi/Khosim.jpg"
+    },
+    {
+        "name": "Kirsa Chair",
+        "category": "Kursi Cafe",
+        "price": 855000,
+        "originalPrice": null,
+        "image": "Kursi/Kirsa.jpg"
+    },
+    {
+        "name": "Kitora Chair",
+        "category": "Kursi Cafe",
+        "price": null,
+        "originalPrice": null,
+        "period": null,
+        "image": "Kursi/Kitora.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": true
+    },
+    {
+        "name": "Klamari Chair",
+        "category": "Kursi Cafe",
+        "price": 639000,
+        "originalPrice": null,
+        "image": "Kursi/Klamari.jpg"
+    },
+    {
+        "name": "Kleewa Chair",
+        "category": "Kursi",
+        "price": 649000,
+        "originalPrice": null,
+        "image": "Kursi/Kleewa.jpg"
+    },
+    {
+        "name": "Konsul Table Kotak",
+        "category": "Meja",
+        "price": 2000000,
+        "originalPrice": null,
+        "image": "Meja/Konsul Table Kotak.jpg"
+    },
+    {
+        "name": "Konsul Table Oval",
+        "category": "Meja",
+        "price": 2085000,
+        "originalPrice": null,
+        "image": "Meja/Konsul Table Oval.jpg"
+    },
+    {
+        "name": "Kursi Anak Hewan",
+        "category": "Kursi, Sungkai",
+        "price": 449000,
+        "originalPrice": null,
+        "period": null,
+        "image": "uploaded/Kursi_Anak_Hewan.jpg",
+        "desc": null,
+        "size": "P30 L30 T50",
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Kursi Anak Jari",
+        "category": "Kursi, Sungkai",
+        "price": 539000,
+        "originalPrice": null,
+        "period": null,
+        "image": "uploaded/Kursi_Anak_Jari.jpg",
+        "desc": null,
+        "size": "P45 L35 T57",
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Kursi Sudut Letter L (Dengan Spons)",
+        "category": "Kursi",
+        "price": 4700000,
+        "originalPrice": null,
+        "image": "Kursi/Kursi Sudut L.jpg"
+    },
+    {
+        "name": "Kursi Sudut Letter L (Tanpa Spons)",
+        "category": "Kursi",
+        "price": 3900000,
+        "originalPrice": null,
+        "image": "Kursi/Kursi Sudut L.jpg"
+    },
+    {
+        "name": "Kurtampu Chair",
+        "category": "Kursi",
+        "price": 815000,
+        "originalPrice": null,
+        "image": "Kursi/Kurtampu.jpg"
+    },
+    {
+        "name": "Kyfee",
+        "category": "Buffet",
+        "price": 3890000,
+        "originalPrice": null,
+        "image": "Buffet/Kyfee.jpg"
+    },
+    {
+        "name": "Kyonan Table",
+        "category": "Meja",
+        "price": 850000,
+        "originalPrice": null,
+        "image": "Meja/Kyonan.jpg"
+    },
+    {
+        "name": "Lapit",
+        "category": "Buffet",
+        "price": 3500000,
+        "originalPrice": null,
+        "image": "Buffet/Lapit.jpg"
+    },
+    {
+        "name": "Lendean Chair",
+        "category": "Kursi",
+        "price": 599000,
+        "originalPrice": null,
+        "image": "Kursi/Lendean.jpg"
+    },
+    {
+        "name": "Lengsy Chair",
+        "category": "Kursi",
+        "price": 815000,
+        "originalPrice": null,
+        "image": "Kursi/Lengsy.jpg"
+    },
+    {
+        "name": "Liencak Chair",
+        "category": "Stool",
+        "price": 1250000,
+        "originalPrice": null,
+        "image": "Stool/Liencak.jpg"
+    },
+    {
+        "name": "Limare Drawer",
+        "category": "Nakas",
+        "price": 3300000,
+        "originalPrice": null,
+        "image": "Nakas/Limare.jpg"
+    },
+    {
+        "name": "Linggoh Chair",
+        "category": "Kursi",
+        "price": 1315000,
+        "originalPrice": null,
+        "image": "Kursi/Linggoh.jpg"
+    },
+    {
+        "name": "Locca",
+        "category": "Nakas",
+        "price": 2950000,
+        "originalPrice": null,
+        "image": "Nakas/Locca.jpg"
+    },
+    {
+        "name": "Lowes",
+        "category": "Nakas",
+        "price": 980000,
+        "originalPrice": null,
+        "image": "Nakas/Lowes.jpg"
+    },
+    {
+        "name": "Machak Table",
+        "category": "Meja",
+        "price": 2750000,
+        "originalPrice": null,
+        "image": "Meja/Machak.jpg"
+    },
+    {
+        "name": "Maksi Table",
+        "category": "Meja, Sungkai",
+        "price": 2499000,
+        "originalPrice": null,
+        "period": null,
+        "image": "Meja/Maksi.jpg",
+        "desc": "Bahan Sungkai (Warna Cerah)",
+        "size": "P160 L80 T75",
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Manya Chair",
+        "category": "Kursi, Sungkai",
+        "price": 629000,
+        "originalPrice": null,
+        "image": "Kursi/Manya.jpg"
+    },
+    {
+        "name": "Manya Solid Chair",
+        "category": "Kursi",
+        "price": 629000,
+        "originalPrice": null,
+        "image": "Kursi/Manya Solid.jpg"
+    },
+    {
+        "name": "Margini Table",
+        "category": "Meja",
+        "price": 1150000,
+        "originalPrice": null,
+        "image": "Meja/Margini.jpg"
+    },
+    {
+        "name": "Marwah Sofa",
+        "category": "Sofa",
+        "price": 7800000,
+        "originalPrice": null,
+        "image": "Sofa/Marwah Sofa.jpg",
+        "size": "P200 x T80 x L45"
+    },
+    {
+        "name": "Mauri Chair",
+        "category": "Kursi",
+        "price": 1015000,
+        "originalPrice": null,
+        "image": "Kursi/Mauri.jpg"
+    },
+    {
+        "name": "Mejia Table",
+        "category": "Meja",
+        "price": 775000,
+        "originalPrice": null,
+        "image": "Meja/Mejia.jpg"
+    },
+    {
+        "name": "Mejoe Table",
+        "category": "Meja",
+        "price": 1570000,
+        "originalPrice": null,
+        "period": null,
+        "image": "Meja/Mejoe.jpg",
+        "desc": "Bahan Jati",
+        "size": "P120 L80 T75",
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Mekko Table",
+        "category": "Meja",
+        "price": 2999000,
+        "originalPrice": null,
+        "image": "Meja/Mekko.jpg"
+    },
+    {
+        "name": "Mendi Table",
+        "category": "Meja, Industrial",
+        "price": 4899000,
+        "originalPrice": null,
+        "period": null,
+        "image": "Industrial/Mendi.jpg",
+        "desc": null,
+        "size": "L200 x T76 x P100",
+        "colors": [],
+        "hidden": true
+    },
+    {
+        "name": "Menjang Table",
+        "category": "Meja",
+        "price": null,
+        "originalPrice": null,
+        "period": null,
+        "image": "Meja/Menjang.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": true
+    },
+    {
+        "name": "Mimore",
+        "category": "Divan",
+        "price": 4800000,
+        "originalPrice": null,
+        "image": "Divan/Mimore.jpg"
+    },
+    {
+        "name": "Mindie Table",
+        "category": "Meja",
+        "price": 599000,
+        "originalPrice": null,
+        "image": "Meja/Mindie.jpg"
+    },
+    {
+        "name": "Mioji Double",
+        "category": "Sofa",
+        "price": 5289000,
+        "originalPrice": null,
+        "image": "Sofa/Mioji Double.jpg",
+        "size": "L165 x T40 x P75"
+    },
+    {
+        "name": "Mioji Single",
+        "category": "Sofa",
+        "price": 3215000,
+        "originalPrice": null,
+        "image": "Sofa/Mioji Single.jpg",
+        "size": "L95 x T40 x P75"
+    },
+    {
+        "name": "Mioji Triple",
+        "category": "Sofa",
+        "price": 6305000,
+        "originalPrice": null,
+        "image": "Sofa/Mioji Triple.jpg",
+        "size": "L205 x T40 x P75"
+    },
+    {
+        "name": "Mirano Chair",
+        "category": "Kursi Cafe",
+        "price": 945000,
+        "originalPrice": null,
+        "image": "Kursi/Mirano.jpg"
+    },
+    {
+        "name": "Moeji Double",
+        "category": "Sofa",
+        "price": 5289000,
+        "originalPrice": null,
+        "image": "Sofa/Moeji Double.jpg",
+        "size": "L165 x T40 x P75"
+    },
+    {
+        "name": "Moeji Single",
+        "category": "Sofa",
+        "price": 3215000,
+        "originalPrice": null,
+        "image": "Sofa/Moeji Single.jpg",
+        "size": "L95 x T40 x P75"
+    },
+    {
+        "name": "Moeji Triple",
+        "category": "Sofa",
+        "price": 6305000,
+        "originalPrice": null,
+        "image": "Sofa/Moeji Triple.jpg",
+        "size": "L205 x T40 x P75"
+    },
+    {
+        "name": "Mongga Chair",
+        "category": "Kursi",
+        "price": 740000,
+        "originalPrice": null,
+        "image": "Kursi/Mongga.jpg"
+    },
+    {
+        "name": "Namas",
+        "category": "Buffet",
+        "price": 2870000,
+        "originalPrice": null,
+        "image": "Buffet/Namas.jpg"
+    },
+    {
+        "name": "Namja",
+        "category": "Buffet",
+        "price": 3050000,
+        "originalPrice": null,
+        "image": "Buffet/Namja.jpg"
+    },
+    {
+        "name": "Nayotan",
+        "category": "Nakas",
+        "price": 870000,
+        "originalPrice": 969000,
+        "image": "Nakas/Nayotan.jpg",
+        "desc": "Bahan Jati + Rotan",
+        "period": "01/08/2025-05/09/2025",
+        "size": "T60 x L50 x P40 / Laci L44 x T16"
+    },
+    {
+        "name": "Nick Cabinet",
+        "category": "Cabinet",
+        "price": 6199000,
+        "originalPrice": null,
+        "image": "Cabinet/Nick.jpg",
+        "size": "P100 x L45 x T148"
+    },
+    {
+        "name": "Nihi",
+        "category": "Divan",
+        "price": 3750000,
+        "originalPrice": null,
+        "image": "Divan/Nihi.jpg"
+    },
+    {
+        "name": "Nikki Table",
+        "category": "Meja, Industrial",
+        "price": 4289000,
+        "originalPrice": null,
+        "image": "Industrial/Nikki.jpg",
+        "size": "L180 x P95 x T73"
+    },
+    {
+        "name": "Njonya Chair",
+        "category": "Kursi Cafe",
+        "price": 855000,
+        "originalPrice": null,
+        "image": "Kursi/Njonya.jpg"
+    },
+    {
+        "name": "Noora Chair",
+        "category": "Kursi Cafe",
+        "price": 899000,
+        "originalPrice": null,
+        "image": "Kursi/Noora.jpg"
+    },
+    {
+        "name": "Nopey Chair",
+        "category": "Kursi",
+        "price": 585000,
+        "originalPrice": null,
+        "image": "Kursi/Nopey.jpg"
+    },
+    {
+        "name": "Numpi Chair",
+        "category": "Kursi Cafe",
+        "price": 665000,
+        "originalPrice": null,
+        "image": "Kursi/Numpi.jpg"
+    },
+    {
+        "name": "Odai Chair",
+        "category": "Kursi",
+        "price": 535000,
+        "originalPrice": null,
+        "image": "Kursi/Odai.jpg"
+    },
+    {
+        "name": "Oled Table",
+        "category": "Meja",
+        "price": 2950000,
+        "originalPrice": null,
+        "image": "Meja/Oled.jpg"
+    },
+    {
+        "name": "Onica Table",
+        "category": "Meja, Industrial",
+        "price": 4500000,
+        "originalPrice": null,
+        "image": "Industrial/Onica.jpg"
+    },
+    {
+        "name": "Oosir",
+        "category": "Divan",
+        "price": 6700000,
+        "originalPrice": null,
+        "image": "Divan/Oosir.jpg"
+    },
+    {
+        "name": "Ortama Chair",
+        "category": "Stool",
+        "price": 369000,
+        "originalPrice": null,
+        "image": "Stool/Ortama.jpg"
+    },
+    {
+        "name": "Pantes Table",
+        "category": "Meja",
+        "price": 2500000,
+        "originalPrice": null,
+        "image": "Meja/Pantes.jpg"
+    },
+    {
+        "name": "Pinarak Chair",
+        "category": "Kursi",
+        "price": 1015000,
+        "originalPrice": null,
+        "image": "Kursi/Pinarak.jpg"
+    },
+    {
+        "name": "Planc",
+        "category": "Nakas",
+        "price": 2550000,
+        "originalPrice": null,
+        "image": "Nakas/Planc.jpg"
+    },
+    {
+        "name": "Pohra Table",
+        "category": "Meja, Industrial",
+        "price": 8900000,
+        "originalPrice": null,
+        "period": null,
+        "image": "Industrial/Pohra.jpg",
+        "desc": "(Meja untuk packing)",
+        "size": null,
+        "colors": [],
+        "hidden": true
+    },
+    {
+        "name": "Pulos Chair",
+        "category": "Kursi, Sungkai",
+        "price": 829000,
+        "originalPrice": null,
+        "image": "Kursi/Pulos.jpg"
+    },
+    {
+        "name": "Pulos Jok Chair",
+        "category": "Kursi, Sungkai",
+        "price": 929000,
+        "originalPrice": null,
+        "image": "Sungkai/Pulos Jok .jpg"
+    },
+    {
+        "name": "Qilla Sofa",
+        "category": "Sofa",
+        "price": 1980000,
+        "originalPrice": 2200000,
+        "period": "01/09/2025-30/09/2025",
+        "image": "Sofa/Qilla Sofa.jpg",
+        "desc": "Kain Kimmy/Linen",
+        "size": null,
+        "colors": [
+            {
+                "hex": "#FFECB3",
+                "name": "Cream 145"
+            },
+            {
+                "hex": "#d7c796",
+                "name": "Cream 182"
+            },
+            {
+                "hex": "#000000",
+                "name": "Hitam 090"
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "name": "Rajua Sofa Set",
+        "category": "Set, Sofa",
+        "price": 9100000,
+        "originalPrice": null,
+        "image": "Set/Rajua Sofa Set.jpg",
+        "size": "P200 x L80 x T65"
+    },
+    {
+        "name": "Dwilama + Tooja set",
+        "category": "Set",
+        "price": 2250000,
+        "originalPrice": 2500000,
+        "period": "25/08/2025-05/09/2025",
+        "image": "Set/Set Dwilama Tooja.jpg",
+        "size": "",
+        "desc": "2 Dwilama Chair + Tooja Table"
+    },
+    {
+        "name": "Rataya Table",
+        "category": "Meja",
+        "price": 3200000,
+        "originalPrice": null,
+        "image": "Meja/Rataya.jpg"
+    },
+    {
+        "name": "Ratton",
+        "category": "Buffet",
+        "price": 2392000,
+        "originalPrice": 2600000,
+        "period": "01/09/2025-30/09/2025",
+        "image": "Buffet/Ratton.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Riyaas Table",
+        "category": "Meja",
+        "price": 2350000,
+        "originalPrice": null,
+        "image": "Meja/Riyaas.jpg"
+    },
+    {
+        "name": "Rokku",
+        "category": "Buffet",
+        "price": 3169000,
+        "originalPrice": null,
+        "image": "Buffet/Rokku.jpg"
+    },
+    {
+        "name": "Ronoa Chair",
+        "category": "Kursi Cafe",
+        "price": 2850000,
+        "originalPrice": null,
+        "image": "Kursi/Ronoa.jpg"
+    },
+    {
+        "name": "Ropan Chair",
+        "category": "Kursi",
+        "price": 565000,
+        "originalPrice": null,
+        "image": "Kursi/Ropan.jpg"
+    },
+    {
+        "name": "Rope Chair",
+        "category": "Kursi Cafe",
+        "price": 980000,
+        "originalPrice": null,
+        "image": "Kursi/Rope.jpg"
+    },
+    {
+        "name": "Roque Chair",
+        "category": "Kursi",
+        "price": 880000,
+        "originalPrice": null,
+        "image": "Kursi/Roque.jpg"
+    },
+    {
+        "name": "Rosyong Chair",
+        "category": "Kursi, Rotan Sintetis",
+        "price": 550000,
+        "originalPrice": null,
+        "image": "Rotan/Rosyong.jpg"
+    },
+    {
+        "name": "Rotarota Chair",
+        "category": "Kursi",
+        "price": 815000,
+        "originalPrice": null,
+        "image": "Kursi/Rotarota.jpg"
+    },
+    {
+        "name": "Rotjil Table",
+        "category": "Meja",
+        "price": 849000,
+        "originalPrice": null,
+        "image": "Meja/Rotjil.jpg"
+    },
+    {
+        "name": "Rounded Table",
+        "category": "Meja, Rotan Sintetis",
+        "price": 415000,
+        "originalPrice": null,
+        "image": "Rotan/Rounded Table.jpg",
+        "size": "T54 D55"
+    },
+    {
+        "name": "Roxy Chair",
+        "category": "Kursi Cafe",
+        "price": 1149000,
+        "originalPrice": null,
+        "image": "Kursi/Roxy.jpg"
+    },
+    {
+        "name": "Rumaoma Chair",
+        "category": "Kursi Cafe",
+        "price": 1100000,
+        "originalPrice": null,
+        "image": "Kursi/Rumaoma.jpg"
+    },
+    {
+        "name": "Ryngkes",
+        "category": "Buffet",
+        "price": 2550000,
+        "originalPrice": null,
+        "image": "Buffet/Ryngkes.jpg"
+    },
+    {
+        "name": "Saari Chair",
+        "category": "Kursi Cafe",
+        "price": 649000,
+        "originalPrice": null,
+        "image": "Kursi/Saari.jpg"
+    },
+    {
+        "name": "Sambrow Chair",
+        "category": "Kursi Cafe",
+        "price": 1305000,
+        "originalPrice": null,
+        "image": "Kursi/Sambrow.jpg"
+    },
+    {
+        "name": "Sandara Chair",
+        "category": "Kursi, Rotan Sintetis",
+        "price": 659000,
+        "originalPrice": null,
+        "image": "Rotan/Sandara.jpg"
+    },
+    {
+        "name": "Sandro Chair",
+        "category": "Stool",
+        "price": 2109000,
+        "originalPrice": null,
+        "image": "Stool/Sandro.jpg"
+    },
+    {
+        "name": "Santee Chair",
+        "category": "Kursi",
+        "price": 780000,
+        "originalPrice": null,
+        "image": "Kursi/Santee.jpg"
+    },
+    {
+        "name": "Santiz Chair",
+        "category": "Kursi, Rotan Sintetis",
+        "price": 659000,
+        "originalPrice": null,
+        "image": "Rotan/Santiz.jpg",
+        "desc": "",
+        "size": "L56 x P44 x T49"
+    },
+    {
+        "name": "Selica Chair",
+        "category": "Kursi Cafe",
+        "price": 1645000,
+        "originalPrice": null,
+        "image": "Kursi/Selica.jpg"
+    },
+    {
+        "name": "Seroshi Chair",
+        "category": "Kursi",
+        "price": 669000,
+        "originalPrice": null,
+        "image": "Kursi/Seroshi.jpg"
+    },
+    {
+        "name": "Serwood Single",
+        "category": "Sofa",
+        "price": 1500000,
+        "originalPrice": null,
+        "image": "Sofa/Serwood Single.jpg"
+    },
+    {
+        "name": "Serwood Sofa Set",
+        "category": "Set, Sofa",
+        "price": 7855000,
+        "originalPrice": null,
+        "image": "Set/Serwood Sofa Set.jpg",
+        "size": "P120 x L60 x T45"
+    },
+    {
+        "name": "Serwood Table Mini",
+        "category": "Meja",
+        "price": 1350000,
+        "originalPrice": null,
+        "image": "Meja/Serwood Mini Table.jpg"
+    },
+    {
+        "name": "Sesareng Chair",
+        "category": "Kursi",
+        "price": 1315000,
+        "originalPrice": null,
+        "image": "Kursi/Sesareng.jpg"
+    },
+    {
+        "name": "Set Rotan Besar",
+        "category": "Set, Rotan Sintetis",
+        "price": 3193000,
+        "originalPrice": null,
+        "image": "Set/Rotan Besar.jpg",
+        "desc": "Galar Chair + 2 Besante Chair + Hifi Table"
+    },
+    {
+        "name": "Set Rotan Kecil",
+        "category": "Set, Rotan Sintetis",
+        "price": 1559000,
+        "originalPrice": 1733000,
+        "period": "01/08/2025-05/09/2025",
+        "image": "Set/Rotan Kecil.jpg",
+        "desc": "2 Santiz Chair + Round Table Rotan",
+        "size": null,
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Sicangku Chair",
+        "category": "Kursi",
+        "price": 649000,
+        "originalPrice": null,
+        "image": "Kursi/Sicangku.jpg"
+    },
+    {
+        "name": "Siepin Chair",
+        "category": "Kursi",
+        "price": 675000,
+        "originalPrice": null,
+        "image": "Kursi/Siepin.jpg"
+    },
+    {
+        "name": "Sikura Chair",
+        "category": "Kursi",
+        "price": 510000,
+        "originalPrice": null,
+        "image": "Kursi/Sikura.jpg"
+    },
+    {
+        "name": "Sikuth Chair",
+        "category": "Stool",
+        "price": 379000,
+        "originalPrice": null,
+        "image": "Stool/Sikuth.jpg"
+    },
+    {
+        "name": "Sinu Chair",
+        "category": "Sungkai, Kursi",
+        "price": 939000,
+        "originalPrice": null,
+        "image": "Kursi/Sinu.jpg"
+    },
+    {
+        "name": "Siroko",
+        "category": "Buffet",
+        "price": 2850000,
+        "originalPrice": null,
+        "image": "Buffet/Siroko.jpg"
+    },
+    {
+        "name": "Smalow Chair",
+        "category": "Kursi Cafe",
+        "price": 855000,
+        "originalPrice": null,
+        "image": "Kursi/Smalow.jpg"
+    },
+    {
+        "name": "Sofa Bed Gembul",
+        "category": "Sofa",
+        "price": 3350000,
+        "originalPrice": null,
+        "period": null,
+        "image": "Sofa/Sofa Bed Gembul.jpg",
+        "desc": "Kain Bludru Vegas, Isian Dacron kombinasi Silikon",
+        "size": null,
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Sofa Bed Mini",
+        "category": "Sofa",
+        "price": 1850000,
+        "originalPrice": 2250000,
+        "period": "01/09/2025-30/09/2025",
+        "image": "Sofa/Sofa Bed Mini.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Sofa L",
+        "category": "Sofa",
+        "price": 3800000,
+        "originalPrice": 4200000,
+        "period": "01/09/2025-30/09/2025",
+        "image": "Sofa/Sofa L.jpg",
+        "desc": "Kain Kimmy/Linen",
+        "size": null,
+        "colors": [
+            {
+                "hex": "#d7c796",
+                "name": "Cream 182"
+            },
+            {
+                "hex": "#b5a26e",
+                "name": "Cream Coklat 183"
+            },
+            {
+                "hex": "#373430",
+                "name": "Abu Muda 162"
+            },
+            {
+                "hex": "#000000",
+                "name": "Hitam 090"
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "name": "Sonara",
+        "category": "Rotan Sintetis",
+        "price": null,
+        "originalPrice": null,
+        "period": null,
+        "image": "Rotan/Sonara.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": true
+    },
+    {
+        "name": "Soopha",
+        "category": "Sofa",
+        "price": 7800000,
+        "originalPrice": null,
+        "image": "Sofa/Soopha.jpg",
+        "size": "L200 x T80 x P55"
+    },
+    {
+        "name": "Staku",
+        "category": "Buffet",
+        "price": 4250000,
+        "originalPrice": null,
+        "image": "Buffet/Staku.jpg"
+    },
+    {
+        "name": "Stool Chair",
+        "category": "Stool",
+        "price": 399000,
+        "originalPrice": null,
+        "image": "Stool/Stool.jpg"
+    },
+    {
+        "name": "Stoora",
+        "category": "Nakas",
+        "price": 1109000,
+        "originalPrice": null,
+        "image": "Nakas/Stoora.jpg"
+    },
+    {
+        "name": "Stooya Chair",
+        "category": "Stool",
+        "price": 469000,
+        "originalPrice": null,
+        "image": "Stool/Stooya.jpg"
+    },
+    {
+        "name": "Sumaar Chair",
+        "category": "Kursi, Rotan Sintetis",
+        "price": 659000,
+        "originalPrice": null,
+        "image": "Rotan/Sumaar.jpg"
+    },
+    {
+        "name": "Swane",
+        "category": "Divan",
+        "price": 3500000,
+        "originalPrice": 3750000,
+        "period": "25/08/2025-05/09/2025",
+        "image": "Divan/Swane.jpg"
+    },
+    {
+        "name": "Talelap",
+        "category": "Divan",
+        "price": 4550000,
+        "originalPrice": null,
+        "image": "Divan/Talelap.jpg"
+    },
+    {
+        "name": "Tana Long Natural",
+        "category": "Meja, Mahoni",
+        "price": null,
+        "originalPrice": null,
+        "hidden": true,
+        "image": "Mahoni/Tana Long Natural.jpg"
+    },
+    {
+        "name": "Tana Long Wallnut",
+        "category": "Meja, Mahoni",
+        "price": null,
+        "originalPrice": null,
+        "hidden": true,
+        "image": "Mahoni/Tana Long Wallnut.jpg"
+    },
+    {
+        "name": "Tana Table Natural",
+        "category": "Meja, Mahoni",
+        "price": 660000,
+        "originalPrice": null,
+        "hidden": true,
+        "image": "Mahoni/Tana Table Natural.jpg"
+    },
+    {
+        "name": "Tana Table Wallnut",
+        "category": "Meja, Mahoni",
+        "price": 660000,
+        "originalPrice": null,
+        "hidden": true,
+        "image": "Mahoni/Tana Table Wallnut.jpg"
+    },
+    {
+        "name": "Tapang Chair",
+        "category": "Kursi",
+        "price": 730000,
+        "originalPrice": null,
+        "image": "Kursi/Tapang.jpg"
+    },
+    {
+        "name": "Tatani Drawer",
+        "category": "Nakas",
+        "price": 3280000,
+        "originalPrice": null,
+        "image": "Nakas/Tatani.jpg"
+    },
+    {
+        "name": "Terias",
+        "category": "Buffet",
+        "price": 4599000,
+        "originalPrice": null,
+        "image": "Buffet/Terias.jpg"
+    },
+    {
+        "name": "Teyko Table",
+        "category": "Meja",
+        "price": 1925000,
+        "originalPrice": null,
+        "period": null,
+        "image": "Meja/Teyko.jpg",
+        "desc": "Bahan Jati",
+        "size": "P150 L80 T75",
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Tlamak Table",
+        "category": "Meja",
+        "price": 598000,
+        "originalPrice": null,
+        "image": "Meja/Tlamak.jpg"
+    },
+    {
+        "name": "Tooja Table",
+        "category": "Meja",
+        "price": 570000,
+        "originalPrice": null,
+        "image": "Meja/Tooja.jpg"
+    },
+    {
+        "name": "Trantul Table",
+        "category": "Meja",
+        "price": 918000,
+        "originalPrice": null,
+        "image": "Meja/Trantul.jpg"
+    },
+    {
+        "name": "Triange",
+        "category": "Buffet",
+        "price": 3600000,
+        "originalPrice": null,
+        "image": "Buffet/Triange.jpg"
+    },
+    {
+        "name": "Trobox",
+        "category": "Nakas",
+        "price": 1500000,
+        "originalPrice": null,
+        "image": "Nakas/Trobox.jpg"
+    },
+    {
+        "name": "Tutug",
+        "category": "Nakas",
+        "price": 2499000,
+        "originalPrice": null,
+        "image": "Nakas/Tutug.jpg"
+    },
+    {
+        "name": "Vinta",
+        "category": "Buffet",
+        "price": 4399000,
+        "originalPrice": null,
+        "image": "Buffet/Vinta.jpg"
+    },
+    {
+        "name": "Vita Sofa 2 Seat",
+        "category": "Sofa",
+        "price": 180000,
+        "originalPrice": 200000,
+        "period": "01/09/2025-30/09/2025",
+        "image": "Sofa/Vita.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Yhantoo Chair",
+        "category": "Kursi Cafe",
+        "price": 1315000,
+        "originalPrice": null,
+        "image": "Kursi/Yhantoo.jpg"
+    },
+    {
+        "name": "Yumma Table",
+        "category": "Meja",
+        "price": 1200000,
+        "originalPrice": null,
+        "image": "Meja/Yumma.jpg"
+    },
+    {
+        "name": "Kursi Anak Sungkai (Motif Tegak)",
+        "category": "Kursi, Sungkai",
+        "price": 449000,
+        "originalPrice": null,
+        "period": null,
+        "image": "uploaded/Kursi_Anak_Sungkai_Motif_Tegak.jpg",
+        "desc": null,
+        "size": "P30 L30 T60",
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Kursi Anak Sungkai (Motif Kupu Kupu)",
+        "category": "Kursi, Sungkai",
+        "price": 449000,
+        "originalPrice": null,
+        "period": null,
+        "image": "uploaded/Kursi_Anak_Sungkai_Motif_Kupu_Kupu.jpg",
+        "desc": null,
+        "size": "P30 L30 T50",
+        "colors": [],
+        "hidden": false
+    },
+    {
+        "name": "Dining Set Mejoe + Ropan",
+        "category": "Set",
+        "price": 2400000,
+        "originalPrice": 2830000,
+        "period": "01/09/2025-30/09/2025",
+        "image": "uploaded/Dining_Set_Mejoe__Ropan.jpg",
+        "desc": "Set Mejoe Table 120cm + 4 pcs Ropan Chair",
+        "size": null,
+        "colors": [],
+        "hidden": false,
+        "_stagedImage": "uploaded/Dining_Set_Mejoe__Ropan.jpg"
+    },
+    {
+        "name": "Dining Set Teyko + Kacang",
+        "category": "Set",
+        "price": 4068000,
+        "originalPrice": 4521000,
+        "period": "01/09/2025-30/09/2025",
+        "image": "uploaded/Dining_Set_Teyko__Kacang.jpg",
+        "desc": "Dining Set Teyko Table 150cm + 4 Kacang Chair",
+        "size": null,
+        "colors": [],
+        "hidden": false,
+        "_stagedImage": "uploaded/Dining_Set_Teyko__Kacang.jpg"
+    }
+]
