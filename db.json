@@ -313,21 +313,36 @@
         "category": "Divan, Mahoni",
         "price": null,
         "originalPrice": null,
-        "image": "Mahoni/Divan Mahoni 160x200.jpg"
+        "period": null,
+        "image": "Mahoni/Divan Mahoni 160x200.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": true
     },
     {
         "name": "Divan Mahoni 180x200",
         "category": "Divan, Mahoni",
         "price": 2050000,
         "originalPrice": null,
-        "image": "Mahoni/Divan Mahoni 180x200.jpg"
+        "period": null,
+        "image": "Mahoni/Divan Mahoni 180x200.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": true
     },
     {
         "name": "Divan Mahoni 90x200",
         "category": "Divan, Mahoni",
         "price": 1100000,
         "originalPrice": null,
-        "image": "Mahoni/Divan Mahoni 90x200.jpg"
+        "period": null,
+        "image": "Mahoni/Divan Mahoni 90x200.jpg",
+        "desc": null,
+        "size": null,
+        "colors": [],
+        "hidden": true
     },
     {
         "name": "Djani Drawer",
@@ -342,8 +357,12 @@
         "category": "Buffet",
         "price": 3050000,
         "originalPrice": null,
+        "period": null,
         "image": "Buffet/Donja.jpg",
-        "size": "P 150 CM X L 45 CM X T 60 CM"
+        "desc": null,
+        "size": "P 150 CM X L 45 CM X T 60 CM",
+        "colors": [],
+        "hidden": true
     },
     {
         "name": "Doolar Table",
@@ -628,8 +647,12 @@
         "category": "Stool",
         "price": 550000,
         "originalPrice": null,
+        "period": null,
         "image": "Stool/Kamara.jpg",
-        "size": "P 36 CM X L 38 CM X T 46 CM X T 35 CM"
+        "desc": null,
+        "size": "P 36 CM X L 38 CM X T 46 CM X T 35 CM",
+        "colors": [],
+        "hidden": true
     },
     {
         "name": "Kanara Table",
@@ -923,8 +946,12 @@
         "category": "Kursi",
         "price": 629000,
         "originalPrice": null,
+        "period": null,
         "image": "Kursi/Manya Solid.jpg",
-        "size": "P 55 CM X L 54 CM X T 35 CM"
+        "desc": null,
+        "size": "P 55 CM X L 54 CM X T 35 CM",
+        "colors": [],
+        "hidden": true
     },
     {
         "name": "Margini Table",
