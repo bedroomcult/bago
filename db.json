@@ -5,7 +5,7 @@
         "price": 4199000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Agogo.jpg",
+        "image": "Buffet/Agogo.webp",
         "desc": null,
         "size": "P 180 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -17,7 +17,7 @@
         "price": 480000,
         "originalPrice": null,
         "period": null,
-        "image": "Kursi/Ahoop.jpg",
+        "image": "Kursi/Ahoop.webp",
         "desc": null,
         "size": "P 47 CM X L 43 CM X T 41 CM",
         "colors": [],
@@ -29,7 +29,7 @@
         "price": 6800000,
         "originalPrice": null,
         "period": null,
-        "image": "Set/Amelia Sofa Set.jpg",
+        "image": "Set/Amelia Sofa Set.webp",
         "desc": null,
         "size": "P 3 Seat: P 180, 2 Seat: P 135, 2 Seat: P 75. L75 T80",
         "colors": [],
@@ -41,7 +41,7 @@
         "price": 4500000,
         "originalPrice": null,
         "period": null,
-        "image": "Sofa/American.jpg",
+        "image": "Sofa/American.webp",
         "desc": null,
         "size": "P 145 CM X L 45 CM X T 54 CM, Dudukan: 45 CM",
         "colors": [],
@@ -53,7 +53,7 @@
         "price": 769000,
         "originalPrice": null,
         "period": null,
-        "image": "Kursi/Amiku.jpg",
+        "image": "Kursi/Amiku.webp",
         "desc": null,
         "size": "P 54 CM X L 50 CM X T 44 CM",
         "colors": [],
@@ -65,7 +65,7 @@
         "price": 675000,
         "originalPrice": null,
         "period": null,
-        "image": "Kursi/Angsa.jpg",
+        "image": "Kursi/Angsa.webp",
         "desc": null,
         "size": "P 55 CM X L 47 CM X T 50 CM",
         "colors": [],
@@ -77,7 +77,7 @@
         "price": 800000,
         "originalPrice": null,
         "period": null,
-        "image": "Stool/Arkoll.jpg",
+        "image": "Stool/Arkoll.webp",
         "desc": null,
         "size": "P 120 CM X L 40 CM X T 45 CM",
         "colors": [],
@@ -89,7 +89,7 @@
         "price": 2880000,
         "originalPrice": 3200000,
         "period": "01/08/2025-05/09/2025",
-        "image": "Buffet/Asimbi.jpg",
+        "image": "Buffet/Asimbi.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 70 CM",
         "colors": [],
@@ -101,7 +101,7 @@
         "price": 649000,
         "originalPrice": null,
         "period": null,
-        "image": "Kursi/Asoka.jpg",
+        "image": "Kursi/Asoka.webp",
         "desc": null,
         "size": "P 55 CM X L 50 CM X T 44 CM",
         "colors": [],
@@ -113,7 +113,7 @@
         "price": 2400000,
         "originalPrice": null,
         "period": null,
-        "image": "Industrial/Astry.jpg",
+        "image": "Industrial/Astry.webp",
         "desc": null,
         "size": "P 120 CM X L 70 CM X T 41 CM",
         "colors": [],
@@ -125,7 +125,7 @@
         "price": 2289000,
         "originalPrice": null,
         "period": null,
-        "image": "Industrial/Ayoe.jpg",
+        "image": "Industrial/Ayoe.webp",
         "desc": null,
         "size": "P 120 CM X L 70 CM X T 41 CM",
         "colors": [],
@@ -137,7 +137,7 @@
         "price": 730000,
         "originalPrice": null,
         "period": null,
-        "image": "Kursi/Banta.jpg",
+        "image": "Kursi/Banta.webp",
         "desc": null,
         "size": "P 53 CM X L 47 CM X T 45 CM",
         "colors": [],
@@ -149,7 +149,7 @@
         "price": 980000,
         "originalPrice": null,
         "period": null,
-        "image": "Kursi/Barere.jpg",
+        "image": "Kursi/Barere.webp",
         "desc": null,
         "size": "P 75 CM X L 63 CM X T 30 CM",
         "colors": [],
@@ -161,7 +161,7 @@
         "price": 1025000,
         "originalPrice": null,
         "period": null,
-        "image": "Stool/Barsi.jpg",
+        "image": "Stool/Barsi.webp",
         "desc": null,
         "size": "P 47 CM X L 40 CM X T 76 CM",
         "colors": [],
@@ -172,7 +172,7 @@
         "category": "Kursi, Rotan Sintetis",
         "price": 659000,
         "originalPrice": null,
-        "image": "Rotan/Besante.jpg",
+        "image": "Rotan/Besante.webp",
         "size": "P 56 CM X L 49 CM X T 38 CM"
     },
     {
@@ -181,7 +181,7 @@
         "price": 2850000,
         "originalPrice": 3100000,
         "period": "01/08/2025-05/09/2025",
-        "image": "Buffet/Bowie.jpg",
+        "image": "Buffet/Bowie.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -193,7 +193,7 @@
         "price": 1550000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Buffet_TV_Gantung.jpg",
+        "image": "Buffet/Buffet_TV_Gantung.webp",
         "desc": null,
         "size": null,
         "colors": [],
@@ -204,7 +204,7 @@
         "category": "Meja, Industrial",
         "price": 2289000,
         "originalPrice": null,
-        "image": "Industrial/Danghe.jpg",
+        "image": "Industrial/Danghe.webp",
         "size": "P 120 CM X L 70 CM X T 41 CM"
     },
     {
@@ -213,7 +213,7 @@
         "price": 4000000,
         "originalPrice": 4350000,
         "period": "01/08/2025-05/09/2025",
-        "image": "Buffet/Dasly.jpg",
+        "image": "Buffet/Dasly.webp",
         "desc": null,
         "size": "P 200 CM X L 45 CM X T 67 CM",
         "colors": [],
@@ -225,7 +225,7 @@
         "price": 3169000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Dauwi.jpg",
+        "image": "Buffet/Dauwi.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -236,7 +236,7 @@
         "category": "Kursi, Sungkai",
         "price": 900000,
         "originalPrice": null,
-        "image": "Kursi/Dayan.jpg",
+        "image": "Kursi/Dayan.webp",
         "size": "P 51 CM X L 47 CM X T 47 CM"
     },
     {
@@ -245,7 +245,7 @@
         "price": 3170000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Delys.jpg",
+        "image": "Buffet/Delys.webp",
         "desc": null,
         "size": "P 120 CM X L 45 CM X T 66 CM",
         "colors": [],
@@ -257,7 +257,7 @@
         "price": 3850000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Denso.jpg",
+        "image": "Buffet/Denso.webp",
         "desc": null,
         "size": "P 200 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -268,7 +268,7 @@
         "category": "Meja, Industrial",
         "price": 4699000,
         "originalPrice": null,
-        "image": "Industrial/Derima.jpg",
+        "image": "Industrial/Derima.webp",
         "size": "P 200 CM X L 100 CM X T 76 CM"
     },
     {
@@ -277,7 +277,7 @@
         "price": 2700000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Dimsen.jpg",
+        "image": "Buffet/Dimsen.webp",
         "desc": null,
         "size": "P 200 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -288,7 +288,7 @@
         "category": "Set",
         "price": 4200000,
         "originalPrice": null,
-        "image": "Set/Set Seroshi Tekyo.jpg",
+        "image": "Set/Set Seroshi Tekyo.webp",
         "desc": "4 Seroshi Chair + Tekyo Table (Harga Normal 4.601.000)",
         "size": "P 53 CM X L 50 CM X T 45 CM"
     },
@@ -297,7 +297,7 @@
         "category": "Kursi Cafe",
         "price": 1315000,
         "originalPrice": null,
-        "image": "Kursi/Dipakne.jpg",
+        "image": "Kursi/Dipakne.webp",
         "size": "P 58 CM X L 50 CM X T 45 CM"
     },
     {
@@ -305,7 +305,7 @@
         "category": "Kursi, Industrial",
         "price": 629000,
         "originalPrice": null,
-        "image": "Industrial/Ditampi.jpg",
+        "image": "Industrial/Ditampi.webp",
         "size": "P 45 CM X L 45 CM X T 48 CM"
     },
     {
@@ -314,7 +314,7 @@
         "price": null,
         "originalPrice": null,
         "period": null,
-        "image": "Mahoni/Divan Mahoni 160x200.jpg",
+        "image": "Mahoni/Divan Mahoni 160x200.webp",
         "desc": null,
         "size": null,
         "colors": [],
@@ -326,7 +326,7 @@
         "price": 2050000,
         "originalPrice": null,
         "period": null,
-        "image": "Mahoni/Divan Mahoni 180x200.jpg",
+        "image": "Mahoni/Divan Mahoni 180x200.webp",
         "desc": null,
         "size": null,
         "colors": [],
@@ -338,7 +338,7 @@
         "price": 1100000,
         "originalPrice": null,
         "period": null,
-        "image": "Mahoni/Divan Mahoni 90x200.jpg",
+        "image": "Mahoni/Divan Mahoni 90x200.webp",
         "desc": null,
         "size": null,
         "colors": [],
@@ -349,7 +349,7 @@
         "category": "Nakas",
         "price": 3199000,
         "originalPrice": null,
-        "image": "Nakas/Djani.jpg",
+        "image": "Nakas/Djani.webp",
         "size": "P 80 CM X L 45 CM X T 65 CM"
     },
     {
@@ -358,7 +358,7 @@
         "price": 3050000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Donja.jpg",
+        "image": "Buffet/Donja.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -369,7 +369,7 @@
         "category": "Meja",
         "price": 1850000,
         "originalPrice": null,
-        "image": "Meja/Doolar.jpg",
+        "image": "Meja/Doolar.webp",
         "size": "P 140 CM X L 80 CM X T 75 CM"
     },
     {
@@ -378,7 +378,7 @@
         "price": 5750000,
         "originalPrice": null,
         "period": null,
-        "image": "Industrial/Drawa.jpg",
+        "image": "Industrial/Drawa.webp",
         "desc": null,
         "size": "P 200 CM X L 45 CM X T 54 CM",
         "colors": [],
@@ -389,7 +389,7 @@
         "category": "Stool",
         "price": 965000,
         "originalPrice": null,
-        "image": "Stool/Duklah.jpg",
+        "image": "Stool/Duklah.webp",
         "size": "P 50 CM X L 50 CM X T 80 CM"
     },
     {
@@ -397,7 +397,7 @@
         "category": "Stool",
         "price": 965000,
         "originalPrice": null,
-        "image": "Stool/Duksaja.jpg",
+        "image": "Stool/Duksaja.webp",
         "size": "P 50 CM X L 50 CM X T 80 CM"
     },
     {
@@ -406,7 +406,7 @@
         "price": 2745000,
         "originalPrice": 3050000,
         "period": "01/10/2025-31/10/2025",
-        "image": "Buffet/Dumata.jpg",
+        "image": "Buffet/Dumata.webp",
         "desc": null,
         "size": "P 145 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -417,7 +417,7 @@
         "category": "Kursi",
         "price": 965000,
         "originalPrice": null,
-        "image": "Kursi/Dwilama.jpg",
+        "image": "Kursi/Dwilama.webp",
         "size": "P 56 CM X L 56 CM X T 45 CM"
     },
     {
@@ -426,7 +426,7 @@
         "price": 2600000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Dympan.jpg",
+        "image": "Buffet/Dympan.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -437,7 +437,7 @@
         "category": "Stool",
         "price": 649000,
         "originalPrice": null,
-        "image": "Stool/Farmae.jpg",
+        "image": "Stool/Farmae.webp",
         "size": "P 52 CM X L 46 CM X T 75 CM"
     },
     {
@@ -445,7 +445,7 @@
         "category": "Stool",
         "price": 2750000,
         "originalPrice": null,
-        "image": "Stool/Fuloro.jpg",
+        "image": "Stool/Fuloro.webp",
         "size": "P 154 CM X L 69 CM X T 39 CM"
     },
     {
@@ -453,7 +453,7 @@
         "category": "Kursi, Rotan Sintetis",
         "price": 1300000,
         "originalPrice": null,
-        "image": "Rotan/Galar.jpg",
+        "image": "Rotan/Galar.webp",
         "size": "P 128 CM X L 55 CM X T 45 CM"
     },
     {
@@ -462,7 +462,7 @@
         "price": 2170000,
         "originalPrice": 2415000,
         "period": "01/08/2025-05/09/2025",
-        "image": "Nakas/Gania.jpg",
+        "image": "Nakas/Gania.webp",
         "size": "P 130 CM X L 45 CM X T 52 CM"
     },
     {
@@ -470,7 +470,7 @@
         "category": "Kursi Cafe",
         "price": 1315000,
         "originalPrice": null,
-        "image": "Kursi/Gashbir.jpg",
+        "image": "Kursi/Gashbir.webp",
         "size": "P 58 CM X L 50 CM X T 45 CM"
     },
     {
@@ -478,7 +478,7 @@
         "category": "Kursi",
         "price": 765000,
         "originalPrice": null,
-        "image": "Kursi/Gorya.jpg",
+        "image": "Kursi/Gorya.webp",
         "size": "P 53 CM X L 44 CM X T 46 CM"
     },
     {
@@ -486,7 +486,7 @@
         "category": "Kursi",
         "price": 750000,
         "originalPrice": null,
-        "image": "Kursi/Hana Lipat.jpg",
+        "image": "Kursi/Hana Lipat.webp",
         "size": "P 55 CM X L 54 CM X T 35 CM"
     },
     {
@@ -494,7 +494,7 @@
         "category": "Meja, Rotan Sintetis",
         "price": 575000,
         "originalPrice": null,
-        "image": "Rotan/Hifi.jpg",
+        "image": "Rotan/Hifi.webp",
         "size": "P 180 CM X L 95 CM X T 73 CM"
     },
     {
@@ -503,7 +503,7 @@
         "price": 3140000,
         "originalPrice": 3420000,
         "period": "01/08/2025-05/09/2025",
-        "image": "Buffet/Hotori.jpg",
+        "image": "Buffet/Hotori.webp",
         "size": "P 150 CM X L 45 CM X T 60 CM"
     },
     {
@@ -511,7 +511,7 @@
         "category": "Kursi Cafe",
         "price": 1305000,
         "originalPrice": null,
-        "image": "Kursi/Ikaaf.jpg",
+        "image": "Kursi/Ikaaf.webp",
         "size": "P 51 CM X L 51 CM X T 49 CM"
     },
     {
@@ -519,7 +519,7 @@
         "category": "Stool",
         "price": 1450000,
         "originalPrice": null,
-        "image": "Stool/Inagi.jpg",
+        "image": "Stool/Inagi.webp",
         "size": "P 120 CM X L 48 CM X T 44 CM"
     },
     {
@@ -527,7 +527,7 @@
         "category": "Kursi",
         "price": 699000,
         "originalPrice": null,
-        "image": "Kursi/Jajeg.jpg",
+        "image": "Kursi/Jajeg.webp",
         "size": "P 55 CM X L 50 CM X T 44 CM"
     },
     {
@@ -535,7 +535,7 @@
         "category": "Meja",
         "price": 570000,
         "originalPrice": null,
-        "image": "Meja/Jakyth.jpg",
+        "image": "Meja/Jakyth.webp",
         "size": "P 54 CM X L 54 CM X T 51 CM"
     },
     {
@@ -543,7 +543,7 @@
         "category": "Kursi Cafe",
         "price": 1475000,
         "originalPrice": null,
-        "image": "Kursi/Jangra.jpg",
+        "image": "Kursi/Jangra.webp",
         "size": "P 55 CM X L 47 CM X T 50 CM"
     },
     {
@@ -552,7 +552,7 @@
         "price": 1500000,
         "originalPrice": null,
         "period": null,
-        "image": "Kursi/Jangra Sofa.jpg",
+        "image": "Kursi/Jangra Sofa.webp",
         "desc": null,
         "size": "P 200 CM X L 80 CM X T 45 CM",
         "colors": [],
@@ -563,7 +563,7 @@
         "category": "Stool",
         "price": 455000,
         "originalPrice": null,
-        "image": "Stool/Jarken.jpg",
+        "image": "Stool/Jarken.webp",
         "size": "P 55 CM X L 40 CM X T 50 CM"
     },
     {
@@ -571,7 +571,7 @@
         "category": "Meja",
         "price": 1335000,
         "originalPrice": null,
-        "image": "Meja/Jlentik.jpg",
+        "image": "Meja/Jlentik.webp",
         "size": "P 80 CM X L 80 CM X T 75 CM"
     },
     {
@@ -579,7 +579,7 @@
         "category": "Stool",
         "price": 615000,
         "originalPrice": null,
-        "image": "Stool/Jopabench.jpg",
+        "image": "Stool/Jopabench.webp",
         "size": "P 118 CM X L 30 CM X T 45 CM"
     },
     {
@@ -587,7 +587,7 @@
         "category": "Stool",
         "price": 329000,
         "originalPrice": null,
-        "image": "Stool/Joparo.jpg",
+        "image": "Stool/Joparo.webp",
         "size": "P 49 CM X L 30 CM X T 44 CM"
     },
     {
@@ -595,7 +595,7 @@
         "category": "Stool",
         "price": 965000,
         "originalPrice": null,
-        "image": "Stool/Kacang Bar.jpg",
+        "image": "Stool/Kacang Bar.webp",
         "size": "P 54 CM X L 50 CM X T 44 CM"
     },
     {
@@ -603,7 +603,7 @@
         "category": "Kursi",
         "price": 649000,
         "originalPrice": null,
-        "image": "Kursi/Kacang.jpg",
+        "image": "Kursi/Kacang.webp",
         "size": "P 54 CM X L 50 CM X T 44 CM"
     },
     {
@@ -612,7 +612,7 @@
         "price": 659000,
         "originalPrice": null,
         "period": null,
-        "image": "Rotan/Kai.jpg",
+        "image": "Rotan/Kai.webp",
         "desc": null,
         "size": "P 56 CM X L 49 CM X T 38 CM",
         "colors": [],
@@ -623,7 +623,7 @@
         "category": "Meja",
         "price": 575000,
         "originalPrice": null,
-        "image": "Meja/Kajetis.jpg",
+        "image": "Meja/Kajetis.webp",
         "size": "P 50 CM X L 50 CM X T 50 CM"
     },
     {
@@ -631,7 +631,7 @@
         "category": "Kursi, Rotan Sintetis",
         "price": 560000,
         "originalPrice": null,
-        "image": "Rotan/Kakida.jpg",
+        "image": "Rotan/Kakida.webp",
         "size": "P 48 CM X L 43 CM X T 45 CM"
     },
     {
@@ -639,7 +639,7 @@
         "category": "Kursi",
         "price": 1079000,
         "originalPrice": null,
-        "image": "Kursi/Kakin.jpg",
+        "image": "Kursi/Kakin.webp",
         "size": "P 64 CM X L 61 CM X T 34 CM"
     },
     {
@@ -648,7 +648,7 @@
         "price": 550000,
         "originalPrice": null,
         "period": null,
-        "image": "Stool/Kamara.jpg",
+        "image": "Stool/Kamara.webp",
         "desc": null,
         "size": "P 36 CM X L 38 CM X T 46 CM X T 35 CM",
         "colors": [],
@@ -659,7 +659,7 @@
         "category": "Meja",
         "price": 1680000,
         "originalPrice": null,
-        "image": "Meja/Kanara.jpg",
+        "image": "Meja/Kanara.webp",
         "size": "P 120 CM X L 70 CM X T 41 CM"
     },
     {
@@ -667,7 +667,7 @@
         "category": "Kursi Cafe",
         "price": 1550000,
         "originalPrice": null,
-        "image": "Kursi/Kane.jpg",
+        "image": "Kursi/Kane.webp",
         "size": "P 64 CM X L 61 CM X T 34 CM"
     },
     {
@@ -676,7 +676,7 @@
         "price": 3750000,
         "originalPrice": null,
         "period": null,
-        "image": "Industrial/Karency.jpg",
+        "image": "Industrial/Karency.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 54 CM",
         "colors": [],
@@ -688,7 +688,7 @@
         "price": 880000,
         "originalPrice": null,
         "period": null,
-        "image": "Nakas/Karo.jpg",
+        "image": "Nakas/Karo.webp",
         "desc": "Bahan Jati",
         "size": "P 50 CM X L 45 CM X T 54 CM",
         "colors": [],
@@ -699,7 +699,7 @@
         "category": "Kursi, Rotan Sintetis",
         "price": 659000,
         "originalPrice": null,
-        "image": "Rotan/Karpi.jpg",
+        "image": "Rotan/Karpi.webp",
         "size": "P 150 CM X L 45 CM X T 54 CM"
     },
     {
@@ -707,7 +707,7 @@
         "category": "Cabinet",
         "price": 4500000,
         "originalPrice": null,
-        "image": "Cabinet/Katoon.jpg",
+        "image": "Cabinet/Katoon.webp",
         "size": "P 100 CM X L 50 CM X T 200 CM"
     },
     {
@@ -716,7 +716,7 @@
         "price": 2100000,
         "originalPrice": 2289000,
         "period": "01/08/2025-05/09/2025",
-        "image": "Industrial/Kayga.jpg",
+        "image": "Industrial/Kayga.webp",
         "size": "P 120 CM X L 70 CM X T 41 CM"
     },
     {
@@ -724,7 +724,7 @@
         "category": "Kursi Cafe",
         "price": 980000,
         "originalPrice": null,
-        "image": "Kursi/Kelawu.jpg",
+        "image": "Kursi/Kelawu.webp",
         "size": "P 60 CM X L 50 CM X T 39 CM"
     },
     {
@@ -732,7 +732,7 @@
         "category": "Kursi",
         "price": 599000,
         "originalPrice": null,
-        "image": "Kursi/Khosim.jpg",
+        "image": "Kursi/Khosim.webp",
         "size": "P 50 CM X L 50 CM X T 45 CM"
     },
     {
@@ -740,7 +740,7 @@
         "category": "Kursi Cafe",
         "price": 855000,
         "originalPrice": null,
-        "image": "Kursi/Kirsa.jpg",
+        "image": "Kursi/Kirsa.webp",
         "size": "P 48 CM X L 47 CM X T 77 CM"
     },
     {
@@ -749,7 +749,7 @@
         "price": null,
         "originalPrice": null,
         "period": null,
-        "image": "Kursi/Kitora.jpg",
+        "image": "Kursi/Kitora.webp",
         "desc": null,
         "size": "P 48 CM X L 47 CM X T 77 CM",
         "colors": [],
@@ -760,7 +760,7 @@
         "category": "Kursi Cafe",
         "price": 639000,
         "originalPrice": null,
-        "image": "Kursi/Klamari.jpg",
+        "image": "Kursi/Klamari.webp",
         "size": "P 36 CM X L 38 CM X T 46 CM X T 35 CM"
     },
     {
@@ -768,7 +768,7 @@
         "category": "Kursi",
         "price": 649000,
         "originalPrice": null,
-        "image": "Kursi/Kleewa.jpg",
+        "image": "Kursi/Kleewa.webp",
         "size": "P 60 CM X L 50 CM X T 39 CM"
     },
     {
@@ -776,7 +776,7 @@
         "category": "Meja",
         "price": 2000000,
         "originalPrice": null,
-        "image": "Meja/Konsul Table Kotak.jpg",
+        "image": "Meja/Konsul Table Kotak.webp",
         "size": "P 120 CM X L 40 CM X T 80 CM"
     },
     {
@@ -784,7 +784,7 @@
         "category": "Meja",
         "price": 2085000,
         "originalPrice": null,
-        "image": "Meja/Konsul Table Oval.jpg",
+        "image": "Meja/Konsul Table Oval.webp",
         "size": "P 120 CM X L 40 CM X T 80 CM"
     },
     {
@@ -793,7 +793,7 @@
         "price": 399000,
         "originalPrice": 449000,
         "period": "01/11/2025-30/11/2025",
-        "image": "uploaded/Kursi_Anak_Hewan.jpg",
+        "image": "uploaded/Kursi_Anak_Hewan.webp",
         "desc": null,
         "size": "P 30 L30 T50",
         "colors": [],
@@ -805,7 +805,7 @@
         "price": 479000,
         "originalPrice": 539000,
         "period": "01/11/2025-30/11/2025",
-        "image": "uploaded/Kursi_Anak_Jari.jpg",
+        "image": "uploaded/Kursi_Anak_Jari.webp",
         "desc": null,
         "size": "P 150 CM X L 80 CM X T 78 CM",
         "colors": [],
@@ -816,21 +816,21 @@
         "category": "Kursi",
         "price": 4700000,
         "originalPrice": null,
-        "image": "Kursi/Kursi Sudut L.jpg"
+        "image": "Kursi/Kursi Sudut L.webp"
     },
     {
         "name": "Kursi Sudut Letter L (Tanpa Spons)",
         "category": "Kursi",
         "price": 3900000,
         "originalPrice": null,
-        "image": "Kursi/Kursi Sudut L.jpg"
+        "image": "Kursi/Kursi Sudut L.webp"
     },
     {
         "name": "Kurtampu Chair",
         "category": "Kursi",
         "price": 815000,
         "originalPrice": null,
-        "image": "Kursi/Kurtampu.jpg",
+        "image": "Kursi/Kurtampu.webp",
         "size": "P 55 CM X L 50 CM X T 85 CM"
     },
     {
@@ -838,7 +838,7 @@
         "category": "Buffet",
         "price": 3890000,
         "originalPrice": null,
-        "image": "Buffet/Kyfee.jpg",
+        "image": "Buffet/Kyfee.webp",
         "size": "P 60 CM X L 50 CM X T 39 CM"
     },
     {
@@ -846,7 +846,7 @@
         "category": "Meja",
         "price": 850000,
         "originalPrice": null,
-        "image": "Meja/Kyonan.jpg",
+        "image": "Meja/Kyonan.webp",
         "size": "P 60 CM X L 60 CM X T 60 CM"
     },
     {
@@ -854,7 +854,7 @@
         "category": "Buffet",
         "price": 3500000,
         "originalPrice": null,
-        "image": "Buffet/Lapit.jpg",
+        "image": "Buffet/Lapit.webp",
         "size": "P 150 CM X L 45 CM X T 60 CM"
     },
     {
@@ -862,7 +862,7 @@
         "category": "Kursi",
         "price": 599000,
         "originalPrice": null,
-        "image": "Kursi/Lendean.jpg",
+        "image": "Kursi/Lendean.webp",
         "size": "P 87 CM X L 45 CM X T 45 CM"
     },
     {
@@ -870,7 +870,7 @@
         "category": "Kursi",
         "price": 815000,
         "originalPrice": null,
-        "image": "Kursi/Lengsy.jpg",
+        "image": "Kursi/Lengsy.webp",
         "size": "P 55 CM X L 50 CM X T 44 CM"
     },
     {
@@ -878,7 +878,7 @@
         "category": "Stool",
         "price": 1250000,
         "originalPrice": null,
-        "image": "Stool/Liencak.jpg",
+        "image": "Stool/Liencak.webp",
         "size": "P 120 CM X L 48 CM X T 46 CM"
     },
     {
@@ -886,7 +886,7 @@
         "category": "Nakas",
         "price": 3300000,
         "originalPrice": null,
-        "image": "Nakas/Limare.jpg",
+        "image": "Nakas/Limare.webp",
         "size": "P 120 CM X L 45 CM X T 80 CM"
     },
     {
@@ -894,7 +894,7 @@
         "category": "Kursi",
         "price": 1315000,
         "originalPrice": null,
-        "image": "Kursi/Linggoh.jpg",
+        "image": "Kursi/Linggoh.webp",
         "size": "P 80 CM X L 65 CM X T 38 CM"
     },
     {
@@ -902,7 +902,7 @@
         "category": "Nakas",
         "price": 2950000,
         "originalPrice": null,
-        "image": "Nakas/Locca.jpg",
+        "image": "Nakas/Locca.webp",
         "size": "P 44 CM X L 42 CM X T 43 CM"
     },
     {
@@ -910,7 +910,7 @@
         "category": "Nakas",
         "price": 980000,
         "originalPrice": null,
-        "image": "Nakas/Lowes.jpg",
+        "image": "Nakas/Lowes.webp",
         "size": "P 150 CM X L 45 CM X T 60 CM"
     },
     {
@@ -918,7 +918,7 @@
         "category": "Meja",
         "price": 2750000,
         "originalPrice": null,
-        "image": "Meja/Machak.jpg",
+        "image": "Meja/Machak.webp",
         "size": "P 100 CM X L 40 CM X T 90 CM"
     },
     {
@@ -927,7 +927,7 @@
         "price": 2499000,
         "originalPrice": null,
         "period": null,
-        "image": "Meja/Maksi.jpg",
+        "image": "Meja/Maksi.webp",
         "desc": "Bahan Sungkai (Warna Cerah)",
         "size": "P 56 CM X L 56 CM X T 49 CM",
         "colors": [],
@@ -938,7 +938,7 @@
         "category": "Kursi, Sungkai",
         "price": 629000,
         "originalPrice": null,
-        "image": "Kursi/Manya.jpg",
+        "image": "Kursi/Manya.webp",
         "size": "P 55 CM X L 54 CM X T 35 CM"
     },
     {
@@ -947,7 +947,7 @@
         "price": 629000,
         "originalPrice": null,
         "period": null,
-        "image": "Kursi/Manya Solid.jpg",
+        "image": "Kursi/Manya Solid.webp",
         "desc": null,
         "size": "P 55 CM X L 54 CM X T 35 CM",
         "colors": [],
@@ -958,7 +958,7 @@
         "category": "Meja",
         "price": 1150000,
         "originalPrice": null,
-        "image": "Meja/Margini.jpg",
+        "image": "Meja/Margini.webp",
         "size": "P 100 CM X L 50 CM X T 60 CM"
     },
     {
@@ -967,7 +967,7 @@
         "price": 7800000,
         "originalPrice": null,
         "period": null,
-        "image": "Sofa/Marwah Sofa.jpg",
+        "image": "Sofa/Marwah Sofa.webp",
         "desc": null,
         "size": "P 200 CM X L 80 CM X T 80 CM, Dudukan: 45 CM",
         "colors": [],
@@ -978,7 +978,7 @@
         "category": "Kursi",
         "price": 1015000,
         "originalPrice": null,
-        "image": "Kursi/Mauri.jpg",
+        "image": "Kursi/Mauri.webp",
         "size": "P 55 CM X L 55 CM X T 45 CM"
     },
     {
@@ -986,7 +986,7 @@
         "category": "Meja",
         "price": 775000,
         "originalPrice": null,
-        "image": "Meja/Mejia.jpg",
+        "image": "Meja/Mejia.webp",
         "size": "P 140 CM X L 70 CM X T 75 CM"
     },
     {
@@ -995,7 +995,7 @@
         "price": 1570000,
         "originalPrice": null,
         "period": null,
-        "image": "Meja/Mejoe.jpg",
+        "image": "Meja/Mejoe.webp",
         "desc": "Bahan Jati",
         "size": "P 120 CM X L 80 CM X T 78 CM",
         "colors": [],
@@ -1006,7 +1006,7 @@
         "category": "Meja",
         "price": 2999000,
         "originalPrice": null,
-        "image": "Meja/Mekko.jpg",
+        "image": "Meja/Mekko.webp",
         "size": "P 120 CM X L 40 CM X T 80 CM"
     },
     {
@@ -1015,7 +1015,7 @@
         "price": 4899000,
         "originalPrice": null,
         "period": null,
-        "image": "Industrial/Mendi.jpg",
+        "image": "Industrial/Mendi.webp",
         "desc": null,
         "size": "P 200 CM X L 100 CM X T 76 CM",
         "colors": [],
@@ -1027,7 +1027,7 @@
         "price": null,
         "originalPrice": null,
         "period": null,
-        "image": "Meja/Menjang.jpg",
+        "image": "Meja/Menjang.webp",
         "desc": null,
         "size": "P 140 CM X L 70 CM X T 75 CM",
         "colors": [],
@@ -1039,7 +1039,7 @@
         "price": 4800000,
         "originalPrice": null,
         "period": null,
-        "image": "Divan/Mimore.jpg",
+        "image": "Divan/Mimore.webp",
         "desc": null,
         "size": "P 221 CM X L 185 CM X T 38 CM",
         "colors": [],
@@ -1050,7 +1050,7 @@
         "category": "Meja",
         "price": 599000,
         "originalPrice": null,
-        "image": "Meja/Mindie.jpg",
+        "image": "Meja/Mindie.webp",
         "size": "P 200 CM X L 100 CM X T 76 CM"
     },
     {
@@ -1059,7 +1059,7 @@
         "price": 5289000,
         "originalPrice": null,
         "period": null,
-        "image": "Sofa/Mioji Double.jpg",
+        "image": "Sofa/Mioji Double.webp",
         "desc": null,
         "size": "P 165 CM X L 76 CM X T 80 CM, Dudukan: 40 CM",
         "colors": [],
@@ -1071,7 +1071,7 @@
         "price": 3215000,
         "originalPrice": null,
         "period": null,
-        "image": "Sofa/Mioji Single.jpg",
+        "image": "Sofa/Mioji Single.webp",
         "desc": null,
         "size": "P 95 CM X L 75 CM X T 80 CM, Dudukan: 40 CM",
         "colors": [],
@@ -1083,7 +1083,7 @@
         "price": 6305000,
         "originalPrice": null,
         "period": null,
-        "image": "Sofa/Mioji Triple.jpg",
+        "image": "Sofa/Mioji Triple.webp",
         "desc": null,
         "size": "P 205 CM X L 76 CM X T 80 CM, Dudukan: 40 CM",
         "colors": [],
@@ -1094,7 +1094,7 @@
         "category": "Kursi Cafe",
         "price": 945000,
         "originalPrice": null,
-        "image": "Kursi/Mirano.jpg",
+        "image": "Kursi/Mirano.webp",
         "size": "P 53 CM X L 47 CM X T 45 CM"
     },
     {
@@ -1103,7 +1103,7 @@
         "price": 5289000,
         "originalPrice": null,
         "period": null,
-        "image": "Sofa/Moeji Double.jpg",
+        "image": "Sofa/Moeji Double.webp",
         "desc": null,
         "size": "P 165 CM X L 76 CM X T 80 CM, Dudukan: 40 CM",
         "colors": [],
@@ -1115,7 +1115,7 @@
         "price": 3215000,
         "originalPrice": null,
         "period": null,
-        "image": "Sofa/Moeji Single.jpg",
+        "image": "Sofa/Moeji Single.webp",
         "desc": null,
         "size": "P 95 CM X L 75 CM X T 80 CM, Dudukan: 40 CM",
         "colors": [],
@@ -1127,7 +1127,7 @@
         "price": 6305000,
         "originalPrice": null,
         "period": null,
-        "image": "Sofa/Moeji Triple.jpg",
+        "image": "Sofa/Moeji Triple.webp",
         "desc": null,
         "size": "P 205 CM X L 76 CM X T 80 CM, Dudukan: 40 CM",
         "colors": [],
@@ -1138,7 +1138,7 @@
         "category": "Kursi",
         "price": 740000,
         "originalPrice": null,
-        "image": "Kursi/Mongga.jpg",
+        "image": "Kursi/Mongga.webp",
         "size": "P 62 CM X L 45 CM X T 46 CM"
     },
     {
@@ -1147,7 +1147,7 @@
         "price": 2870000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Namas.jpg",
+        "image": "Buffet/Namas.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 65 CM",
         "colors": [],
@@ -1159,7 +1159,7 @@
         "price": 3050000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Namja.jpg",
+        "image": "Buffet/Namja.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -1171,7 +1171,7 @@
         "price": 870000,
         "originalPrice": 969000,
         "period": "01/08/2025-05/09/2025",
-        "image": "Nakas/Nayotan.jpg",
+        "image": "Nakas/Nayotan.webp",
         "desc": "Bahan Jati + Rotan",
         "size": "P 50 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -1182,7 +1182,7 @@
         "category": "Cabinet",
         "price": 6199000,
         "originalPrice": null,
-        "image": "Cabinet/Nick.jpg",
+        "image": "Cabinet/Nick.webp",
         "size": "P 100 CM X L 45 CM X T 148 CM"
     },
     {
@@ -1190,7 +1190,7 @@
         "category": "Divan",
         "price": 3750000,
         "originalPrice": null,
-        "image": "Divan/Nihi.jpg",
+        "image": "Divan/Nihi.webp",
         "size": "P 150 CM X L 45 CM X T 60 CM"
     },
     {
@@ -1198,7 +1198,7 @@
         "category": "Meja, Industrial",
         "price": 4289000,
         "originalPrice": null,
-        "image": "Industrial/Nikki.jpg",
+        "image": "Industrial/Nikki.webp",
         "size": "P 180 CM X L 95 CM X T 73 CM"
     },
     {
@@ -1206,7 +1206,7 @@
         "category": "Kursi Cafe",
         "price": 855000,
         "originalPrice": null,
-        "image": "Kursi/Njonya.jpg",
+        "image": "Kursi/Njonya.webp",
         "size": "P 38 CM X L 37 CM X T 46 CM X T 35 CM"
     },
     {
@@ -1214,7 +1214,7 @@
         "category": "Kursi Cafe",
         "price": 899000,
         "originalPrice": null,
-        "image": "Kursi/Noora.jpg",
+        "image": "Kursi/Noora.webp",
         "size": "P 78 CM X L 71 CM X T 17 CM"
     },
     {
@@ -1222,7 +1222,7 @@
         "category": "Kursi",
         "price": 585000,
         "originalPrice": null,
-        "image": "Kursi/Nopey.jpg",
+        "image": "Kursi/Nopey.webp",
         "size": "P 50 CM X L 48 CM X T 45 CM"
     },
     {
@@ -1230,7 +1230,7 @@
         "category": "Kursi Cafe",
         "price": 665000,
         "originalPrice": null,
-        "image": "Kursi/Numpi.jpg",
+        "image": "Kursi/Numpi.webp",
         "size": "P 53 CM X L 49 CM X T 45 CM"
     },
     {
@@ -1238,7 +1238,7 @@
         "category": "Kursi",
         "price": 535000,
         "originalPrice": null,
-        "image": "Kursi/Odai.jpg",
+        "image": "Kursi/Odai.webp",
         "size": "P 44 CM X L 42 CM X T 43 CM"
     },
     {
@@ -1246,7 +1246,7 @@
         "category": "Meja",
         "price": 2950000,
         "originalPrice": null,
-        "image": "Meja/Oled.jpg",
+        "image": "Meja/Oled.webp",
         "size": "P 124 CM X L 63 CM X T 77 CM"
     },
     {
@@ -1254,7 +1254,7 @@
         "category": "Meja, Industrial",
         "price": 4500000,
         "originalPrice": null,
-        "image": "Industrial/Onica.jpg",
+        "image": "Industrial/Onica.webp",
         "size": "P 60 CM X L 60 CM X T 60 CM"
     },
     {
@@ -1262,7 +1262,7 @@
         "category": "Divan",
         "price": 6700000,
         "originalPrice": null,
-        "image": "Divan/Oosir.jpg",
+        "image": "Divan/Oosir.webp",
         "size": "P 221 CM X L 173 CM X T 47 CM"
     },
     {
@@ -1270,7 +1270,7 @@
         "category": "Stool",
         "price": 369000,
         "originalPrice": null,
-        "image": "Stool/Ortama.jpg",
+        "image": "Stool/Ortama.webp",
         "size": "P 51 CM X L 28 CM X T 42 CM"
     },
     {
@@ -1278,7 +1278,7 @@
         "category": "Meja",
         "price": 2500000,
         "originalPrice": null,
-        "image": "Meja/Pantes.jpg",
+        "image": "Meja/Pantes.webp",
         "size": "P 90 CM X L 40 CM X T 80 CM"
     },
     {
@@ -1286,7 +1286,7 @@
         "category": "Kursi",
         "price": 1015000,
         "originalPrice": null,
-        "image": "Kursi/Pinarak.jpg",
+        "image": "Kursi/Pinarak.webp",
         "size": "P 80 CM X L 65 CM X T 38 CM"
     },
     {
@@ -1294,7 +1294,7 @@
         "category": "Nakas",
         "price": 2550000,
         "originalPrice": null,
-        "image": "Nakas/Planc.jpg",
+        "image": "Nakas/Planc.webp",
         "size": "P 150 CM X L 45 CM X T 60 CM"
     },
     {
@@ -1303,7 +1303,7 @@
         "price": 8900000,
         "originalPrice": null,
         "period": null,
-        "image": "Industrial/Pohra.jpg",
+        "image": "Industrial/Pohra.webp",
         "desc": "(Meja untuk packing)",
         "size": "P 55 CM X L 55 CM X T 55 CM",
         "colors": [],
@@ -1314,7 +1314,7 @@
         "category": "Kursi, Sungkai",
         "price": 829000,
         "originalPrice": null,
-        "image": "Kursi/Pulos.jpg",
+        "image": "Kursi/Pulos.webp",
         "size": "P 56 CM X L 48 CM X T 46 CM"
     },
     {
@@ -1322,7 +1322,7 @@
         "category": "Kursi, Sungkai",
         "price": 929000,
         "originalPrice": null,
-        "image": "Sungkai/Pulos Jok .jpg",
+        "image": "Sungkai/Pulos Jok .webp",
         "size": "P 56 CM X L 48 CM X T 46 CM"
     },
     {
@@ -1331,7 +1331,7 @@
         "price": 1980000,
         "originalPrice": 2200000,
         "period": "01/09/2025-30/09/2025",
-        "image": "Sofa/Qilla Sofa.jpg",
+        "image": "Sofa/Qilla Sofa.webp",
         "desc": "Kain Kimmy/Linen",
         "size": "P 130 CM X L 70 CM X T 80 CM, Stool: D 43 CM x T 43 CM, Dudukan: 45 CM",
         "colors": [
@@ -1356,7 +1356,7 @@
         "price": 2490000,
         "originalPrice": 2799000,
         "period": "01/11/2025-30/11/2025",
-        "image": "Set/Qilla Sofa Set.jpg",
+        "image": "Set/Qilla Sofa Set.webp",
         "desc": "Qilla Sofa + Mindie Table",
         "size": "P 130 CM X L 70 CM X T 80 CM, Stool: D 43 CM x T 43 CM, Dudukan: 45 CM",
         "colors": [
@@ -1381,7 +1381,7 @@
         "price": 9100000,
         "originalPrice": null,
         "period": null,
-        "image": "Set/Rajua Sofa Set.jpg",
+        "image": "Set/Rajua Sofa Set.webp",
         "desc": null,
         "size": "P 200 CM X L 80 CM X T 65 CM, Dudukan: 45 CM",
         "colors": [],
@@ -1393,7 +1393,7 @@
         "price": 2250000,
         "originalPrice": 2500000,
         "period": "25/08/2025-05/09/2025",
-        "image": "Set/Set Dwilama Tooja.jpg",
+        "image": "Set/Set Dwilama Tooja.webp",
         "size": "P",
         "desc": "2 Dwilama Chair + Tooja Table"
     },
@@ -1402,7 +1402,7 @@
         "category": "Meja",
         "price": 3200000,
         "originalPrice": null,
-        "image": "Meja/Rataya.jpg",
+        "image": "Meja/Rataya.webp",
         "size": "P 124 CM X L 63 CM X T 75 CM"
     },
     {
@@ -1411,7 +1411,7 @@
         "price": 2392000,
         "originalPrice": 2600000,
         "period": "01/09/2025-30/09/2025",
-        "image": "Buffet/Ratton.jpg",
+        "image": "Buffet/Ratton.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -1422,7 +1422,7 @@
         "category": "Meja",
         "price": 2350000,
         "originalPrice": null,
-        "image": "Meja/Riyaas.jpg",
+        "image": "Meja/Riyaas.webp",
         "size": "P 90 CM X L 45 CM X T 80 CM"
     },
     {
@@ -1431,7 +1431,7 @@
         "price": 3169000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Rokku.jpg",
+        "image": "Buffet/Rokku.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -1442,7 +1442,7 @@
         "category": "Kursi Cafe",
         "price": 2850000,
         "originalPrice": null,
-        "image": "Kursi/Ronoa.jpg",
+        "image": "Kursi/Ronoa.webp",
         "size": "P 78 CM X L 71 CM X T 17 CM"
     },
     {
@@ -1450,7 +1450,7 @@
         "category": "Kursi",
         "price": 565000,
         "originalPrice": null,
-        "image": "Kursi/Ropan.jpg",
+        "image": "Kursi/Ropan.webp",
         "size": "P 53 CM X L 47 CM X T 45 CM"
     },
     {
@@ -1458,7 +1458,7 @@
         "category": "Kursi Cafe",
         "price": 980000,
         "originalPrice": null,
-        "image": "Kursi/Rope.jpg",
+        "image": "Kursi/Rope.webp",
         "size": "P 52 CM X L 47 CM X T 47 CM"
     },
     {
@@ -1466,7 +1466,7 @@
         "category": "Kursi",
         "price": 880000,
         "originalPrice": null,
-        "image": "Kursi/Roque.jpg",
+        "image": "Kursi/Roque.webp",
         "size": "P 56 CM X L 45 CM X T 46 CM"
     },
     {
@@ -1474,7 +1474,7 @@
         "category": "Kursi, Rotan Sintetis",
         "price": 550000,
         "originalPrice": null,
-        "image": "Rotan/Rosyong.jpg",
+        "image": "Rotan/Rosyong.webp",
         "size": "P 55 CM X L 46 CM X T 70 CM"
     },
     {
@@ -1482,7 +1482,7 @@
         "category": "Kursi",
         "price": 815000,
         "originalPrice": null,
-        "image": "Kursi/Rotarota.jpg",
+        "image": "Kursi/Rotarota.webp",
         "size": "P 62 CM X L 45 CM X T 46 CM"
     },
     {
@@ -1490,7 +1490,7 @@
         "category": "Meja",
         "price": 849000,
         "originalPrice": null,
-        "image": "Meja/Rotjil.jpg",
+        "image": "Meja/Rotjil.webp",
         "size": "P 54 CM X L 54 CM X T 52 CM"
     },
     {
@@ -1498,7 +1498,7 @@
         "category": "Meja, Rotan Sintetis",
         "price": 415000,
         "originalPrice": null,
-        "image": "Rotan/Rounded Table.jpg",
+        "image": "Rotan/Rounded Table.webp",
         "size": "PD55XT54 CM"
     },
     {
@@ -1506,7 +1506,7 @@
         "category": "Kursi Cafe",
         "price": 1149000,
         "originalPrice": null,
-        "image": "Kursi/Roxy.jpg",
+        "image": "Kursi/Roxy.webp",
         "size": "P 52 CM X L 47 CM X T 47 CM"
     },
     {
@@ -1514,7 +1514,7 @@
         "category": "Kursi Cafe",
         "price": 1100000,
         "originalPrice": null,
-        "image": "Kursi/Rumaoma.jpg",
+        "image": "Kursi/Rumaoma.webp",
         "size": "P 60 CM X L 51 CM X T 43 CM"
     },
     {
@@ -1523,7 +1523,7 @@
         "price": 2550000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Ryngkes.jpg",
+        "image": "Buffet/Ryngkes.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -1534,7 +1534,7 @@
         "category": "Kursi Cafe",
         "price": 649000,
         "originalPrice": null,
-        "image": "Kursi/Saari.jpg",
+        "image": "Kursi/Saari.webp",
         "size": "P 36 CM X L 38 CM X T 46 CM X T 35 CM"
     },
     {
@@ -1542,7 +1542,7 @@
         "category": "Kursi Cafe",
         "price": 1305000,
         "originalPrice": null,
-        "image": "Kursi/Sambrow.jpg",
+        "image": "Kursi/Sambrow.webp",
         "size": "P 51 CM X L 51 CM X T 49 CM"
     },
     {
@@ -1550,7 +1550,7 @@
         "category": "Kursi, Rotan Sintetis",
         "price": 659000,
         "originalPrice": null,
-        "image": "Rotan/Sandara.jpg",
+        "image": "Rotan/Sandara.webp",
         "size": "P 120 CM X L 56 CM X T 39 CM"
     },
     {
@@ -1558,7 +1558,7 @@
         "category": "Stool",
         "price": 2109000,
         "originalPrice": null,
-        "image": "Stool/Sandro.jpg",
+        "image": "Stool/Sandro.webp",
         "size": "P 120 CM X L 56 CM X T 39 CM"
     },
     {
@@ -1566,7 +1566,7 @@
         "category": "Kursi",
         "price": 780000,
         "originalPrice": null,
-        "image": "Kursi/Santee.jpg",
+        "image": "Kursi/Santee.webp",
         "size": "P 48 CM X L 46 CM X T 48 CM"
     },
     {
@@ -1574,7 +1574,7 @@
         "category": "Kursi, Rotan Sintetis",
         "price": 659000,
         "originalPrice": null,
-        "image": "Rotan/Santiz.jpg",
+        "image": "Rotan/Santiz.webp",
         "desc": "",
         "size": "P 56 CM X L 49 CM X T 44 CM"
     },
@@ -1583,7 +1583,7 @@
         "category": "Kursi Cafe",
         "price": 1645000,
         "originalPrice": null,
-        "image": "Kursi/Selica.jpg",
+        "image": "Kursi/Selica.webp",
         "size": "P 120 CM X L 48 CM X T 46 CM"
     },
     {
@@ -1591,7 +1591,7 @@
         "category": "Kursi",
         "price": 669000,
         "originalPrice": null,
-        "image": "Kursi/Seroshi.jpg",
+        "image": "Kursi/Seroshi.webp",
         "size": "P 53 CM X L 50 CM X T 45 CM"
     },
     {
@@ -1600,7 +1600,7 @@
         "price": 1500000,
         "originalPrice": null,
         "period": null,
-        "image": "Sofa/Serwood Single.jpg",
+        "image": "Sofa/Serwood Single.webp",
         "desc": null,
         "size": "P 120 CM X L 60 CM X T 80 CM, Dudukan: 45 CM",
         "colors": [],
@@ -1609,10 +1609,10 @@
     {
         "name": "Serwood Sofa Set",
         "category": "Set, Sofa",
-        "price": 6284000,
+        "price": 6200000,
         "originalPrice": 7855000,
-        "period": "01/10/2025-31/10/2025",
-        "image": "Set/Serwood Sofa Set.jpg",
+        "period": "01/11/2025-30/11/2025",
+        "image": "Set/Serwood Sofa Set.webp",
         "desc": "Kayu Jati",
         "size": "P 120 CM X L 60 CM X T 80 CM, Dudukan: 45 CM",
         "colors": [],
@@ -1623,7 +1623,7 @@
         "category": "Meja",
         "price": 1350000,
         "originalPrice": null,
-        "image": "Meja/Serwood Mini Table.jpg",
+        "image": "Meja/Serwood Mini Table.webp",
         "size": "P 120 CM X L 60 CM X T 45 CM"
     },
     {
@@ -1631,7 +1631,7 @@
         "category": "Kursi",
         "price": 1315000,
         "originalPrice": null,
-        "image": "Kursi/Sesareng.jpg",
+        "image": "Kursi/Sesareng.webp",
         "size": "P 60 CM X L 50 CM X T 46 CM"
     },
     {
@@ -1639,7 +1639,7 @@
         "category": "Set, Rotan Sintetis",
         "price": 3193000,
         "originalPrice": null,
-        "image": "Set/Rotan Besar.jpg",
+        "image": "Set/Rotan Besar.webp",
         "desc": "Galar Chair + 2 Besante Chair + Hifi Table"
     },
     {
@@ -1648,7 +1648,7 @@
         "price": 1559000,
         "originalPrice": 1733000,
         "period": "01/10/2025-31/10/2025",
-        "image": "Set/Rotan Kecil.jpg",
+        "image": "Set/Rotan Kecil.webp",
         "desc": "2 Santiz Chair + Round Table Rotan",
         "size": null,
         "colors": [],
@@ -1660,7 +1660,7 @@
         "price": 5560000,
         "originalPrice": 6255000,
         "period": "01/11/2025-30/11/2025",
-        "image": "Set/Set Maksi Sinu.jpg",
+        "image": "Set/Set Maksi Sinu.webp",
         "desc": "1 Maksi Table + 4 Sinu Chair",
         "size": null,
         "colors": [],
@@ -1671,7 +1671,7 @@
         "category": "Kursi",
         "price": 649000,
         "originalPrice": null,
-        "image": "Kursi/Sicangku.jpg",
+        "image": "Kursi/Sicangku.webp",
         "size": "P 54 CM X L 39 CM X T 44 CM"
     },
     {
@@ -1679,7 +1679,7 @@
         "category": "Kursi",
         "price": 675000,
         "originalPrice": null,
-        "image": "Kursi/Siepin.jpg",
+        "image": "Kursi/Siepin.webp",
         "size": "P 57 CM X L 47 CM X T 45 CM"
     },
     {
@@ -1687,7 +1687,7 @@
         "category": "Kursi",
         "price": 510000,
         "originalPrice": null,
-        "image": "Kursi/Sikura.jpg",
+        "image": "Kursi/Sikura.webp",
         "size": "P 31 CM X L 31 CM X T 44 CM"
     },
     {
@@ -1695,7 +1695,7 @@
         "category": "Stool",
         "price": 379000,
         "originalPrice": null,
-        "image": "Stool/Sikuth.jpg",
+        "image": "Stool/Sikuth.webp",
         "size": "P 31 CM X L 31 CM X T 44 CM"
     },
     {
@@ -1703,7 +1703,7 @@
         "category": "Sungkai, Kursi",
         "price": 939000,
         "originalPrice": null,
-        "image": "Kursi/Sinu.jpg",
+        "image": "Kursi/Sinu.webp",
         "size": "P 53 CM X L 49 CM X T 45 CM"
     },
     {
@@ -1712,7 +1712,7 @@
         "price": 2850000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Siroko.jpg",
+        "image": "Buffet/Siroko.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -1723,7 +1723,7 @@
         "category": "Kursi Cafe",
         "price": 855000,
         "originalPrice": null,
-        "image": "Kursi/Smalow.jpg",
+        "image": "Kursi/Smalow.webp",
         "size": "P 48 CM X L 47 CM X T 69 CM"
     },
     {
@@ -1732,7 +1732,7 @@
         "price": 3015000,
         "originalPrice": 3350000,
         "period": "01/10/2025-31/10/2025",
-        "image": "Sofa/Sofa Bed Gembul.jpg",
+        "image": "Sofa/Sofa Bed Gembul.webp",
         "desc": "Kain Bludru Vegas, Isian Dacron kombinasi Silikon",
         "size": "P 170 CM X L 120 CM X T 45 CM",
         "colors": [],
@@ -1744,7 +1744,7 @@
         "price": 2025000,
         "originalPrice": 2250000,
         "period": "01/10/2025-31/10/2025",
-        "image": "Sofa/Sofa Bed Mini.jpg",
+        "image": "Sofa/Sofa Bed Mini.webp",
         "desc": null,
         "size": "P 170 CM X L 120 CM X T 45 CM",
         "colors": [],
@@ -1756,7 +1756,7 @@
         "price": 3800000,
         "originalPrice": 4200000,
         "period": "01/10/2025-31/10/2025",
-        "image": "Sofa/Sofa L.jpg",
+        "image": "Sofa/Sofa L.webp",
         "desc": "Kain Kimmy/Linen",
         "size": "P 200 CM X L 45 CM X T 80 CM, Dudukan: 45 CM",
         "colors": [
@@ -1785,7 +1785,7 @@
         "price": null,
         "originalPrice": null,
         "period": null,
-        "image": "Rotan/Sonara.jpg",
+        "image": "Rotan/Sonara.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -1797,7 +1797,7 @@
         "price": 7800000,
         "originalPrice": null,
         "period": null,
-        "image": "Sofa/Soopha.jpg",
+        "image": "Sofa/Soopha.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM, Dudukan: 45 CM",
         "colors": [],
@@ -1809,7 +1809,7 @@
         "price": 4250000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Staku.jpg",
+        "image": "Buffet/Staku.webp",
         "desc": null,
         "size": "P 200 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -1820,7 +1820,7 @@
         "category": "Stool",
         "price": 399000,
         "originalPrice": null,
-        "image": "Stool/Stool.jpg",
+        "image": "Stool/Stool.webp",
         "size": "P 50 CM X L 36 CM X T 44 CM"
     },
     {
@@ -1828,7 +1828,7 @@
         "category": "Nakas",
         "price": 1109000,
         "originalPrice": null,
-        "image": "Nakas/Stoora.jpg",
+        "image": "Nakas/Stoora.webp",
         "size": "P 200 CM X L 45 CM X T 60 CM"
     },
     {
@@ -1836,7 +1836,7 @@
         "category": "Stool",
         "price": 469000,
         "originalPrice": null,
-        "image": "Stool/Stooya.jpg",
+        "image": "Stool/Stooya.webp",
         "size": "P 60 CM X L 40 CM X T 48 CM"
     },
     {
@@ -1844,7 +1844,7 @@
         "category": "Kursi, Rotan Sintetis",
         "price": 659000,
         "originalPrice": null,
-        "image": "Rotan/Sumaar.jpg",
+        "image": "Rotan/Sumaar.webp",
         "size": "P 56 CM X L 49 CM X T 38 CM"
     },
     {
@@ -1853,7 +1853,7 @@
         "price": 3500000,
         "originalPrice": 3750000,
         "period": "25/08/2025-05/09/2025",
-        "image": "Divan/Swane.jpg",
+        "image": "Divan/Swane.webp",
         "size": "P 221 CM X L 185 CM X T 38 CM"
     },
     {
@@ -1861,7 +1861,7 @@
         "category": "Divan",
         "price": 4550000,
         "originalPrice": null,
-        "image": "Divan/Talelap.jpg",
+        "image": "Divan/Talelap.webp",
         "size": "P 210 CM X L 185 CM X T 42 CM"
     },
     {
@@ -1870,7 +1870,7 @@
         "price": null,
         "originalPrice": null,
         "hidden": true,
-        "image": "Mahoni/Tana Long Natural.jpg"
+        "image": "Mahoni/Tana Long Natural.webp"
     },
     {
         "name": "Tana Long Wallnut",
@@ -1878,7 +1878,7 @@
         "price": null,
         "originalPrice": null,
         "hidden": true,
-        "image": "Mahoni/Tana Long Wallnut.jpg"
+        "image": "Mahoni/Tana Long Wallnut.webp"
     },
     {
         "name": "Tana Table Natural",
@@ -1886,7 +1886,7 @@
         "price": 660000,
         "originalPrice": null,
         "hidden": true,
-        "image": "Mahoni/Tana Table Natural.jpg"
+        "image": "Mahoni/Tana Table Natural.webp"
     },
     {
         "name": "Tana Table Wallnut",
@@ -1894,14 +1894,14 @@
         "price": 660000,
         "originalPrice": null,
         "hidden": true,
-        "image": "Mahoni/Tana Table Wallnut.jpg"
+        "image": "Mahoni/Tana Table Wallnut.webp"
     },
     {
         "name": "Tapang Chair",
         "category": "Kursi",
         "price": 730000,
         "originalPrice": null,
-        "image": "Kursi/Tapang.jpg",
+        "image": "Kursi/Tapang.webp",
         "size": "P 48 CM X L 46 CM X T 44 CM"
     },
     {
@@ -1909,7 +1909,7 @@
         "category": "Nakas",
         "price": 3280000,
         "originalPrice": null,
-        "image": "Nakas/Tatani.jpg",
+        "image": "Nakas/Tatani.webp",
         "size": "P 150 CM X L 45 CM X T 80 CM"
     },
     {
@@ -1918,7 +1918,7 @@
         "price": 4599000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Terias.jpg",
+        "image": "Buffet/Terias.webp",
         "desc": null,
         "size": "P 145 CM X L 45 CM X T 54 CM",
         "colors": [],
@@ -1930,7 +1930,7 @@
         "price": 1925000,
         "originalPrice": null,
         "period": null,
-        "image": "Meja/Teyko.jpg",
+        "image": "Meja/Teyko.webp",
         "desc": "Bahan Jati",
         "size": "P 150 CM X L 80 CM X T 78 CM",
         "colors": [],
@@ -1941,7 +1941,7 @@
         "category": "Meja",
         "price": 598000,
         "originalPrice": null,
-        "image": "Meja/Tlamak.jpg",
+        "image": "Meja/Tlamak.webp",
         "size": "P 56 CM X L 56 CM X T 49 CM"
     },
     {
@@ -1949,7 +1949,7 @@
         "category": "Meja",
         "price": 570000,
         "originalPrice": null,
-        "image": "Meja/Tooja.jpg",
+        "image": "Meja/Tooja.webp",
         "size": "P 55 CM X L 55 CM X T 55 CM"
     },
     {
@@ -1957,7 +1957,7 @@
         "category": "Meja",
         "price": 918000,
         "originalPrice": null,
-        "image": "Meja/Trantul.jpg",
+        "image": "Meja/Trantul.webp",
         "size": "P 80 CM X L 80 CM X T 75 CM"
     },
     {
@@ -1966,7 +1966,7 @@
         "price": 3600000,
         "originalPrice": null,
         "period": null,
-        "image": "Buffet/Triange.jpg",
+        "image": "Buffet/Triange.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
         "colors": [],
@@ -1977,7 +1977,7 @@
         "category": "Nakas",
         "price": 1500000,
         "originalPrice": null,
-        "image": "Nakas/Trobox.jpg",
+        "image": "Nakas/Trobox.webp",
         "size": "P 150 CM X L 45 CM X T 60 CM"
     },
     {
@@ -1985,7 +1985,7 @@
         "category": "Nakas",
         "price": 2499000,
         "originalPrice": null,
-        "image": "Nakas/Tutug.jpg",
+        "image": "Nakas/Tutug.webp",
         "size": "P 200 CM X L 45 CM X T 60 CM"
     },
     {
@@ -1993,7 +1993,7 @@
         "category": "Buffet",
         "price": 4399000,
         "originalPrice": null,
-        "image": "Buffet/Vinta.jpg",
+        "image": "Buffet/Vinta.webp",
         "size": "P 200 CM X L 45 CM X T 60 CM"
     },
     {
@@ -2002,7 +2002,7 @@
         "price": 1800000,
         "originalPrice": 2000000,
         "period": "01/09/2025-30/09/2025",
-        "image": "Sofa/Vita.jpg",
+        "image": "Sofa/Vita.webp",
         "desc": null,
         "size": "P 140 CM X L 75 CM X 80CM, Dudukan T 45CM",
         "colors": [],
@@ -2013,7 +2013,7 @@
         "category": "Kursi Cafe",
         "price": 1315000,
         "originalPrice": null,
-        "image": "Kursi/Yhantoo.jpg",
+        "image": "Kursi/Yhantoo.webp",
         "size": "P 58 CM X L 50 CM X T 45 CM"
     },
     {
@@ -2021,7 +2021,7 @@
         "category": "Meja",
         "price": 1200000,
         "originalPrice": null,
-        "image": "Meja/Yumma.jpg",
+        "image": "Meja/Yumma.webp",
         "size": "P 120 CM X L 70 CM X T 41 CM"
     },
     {
@@ -2030,7 +2030,7 @@
         "price": 449000,
         "originalPrice": null,
         "period": null,
-        "image": "uploaded/Kursi_Anak_Sungkai_Motif_Tegak.jpg",
+        "image": "uploaded/Kursi_Anak_Sungkai_Motif_Tegak.webp",
         "desc": null,
         "size": "P 30 L30 T60",
         "colors": [],
@@ -2042,7 +2042,7 @@
         "price": 449000,
         "originalPrice": null,
         "period": null,
-        "image": "uploaded/Kursi_Anak_Sungkai_Motif_Kupu_Kupu.jpg",
+        "image": "uploaded/Kursi_Anak_Sungkai_Motif_Kupu_Kupu.webp",
         "desc": null,
         "size": "P 30 L30 T50",
         "colors": [],
@@ -2054,7 +2054,7 @@
         "price": 4068000,
         "originalPrice": 4521000,
         "period": "01/09/2025-30/09/2025",
-        "image": "uploaded/Dining_Set_Teyko__Kacang.jpg",
+        "image": "uploaded/Dining_Set_Teyko__Kacang.webp",
         "desc": "Dining Set Teyko Table 150cm + 4 Kacang Chair",
         "size": null,
         "colors": [],
@@ -2067,7 +2067,7 @@
         "price": 2650000,
         "originalPrice": null,
         "period": null,
-        "image": "uploaded/Sofa_2_Seat.jpg",
+        "image": "uploaded/Sofa_2_Seat.webp",
         "desc": null,
         "size": "P 140 x L 75 x T 80 cm, Dudukan: T 45 cm",
         "colors": [],
@@ -2080,7 +2080,7 @@
         "price": 3021000,
         "originalPrice": 3357000,
         "period": "01/10/2025-31/10/2025",
-        "image": "uploaded/Dining_Set_Pulos.jpg",
+        "image": "uploaded/Dining_Set_Pulos.webp",
         "desc": "2 Pulos Table + Sungkai 80 CM Table",
         "size": null,
         "colors": [],
@@ -2090,10 +2090,10 @@
     {
         "name": "Dining Set Ropan",
         "category": "Set",
-        "price": 3447000,
+        "price": 3400000,
         "originalPrice": 3830000,
-        "period": "01/10/2025-31/10/2025",
-        "image": "uploaded/Dining_Set_Ropan.jpg",
+        "period": "01/11/2025-30/11/2025",
+        "image": "uploaded/Dining_Set_Ropan.webp",
         "desc": "4 Ropan Chair + Mejoe Table",
         "size": null,
         "colors": [],
@@ -2106,7 +2106,7 @@
         "price": 3150000,
         "originalPrice": 3500000,
         "period": "01/10/2025-31/10/2025",
-        "image": "uploaded/Dining_Set_Banta.jpg",
+        "image": "uploaded/Dining_Set_Banta.webp",
         "desc": "2 Banta Chair + Mejoe Table + Arkoll Bench",
         "size": null,
         "colors": [],
@@ -2119,7 +2119,7 @@
         "price": 5593000,
         "originalPrice": 6215000,
         "period": "01/10/2025-31/10/2025",
-        "image": "uploaded/Dining_Set_Pulos_jok.jpg",
+        "image": "uploaded/Dining_Set_Pulos_jok.webp",
         "desc": "4 Pulos Jok Chair + Mejoe Table",
         "size": null,
         "colors": [],
