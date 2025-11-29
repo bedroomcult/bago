@@ -599,6 +599,14 @@
         "size": "P 54 CM X L 50 CM X T 44 CM"
     },
     {
+        "name": "Kadjo Table",
+        "category": "Meja",
+        "price": 980000,
+        "originalPrice": null,
+        "image": "uploaded/Kadjo_Table.jpg",
+        "size": ""
+    },
+    {
         "name": "Kacang Chair",
         "category": "Kursi",
         "price": 649000,
