@@ -1945,6 +1945,14 @@
         "hidden": false
     },
     {
+        "name": "Tikki Table",
+        "category": "Meja",
+        "price": 1050000,
+        "originalPrice": null,
+        "image": "uploaded/Tikki_Table.jpg",
+        "size": "P 80 CM X L 80 CM X T 75 CM"
+    },
+    {
         "name": "Tlamak Table",
         "category": "Meja",
         "price": 598000,
