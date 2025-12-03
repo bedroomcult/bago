@@ -2,9 +2,9 @@
     {
         "name": "Agogo",
         "category": "Buffet",
-        "price": 4199000,
-        "originalPrice": null,
-        "period": null,
+        "price": 2900000,
+        "originalPrice": 4199000,
+        "period": "01/12/2025-31/12/2025",
         "image": "Buffet/Agogo.webp",
         "desc": null,
         "size": "P 180 CM X L 45 CM X T 60 CM",
@@ -435,8 +435,9 @@
     {
         "name": "Farmae Chair",
         "category": "Stool",
-        "price": 649000,
-        "originalPrice": null,
+        "price": 485000,
+        "originalPrice": 649000,
+        "period": "01/12/2025-31/12/2025",
         "image": "Stool/Farmae.webp",
         "size": "P 52 CM X L 46 CM X T 75 CM"
     },
@@ -500,9 +501,9 @@
     {
         "name": "Hotori",
         "category": "Buffet",
-        "price": 3140000,
+        "price": 2750000,
         "originalPrice": 3420000,
-        "period": "01/08/2025-05/09/2025",
+        "period": "01/12/2025-31/12/2025",
         "image": "Buffet/Hotori.webp",
         "size": "P 150 CM X L 45 CM X T 60 CM"
     },
@@ -798,9 +799,9 @@
     {
         "name": "Kursi Anak Hewan",
         "category": "Kursi, Sungkai",
-        "price": 399000,
+        "price": 315000,
         "originalPrice": 449000,
-        "period": "01/11/2025-30/11/2025",
+        "period": "01/12/2025-31/12/2025",
         "image": "uploaded/Kursi_Anak_Hewan.webp",
         "desc": null,
         "size": "P 30 L30 T50",
@@ -810,9 +811,9 @@
     {
         "name": "Kursi Anak Jari",
         "category": "Kursi, Sungkai",
-        "price": 479000,
+        "price": 375000,
         "originalPrice": 539000,
-        "period": "01/11/2025-30/11/2025",
+        "period": "01/12/2025-31/12/2025",
         "image": "uploaded/Kursi_Anak_Jari.webp",
         "desc": null,
         "size": "P 150 CM X L 80 CM X T 78 CM",
@@ -1406,6 +1407,26 @@
         "desc": "2 Dwilama Chair + Tooja Table"
     },
     {
+        "name": "Tapang + Tikki set",
+        "category": "Set",
+        "price": 2000000,
+        "originalPrice": 2510000,
+        "period": "1/12/2025-31/12/2025",
+        "image": "Set/Tapang_Tikki_set.webp",
+        "size": "",
+        "desc": "2 Tapang Chair + Tikki Table"
+    },
+    {
+        "name": "Rotarota + Tlamak set",
+        "category": "Set",
+        "price": 1670000,
+        "originalPrice": 2280000,
+        "period": "1/12/2025-31/12/2025",
+        "image": "Set/Rotarota_Tlamak_set.webp",
+        "size": "",
+        "desc": "2 Tapang Chair + Tikki Table"
+    },
+    {
         "name": "Rataya Table",
         "category": "Meja",
         "price": 3200000,
@@ -1665,9 +1686,9 @@
     {
         "name": "Maksi Sinu Set",
         "category": "Set, Sungkai",
-        "price": 5560000,
+        "price": 5300000,
         "originalPrice": 6255000,
-        "period": "01/11/2025-30/11/2025",
+        "period": "01/12/2025-31/12/2025",
         "image": "Set/Set Maksi Sinu.webp",
         "desc": "1 Maksi Table + 4 Sinu Chair",
         "size": null,
@@ -2125,7 +2146,6 @@
         "image": "uploaded/Dining_Set_Banta.webp",
         "desc": "2 Banta Chair + Mejoe Table + Arkoll Bench",
         "size": null,
-        "colors": [],
         "hidden": false,
         "_stagedImage": "uploaded/Dining_Set_Banta.jpg"
     },
@@ -2141,4 +2161,17 @@
         "colors": [],
         "hidden": false
     }
+        {
+        "name": "Dining Set Pulos jok 2",
+        "category": "Set",
+        "price": 5300000,
+        "originalPrice": 6255000,
+        "period": "01/12/2025-31/12/2025",
+        "image": "uploaded/Dining_Set_Pulos_jok_2.webp",
+        "desc": "4 Pulos Jok Chair + Maksi Table",
+        "size": null,
+        "colors": [],
+        "hidden": false
+    }
+]
 ]
