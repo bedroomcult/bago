@@ -189,12 +189,12 @@
     },
     {
         "name": "Buffet TV Gantung",
-        "category": "Buffet, Mahoni",
+        "category": "Buffet",
         "price": 1550000,
         "originalPrice": null,
         "period": null,
         "image": "Buffet/Buffet_TV_Gantung.webp",
-        "desc": null,
+        "desc": "Kayu Mahoni",
         "size": null,
         "colors": [],
         "hidden": false
@@ -2160,8 +2160,8 @@
         "size": null,
         "colors": [],
         "hidden": false
-    }
-        {
+    },
+    {
         "name": "Dining Set Pulos jok 2",
         "category": "Set",
         "price": 5300000,

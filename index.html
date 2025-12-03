@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,21 +10,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <!-- Preload Inter font CSS for performance -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    </noscript>
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f3f4f6;
         }
+
         /* Custom scrollbar styling for a nicer look */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
+
         .no-scrollbar {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
         }
+
         /* Modal overlay styling */
         .modal-overlay {
             position: fixed;
@@ -37,18 +46,23 @@
             align-items: center;
             z-index: 50;
         }
+
         /* Color swatch styling */
         .color-swatch {
             width: 24px;
             height: 24px;
-            border-radius: 9999px; /* This makes it a perfect circle/rounded square */
-            border: 2px solid #e5e7eb; /* Light gray border */
+            border-radius: 9999px;
+            /* This makes it a perfect circle/rounded square */
+            border: 2px solid #e5e7eb;
+            /* Light gray border */
             cursor: pointer;
             transition: transform 0.1s ease-in-out;
         }
+
         .color-swatch:hover {
             transform: scale(1.1);
         }
+
         /* Quantity input styling */
         .quantity-input {
             border: 1px solid #d1d5db;
@@ -57,6 +71,7 @@
             text-align: center;
             width: 3rem;
         }
+
         .quantity-input:focus {
             outline: none;
             border-color: #6366f1;
@@ -64,67 +79,96 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-100 p-4">
 
     <div class="max-w-7xl mx-auto py-8">
-        
+
         <header class="text-center mb-8 relative">
             <h1 class="text-4xl font-bold text-gray-800">Katalog Bago Home Decor</h1>
             <p class="text-lg text-gray-500 mt-2">Contact us: 0811-3202-1021</p>
             <!-- Buttons moved below headline on mobile to prevent overlap -->
             <div class="flex justify-between items-center mt-4">
                 <div></div> <!-- Empty div for spacing -->
-                
+
                 <div class="flex space-x-2">
-                    <button id="settings-btn" class="bg-gray-200 hover:bg-gray-300 rounded-full p-2 shadow transition-colors duration-200" title="Pengaturan">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="currentcolor" viewBox="0 0 24 24"  height="20" width="20">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M24 13.616v-3.232l-2.869-1.02c-.198-.687-.472-1.342-.811-1.955l1.308-2.751-2.285-2.285-2.751 1.307c-.613-.339-1.269-.613-1.955-.811l-1.021-2.869h-3.232l-1.021 2.869c-.686.198-1.342.471-1.955.811l-2.751-1.308-2.285 2.285 1.308 2.752c-.339.613-.614 1.268-.811 1.955l-2.869 1.02v3.232l2.869 1.02c.197.687.472 1.342.811 1.955l-1.308 2.751 2.285 2.286 2.751-1.308c.613.339 1.269.613 1.955.811l1.021 2.869h3.232l1.021-2.869c.687-.198 1.342-.472 1.955-.811l2.751 1.308 2.285-2.286-1.308-2.751c.339-.613.613-1.268.811-1.955l2.869-1.02zm-12 2.384c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zz" />
+                    <button id="settings-btn"
+                        class="bg-gray-200 hover:bg-gray-300 rounded-full p-2 shadow transition-colors duration-200"
+                        title="Pengaturan">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="currentcolor"
+                            viewBox="0 0 24 24" height="20" width="20">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M24 13.616v-3.232l-2.869-1.02c-.198-.687-.472-1.342-.811-1.955l1.308-2.751-2.285-2.285-2.751 1.307c-.613-.339-1.269-.613-1.955-.811l-1.021-2.869h-3.232l-1.021 2.869c-.686.198-1.342.471-1.955.811l-2.751-1.308-2.285 2.285 1.308 2.752c-.339.613-.614 1.268-.811 1.955l-2.869 1.02v3.232l2.869 1.02c.197.687.472 1.342.811 1.955l-1.308 2.751 2.285 2.286 2.751-1.308c.613.339 1.269.613 1.955.811l1.021 2.869h3.232l1.021-2.869c.687-.198 1.342-.472 1.955-.811l2.751 1.308 2.285-2.286-1.308-2.751c.339-.613.613-1.268.811-1.955l2.869-1.02zm-12 2.384c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zz" />
                         </svg>
                     </button>
-                    <button id="checkout-toggle" class="bg-gray-200 hover:bg-gray-300 rounded-full p-2 shadow transition-colors duration-200" title="Mode Checkout">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    <button id="checkout-toggle"
+                        class="bg-gray-200 hover:bg-gray-300 rounded-full p-2 shadow transition-colors duration-200"
+                        title="Mode Checkout">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                     </button>
                 </div>
             </div>
         </header>
-        
+
         <div class="flex flex-col sm:flex-row justify-between items-center mb-6 space-y-4 sm:space-y-0">
             <div id="category-cards" class="flex flex-wrap gap-2 justify-center sm:justify-start w-full sm:w-auto">
-                </div>
-            
+            </div>
+
             <div class="flex flex-row items-center gap-4 w-full sm:w-auto flex-nowrap">
                 <div class="relative inline-block text-left">
-                <button id="sort-button" type="button"
-                    class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
-                    aria-expanded="true" aria-haspopup="true">
-                    Urutkan
-                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
+                    <button id="sort-button" type="button"
+                        class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
+                        aria-expanded="true" aria-haspopup="true">
+                        Urutkan
+                        <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
 
-                <div id="sort-menu"
-                    class="origin-top absolute left-0 right-0 mx-auto mt-2 w-full sm:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden z-10">
-                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="sort-button">
-                    <button data-sort="name-asc" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">Nama ↑</button>
-                    <button data-sort="name-desc" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">Nama ↓</button>
-                    <button data-sort="price-asc" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">Harga ↑</button>
-                    <button data-sort="price-desc" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">Harga ↓</button>
+                    <div id="sort-menu"
+                        class="origin-top absolute left-0 right-0 mx-auto mt-2 w-full sm:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden z-10">
+                        <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="sort-button">
+                            <button data-sort="name-asc"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">Nama
+                                ↑</button>
+                            <button data-sort="name-desc"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">Nama
+                                ↓</button>
+                            <button data-sort="price-asc"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">Harga
+                                ↑</button>
+                            <button data-sort="price-desc"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">Harga
+                                ↓</button>
+                        </div>
                     </div>
-                </div>
                 </div>
 
                 <label for="search-input" class="sr-only">Cari Produk</label>
-                <input type="text" id="search-input" placeholder="Cari Produk..."
-                    class="block w-full sm:w-64 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
-                
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="Cari Produk..."
+                        class="block w-full sm:w-64 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 pr-8 border">
+                    <button id="clear-search"
+                        class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+
                 <a href="admin.html"
                     class="w-full sm:w-auto bg-indigo-600 text-white py-2 px-4 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-200 flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" />
                     </svg>
                     <span>Edit</span>
                 </a>
@@ -132,7 +176,7 @@
         </div>
 
         <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            </div>
+        </div>
 
         <div id="empty-message" class="hidden text-center text-gray-500 mt-16">
             <p class="text-xl">Tidak ada produk untuk kategori ini, tambahkan produk dari halaman admin.</p>
@@ -142,7 +186,8 @@
 
     <!-- Loading Spinner -->
     <div id="loading-spinner" class="flex flex-col items-center justify-center py-24">
-        <svg class="animate-spin h-10 w-10 text-indigo-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <svg class="animate-spin h-10 w-10 text-indigo-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
         </svg>
@@ -151,12 +196,14 @@
 
     <div id="product-modal" class="modal-overlay hidden">
         <div class="bg-white rounded-2xl shadow-2xl p-6 w-11/12 max-w-2xl relative max-h-full overflow-y-auto">
-            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button id="close-modal"
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            
+
             <div id="modal-content" class="flex flex-col md:flex-row gap-6">
                 <div class="flex-shrink-0 w-full md:w-1/2">
                     <img id="modal-image" src="" alt="" class="w-full rounded-xl object-cover">
@@ -167,8 +214,9 @@
                         <p id="modal-price" class="text-2xl font-bold text-indigo-600"></p>
                         <p id="modal-original-price" class="text-gray-400 line-through text-lg"></p>
                     </div>
-                    <p class="text-sm text-gray-500 capitalize">Kategori: <span id="modal-category" class="font-medium"></span></p>
-                    
+                    <p class="text-sm text-gray-500 capitalize">Kategori: <span id="modal-category"
+                            class="font-medium"></span></p>
+
                     <div class="border-t border-gray-200 pt-4">
                         <p class="text-gray-700 font-semibold">Detail:</p>
                         <ul class="text-sm text-gray-600 mt-2 space-y-1">
@@ -182,7 +230,7 @@
                         <p class="text-gray-700 font-semibold">Pilihan Warna:</p>
                         <div id="modal-colors" class="mt-2 space-y-2">
                         </div>
-                </div>
+                    </div>
 
                 </div>
             </div>
@@ -193,7 +241,8 @@
     <div id="settings-modal" class="modal-overlay hidden z-50">
         <div class="bg-white rounded-xl shadow-2xl p-6 w-80 max-w-full relative">
             <button id="close-settings" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
@@ -218,50 +267,58 @@
     <!-- Shopping Cart Modal -->
     <div id="cart-modal" class="modal-overlay hidden">
         <div class="bg-white rounded-2xl shadow-2xl p-6 w-11/12 max-w-2xl relative max-h-full overflow-y-auto">
-            <button id="close-cart" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button id="close-cart"
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            
+
             <h2 class="text-2xl font-bold text-gray-800 mb-4">Keranjang Belanja</h2>
-            
+
             <div class="mb-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
                         <label for="customer-name" class="block text-sm font-medium text-gray-700 mb-1">Nama</label>
-                        <input type="text" id="customer-name" class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+                        <input type="text" id="customer-name"
+                            class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
                     </div>
                     <div>
-                        <label for="customer-phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon</label>
-                        <input type="text" id="customer-phone" class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+                        <label for="customer-phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor
+                            Telepon</label>
+                        <input type="text" id="customer-phone"
+                            class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
                     </div>
                 </div>
             </div>
-            
+
             <div id="cart-items" class="mb-6 max-h-96 overflow-y-auto">
                 <!-- Cart items will be populated here -->
             </div>
-            
+
             <!-- PDF Generation Loading Spinner -->
             <div id="pdf-loading" class="hidden flex flex-col items-center justify-center py-8">
-                <svg class="animate-spin h-10 w-10 text-indigo-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <svg class="animate-spin h-10 w-10 text-indigo-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V8a4 4 0 00-4 4H4z"></path>
                 </svg>
                 <p class="text-lg text-gray-600 font-medium">Menghasilkan PDF, mohon tunggu...</p>
             </div>
-            
+
             <div class="border-t border-gray-200 pt-4">
                 <div class="flex justify-between text-lg font-bold">
                     <span>Total:</span>
                     <span id="cart-total-modal">Rp 0</span>
                 </div>
                 <div class="flex gap-2 mt-4">
-                    <button id="clear-cart-button" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-full">
+                    <button id="clear-cart-button"
+                        class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-full">
                         Clear
                     </button>
-                    <button id="checkout-button" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-full">
+                    <button id="checkout-button"
+                        class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-full">
                         Checkout
                     </button>
                 </div>
@@ -334,10 +391,10 @@
             // Cart functionality
             // Load cart from storage on page load
             loadCartFromStorage();
-            
+
             // Track checkout mode state
             let isCheckoutMode = false;
-            
+
             // Use cart button as toggle for checkout mode
             checkoutToggle.addEventListener('click', () => {
                 if (!isCheckoutMode) {
@@ -378,25 +435,25 @@
                 // Get customer information from form fields
                 const name = document.getElementById('customer-name').value || "";
                 const phone = document.getElementById('customer-phone').value || "";
-                
+
                 // Create customer info object
                 const customerInfo = {
                     name: name.trim(),
                     phone: phone.trim()
                 };
-                
+
                 // Show loading spinner and hide all cart content
                 const cartContentElements = document.querySelectorAll('#cart-items, .border-t.border-gray-200.pt-4');
                 const pdfLoadingElement = document.getElementById('pdf-loading');
                 const checkoutButton = document.getElementById('checkout-button');
-                
+
                 cartContentElements.forEach(element => {
                     element.classList.add('hidden');
                 });
                 pdfLoadingElement.classList.remove('hidden');
                 checkoutButton.disabled = true;
                 checkoutButton.textContent = 'Memproses...';
-                
+
                 // Generate and download PDF with customer info
                 generateAndDownloadPDF(customerInfo)
                     .finally(() => {
@@ -441,19 +498,19 @@
                 // Update cart count
                 const totalItems = shoppingCart.reduce((total, item) => total + item.quantity, 0);
                 cartCount.textContent = totalItems;
-                
+
                 // Update cart total
                 const totalAmount = shoppingCart.reduce((total, item) => total + (item.price * item.quantity), 0);
                 cartTotal.textContent = formatRupiah(totalAmount);
                 cartTotalModal.textContent = formatRupiah(totalAmount);
-                
+
                 // Show/hide floating calculator only when checkout mode is enabled and cart is not empty
                 if (totalItems > 0 && isCheckoutMode) {
                     floatingCalculator.classList.remove('hidden');
                 } else {
                     floatingCalculator.classList.add('hidden');
                 }
-                
+
                 // Update cart modal items
                 updateCartItems();
             }
@@ -463,20 +520,20 @@
                     cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center py-4">Keranjang kosong</p>';
                     return;
                 }
-                
+
                 // Calculate totals
                 let subtotal = 0;
                 let totalDiscount = 0;
-                
+
                 const cartItemsHtml = shoppingCart.map(item => {
                     const isDiscounted = item.originalPrice && item.originalPrice > item.price;
                     const displayPrice = isDiscounted ? item.price : (item.originalPrice || item.price);
                     const itemTotal = displayPrice * item.quantity;
                     const discountAmount = isDiscounted ? (item.originalPrice - item.price) * item.quantity : 0;
-                    
+
                     subtotal += itemTotal;
                     totalDiscount += discountAmount;
-                    
+
                     return `
                         <div class="flex items-center py-4 border-b border-gray-200">
                             <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded">
@@ -495,10 +552,10 @@
                         </div>
                     `;
                 }).join('');
-                
+
                 // Calculate final total
                 const finalTotal = subtotal - totalDiscount;
-                
+
                 // Update cart items container with summary
                 cartItemsContainer.innerHTML = `
                     ${cartItemsHtml}
@@ -519,10 +576,10 @@
                         </div>
                     </div>
                 `;
-                
+
                 // Update the total in the modal footer
                 cartTotalModal.textContent = formatRupiah(finalTotal);
-                
+
                 // Add event listeners for quantity buttons
                 document.querySelectorAll('.decrease-qty').forEach(button => {
                     button.addEventListener('click', (e) => {
@@ -531,7 +588,7 @@
                         changeQuantity(productId, -1);
                     });
                 });
-                
+
                 document.querySelectorAll('.increase-qty').forEach(button => {
                     button.addEventListener('click', (e) => {
                         e.stopPropagation();
@@ -539,7 +596,7 @@
                         changeQuantity(productId, 1);
                     });
                 });
-                
+
                 // Add event listeners for quantity input fields
                 document.querySelectorAll('.quantity-input').forEach(input => {
                     input.addEventListener('change', (e) => {
@@ -639,7 +696,7 @@
                 const createButton = (text, isSelected, isSaleButton = false) => {
                     const card = document.createElement('button');
                     card.textContent = text;
-                    
+
                     let baseClasses = 'category-card px-4 py-2 rounded-full text-sm font-medium border transition-colors duration-200 ';
                     let activeClasses = 'bg-indigo-600 text-white border-indigo-600';
                     let inactiveClasses = 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100';
@@ -697,7 +754,7 @@
                 }
 
                 if (selectedCategory && selectedCategory !== 'All') {
-                    filtered = filtered.filter(item => 
+                    filtered = filtered.filter(item =>
                         item.category && item.category.split(',').map(c => c.trim()).includes(selectedCategory)
                     );
                 }
@@ -772,7 +829,7 @@
                         }
 
                         // Only show add to cart button when checkout mode is enabled
-                        const addToCartButton = isCheckoutMode ? 
+                        const addToCartButton = isCheckoutMode ?
                             `<button class="add-to-cart-btn mt-2 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-1 px-2 rounded text-sm" data-product-id="${product.id}">
                                 Tambah ke Keranjang
                             </button>` : '';
@@ -806,7 +863,7 @@
                                 showModal(product);
                             }
                         });
-                        
+
                         // Add to cart button event listener (only if button exists)
                         const addToCartBtn = card.querySelector('.add-to-cart-btn');
                         if (addToCartBtn) {
@@ -816,7 +873,7 @@
                                 addToCart(productId);
                             });
                         }
-                        
+
                         productGrid.appendChild(card);
                     });
                 }
@@ -833,7 +890,7 @@
                 });
                 return formatter.format(number).replace(/\s/, ' ');
             }
-            
+
             function isDiscountActive(period) {
                 if (!period) return false;
                 const [start, end] = period.split('-');
@@ -856,7 +913,7 @@
                 }
                 return true;
             }
-            
+
             function showModal(item) {
                 const modalImage = document.getElementById('modal-image');
                 const modalName = document.getElementById('modal-name');
@@ -871,7 +928,7 @@
                 modalImage.src = item.image;
                 const isDiscounted = isCurrentlyDiscounted(item);
                 const displayedPrice = isDiscounted ? item.price : (item.originalPrice || item.price);
-                
+
                 modalName.textContent = item.name;
                 modalCategory.textContent = item.category;
                 modalDesc.textContent = item.desc || '-';
@@ -885,7 +942,7 @@
                     modalOriginalPrice.textContent = '';
                     modalOriginalPrice.classList.add('hidden');
                 }
-                
+
                 modalColors.innerHTML = '';
                 if (item.colors && item.colors.length > 0) {
                     item.colors.forEach(color => {
@@ -901,7 +958,16 @@
                 productModal.classList.remove('hidden');
             }
 
-            searchInput.addEventListener('input', filterAndDisplayProducts);
+            searchInput.addEventListener('input', () => {
+                filterAndDisplayProducts();
+                document.getElementById('clear-search').classList.toggle('hidden', !searchInput.value);
+            });
+
+            document.getElementById('clear-search').addEventListener('click', () => {
+                searchInput.value = '';
+                filterAndDisplayProducts();
+                document.getElementById('clear-search').classList.add('hidden');
+            });
 
             closeModalButton.addEventListener('click', () => {
                 productModal.classList.add('hidden');
@@ -970,7 +1036,7 @@
                     pdfContainer.style.backgroundColor = 'white';
                     pdfContainer.style.fontFamily = "'Inter', sans-serif";
                     pdfContainer.style.fontSize = '11px';
-                    
+
                     // Add header to the PDF
                     const header = document.createElement('div');
                     header.style.textAlign = 'center';
@@ -985,7 +1051,7 @@
                         <hr style="border: 1px solid #e5e7eb;">
                     `;
                     pdfContainer.appendChild(header);
-                    
+
                     // Add customer information if provided
                     if (customerInfo && (customerInfo.name || customerInfo.phone)) {
                         const customerInfoContainer = document.createElement('div');
@@ -1003,7 +1069,7 @@
                         `;
                         pdfContainer.appendChild(customerInfoContainer);
                     }
-                    
+
                     // Add items header with 4 columns
                     const itemsHeader = document.createElement('div');
                     itemsHeader.style.display = 'flex';
@@ -1018,7 +1084,7 @@
                         <div style="flex: 2; text-align: right;">Total</div>
                     `;
                     pdfContainer.appendChild(itemsHeader);
-                    
+
                     // Add cart items with proper formatting in 4 columns
                     let subtotal = 0; // Sum of undiscounted prices
                     let totalDiscount = 0;
@@ -1030,11 +1096,11 @@
                         const itemTotal = displayPrice * item.quantity;
                         // Calculate discount based on original price
                         const discountAmount = isDiscounted ? (originalPrice - item.price) * item.quantity : 0;
-                        
+
                         // Add to totals
                         subtotal += originalPrice * item.quantity;
                         totalDiscount += discountAmount;
-                        
+
                         // Format prices using the existing formatRupiah function logic
                         const formatRupiah = (number) => {
                             if (number === null || number === undefined || isNaN(number)) {
@@ -1047,24 +1113,24 @@
                             });
                             return formatter.format(number).replace(/\s/, ' ');
                         };
-                        
+
                         const formattedOriginalPrice = formatRupiah(originalPrice);
                         const formattedDisplayPrice = formatRupiah(displayPrice);
                         const formattedTotal = formatRupiah(itemTotal);
                         const formattedDiscount = isDiscounted ? formatRupiah(originalPrice - item.price) : null;
-                        
+
                         const itemElement = document.createElement('div');
                         itemElement.style.display = 'flex';
                         itemElement.style.marginBottom = '12px';
                         itemElement.style.paddingBottom = '12px';
                         itemElement.style.borderBottom = '1px dashed #e5e7eb';
-                        
+
                         // Create item content with 4 columns
                         let priceInfo = formattedOriginalPrice; // Always show original price
                         if (isDiscounted) {
                             priceInfo += `<br><span style="font-size: 8px; color: #ef4444;">Disc: ${formattedDiscount}</span>`;
                         }
-                        
+
                         itemElement.innerHTML = `
                             <div style="display: flex; width: 100%;">
                                 <!-- Column 1: Thumbnail and Name -->
@@ -1082,16 +1148,16 @@
                                 <div style="flex: 2; text-align: right; font-weight: bold; align-self: center;">${formattedTotal}</div>
                             </div>
                         `;
-                        
+
                         pdfContainer.appendChild(itemElement);
                     });
-                    
+
                     // Add summary section
                     const summaryContainer = document.createElement('div');
                     summaryContainer.style.marginTop = '20px';
                     summaryContainer.style.paddingTop = '15px';
                     summaryContainer.style.borderTop = '1px solid #e5e7eb';
-                    
+
                     // Format the amounts
                     const formatRupiah = (number) => {
                         if (number === null || number === undefined || isNaN(number)) {
@@ -1104,18 +1170,18 @@
                         });
                         return formatter.format(number).replace(/\s/, ' ');
                     };
-                    
+
                     const formattedSubtotal = formatRupiah(subtotal);
                     const formattedTotalDiscount = formatRupiah(totalDiscount);
                     const formattedFinalTotal = formatRupiah(subtotal - totalDiscount);
-                    
+
                     let summaryHTML = `
                         <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                             <span>Subtotal (Harga asli):</span>
                             <span>${formattedSubtotal}</span>
                         </div>
                     `;
-                    
+
                     if (totalDiscount > 0) {
                         summaryHTML += `
                             <div style="display: flex; justify-content: space-between; margin-bottom: 8px; color: #ef4444;">
@@ -1124,17 +1190,17 @@
                             </div>
                         `;
                     }
-                    
+
                     summaryHTML += `
                         <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: bold; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e5e7eb;">
                             <span>TOTAL:</span>
                             <span>${formattedFinalTotal}</span>
                         </div>
                     `;
-                    
+
                     summaryContainer.innerHTML = summaryHTML;
                     pdfContainer.appendChild(summaryContainer);
-                    
+
                     // Add footer
                     const footer = document.createElement('div');
                     const timestamp = new Date().toLocaleString('id-ID');
@@ -1149,10 +1215,10 @@
                         <p>Dicetak pada: ${timestamp}</p>
                     `;
                     pdfContainer.appendChild(footer);
-                    
+
                     // Add the container to the document
                     document.body.appendChild(pdfContainer);
-                    
+
                     // Use html2canvas to capture the content
                     html2canvas(pdfContainer, {
                         scale: 2,
@@ -1164,30 +1230,30 @@
                     }).then(canvas => {
                         // Remove the temporary container
                         document.body.removeChild(pdfContainer);
-                        
+
                         // Create PDF using jsPDF with dynamic sizing
                         const { jsPDF } = window.jspdf;
                         const imgData = canvas.toDataURL('image/png');
-                        
+
                         // Calculate dimensions based on content
                         const imgWidth = canvas.width / 4; // Scale down for better fit
                         const imgHeight = canvas.height / 4;
                         const pdfWidth = imgWidth + 20; // Add some margins
                         const pdfHeight = imgHeight + 20;
-                        
+
                         // Create PDF with custom dimensions
                         const pdf = new jsPDF('p', 'mm', [pdfWidth, pdfHeight]);
-                        
+
                         // Add image
                         pdf.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight);
-                        
+
                         // Download the PDF
                         pdf.save('bago-checkout-' + new Date().getTime() + '.pdf');
-                        
+
                         // Do not clear the cart after download
                         // clearCart();
                         cartModal.classList.add('hidden');
-                        
+
                         resolve();
                     }).catch(error => {
                         console.error('Error generating PDF:', error);
@@ -1199,7 +1265,7 @@
                         // Do not clear the cart after error
                         // clearCart();
                         cartModal.classList.add('hidden');
-                        
+
                         reject(error);
                     });
                 });
@@ -1209,14 +1275,19 @@
         });
     </script>
     <!-- Floating Calculator Button -->
-    <div id="floating-calculator" class="fixed bottom-6 right-6 bg-indigo-600 text-white rounded-full shadow-lg p-4 cursor-pointer hover:bg-indigo-700 transition-all duration-300 hidden">
+    <div id="floating-calculator"
+        class="fixed bottom-6 right-6 bg-indigo-600 text-white rounded-full shadow-lg p-4 cursor-pointer hover:bg-indigo-700 transition-all duration-300 hidden">
         <div class="flex items-center relative">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
             </svg>
             <span class="ml-2 font-bold" id="cart-total">Rp 0</span>
-            <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+            <span id="cart-count"
+                class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
         </div>
     </div>
 </body>
+
 </html>
