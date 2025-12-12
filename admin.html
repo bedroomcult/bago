@@ -47,6 +47,97 @@
             opacity: 0;
             transform: translateY(20px);
         }
+
+        .calendar {
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            background: white;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            background: #f9fafb;
+            border-bottom: 1px solid #d1d5db;
+        }
+
+        .calendar-month-year {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .calendar-nav-btn {
+            width: 1.5rem;
+            height: 1.5rem;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 0.25rem;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calendar-nav-btn:hover {
+            background: #e5e7eb;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.125rem;
+            padding: 0.5rem;
+        }
+
+        .calendar-day-header {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #6b7280;
+            padding: 0.25rem;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            cursor: pointer;
+            border-radius: 0.25rem;
+            transition: background-color 0.15s;
+        }
+
+        .calendar-day:hover {
+            background: #f3f4f6;
+        }
+
+        .calendar-day.selected {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .calendar-day.today {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .calendar-day.disabled {
+            color: #d1d5db;
+            cursor: not-allowed;
+        }
+
+        .calendar-day.disabled:hover {
+            background: transparent;
+        }
     </style>
 </head>
 
@@ -230,8 +321,20 @@
                     <div class="md:col-span-2">
                         <label for="period" class="block text-sm font-medium text-gray-700">Periode Diskon (format:
                             01/08/2025-31/08/2025)</label>
-                        <input type="text" id="period"
-                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2">
+                        <div class="relative">
+                            <input type="hidden" id="period">
+                            <div id="date-picker-display"
+                                class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2 cursor-pointer flex items-center justify-between"
+                                tabindex="0">
+                                <span id="date-display">Pilih tanggal...</span>
+                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                     <div class="md:col-span-2 flex items-center gap-4 pt-2">
                         <label for="hidden" class="block text-sm font-medium text-gray-700">Sembunyikan Produk</label>
@@ -267,6 +370,31 @@
                     class="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg">Batal</button>
                 <button type="button" id="save-color-btn"
                     class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg">Tambah Warna</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Date Picker Modal -->
+    <div id="date-picker-modal" class="modal-overlay hidden">
+        <div class="bg-white rounded-lg shadow-xl p-6 w-11/12 max-w-2xl">
+            <h2 class="text-xl font-bold mb-4">Pilih Periode Diskon</h2>
+            <div class="flex gap-6">
+                <div class="flex-1">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Tanggal Mulai</label>
+                    <div id="start-calendar" class="calendar"></div>
+                </div>
+                <div class="flex-1">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Tanggal Akhir</label>
+                    <div id="end-calendar" class="calendar"></div>
+                </div>
+            </div>
+            <div class="mt-6 flex justify-end gap-3">
+                <button id="clear-dates"
+                    class="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg hover:bg-gray-400">Clear</button>
+                <button id="cancel-date-picker"
+                    class="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg hover:bg-gray-400">Batal</button>
+                <button id="confirm-dates"
+                    class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700">Pilih</button>
             </div>
         </div>
     </div>
@@ -371,6 +499,14 @@
 
             let showSizeCol = false;
             let showDescCol = false;
+
+            // Date Picker Variables
+            let selectedStartDate = null;
+            let selectedEndDate = null;
+            let startCalendarMonth = new Date().getMonth();
+            let startCalendarYear = new Date().getFullYear();
+            let endCalendarMonth = new Date().getMonth();
+            let endCalendarYear = new Date().getFullYear();
 
             const toggleSizeCol = document.getElementById('toggle-size-col');
             const toggleDescCol = document.getElementById('toggle-desc-col');
@@ -638,10 +774,31 @@
                     if (Array.isArray(item.colors)) {
                         renderColorSwatches(item.colors);
                     }
+
+                    // Parse existing period for date picker
+                    if (item.period) {
+                        const [startStr, endStr] = item.period.split('-');
+                        if (startStr && endStr) {
+                            const [sd, sm, sy] = startStr.split('/').map(Number);
+                            const [ed, em, ey] = endStr.split('/').map(Number);
+                            selectedStartDate = new Date(sy, sm - 1, sd);
+                            selectedEndDate = new Date(ey, em - 1, ed);
+                        } else {
+                            selectedStartDate = null;
+                            selectedEndDate = null;
+                        }
+                    } else {
+                        selectedStartDate = null;
+                        selectedEndDate = null;
+                    }
+                    updateDateDisplay();
                 } else {
                     modalTitle.textContent = 'Add New Product';
                     document.getElementById('image').value = '/';
                     document.getElementById('hidden').checked = false;
+                    selectedStartDate = null;
+                    selectedEndDate = null;
+                    updateDateDisplay();
                 }
                 productModal.classList.remove('hidden');
             }
@@ -918,6 +1075,109 @@
                 colorsContainer.appendChild(addColorBtn);
             }
 
+            // --- Date Picker Functions ---
+            function formatDate(date) {
+                const day = String(date.getDate()).padStart(2, '0');
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const year = date.getFullYear();
+                return `${day}/${month}/${year}`;
+            }
+
+            function updateDateDisplay() {
+                const display = document.getElementById('date-display');
+                if (selectedStartDate && selectedEndDate) {
+                    display.textContent = `${formatDate(selectedStartDate)} - ${formatDate(selectedEndDate)}`;
+                } else if (selectedStartDate) {
+                    display.textContent = `${formatDate(selectedStartDate)} - Pilih tanggal akhir`;
+                } else {
+                    display.textContent = 'Pilih tanggal...';
+                }
+                document.getElementById('period').value = selectedStartDate && selectedEndDate ? `${formatDate(selectedStartDate)}-${formatDate(selectedEndDate)}` : '';
+            }
+
+            function renderCalendar(container, month, year, isStart) {
+                const calendar = document.getElementById(container);
+                const today = new Date();
+                const currentMonth = month;
+                const currentYear = year;
+
+                const monthNames = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+                calendar.innerHTML = `
+                    <div class="calendar-header">
+                        <button class="calendar-nav-btn" data-action="prev" data-is-start="${isStart}">‹</button>
+                        <div class="calendar-month-year">${monthNames[currentMonth]} ${currentYear}</div>
+                        <button class="calendar-nav-btn" data-action="next" data-is-start="${isStart}">›</button>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="calendar-day-header">Min</div>
+                        <div class="calendar-day-header">Sen</div>
+                        <div class="calendar-day-header">Sel</div>
+                        <div class="calendar-day-header">Rab</div>
+                        <div class="calendar-day-header">Kam</div>
+                        <div class="calendar-day-header">Jum</div>
+                        <div class="calendar-day-header">Sab</div>
+                    </div>
+                    <div class="calendar-grid" id="${container}-days">
+                    </div>
+                `;
+
+                const daysContainer = document.getElementById(`${container}-days`);
+                const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+                const lastDate = new Date(currentYear, currentMonth + 1, 0).getDate();
+                const prevLastDate = new Date(currentYear, currentMonth, 0).getDate();
+
+                // Previous month days
+                for (let i = firstDay - 1; i >= 0; i--) {
+                    const day = prevLastDate - i;
+                    daysContainer.innerHTML += `<div class="calendar-day disabled">${day}</div>`;
+                }
+
+                // Current month days
+                for (let day = 1; day <= lastDate; day++) {
+                    const date = new Date(currentYear, currentMonth, day);
+                    const isToday = date.toDateString() === today.toDateString();
+                    const isSelectedStart = selectedStartDate && date.toDateString() === selectedStartDate.toDateString();
+                    const isSelectedEnd = selectedEndDate && date.toDateString() === selectedEndDate.toDateString();
+                    const isInRange = selectedStartDate && selectedEndDate && date >= selectedStartDate && date <= selectedEndDate;
+
+                    let classes = 'calendar-day';
+                    if (isToday) classes += ' today';
+                    if (isSelectedStart || isSelectedEnd) classes += ' selected';
+                    if (isInRange && !isSelectedStart && !isSelectedEnd) classes += ' selected';
+
+                    daysContainer.innerHTML += `<div class="${classes}" data-date="${date.toISOString()}" data-is-start="${isStart}">${day}</div>`;
+                }
+
+                // Next month days
+                const remainingCells = 42 - (firstDay + lastDate); // 6 rows * 7 days
+                for (let day = 1; day <= remainingCells; day++) {
+                    daysContainer.innerHTML += `<div class="calendar-day disabled">${day}</div>`;
+                }
+            }
+
+            function openDatePicker() {
+                renderCalendar('start-calendar', startCalendarMonth, startCalendarYear, true);
+                renderCalendar('end-calendar', endCalendarMonth, endCalendarYear, false);
+                document.getElementById('date-picker-modal').classList.remove('hidden');
+            }
+
+            function closeDatePicker() {
+                document.getElementById('date-picker-modal').classList.add('hidden');
+            }
+
+            function clearDates() {
+                selectedStartDate = null;
+                selectedEndDate = null;
+                updateDateDisplay();
+                closeDatePicker();
+            }
+
+            function confirmDates() {
+                updateDateDisplay();
+                closeDatePicker();
+            }
+
             addColorBtn.addEventListener('click', () => {
                 if (!colorPicker) initializeColorPicker();
                 document.getElementById('color-desc').value = '';
@@ -942,6 +1202,69 @@
             colorsContainer.addEventListener('click', (e) => {
                 if (e.target.classList.contains('remove-color-btn')) {
                     e.target.closest('.color-swatch-item').remove();
+                }
+            });
+
+            // --- Date Picker Event Listeners ---
+            document.getElementById('date-picker-display').addEventListener('click', openDatePicker);
+            document.getElementById('cancel-date-picker').addEventListener('click', closeDatePicker);
+            document.getElementById('clear-dates').addEventListener('click', clearDates);
+            document.getElementById('confirm-dates').addEventListener('click', confirmDates);
+
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('calendar-nav-btn')) {
+                    const action = e.target.dataset.action;
+                    const isStart = e.target.dataset.isStart === 'true';
+
+                    if (isStart) {
+                        if (action === 'prev') {
+                            startCalendarMonth--;
+                            if (startCalendarMonth < 0) {
+                                startCalendarMonth = 11;
+                                startCalendarYear--;
+                            }
+                        } else {
+                            startCalendarMonth++;
+                            if (startCalendarMonth > 11) {
+                                startCalendarMonth = 0;
+                                startCalendarYear++;
+                            }
+                        }
+                        renderCalendar('start-calendar', startCalendarMonth, startCalendarYear, true);
+                    } else {
+                        if (action === 'prev') {
+                            endCalendarMonth--;
+                            if (endCalendarMonth < 0) {
+                                endCalendarMonth = 11;
+                                endCalendarYear--;
+                            }
+                        } else {
+                            endCalendarMonth++;
+                            if (endCalendarMonth > 11) {
+                                endCalendarMonth = 0;
+                                endCalendarYear++;
+                            }
+                        }
+                        renderCalendar('end-calendar', endCalendarMonth, endCalendarYear, false);
+                    }
+                } else if (e.target.classList.contains('calendar-day') && !e.target.classList.contains('disabled')) {
+                    const date = new Date(e.target.dataset.date);
+                    const isStart = e.target.dataset.isStart === 'true';
+
+                    if (isStart) {
+                        selectedStartDate = date;
+                        selectedEndDate = null; // Reset end date when start date changes
+                    } else {
+                        if (selectedStartDate && date < selectedStartDate) {
+                            selectedEndDate = selectedStartDate;
+                            selectedStartDate = date;
+                        } else {
+                            selectedEndDate = date;
+                        }
+                    }
+
+                    renderCalendar('start-calendar', startCalendarMonth, startCalendarYear, true);
+                    renderCalendar('end-calendar', endCalendarMonth, endCalendarYear, false);
                 }
             });
 
