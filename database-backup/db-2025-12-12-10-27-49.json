@@ -2179,12 +2179,12 @@
         "price": 1000,
         "originalPrice": 2000,
         "period": "01/12/2025-31/12/2025",
-        "image": "uploaded/Test.jpg",
-        "desc": "DescTest",
-        "size": "UkTest",
+        "image": "uploaded/temp_1765534918_737327ae_Test.jpg",
+        "desc": "Testtt",
+        "size": "Testttttt",
         "colors": [
             {
-                "hex": "#0055ff",
+                "hex": "#00ccff",
                 "name": "Test"
             }
         ],

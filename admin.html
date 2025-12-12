@@ -508,6 +508,9 @@
             let endCalendarMonth = new Date().getMonth();
             let endCalendarYear = new Date().getFullYear();
 
+            // Temporary file tracking for edit operations
+            let tempFiles = {}; // { [productKey]: tempFilePath }
+
             const toggleSizeCol = document.getElementById('toggle-size-col');
             const toggleDescCol = document.getElementById('toggle-desc-col');
 
@@ -558,7 +561,10 @@
                 allItems.forEach(item => {
                     if (item._tempId === undefined) return;
                     const original = originalItems.find(orig => orig._tempId === item._tempId);
-                    if (original && JSON.stringify(original) !== JSON.stringify(item)) {
+
+                    const hasPendingImage = tempFiles[item._tempId] !== undefined;
+
+                    if (original && (JSON.stringify(original) !== JSON.stringify(item) || hasPendingImage)) {
                         const diff = {};
                         const allKeys = new Set([...Object.keys(original), ...Object.keys(item)]);
                         allKeys.forEach(key => {
@@ -569,6 +575,11 @@
                                 diff[key] = { from: original[key] ?? 'N/A', to: item[key] ?? 'N/A' };
                             }
                         });
+
+                        if (hasPendingImage) {
+                            diff['image'] = { from: original.image, to: 'Pending Update (New Image)' };
+                        }
+
                         if (Object.keys(diff).length > 0) {
                             edited.push({ name: original.name, _tempId: item._tempId, diff });
                         }
@@ -752,7 +763,8 @@
                 editingIndex = index;
 
                 // Reset image staging on modal open
-                stagedFiles = {};
+                // stagedFiles = {}; // Removed to preserve pending uploads across multiple products
+
                 uploadStatus.textContent = '';
                 imagePathInput.disabled = false;
 
@@ -806,6 +818,30 @@
             function closeModal() {
                 productModal.classList.add('hidden');
                 uploadStatus.textContent = ''; // Clear upload status on close
+            }
+
+            function cancelEdit() {
+                // Clean up temporary files when canceling edit
+                let productKey = editingIndex !== null ? allItems[editingIndex]._tempId : 'new';
+                let fileToDelete = null;
+
+                if (tempFiles[productKey]) {
+                    fileToDelete = tempFiles[productKey];
+                    delete tempFiles[productKey];
+                } else if (stagedFiles[productKey]) {
+                    fileToDelete = stagedFiles[productKey];
+                    delete stagedFiles[productKey];
+                }
+
+                if (fileToDelete) {
+                    const formData = new FormData();
+                    formData.append('deleteTempFile', fileToDelete);
+                    fetch('update-db.php', {
+                        method: 'POST',
+                        body: formData
+                    }).catch(err => console.warn('Failed to delete temp file:', err));
+                }
+                closeModal();
             }
 
             function deleteProduct(index) {
@@ -871,8 +907,15 @@
                     const tempId = allItems[editingIndex]._tempId;
                     allItems[editingIndex] = { ...productData, _tempId: tempId };
                 } else {
-                    const newTempId = (originalItems.length > 0 ? Math.max(...originalItems.map(i => i._tempId)) : -1) + 1;
+                    const existingIds = allItems.map(i => i._tempId).filter(id => typeof id === 'number');
+                    const newTempId = (existingIds.length > 0 ? Math.max(...existingIds) : -1) + 1;
                     allItems.push({ ...productData, _tempId: newTempId });
+
+                    // Transfer staged file from 'new' to the actual tempId
+                    if (stagedFiles['new']) {
+                        stagedFiles[newTempId] = stagedFiles['new'];
+                        delete stagedFiles['new'];
+                    }
                 }
                 renderTable();
                 closeModal();
@@ -938,15 +981,50 @@
                 confirmSaveBtn.disabled = true;
                 confirmSaveBtn.textContent = 'Saving...';
 
+                // Handle temp file replacements for edited products
+                const fileOperations = [];
                 const itemsToSave = allItems.map(item => {
                     const { _tempId, ...rest } = item;
-                    // If a staged image path exists, update image field
                     let productKey = item._tempId;
-                    if (stagedFiles[productKey]) {
-                        rest.image = stagedFiles[productKey];
+
+                    // Check if this product has a temp file that needs to be finalized
+                    if (tempFiles[productKey] || stagedFiles[productKey]) {
+                        const tempPath = tempFiles[productKey] || stagedFiles[productKey];
+                        const originalItem = originalItems.find(orig => orig._tempId === item._tempId);
+                        const originalImage = originalItem ? originalItem.image : null;
+
+                        // Use the original image path as final path to ensure proper replacement
+                        const safeName = item.name.replace(/[^a-zA-Z0-9_-]/g, '').replace(/ /g, '_');
+                        // Use a consistent naming convention
+                        const finalPath = 'uploaded/' + safeName + '.jpg';
+
+                        fileOperations.push({
+                            tempPath,
+                            finalPath,
+                            originalImage
+                        });
+
+                        // Update the image path to the final path
+                        rest.image = finalPath;
                     }
+
                     return rest;
                 });
+
+                // Perform file operations
+                try {
+                    for (const op of fileOperations) {
+                        // Move temp file to final location
+                        const formData = new FormData();
+                        formData.append('moveTempFile', JSON.stringify(op));
+                        await fetch('update-db.php', {
+                            method: 'POST',
+                            body: formData
+                        });
+                    }
+                } catch (error) {
+                    console.warn('File operation failed:', error);
+                }
 
                 const formData = new FormData();
                 formData.append('dbData', JSON.stringify(itemsToSave));
@@ -961,6 +1039,7 @@
                         throw new Error(result.message || 'An unknown error occurred.');
                     }
                     stagedFiles = {};
+                    tempFiles = {};
                     showChangesSummary(false);
                 } catch (error) {
                     alert('Save Error: ' + error.message);
@@ -997,12 +1076,25 @@
                     return;
                 }
 
-                // Prepare FormData for instant upload
-                const formData = new FormData();
-                formData.append('instantImage', file);
-                formData.append('instantProductName', productName);
-
                 uploadStatus.textContent = 'Uploading...';
+
+                // Generate unique temp filename for edit operations
+                const isEditing = editingIndex !== null;
+                const timestamp = Date.now();
+                const random = Math.random().toString(36).substring(2, 8);
+                const safeName = productName.replace(/[^a-zA-Z0-9_-]/g, '').replace(/ /g, '_');
+                const tempFileName = isEditing ? `temp_${timestamp}_${random}_${safeName}.jpg` : `${safeName}.jpg`;
+
+                // Send current database state along with image
+                const formData = new FormData();
+                formData.append('dbData', JSON.stringify(allItems.map(item => {
+                    const { _tempId, ...rest } = item;
+                    return rest;
+                })));
+                formData.append('productImage', file);
+                formData.append('productName', productName);
+                // Always treat as temp upload
+                formData.append('isTempUpload', 'true');
 
                 try {
                     const response = await fetch('update-db.php', {
@@ -1013,8 +1105,18 @@
                     if (result.status === 'success' && result.imagePath) {
                         // Store staged image path for this product
                         let productKey = editingIndex !== null ? allItems[editingIndex]._tempId : 'new';
-                        stagedFiles[productKey] = result.imagePath;
-                        imagePathInput.value = result.imagePath;
+
+                        if (isEditing) {
+                            // Store temp file path for cleanup on cancel/saving
+                            tempFiles[productKey] = result.imagePath;
+                            // Do NOT update imagePathInput for editing; keep pointing to original logic
+                        } else {
+                            // For new products, update image field to show uploaded path
+                            stagedFiles[productKey] = result.imagePath;
+                            imagePathInput.value = result.imagePath;
+                        }
+
+                        // Update status but not the input value for edits
                         uploadStatus.textContent = 'Upload successful!';
                     } else {
                         uploadStatus.textContent = 'Upload failed: ' + (result.message || 'Unknown error');

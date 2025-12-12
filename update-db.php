@@ -36,12 +36,13 @@ handleDbUpdate();
  * @param array $file The file array from $_FILES.
  * @param string $productName The name of the product to associate the image with.
  * @param string &$errorMsg A variable to hold any error message.
+ * @param bool $isTempUpload Whether this is a temporary upload for editing.
  * @return string|false The path to the saved image on success, false on failure.
  */
-function processAndSaveImage($file, $productName, &$errorMsg)
+function processAndSaveImage($file, $productName, &$errorMsg, $isTempUpload = false)
 {
     write_log("--- Starting Image Upload ---");
-    
+
     // Attempt to increase memory limit for larger images.
     @ini_set('memory_limit', '256M');
     write_log("Memory limit set to 256M.");
@@ -98,7 +99,7 @@ function processAndSaveImage($file, $productName, &$errorMsg)
 
     $newWidth = $width > $maxWidth ? $maxWidth : $width;
     $newHeight = $width > $maxWidth ? floor($height * ($maxWidth / $width)) : $height;
-    
+
     $resizedImage = imagecreatetruecolor($newWidth, $newHeight);
     write_log("Resized canvas created with dimensions: {$newWidth}x{$newHeight}.");
 
@@ -108,12 +109,21 @@ function processAndSaveImage($file, $productName, &$errorMsg)
         imagefill($resizedImage, 0, 0, $white);
         write_log("Filled transparent background with white.");
     }
-    
+
     imagecopyresampled($resizedImage, $sourceImage, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
     write_log("Image resampled.");
 
-    $safeName = preg_replace('/[^a-zA-Z0-9_-]/', '', str_replace(' ', '_', $productName));
-    $fileName = $safeName . '.jpg';
+    // For temp uploads, generate a unique temp filename
+    if ($isTempUpload) {
+        $timestamp = time();
+        $random = substr(md5(uniqid(mt_rand(), true)), 0, 8);
+        $safeName = preg_replace('/[^a-zA-Z0-9_-]/', '', str_replace(' ', '_', $productName));
+        $fileName = "temp_{$timestamp}_{$random}_{$safeName}.jpg";
+    } else {
+        $safeName = preg_replace('/[^a-zA-Z0-9_-]/', '', str_replace(' ', '_', $productName));
+        $fileName = $safeName . '.jpg';
+    }
+
     $filePath = $uploadDir . $fileName;
 
     if (imagejpeg($resizedImage, $filePath, $quality)) {
@@ -144,6 +154,60 @@ function handleDbUpdate() {
         exit;
     }
 
+    // Handle temp file deletion request
+    if (isset($_POST['deleteTempFile'])) {
+        $tempFilePath = $_POST['deleteTempFile'];
+        write_log("Deleting temp file: " . $tempFilePath);
+        if (file_exists($tempFilePath)) {
+            unlink($tempFilePath);
+            write_log("Temp file deleted successfully.");
+        } else {
+            write_log("Temp file not found: " . $tempFilePath);
+        }
+        echo json_encode(['status' => 'success']);
+        exit;
+    }
+
+    // Handle temp file move request
+    if (isset($_POST['moveTempFile'])) {
+        $fileOp = json_decode($_POST['moveTempFile'], true);
+        $tempPath = $fileOp['tempPath'];
+        $finalPath = $fileOp['finalPath'];
+        $originalImage = $fileOp['originalImage'];
+
+        write_log("Moving temp file: {$tempPath} to {$finalPath}");
+
+        if (file_exists($tempPath)) {
+            // Delete original file if it exists and is different from the new one
+            if ($originalImage && $originalImage !== $finalPath && file_exists($originalImage)) {
+                unlink($originalImage);
+                write_log("Deleted original file: {$originalImage}");
+            }
+
+            // Force overwrite: Delete finalPath if it exists (fixes rename failure on Windows)
+            if (file_exists($finalPath)) {
+                if (unlink($finalPath)) {
+                    write_log("Deleted existing destination file: {$finalPath}");
+                } else {
+                    write_log("Warning: Failed to delete existing destination file: {$finalPath}");
+                }
+            }
+
+            // Move temp file to final location
+            if (rename($tempPath, $finalPath)) {
+                write_log("Temp file moved successfully to: {$finalPath}");
+                echo json_encode(['status' => 'success']);
+            } else {
+                write_log("Failed to move temp file");
+                echo json_encode(['status' => 'error', 'message' => 'Failed to move temp file']);
+            }
+        } else {
+            write_log("Temp file not found: {$tempPath}");
+            echo json_encode(['status' => 'error', 'message' => 'Temp file not found']);
+        }
+        exit;
+    }
+
     // The JSON payload is now expected in a POST field, e.g., 'dbData'
     // because the request is multipart/form-data when an image is included.
     if (!isset($_POST['dbData'])) {
@@ -164,6 +228,7 @@ function handleDbUpdate() {
     }
 
     // Check if an image file is being uploaded
+    $uploadedImagePath = null;
     if (isset($_FILES['productImage']) && $_FILES['productImage']['error'] === UPLOAD_ERR_OK) {
         write_log("Image file detected in request: " . $_FILES['productImage']['name']);
 
@@ -174,10 +239,12 @@ function handleDbUpdate() {
             exit;
         }
         $productName = $_POST['productName'];
-        write_log("Processing image for product: " . $productName);
+        $isTempUpload = isset($_POST['isTempUpload']) && $_POST['isTempUpload'] === 'true';
+
+        write_log("Processing image for product: " . $productName . ($isTempUpload ? " (temp upload)" : ""));
 
         $errorMsg = '';
-        $newImagePath = processAndSaveImage($_FILES['productImage'], $productName, $errorMsg);
+        $newImagePath = processAndSaveImage($_FILES['productImage'], $productName, $errorMsg, $isTempUpload);
 
         if ($newImagePath === false) {
             http_response_code(500);
@@ -185,7 +252,17 @@ function handleDbUpdate() {
             exit;
         }
 
-        // Update the image path in the data object
+        // For temp uploads, just return the image path without updating database
+        if ($isTempUpload) {
+            write_log("Temp image uploaded successfully to: " . $newImagePath);
+            echo json_encode(['status' => 'success', 'imagePath' => $newImagePath]);
+            exit;
+        }
+
+        // Store the image path for the final response
+        $uploadedImagePath = $newImagePath;
+
+        // Update the image path in the data object for regular uploads
         $productFound = false;
         foreach ($data as $product) {
             if (isset($product->name) && $product->name === $productName) {
@@ -197,7 +274,7 @@ function handleDbUpdate() {
         }
 
         if (!$productFound) {
-            write_log("Warning: Product '{$productName}' not found in dbData to update image path. The product might be new. The frontend should ensure the product exists in the payload.");
+            write_log("Warning: Product '{$productName}' not found in dbData to update image path. The product might be new. The image path will be returned to frontend for staging.");
         }
     }
 
@@ -233,7 +310,11 @@ function handleDbUpdate() {
         exit;
     }
 
-    echo json_encode(['status' => 'success', 'message' => 'Products updated successfully. Backup created at ' . $backupFile]);
+    $response = ['status' => 'success', 'message' => 'Products updated successfully. Backup created at ' . $backupFile];
+    if ($uploadedImagePath) {
+        $response['imagePath'] = $uploadedImagePath;
+    }
+    echo json_encode($response);
     exit;
 }
 ?>

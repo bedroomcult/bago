@@ -2172,22 +2172,5 @@
         "size": null,
         "colors": [],
         "hidden": false
-    },
-    {
-        "name": "Test",
-        "category": "Test",
-        "price": 1000,
-        "originalPrice": 2000,
-        "period": "01/12/2025-31/12/2025",
-        "image": "uploaded/Test.jpg",
-        "desc": "DescTest",
-        "size": "UkTest",
-        "colors": [
-            {
-                "hex": "#0055ff",
-                "name": "Test"
-            }
-        ],
-        "hidden": false
     }
 ]

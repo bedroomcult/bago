@@ -78,3 +78,282 @@
 2025-08-25 04:36:44 - --- Starting DB Update ---
 2025-12-12 10:01:22 - --- Starting DB Update ---
 2025-12-12 10:01:22 - Error: dbData payload is missing.
+2025-12-12 10:12:10 - --- Starting DB Update ---
+2025-12-12 10:12:10 - Image file detected in request: 27x16.png
+2025-12-12 10:12:10 - Processing image for product: Test
+2025-12-12 10:12:10 - --- Starting Image Upload ---
+2025-12-12 10:12:10 - Memory limit set to 256M.
+2025-12-12 10:12:10 - Server extensions checked successfully.
+2025-12-12 10:12:10 - Upload directory is writable.
+2025-12-12 10:12:10 - File type detected as: image/png
+2025-12-12 10:12:11 - Image resource created successfully.
+2025-12-12 10:12:11 - Original image dimensions: 1595x945.
+2025-12-12 10:12:11 - Resized canvas created with dimensions: 800x473.
+2025-12-12 10:12:11 - Filled transparent background with white.
+2025-12-12 10:12:11 - Image resampled.
+2025-12-12 10:12:11 - Image saved successfully to: uploaded/Test.jpg
+2025-12-12 10:12:11 - Warning: Product 'Test' not found in dbData to update image path. The product might be new. The image path will be returned to frontend for staging.
+2025-12-12 10:12:43 - --- Starting DB Update ---
+2025-12-12 10:12:57 - --- Starting DB Update ---
+2025-12-12 10:12:57 - Image file detected in request: 27x16.png
+2025-12-12 10:12:57 - Processing image for product: Test
+2025-12-12 10:12:57 - --- Starting Image Upload ---
+2025-12-12 10:12:57 - Memory limit set to 256M.
+2025-12-12 10:12:57 - Server extensions checked successfully.
+2025-12-12 10:12:57 - Upload directory is writable.
+2025-12-12 10:12:57 - File type detected as: image/png
+2025-12-12 10:12:58 - Image resource created successfully.
+2025-12-12 10:12:58 - Original image dimensions: 1595x945.
+2025-12-12 10:12:58 - Resized canvas created with dimensions: 800x473.
+2025-12-12 10:12:58 - Filled transparent background with white.
+2025-12-12 10:12:58 - Image resampled.
+2025-12-12 10:12:58 - Image saved successfully to: uploaded/Test.jpg
+2025-12-12 10:12:58 - Warning: Product 'Test' not found in dbData to update image path. The product might be new. The image path will be returned to frontend for staging.
+2025-12-12 10:15:38 - --- Starting DB Update ---
+2025-12-12 10:15:38 - Image file detected in request: 27x16.png
+2025-12-12 10:15:38 - Processing image for product: Test
+2025-12-12 10:15:38 - --- Starting Image Upload ---
+2025-12-12 10:15:38 - Memory limit set to 256M.
+2025-12-12 10:15:38 - Server extensions checked successfully.
+2025-12-12 10:15:38 - Upload directory is writable.
+2025-12-12 10:15:38 - File type detected as: image/png
+2025-12-12 10:15:39 - Image resource created successfully.
+2025-12-12 10:15:39 - Original image dimensions: 1595x945.
+2025-12-12 10:15:39 - Resized canvas created with dimensions: 800x473.
+2025-12-12 10:15:39 - Filled transparent background with white.
+2025-12-12 10:15:39 - Image resampled.
+2025-12-12 10:15:39 - Image saved successfully to: uploaded/Test.jpg
+2025-12-12 10:15:39 - Warning: Product 'Test' not found in dbData to update image path. The product might be new. The image path will be returned to frontend for staging.
+2025-12-12 10:16:17 - --- Starting DB Update ---
+2025-12-12 10:17:13 - --- Starting DB Update ---
+2025-12-12 10:17:13 - Image file detected in request: banjir-bandang-menerjang-batang-toru-tapanuli-selatan-sumatera-utara-indonesia-sabtu-29112025-1764484561973_169.jpeg
+2025-12-12 10:17:13 - Processing image for product: Test (temp upload)
+2025-12-12 10:17:13 - --- Starting Image Upload ---
+2025-12-12 10:17:13 - Memory limit set to 256M.
+2025-12-12 10:17:13 - Server extensions checked successfully.
+2025-12-12 10:17:13 - Upload directory is writable.
+2025-12-12 10:17:13 - File type detected as: image/jpeg
+2025-12-12 10:17:13 - Image resource created successfully.
+2025-12-12 10:17:13 - Original image dimensions: 650x366.
+2025-12-12 10:17:13 - Resized canvas created with dimensions: 650x366.
+2025-12-12 10:17:13 - Image resampled.
+2025-12-12 10:17:13 - Image saved successfully to: uploaded/temp_1765534633_82c8c8e7_Test.jpg
+2025-12-12 10:17:13 - Temp image uploaded successfully to: uploaded/temp_1765534633_82c8c8e7_Test.jpg
+2025-12-12 10:17:31 - --- Starting DB Update ---
+2025-12-12 10:19:09 - --- Starting DB Update ---
+2025-12-12 10:19:09 - Image file detected in request: 1445838_720.jpg
+2025-12-12 10:19:09 - Processing image for product: Test (temp upload)
+2025-12-12 10:19:09 - --- Starting Image Upload ---
+2025-12-12 10:19:09 - Memory limit set to 256M.
+2025-12-12 10:19:09 - Server extensions checked successfully.
+2025-12-12 10:19:10 - Upload directory is writable.
+2025-12-12 10:19:10 - File type detected as: image/jpeg
+2025-12-12 10:19:10 - Image resource created successfully.
+2025-12-12 10:19:10 - Original image dimensions: 720x405.
+2025-12-12 10:19:10 - Resized canvas created with dimensions: 720x405.
+2025-12-12 10:19:10 - Image resampled.
+2025-12-12 10:19:10 - Image saved successfully to: uploaded/temp_1765534750_39c6fe33_Test.jpg
+2025-12-12 10:19:10 - Temp image uploaded successfully to: uploaded/temp_1765534750_39c6fe33_Test.jpg
+2025-12-12 10:21:43 - --- Starting DB Update ---
+2025-12-12 10:21:43 - Image file detected in request: banjir-bandang-menerjang-batang-toru-tapanuli-selatan-sumatera-utara-indonesia-sabtu-29112025-1764484561973_169.jpeg
+2025-12-12 10:21:43 - Processing image for product: Test (temp upload)
+2025-12-12 10:21:43 - --- Starting Image Upload ---
+2025-12-12 10:21:43 - Memory limit set to 256M.
+2025-12-12 10:21:43 - Server extensions checked successfully.
+2025-12-12 10:21:43 - Upload directory is writable.
+2025-12-12 10:21:43 - File type detected as: image/jpeg
+2025-12-12 10:21:43 - Image resource created successfully.
+2025-12-12 10:21:43 - Original image dimensions: 650x366.
+2025-12-12 10:21:43 - Resized canvas created with dimensions: 650x366.
+2025-12-12 10:21:43 - Image resampled.
+2025-12-12 10:21:43 - Image saved successfully to: uploaded/temp_1765534903_3427b4b5_Test.jpg
+2025-12-12 10:21:43 - Temp image uploaded successfully to: uploaded/temp_1765534903_3427b4b5_Test.jpg
+2025-12-12 10:21:47 - --- Starting DB Update ---
+2025-12-12 10:21:47 - Deleting temp file: uploaded/temp_1765534903_3427b4b5_Test.jpg
+2025-12-12 10:21:47 - Temp file deleted successfully.
+2025-12-12 10:21:58 - --- Starting DB Update ---
+2025-12-12 10:21:58 - Image file detected in request: 901540_1200.jpg
+2025-12-12 10:21:58 - Processing image for product: Test (temp upload)
+2025-12-12 10:21:58 - --- Starting Image Upload ---
+2025-12-12 10:21:58 - Memory limit set to 256M.
+2025-12-12 10:21:58 - Server extensions checked successfully.
+2025-12-12 10:21:58 - Upload directory is writable.
+2025-12-12 10:21:58 - File type detected as: image/jpeg
+2025-12-12 10:21:58 - Image resource created successfully.
+2025-12-12 10:21:58 - Original image dimensions: 935x624.
+2025-12-12 10:21:58 - Resized canvas created with dimensions: 800x533.
+2025-12-12 10:21:58 - Image resampled.
+2025-12-12 10:21:58 - Image saved successfully to: uploaded/temp_1765534918_737327ae_Test.jpg
+2025-12-12 10:21:58 - Temp image uploaded successfully to: uploaded/temp_1765534918_737327ae_Test.jpg
+2025-12-12 10:22:00 - --- Starting DB Update ---
+2025-12-12 10:22:00 - Deleting temp file: uploaded/temp_1765534918_737327ae_Test.jpg
+2025-12-12 10:22:00 - Temp file deleted successfully.
+2025-12-12 10:22:05 - --- Starting DB Update ---
+2025-12-12 10:26:31 - --- Starting DB Update ---
+2025-12-12 10:26:31 - Image file detected in request: 1445838_720.jpg
+2025-12-12 10:26:31 - Processing image for product: Test (temp upload)
+2025-12-12 10:26:31 - --- Starting Image Upload ---
+2025-12-12 10:26:31 - Memory limit set to 256M.
+2025-12-12 10:26:31 - Server extensions checked successfully.
+2025-12-12 10:26:31 - Upload directory is writable.
+2025-12-12 10:26:31 - File type detected as: image/jpeg
+2025-12-12 10:26:31 - Image resource created successfully.
+2025-12-12 10:26:31 - Original image dimensions: 720x405.
+2025-12-12 10:26:31 - Resized canvas created with dimensions: 720x405.
+2025-12-12 10:26:31 - Image resampled.
+2025-12-12 10:26:31 - Image saved successfully to: uploaded/temp_1765535191_4560d619_Test.jpg
+2025-12-12 10:26:31 - Temp image uploaded successfully to: uploaded/temp_1765535191_4560d619_Test.jpg
+2025-12-12 10:26:36 - --- Starting DB Update ---
+2025-12-12 10:26:36 - Deleting temp file: uploaded/temp_1765535191_4560d619_Test.jpg
+2025-12-12 10:26:36 - Temp file deleted successfully.
+2025-12-12 10:26:50 - --- Starting DB Update ---
+2025-12-12 10:26:50 - Image file detected in request: 901540_1200.jpg
+2025-12-12 10:26:50 - Processing image for product: Test (temp upload)
+2025-12-12 10:26:50 - --- Starting Image Upload ---
+2025-12-12 10:26:50 - Memory limit set to 256M.
+2025-12-12 10:26:50 - Server extensions checked successfully.
+2025-12-12 10:26:50 - Upload directory is writable.
+2025-12-12 10:26:50 - File type detected as: image/jpeg
+2025-12-12 10:26:50 - Image resource created successfully.
+2025-12-12 10:26:50 - Original image dimensions: 935x624.
+2025-12-12 10:26:50 - Resized canvas created with dimensions: 800x533.
+2025-12-12 10:26:50 - Image resampled.
+2025-12-12 10:26:50 - Image saved successfully to: uploaded/temp_1765535210_78470b00_Test.jpg
+2025-12-12 10:26:50 - Temp image uploaded successfully to: uploaded/temp_1765535210_78470b00_Test.jpg
+2025-12-12 10:26:53 - --- Starting DB Update ---
+2025-12-12 10:26:53 - Deleting temp file: uploaded/temp_1765535210_78470b00_Test.jpg
+2025-12-12 10:26:53 - Temp file deleted successfully.
+2025-12-12 10:27:49 - --- Starting DB Update ---
+2025-12-12 10:27:49 - Image file detected in request: gania genkan.jpg
+2025-12-12 10:27:49 - Processing image for product: Test
+2025-12-12 10:27:49 - --- Starting Image Upload ---
+2025-12-12 10:27:49 - Memory limit set to 256M.
+2025-12-12 10:27:49 - Server extensions checked successfully.
+2025-12-12 10:27:49 - Upload directory is writable.
+2025-12-12 10:27:49 - File type detected as: image/jpeg
+2025-12-12 10:27:49 - Image resource created successfully.
+2025-12-12 10:27:49 - Original image dimensions: 1080x1351.
+2025-12-12 10:27:49 - Resized canvas created with dimensions: 800x1000.
+2025-12-12 10:27:49 - Image resampled.
+2025-12-12 10:27:49 - Image saved successfully to: uploaded/Test.jpg
+2025-12-12 10:27:49 - Warning: Product 'Test' not found in dbData to update image path. The product might be new. The image path will be returned to frontend for staging.
+2025-12-12 10:28:16 - --- Starting DB Update ---
+2025-12-12 10:29:37 - --- Starting DB Update ---
+2025-12-12 10:29:37 - Image file detected in request: banjir-bandang-menerjang-batang-toru-tapanuli-selatan-sumatera-utara-indonesia-sabtu-29112025-1764484561973_169.jpeg
+2025-12-12 10:29:37 - Processing image for product: Test (temp upload)
+2025-12-12 10:29:37 - --- Starting Image Upload ---
+2025-12-12 10:29:37 - Memory limit set to 256M.
+2025-12-12 10:29:37 - Server extensions checked successfully.
+2025-12-12 10:29:37 - Upload directory is writable.
+2025-12-12 10:29:37 - File type detected as: image/jpeg
+2025-12-12 10:29:37 - Image resource created successfully.
+2025-12-12 10:29:37 - Original image dimensions: 650x366.
+2025-12-12 10:29:37 - Resized canvas created with dimensions: 650x366.
+2025-12-12 10:29:37 - Image resampled.
+2025-12-12 10:29:37 - Image saved successfully to: uploaded/temp_1765535377_85da520e_Test.jpg
+2025-12-12 10:29:37 - Temp image uploaded successfully to: uploaded/temp_1765535377_85da520e_Test.jpg
+2025-12-12 10:29:44 - --- Starting DB Update ---
+2025-12-12 10:29:44 - Deleting temp file: uploaded/temp_1765535377_85da520e_Test.jpg
+2025-12-12 10:29:44 - Temp file deleted successfully.
+2025-12-12 10:29:49 - --- Starting DB Update ---
+2025-12-12 10:34:05 - --- Starting DB Update ---
+2025-12-12 10:34:05 - Image file detected in request: a26f3cf0-11fa-11ef-996a-ebe39743bd77.jpg.webp
+2025-12-12 10:34:05 - Processing image for product: Test (temp upload)
+2025-12-12 10:34:05 - --- Starting Image Upload ---
+2025-12-12 10:34:05 - Memory limit set to 256M.
+2025-12-12 10:34:05 - Server extensions checked successfully.
+2025-12-12 10:34:05 - Upload directory is writable.
+2025-12-12 10:34:05 - File type detected as: image/webp
+2025-12-12 10:34:05 - Image resource created successfully.
+2025-12-12 10:34:05 - Original image dimensions: 800x450.
+2025-12-12 10:34:05 - Resized canvas created with dimensions: 800x450.
+2025-12-12 10:34:05 - Filled transparent background with white.
+2025-12-12 10:34:05 - Image resampled.
+2025-12-12 10:34:05 - Image saved successfully to: uploaded/temp_1765535645_035f445f_Test.jpg
+2025-12-12 10:34:05 - Temp image uploaded successfully to: uploaded/temp_1765535645_035f445f_Test.jpg
+2025-12-12 10:34:13 - --- Starting DB Update ---
+2025-12-12 10:34:13 - Deleting temp file: uploaded/temp_1765535645_035f445f_Test.jpg
+2025-12-12 10:34:13 - Temp file deleted successfully.
+2025-12-12 10:34:25 - --- Starting DB Update ---
+2025-12-12 10:34:25 - Image file detected in request: a26f3cf0-11fa-11ef-996a-ebe39743bd77.jpg.webp
+2025-12-12 10:34:25 - Processing image for product: Test (temp upload)
+2025-12-12 10:34:25 - --- Starting Image Upload ---
+2025-12-12 10:34:25 - Memory limit set to 256M.
+2025-12-12 10:34:25 - Server extensions checked successfully.
+2025-12-12 10:34:25 - Upload directory is writable.
+2025-12-12 10:34:25 - File type detected as: image/webp
+2025-12-12 10:34:25 - Image resource created successfully.
+2025-12-12 10:34:25 - Original image dimensions: 800x450.
+2025-12-12 10:34:25 - Resized canvas created with dimensions: 800x450.
+2025-12-12 10:34:25 - Filled transparent background with white.
+2025-12-12 10:34:25 - Image resampled.
+2025-12-12 10:34:25 - Image saved successfully to: uploaded/temp_1765535665_33efa182_Test.jpg
+2025-12-12 10:34:25 - Temp image uploaded successfully to: uploaded/temp_1765535665_33efa182_Test.jpg
+2025-12-12 10:34:29 - --- Starting DB Update ---
+2025-12-12 10:34:29 - Deleting temp file: uploaded/temp_1765535665_33efa182_Test.jpg
+2025-12-12 10:34:29 - Temp file deleted successfully.
+2025-12-12 10:46:13 - --- Starting DB Update ---
+2025-12-12 10:46:13 - Image file detected in request: banjir-bandang-menerjang-batang-toru-tapanuli-selatan-sumatera-utara-indonesia-sabtu-29112025-1764484561973_169.jpeg
+2025-12-12 10:46:13 - Processing image for product: Test (temp upload)
+2025-12-12 10:46:13 - --- Starting Image Upload ---
+2025-12-12 10:46:13 - Memory limit set to 256M.
+2025-12-12 10:46:13 - Server extensions checked successfully.
+2025-12-12 10:46:13 - Upload directory is writable.
+2025-12-12 10:46:13 - File type detected as: image/jpeg
+2025-12-12 10:46:13 - Image resource created successfully.
+2025-12-12 10:46:13 - Original image dimensions: 650x366.
+2025-12-12 10:46:13 - Resized canvas created with dimensions: 650x366.
+2025-12-12 10:46:13 - Image resampled.
+2025-12-12 10:46:13 - Image saved successfully to: uploaded/temp_1765536373_41be5607_Test.jpg
+2025-12-12 10:46:13 - Temp image uploaded successfully to: uploaded/temp_1765536373_41be5607_Test.jpg
+2025-12-12 10:48:32 - --- Starting DB Update ---
+2025-12-12 10:48:32 - Image file detected in request: banjir-bandang-menerjang-batang-toru-tapanuli-selatan-sumatera-utara-indonesia-sabtu-29112025-1764484561973_169.jpeg
+2025-12-12 10:48:32 - Processing image for product: Test (temp upload)
+2025-12-12 10:48:32 - --- Starting Image Upload ---
+2025-12-12 10:48:32 - Memory limit set to 256M.
+2025-12-12 10:48:32 - Server extensions checked successfully.
+2025-12-12 10:48:32 - Upload directory is writable.
+2025-12-12 10:48:32 - File type detected as: image/jpeg
+2025-12-12 10:48:32 - Image resource created successfully.
+2025-12-12 10:48:32 - Original image dimensions: 650x366.
+2025-12-12 10:48:32 - Resized canvas created with dimensions: 650x366.
+2025-12-12 10:48:32 - Image resampled.
+2025-12-12 10:48:32 - Image saved successfully to: uploaded/temp_1765536512_ee8ca885_Test.jpg
+2025-12-12 10:48:32 - Temp image uploaded successfully to: uploaded/temp_1765536512_ee8ca885_Test.jpg
+2025-12-12 10:52:34 - --- Starting DB Update ---
+2025-12-12 10:52:34 - Image file detected in request: banjir-bandang-menerjang-batang-toru-tapanuli-selatan-sumatera-utara-indonesia-sabtu-29112025-1764484561973_169.jpeg
+2025-12-12 10:52:34 - Processing image for product: Test (temp upload)
+2025-12-12 10:52:34 - --- Starting Image Upload ---
+2025-12-12 10:52:34 - Memory limit set to 256M.
+2025-12-12 10:52:34 - Server extensions checked successfully.
+2025-12-12 10:52:34 - Upload directory is writable.
+2025-12-12 10:52:34 - File type detected as: image/jpeg
+2025-12-12 10:52:34 - Image resource created successfully.
+2025-12-12 10:52:34 - Original image dimensions: 650x366.
+2025-12-12 10:52:34 - Resized canvas created with dimensions: 650x366.
+2025-12-12 10:52:34 - Image resampled.
+2025-12-12 10:52:34 - Image saved successfully to: uploaded/temp_1765536754_9ee85e08_Test.jpg
+2025-12-12 10:52:34 - Temp image uploaded successfully to: uploaded/temp_1765536754_9ee85e08_Test.jpg
+2025-12-12 10:52:49 - --- Starting DB Update ---
+2025-12-12 10:52:49 - Moving temp file: uploaded/temp_1765536754_9ee85e08_Test.jpg to uploaded/Test.jpg
+2025-12-12 10:52:49 - Failed to move temp file
+2025-12-12 10:52:50 - --- Starting DB Update ---
+2025-12-12 11:13:17 - --- Starting DB Update ---
+2025-12-12 11:13:17 - Image file detected in request: 1445838_720.jpg
+2025-12-12 11:13:17 - Processing image for product: Test (temp upload)
+2025-12-12 11:13:17 - --- Starting Image Upload ---
+2025-12-12 11:13:17 - Memory limit set to 256M.
+2025-12-12 11:13:17 - Server extensions checked successfully.
+2025-12-12 11:13:17 - Upload directory is writable.
+2025-12-12 11:13:17 - File type detected as: image/jpeg
+2025-12-12 11:13:17 - Image resource created successfully.
+2025-12-12 11:13:17 - Original image dimensions: 720x405.
+2025-12-12 11:13:17 - Resized canvas created with dimensions: 720x405.
+2025-12-12 11:13:17 - Image resampled.
+2025-12-12 11:13:17 - Image saved successfully to: uploaded/temp_1765537997_ce071f90_Test.jpg
+2025-12-12 11:13:17 - Temp image uploaded successfully to: uploaded/temp_1765537997_ce071f90_Test.jpg
+2025-12-12 11:16:23 - --- Starting DB Update ---
+2025-12-12 11:16:23 - Moving temp file: uploaded/temp_1765537997_ce071f90_Test.jpg to uploaded/Test.jpg
+2025-12-12 11:16:23 - Deleted existing destination file: uploaded/Test.jpg
+2025-12-12 11:16:23 - Failed to move temp file
+2025-12-12 11:16:24 - --- Starting DB Update ---

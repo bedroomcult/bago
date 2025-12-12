@@ -2176,8 +2176,8 @@
     {
         "name": "Test",
         "category": "Test",
-        "price": 1000,
-        "originalPrice": 2000,
+        "price": 2000,
+        "originalPrice": 1000,
         "period": "01/12/2025-31/12/2025",
         "image": "uploaded/Test.jpg",
         "desc": "DescTest",
@@ -2188,6 +2188,7 @@
                 "name": "Test"
             }
         ],
-        "hidden": false
+        "hidden": false,
+        "_stagedImage": "uploaded/Test.jpg"
     }
 ]
