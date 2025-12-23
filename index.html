@@ -7,8 +7,6 @@
     <title>Catalog</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <!-- Preload Inter font CSS for performance -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
         as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -297,15 +295,7 @@
                 <!-- Cart items will be populated here -->
             </div>
 
-            <!-- PDF Generation Loading Spinner -->
-            <div id="pdf-loading" class="hidden flex flex-col items-center justify-center py-8">
-                <svg class="animate-spin h-10 w-10 text-indigo-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V8a4 4 0 00-4 4H4z"></path>
-                </svg>
-                <p class="text-lg text-gray-600 font-medium">Menghasilkan PDF, mohon tunggu...</p>
-            </div>
+
 
             <div class="border-t border-gray-200 pt-4">
                 <div class="flex justify-between text-lg font-bold">
@@ -319,7 +309,7 @@
                     </button>
                     <button id="checkout-button"
                         class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-full">
-                        Checkout
+                        Hubungi Admin
                     </button>
                 </div>
             </div>
@@ -432,39 +422,29 @@
 
             // Add click event for checkout button
             document.getElementById('checkout-button').addEventListener('click', () => {
-                // Get customer information from form fields
-                const name = document.getElementById('customer-name').value || "";
-                const phone = document.getElementById('customer-phone').value || "";
+                // Create WhatsApp message with cart items
+                let message = "Halo kak, saya tertarik dengan ";
 
-                // Create customer info object
-                const customerInfo = {
-                    name: name.trim(),
-                    phone: phone.trim()
-                };
-
-                // Show loading spinner and hide all cart content
-                const cartContentElements = document.querySelectorAll('#cart-items, .border-t.border-gray-200.pt-4');
-                const pdfLoadingElement = document.getElementById('pdf-loading');
-                const checkoutButton = document.getElementById('checkout-button');
-
-                cartContentElements.forEach(element => {
-                    element.classList.add('hidden');
+                shoppingCart.forEach((item, index) => {
+                    message += `${item.name} - ${item.quantity} pcs`;
+                    if (index < shoppingCart.length - 1) {
+                        message += ", ";
+                    }
                 });
-                pdfLoadingElement.classList.remove('hidden');
-                checkoutButton.disabled = true;
-                checkoutButton.textContent = 'Memproses...';
 
-                // Generate and download PDF with customer info
-                generateAndDownloadPDF(customerInfo)
-                    .finally(() => {
-                        // Hide loading spinner and show cart content again
-                        pdfLoadingElement.classList.add('hidden');
-                        cartContentElements.forEach(element => {
-                            element.classList.remove('hidden');
-                        });
-                        checkoutButton.disabled = false;
-                        checkoutButton.textContent = 'Checkout';
-                    });
+                message += ". Apakah sekarang stoknya ada?";
+
+                // Encode the message for URL
+                const encodedMessage = encodeURIComponent(message);
+
+                // WhatsApp URL with admin phone number
+                const whatsappUrl = `https://wa.me/6281132021021?text=${encodedMessage}`;
+
+                // Open WhatsApp
+                window.open(whatsappUrl, '_blank');
+
+                // Close the cart modal
+                cartModal.classList.add('hidden');
             });
 
             window.addEventListener('click', (event) => {
@@ -526,10 +506,13 @@
                 let totalDiscount = 0;
 
                 const cartItemsHtml = shoppingCart.map(item => {
-                    const isDiscounted = item.originalPrice && item.originalPrice > item.price;
-                    const displayPrice = isDiscounted ? item.price : (item.originalPrice || item.price);
+                    // Look up the current product data to check if discount is still active
+                    const product = allProducts.find(p => p.id === item.id);
+                    const isDiscounted = product ? isCurrentlyDiscounted(product) : false;
+                    const displayPrice = item.price; // Use the stored price (which was the discounted price when added)
                     const itemTotal = displayPrice * item.quantity;
-                    const discountAmount = isDiscounted ? (item.originalPrice - item.price) * item.quantity : 0;
+                    // Only calculate discount if currently discounted
+                    const discountAmount = isDiscounted && item.originalPrice ? (item.originalPrice - item.price) * item.quantity : 0;
 
                     subtotal += itemTotal;
                     totalDiscount += discountAmount;
@@ -1024,252 +1007,7 @@
                 filterAndDisplayProducts();
             });
 
-            // Function to generate and download PDF
-            function generateAndDownloadPDF(customerInfo) {
-                return new Promise((resolve, reject) => {
-                    // Create a temporary container for the PDF content with a dedicated layout
-                    const pdfContainer = document.createElement('div');
-                    pdfContainer.style.position = 'absolute';
-                    pdfContainer.style.left = '-9999px';
-                    pdfContainer.style.width = '400px';
-                    pdfContainer.style.padding = '20px';
-                    pdfContainer.style.backgroundColor = 'white';
-                    pdfContainer.style.fontFamily = "'Inter', sans-serif";
-                    pdfContainer.style.fontSize = '11px';
 
-                    // Add header to the PDF
-                    const header = document.createElement('div');
-                    header.style.textAlign = 'center';
-                    header.style.marginBottom = '20px';
-                    header.innerHTML = `
-                        <h1 style="font-size: 20px; font-weight: bold; color: #1e40af; margin-bottom: 5px;">
-                            BAGO HOME DECOR
-                        </h1>
-                        <p style="font-size: 12px; color: #6b7280; margin-bottom: 10px;">
-                            Checkout Receipt
-                        </p>
-                        <hr style="border: 1px solid #e5e7eb;">
-                    `;
-                    pdfContainer.appendChild(header);
-
-                    // Add customer information if provided
-                    if (customerInfo && (customerInfo.name || customerInfo.phone)) {
-                        const customerInfoContainer = document.createElement('div');
-                        customerInfoContainer.style.marginBottom = '20px';
-                        customerInfoContainer.innerHTML = `
-                            <div style="margin-bottom: 5px;">
-                                <strong style="display: inline-block; width: 70px;">Nama:</strong> 
-                                <span>${customerInfo.name || '-'}</span>
-                            </div>
-                            <div>
-                                <strong style="display: inline-block; width: 70px;">Telepon:</strong> 
-                                <span>${customerInfo.phone || '-'}</span>
-                            </div>
-                            <hr style="margin-top: 15px; border: 1px solid #e5e7eb;">
-                        `;
-                        pdfContainer.appendChild(customerInfoContainer);
-                    }
-
-                    // Add items header with 4 columns
-                    const itemsHeader = document.createElement('div');
-                    itemsHeader.style.display = 'flex';
-                    itemsHeader.style.fontWeight = 'bold';
-                    itemsHeader.style.marginBottom = '10px';
-                    itemsHeader.style.borderBottom = '1px solid #e5e7eb';
-                    itemsHeader.style.paddingBottom = '8px';
-                    itemsHeader.innerHTML = `
-                        <div style="flex: 3;">Item</div>
-                        <div style="flex: 1; text-align: center;">Qty</div>
-                        <div style="flex: 2; text-align: right;">Price</div>
-                        <div style="flex: 2; text-align: right;">Total</div>
-                    `;
-                    pdfContainer.appendChild(itemsHeader);
-
-                    // Add cart items with proper formatting in 4 columns
-                    let subtotal = 0; // Sum of undiscounted prices
-                    let totalDiscount = 0;
-                    shoppingCart.forEach(item => {
-                        const isDiscounted = item.originalPrice && item.originalPrice > item.price;
-                        // Use original price for subtotal calculation
-                        const originalPrice = item.originalPrice || item.price;
-                        const displayPrice = item.price; // Always show the actual price charged
-                        const itemTotal = displayPrice * item.quantity;
-                        // Calculate discount based on original price
-                        const discountAmount = isDiscounted ? (originalPrice - item.price) * item.quantity : 0;
-
-                        // Add to totals
-                        subtotal += originalPrice * item.quantity;
-                        totalDiscount += discountAmount;
-
-                        // Format prices using the existing formatRupiah function logic
-                        const formatRupiah = (number) => {
-                            if (number === null || number === undefined || isNaN(number)) {
-                                return '';
-                            }
-                            const formatter = new Intl.NumberFormat('id-ID', {
-                                style: 'currency',
-                                currency: 'IDR',
-                                minimumFractionDigits: 0
-                            });
-                            return formatter.format(number).replace(/\s/, ' ');
-                        };
-
-                        const formattedOriginalPrice = formatRupiah(originalPrice);
-                        const formattedDisplayPrice = formatRupiah(displayPrice);
-                        const formattedTotal = formatRupiah(itemTotal);
-                        const formattedDiscount = isDiscounted ? formatRupiah(originalPrice - item.price) : null;
-
-                        const itemElement = document.createElement('div');
-                        itemElement.style.display = 'flex';
-                        itemElement.style.marginBottom = '12px';
-                        itemElement.style.paddingBottom = '12px';
-                        itemElement.style.borderBottom = '1px dashed #e5e7eb';
-
-                        // Create item content with 4 columns
-                        let priceInfo = formattedOriginalPrice; // Always show original price
-                        if (isDiscounted) {
-                            priceInfo += `<br><span style="font-size: 8px; color: #ef4444;">Disc: ${formattedDiscount}</span>`;
-                        }
-
-                        itemElement.innerHTML = `
-                            <div style="display: flex; width: 100%;">
-                                <!-- Column 1: Thumbnail and Name -->
-                                <div style="flex: 3; display: flex;">
-                                    <div style="width: 50px; height: 50px; margin-right: 10px; flex-shrink: 0;">
-                                        <img src="${item.image}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;" crossorigin="anonymous">
-                                    </div>
-                                    <div style="align-self: center; font-weight: bold;">${item.name}</div>
-                                </div>
-                                <!-- Column 2: Quantity -->
-                                <div style="flex: 1; text-align: center; align-self: center;">${item.quantity}</div>
-                                <!-- Column 3: Price -->
-                                <div style="flex: 2; text-align: right; align-self: center;">${priceInfo}</div>
-                                <!-- Column 4: Total -->
-                                <div style="flex: 2; text-align: right; font-weight: bold; align-self: center;">${formattedTotal}</div>
-                            </div>
-                        `;
-
-                        pdfContainer.appendChild(itemElement);
-                    });
-
-                    // Add summary section
-                    const summaryContainer = document.createElement('div');
-                    summaryContainer.style.marginTop = '20px';
-                    summaryContainer.style.paddingTop = '15px';
-                    summaryContainer.style.borderTop = '1px solid #e5e7eb';
-
-                    // Format the amounts
-                    const formatRupiah = (number) => {
-                        if (number === null || number === undefined || isNaN(number)) {
-                            return '';
-                        }
-                        const formatter = new Intl.NumberFormat('id-ID', {
-                            style: 'currency',
-                            currency: 'IDR',
-                            minimumFractionDigits: 0
-                        });
-                        return formatter.format(number).replace(/\s/, ' ');
-                    };
-
-                    const formattedSubtotal = formatRupiah(subtotal);
-                    const formattedTotalDiscount = formatRupiah(totalDiscount);
-                    const formattedFinalTotal = formatRupiah(subtotal - totalDiscount);
-
-                    let summaryHTML = `
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                            <span>Subtotal (Harga asli):</span>
-                            <span>${formattedSubtotal}</span>
-                        </div>
-                    `;
-
-                    if (totalDiscount > 0) {
-                        summaryHTML += `
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; color: #ef4444;">
-                                <span>Total Diskon:</span>
-                                <span>-${formattedTotalDiscount}</span>
-                            </div>
-                        `;
-                    }
-
-                    summaryHTML += `
-                        <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: bold; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e5e7eb;">
-                            <span>TOTAL:</span>
-                            <span>${formattedFinalTotal}</span>
-                        </div>
-                    `;
-
-                    summaryContainer.innerHTML = summaryHTML;
-                    pdfContainer.appendChild(summaryContainer);
-
-                    // Add footer
-                    const footer = document.createElement('div');
-                    const timestamp = new Date().toLocaleString('id-ID');
-                    footer.style.marginTop = '25px';
-                    footer.style.paddingTop = '20px';
-                    footer.style.borderTop = '1px solid #e5e7eb';
-                    footer.style.textAlign = 'center';
-                    footer.style.fontSize = '9px';
-                    footer.style.color = '#6b7280';
-                    footer.innerHTML = `
-                        <p>Terima kasih sudah berbelanja di Bago Home Decor</p>
-                        <p>Dicetak pada: ${timestamp}</p>
-                    `;
-                    pdfContainer.appendChild(footer);
-
-                    // Add the container to the document
-                    document.body.appendChild(pdfContainer);
-
-                    // Use html2canvas to capture the content
-                    html2canvas(pdfContainer, {
-                        scale: 2,
-                        useCORS: true,
-                        logging: false,
-                        height: pdfContainer.offsetHeight,
-                        width: pdfContainer.offsetWidth,
-                        scrollY: 0
-                    }).then(canvas => {
-                        // Remove the temporary container
-                        document.body.removeChild(pdfContainer);
-
-                        // Create PDF using jsPDF with dynamic sizing
-                        const { jsPDF } = window.jspdf;
-                        const imgData = canvas.toDataURL('image/png');
-
-                        // Calculate dimensions based on content
-                        const imgWidth = canvas.width / 4; // Scale down for better fit
-                        const imgHeight = canvas.height / 4;
-                        const pdfWidth = imgWidth + 20; // Add some margins
-                        const pdfHeight = imgHeight + 20;
-
-                        // Create PDF with custom dimensions
-                        const pdf = new jsPDF('p', 'mm', [pdfWidth, pdfHeight]);
-
-                        // Add image
-                        pdf.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight);
-
-                        // Download the PDF
-                        pdf.save('bago-checkout-' + new Date().getTime() + '.pdf');
-
-                        // Do not clear the cart after download
-                        // clearCart();
-                        cartModal.classList.add('hidden');
-
-                        resolve();
-                    }).catch(error => {
-                        console.error('Error generating PDF:', error);
-                        // Remove the temporary container if there was an error
-                        if (document.body.contains(pdfContainer)) {
-                            document.body.removeChild(pdfContainer);
-                        }
-                        alert('Terjadi kesalahan saat menghasilkan PDF. Pesanan Anda tetap diproses.');
-                        // Do not clear the cart after error
-                        // clearCart();
-                        cartModal.classList.add('hidden');
-
-                        reject(error);
-                    });
-                });
-            }
 
             fetchProducts();
         });
