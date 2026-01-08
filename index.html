@@ -331,7 +331,6 @@
             let allProducts = [];
             let selectedCategory = 'All';
             let currentSort = 'name-asc';
-            let showOnlyDiscounted = false;
             let shoppingCart = [];
 
             // Load cart from localStorage if available
@@ -687,9 +686,9 @@
                 categoryCardsContainer.appendChild(allCard);
 
                 // "On Sale" button
-                const saleCard = createButton('DISKON', showOnlyDiscounted, true);
+                const saleCard = createButton('DISKON', selectedCategory === 'DISKON', true);
                 saleCard.addEventListener('click', () => {
-                    showOnlyDiscounted = !showOnlyDiscounted;
+                    selectedCategory = selectedCategory === 'DISKON' ? 'All' : 'DISKON';
                     updateCategoryAndFilter();
                 });
                 categoryCardsContainer.appendChild(saleCard);
@@ -718,11 +717,9 @@
                 const searchTerm = searchInput.value.toLowerCase();
                 let filtered = allProducts;
 
-                if (showOnlyDiscounted) {
+                if (selectedCategory === 'DISKON') {
                     filtered = filtered.filter(item => isCurrentlyDiscounted(item));
-                }
-
-                if (selectedCategory && selectedCategory !== 'All') {
+                } else if (selectedCategory && selectedCategory !== 'All') {
                     filtered = filtered.filter(item =>
                         item.category && item.category.split(',').map(c => c.trim()).includes(selectedCategory)
                     );
@@ -1013,5 +1010,7 @@
         </div>
     </div>
 </body>
+
+</html>
 
 </html>
