@@ -270,10 +270,13 @@
                             required>
                     </div>
                     <div>
-                        <label for="category" class="block text-sm font-medium text-gray-700">Kategori</label>
-                        <input type="text" id="category"
-                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm p-2"
-                            required>
+                        <label class="block text-sm font-medium text-gray-700">Kategori</label>
+                        <div id="categories-container" class="mt-1 flex items-center gap-2 flex-wrap">
+                            <!-- Category badges will be added here -->
+                            <button type="button" id="add-category-btn"
+                                class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 text-xl font-bold">+</button>
+                        </div>
+                        <input type="hidden" id="category" name="category">
                     </div>
                     <div>
                         <label for="image" class="block text-sm font-medium text-gray-700">Direktori Gambar</label>
@@ -370,6 +373,22 @@
                     class="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg">Batal</button>
                 <button type="button" id="save-color-btn"
                     class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg">Tambah Warna</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Selection Modal -->
+    <div id="category-modal" class="modal-overlay hidden">
+        <div class="modal-content bg-white rounded-lg shadow-xl p-6 w-11/12 max-w-md">
+            <h2 class="text-xl font-bold mb-4">Pilih Kategori</h2>
+            <div id="category-list" class="grid grid-cols-2 gap-3">
+                <!-- Categories will be populated here -->
+            </div>
+            <div class="mt-6 flex justify-end gap-3">
+                <button type="button" id="cancel-category-btn"
+                    class="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg">Batal</button>
+                <button type="button" id="submit-category-btn"
+                    class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg">Pilih</button>
             </div>
         </div>
     </div>
@@ -481,6 +500,19 @@
             const saveColorBtn = document.getElementById('save-color-btn');
             const colorsContainer = document.getElementById('colors-container');
             let colorPicker;
+
+            // Category Elements
+            const categoryModal = document.getElementById('category-modal');
+            const addCategoryBtn = document.getElementById('add-category-btn');
+            const cancelCategoryBtn = document.getElementById('cancel-category-btn');
+            const categoriesContainer = document.getElementById('categories-container');
+            const categoryList = document.getElementById('category-list');
+
+            // Available categories
+            const availableCategories = [
+                'Buffet', 'Kursi', 'Cabinet', 'Set', 'Sofa', 'Stool',
+                'Meja', 'Industrial', 'Sungkai', 'Kursi Cafe', 'Nakas', 'Divan'
+            ];
 
             // Image Upload Elements
             const imageUploadBtn = document.getElementById('image-upload-btn');
@@ -775,7 +807,9 @@
                     const item = allItems[index];
                     document.getElementById('product-id').value = index;
                     document.getElementById('name').value = item.name || '';
-                    document.getElementById('category').value = item.category || '';
+                    // Parse categories from comma-separated string and render badges
+                    const categories = item.category ? item.category.split(',').map(c => c.trim()).filter(c => c) : [];
+                    renderCategoryBadges(categories);
                     document.getElementById('image').value = item.image || '';
                     document.getElementById('price').value = item.price;
                     document.getElementById('originalPrice').value = item.originalPrice;
@@ -1176,6 +1210,112 @@
                 });
                 colorsContainer.appendChild(addColorBtn);
             }
+
+            // --- Category Badge Functions ---
+            function renderCategoryBadges(categories) {
+                categoriesContainer.innerHTML = '';
+                categories.forEach(category => {
+                    const badge = document.createElement('div');
+                    badge.className = 'category-badge-item flex items-center gap-2 bg-blue-100 text-blue-800 rounded-full px-3 py-1';
+                    badge.dataset.category = category;
+                    badge.innerHTML = `
+                        <span class="text-sm font-medium">${category}</span>
+                        <button type="button" class="remove-category-btn text-blue-600 hover:text-blue-800 font-bold">×</button>
+                    `;
+                    categoriesContainer.appendChild(badge);
+                });
+                categoriesContainer.appendChild(addCategoryBtn);
+                updateCategoryHiddenInput(categories);
+            }
+
+            function updateCategoryHiddenInput(categories) {
+                document.getElementById('category').value = categories.join(', ');
+            }
+
+            function openCategoryModal() {
+                // Get currently selected categories
+                const currentCategories = [];
+                categoriesContainer.querySelectorAll('.category-badge-item').forEach(badge => {
+                    currentCategories.push(badge.dataset.category);
+                });
+
+                // Render available categories in modal
+                categoryList.innerHTML = '';
+                availableCategories.forEach(category => {
+                    const isSelected = currentCategories.includes(category);
+                    const categoryBtn = document.createElement('button');
+                    categoryBtn.className = `category-option p-3 border rounded-lg text-center transition-colors ${isSelected ? 'bg-blue-500 text-white border-blue-500' : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+                        }`;
+                    categoryBtn.dataset.category = category;
+                    categoryBtn.textContent = category;
+                    categoryList.appendChild(categoryBtn);
+                });
+
+                categoryModal.classList.remove('hidden');
+            }
+
+            function closeCategoryModal() {
+                categoryModal.classList.add('hidden');
+            }
+
+            // Add event listeners for category modal
+            addCategoryBtn.addEventListener('click', openCategoryModal);
+            cancelCategoryBtn.addEventListener('click', closeCategoryModal);
+
+            // Submit category button
+            document.getElementById('submit-category-btn').addEventListener('click', () => {
+                const selectedCategories = [];
+                categoryList.querySelectorAll('.category-option.bg-blue-500').forEach(btn => {
+                    selectedCategories.push(btn.dataset.category);
+                });
+                renderCategoryBadges(selectedCategories);
+                closeCategoryModal();
+            });
+
+            categoryList.addEventListener('click', (e) => {
+                if (e.target.classList.contains('category-option')) {
+                    const category = e.target.dataset.category;
+                    e.target.classList.toggle('bg-blue-500');
+                    e.target.classList.toggle('text-white');
+                    e.target.classList.toggle('border-blue-500');
+                    e.target.classList.toggle('bg-white');
+                    e.target.classList.toggle('text-gray-700');
+                    e.target.classList.toggle('border-gray-300');
+                }
+            });
+
+            // Handle category selection confirmation (close modal and update badges)
+            categoryModal.addEventListener('click', (e) => {
+                if (e.target === cancelCategoryBtn) return; // Already handled above
+
+                // If clicking outside modal content, close modal
+                if (e.target === categoryModal) {
+                    const selectedCategories = [];
+                    categoryList.querySelectorAll('.category-option.bg-blue-500').forEach(btn => {
+                        selectedCategories.push(btn.dataset.category);
+                    });
+                    renderCategoryBadges(selectedCategories);
+                    closeCategoryModal();
+                }
+            });
+
+            // Handle badge removal
+            categoriesContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('remove-category-btn')) {
+                    const badge = e.target.closest('.category-badge-item');
+                    const categoryToRemove = badge.dataset.category;
+
+                    // Remove the badge
+                    badge.remove();
+
+                    // Update hidden input
+                    const remainingCategories = [];
+                    categoriesContainer.querySelectorAll('.category-badge-item').forEach(badge => {
+                        remainingCategories.push(badge.dataset.category);
+                    });
+                    updateCategoryHiddenInput(remainingCategories);
+                }
+            });
 
             // --- Date Picker Functions ---
             function formatDate(date) {
