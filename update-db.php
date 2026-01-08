@@ -91,8 +91,8 @@ function processAndSaveImage($file, $productName, &$errorMsg, $isTempUpload = fa
     }
     write_log("Image resource created successfully.");
 
-    $maxWidth = 800;
-    $quality = 75;
+    $maxWidth = 1080;
+    $quality = 90;
     $width = imagesx($sourceImage);
     $height = imagesy($sourceImage);
     write_log("Original image dimensions: {$width}x{$height}.");
