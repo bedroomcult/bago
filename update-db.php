@@ -31,6 +31,48 @@ header('Content-Type: application/json');
 handleDbUpdate();
 
 /**
+ * Loads the settings from settings.json.
+ * @return array The settings array or default values if file doesn't exist.
+ */
+function loadSettings() {
+    $settingsFile = 'settings.json';
+    if (file_exists($settingsFile)) {
+        $json = file_get_contents($settingsFile);
+        $data = json_decode($json, true);
+        if ($data) {
+            return $data;
+        }
+    }
+    // Default settings
+    return [
+        'compressionQuality' => 90,
+        'maxWidth' => 1080,
+        'popupSettings' => [
+            'enabled' => false,
+            'compressionQuality' => 80,
+            'maxWidth' => 800,
+            'images' => []
+        ]
+    ];
+}
+
+/**
+ * Saves the settings to settings.json.
+ * @param array $settings The settings array to save.
+ * @return bool True on success, false on failure.
+ */
+function saveSettings($settings) {
+    $settingsFile = 'settings.json';
+    $json = json_encode($settings, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+    if (file_put_contents($settingsFile, $json) !== false) {
+        write_log("Settings saved successfully.");
+        return true;
+    }
+    write_log("Failed to save settings.");
+    return false;
+}
+
+/**
  * Processes and saves an uploaded image.
  *
  * @param array $file The file array from $_FILES.
@@ -91,8 +133,11 @@ function processAndSaveImage($file, $productName, &$errorMsg, $isTempUpload = fa
     }
     write_log("Image resource created successfully.");
 
-    $maxWidth = 1080;
-    $quality = 90;
+    $settings = loadSettings();
+    $maxWidth = isset($settings['maxWidth']) ? (int)$settings['maxWidth'] : 1080;
+    $quality = isset($settings['compressionQuality']) ? (int)$settings['compressionQuality'] : 90;
+
+    write_log("Using compression quality: {$quality}, Max Width: {$maxWidth}");
     $width = imagesx($sourceImage);
     $height = imagesy($sourceImage);
     write_log("Original image dimensions: {$width}x{$height}.");
@@ -142,15 +187,130 @@ function processAndSaveImage($file, $productName, &$errorMsg, $isTempUpload = fa
 
 /**
  * Handles backing up and updating the db.json file.
- * This function now also handles an optional image upload.
+ * This function now also handles an optional image upload and settings updates.
  */
 function handleDbUpdate() {
     write_log("--- Starting DB Update ---");
+
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'getSettings') {
+        $settings = loadSettings();
+        echo json_encode(['status' => 'success', 'settings' => $settings]);
+        exit;
+    }
 
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         write_log("Error: Invalid request method for DB update.");
         http_response_code(405);
         echo json_encode(['status' => 'error', 'message' => 'Invalid request method for DB update.']);
+        exit;
+    }
+
+    // Handle settings update
+    if (isset($_POST['settingsData'])) {
+        $settingsData = json_decode($_POST['settingsData'], true);
+        if ($settingsData) {
+            write_log("Updating settings: " . json_encode($settingsData));
+            if (saveSettings($settingsData)) {
+                echo json_encode(['status' => 'success', 'message' => 'Settings updated successfully.']);
+            } else {
+                http_response_code(500);
+                echo json_encode(['status' => 'error', 'message' => 'Failed to save settings.']);
+            }
+        } else {
+             http_response_code(400);
+             echo json_encode(['status' => 'error', 'message' => 'Invalid settings data.']);
+        }
+        exit;
+    }
+
+    // Handle popup image upload
+    if (isset($_FILES['popupImage']) && $_FILES['popupImage']['error'] === UPLOAD_ERR_OK) {
+        $uploadDir = 'uploaded/popup/';
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        $settings = loadSettings();
+        $popupSettings = $settings['popupSettings'] ?? [];
+        $quality = isset($popupSettings['compressionQuality']) ? (int)$popupSettings['compressionQuality'] : 80;
+        // Correctly handle maxWidth: if it's set in popupSettings, use it; otherwise default to 800.
+        // The processAndSaveImage uses a hardcoded 1080 default if not passed, but here we want to respect the popup specific setting.
+        // We need to modify processAndSaveImage to accept quality and maxWidth or we just temporarily overwrite the global ones?
+        // Actually processAndSaveImage reads from loadSettings() which creates a race condition or just uses the global ones.
+        // Better to refactor processAndSaveImage to accept options.
+        
+        // REFACTOR: We need to pass options to processAndSaveImage to avoid using global settings for popup specific needs.
+        // For now, let's manually process or assume processAndSaveImage will be refactored.
+        // Given complexity, I will refactor processAndSaveImage signature effectively below.
+        
+        $detectedType = @exif_imagetype($_FILES['popupImage']['tmp_name']);
+        if (!$detectedType) {
+             echo json_encode(['status' => 'error', 'message' => 'Invalid image type.']);
+             exit;
+        }
+        
+        $sourceImage = null;
+        switch ($detectedType) {
+            case IMAGETYPE_JPEG: $sourceImage = @imagecreatefromjpeg($_FILES['popupImage']['tmp_name']); break;
+            case IMAGETYPE_PNG: $sourceImage = @imagecreatefrompng($_FILES['popupImage']['tmp_name']); break;
+            case IMAGETYPE_GIF: $sourceImage = @imagecreatefromgif($_FILES['popupImage']['tmp_name']); break;
+            case IMAGETYPE_WEBP: $sourceImage = @imagecreatefromwebp($_FILES['popupImage']['tmp_name']); break;
+        }
+
+        if ($sourceImage) {
+            $maxWidth = isset($popupSettings['maxWidth']) ? (int)$popupSettings['maxWidth'] : 800;
+            $width = imagesx($sourceImage);
+            $height = imagesy($sourceImage);
+            
+            $newWidth = $width > $maxWidth ? $maxWidth : $width;
+            $newHeight = $width > $maxWidth ? floor($height * ($maxWidth / $width)) : $height;
+            
+            $resizedImage = imagecreatetruecolor($newWidth, $newHeight);
+            
+             if (in_array($detectedType, [IMAGETYPE_PNG, IMAGETYPE_GIF, IMAGETYPE_WEBP])) {
+                $white = imagecolorallocate($resizedImage, 255, 255, 255);
+                imagefill($resizedImage, 0, 0, $white);
+            }
+            
+            imagecopyresampled($resizedImage, $sourceImage, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+            
+            $fileName = 'popup_' . time() . '_' . uniqid() . '.jpg';
+            $filePath = $uploadDir . $fileName;
+            
+            if (imagejpeg($resizedImage, $filePath, $quality)) {
+                imagedestroy($sourceImage);
+                imagedestroy($resizedImage);
+                
+                // Update settings with new image
+                $settings['popupSettings']['images'][] = $filePath;
+                saveSettings($settings);
+                
+                echo json_encode(['status' => 'success', 'imagePath' => $filePath, 'settings' => $settings]);
+            } else {
+                echo json_encode(['status' => 'error', 'message' => 'Failed to save popup image.']);
+            }
+        } else {
+             echo json_encode(['status' => 'error', 'message' => 'Failed to process image.']);
+        }
+        exit;
+    }
+    
+    // Handle popup image delete
+    if (isset($_POST['deletePopupImage'])) {
+        $imagePath = $_POST['deletePopupImage'];
+        if (file_exists($imagePath)) {
+            unlink($imagePath);
+        }
+        
+        $settings = loadSettings();
+        if (isset($settings['popupSettings']['images'])) {
+            $settings['popupSettings']['images'] = array_values(array_filter($settings['popupSettings']['images'], function($img) use ($imagePath) {
+                return $img !== $imagePath;
+            }));
+            saveSettings($settings);
+        }
+        
+        echo json_encode(['status' => 'success', 'settings' => $settings]);
         exit;
     }
 

@@ -1,0 +1,10 @@
+{
+    "compressionQuality": 90,
+    "maxWidth": 1080,
+    "popupSettings": {
+        "enabled": false,
+        "compressionQuality": 80,
+        "maxWidth": 800,
+        "images": []
+    }
+}

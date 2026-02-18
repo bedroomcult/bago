@@ -2300,31 +2300,5 @@
         "colors": [],
         "hidden": false,
         "_stagedImage": "uploaded/temp_1771401388_40c8a541_Kakida_Rotan_Set.jpg"
-    },
-    {
-        "name": "Lendean Dining Set",
-        "category": "Set",
-        "price": 3650000,
-        "originalPrice": 4321000,
-        "period": "18/02/2026-12/04/2026",
-        "image": "uploaded/LendeanDiningSet.jpg",
-        "desc": "4 Lendean Chair + Mejoe Table (Jati 120)",
-        "size": null,
-        "colors": [],
-        "hidden": false,
-        "_stagedImage": "uploaded/temp_1771401544_5372183d_Lendean_Dining_Set.jpg"
-    },
-    {
-        "name": "Siepin Dining Set",
-        "category": "Set",
-        "price": 3900000,
-        "originalPrice": 4625000,
-        "period": "18/02/2026-12/04/2026",
-        "image": "uploaded/SiepinDiningSet.jpg",
-        "desc": "4 Siepin Chair + Mejoe Table (Jati 120)",
-        "size": null,
-        "colors": [],
-        "hidden": false,
-        "_stagedImage": "uploaded/temp_1771401596_bb6411b0_Siepin_Dining_Set.jpg"
     }
 ]

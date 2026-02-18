@@ -1009,6 +1009,138 @@
                 class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
         </div>
     </div>
+    <!-- Popup Carousel -->
+    <div id="popup-overlay"
+        class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center transition-opacity duration-300 opacity-0">
+        <div class="relative w-full max-w-4xl max-h-[90vh] flex flex-col items-center">
+            <button id="popup-close" class="absolute -top-10 right-4 sm:-right-4 text-white hover:text-gray-300 z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div id="popup-content" class="relative w-full aspect-video sm:rounded-lg overflow-hidden shadow-2xl">
+                <img id="popup-image" src="" alt="Popup"
+                    class="w-full h-full object-contain cursor-pointer transition-opacity duration-300 opacity-100">
+
+                <!-- Navigation Hints (Optional) -->
+                <div class="absolute inset-y-0 left-0 w-1/4 bg-transparent cursor-pointer" id="prev-area"></div>
+                <div class="absolute inset-y-0 right-0 w-1/4 bg-transparent cursor-pointer" id="next-area"></div>
+            </div>
+
+            <!-- Indicators -->
+            <div id="popup-indicators" class="flex gap-2 mt-4">
+                <!-- Indicators injected by JS -->
+            </div>
+        </div>
+        <!-- Clickable background area -->
+        <div id="popup-backdrop-click" class="absolute inset-0 -z-10"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const popupOverlay = document.getElementById('popup-overlay');
+            const popupImage = document.getElementById('popup-image');
+            const popupClose = document.getElementById('popup-close');
+            const popupBackdropClick = document.getElementById('popup-backdrop-click');
+            const popupIndicators = document.getElementById('popup-indicators');
+            const popupContent = document.getElementById('popup-content');
+
+            let images = [];
+            let currentIndex = 0;
+            let autoInterval;
+
+            try {
+                const response = await fetch('update-db.php?action=getSettings');
+                const data = await response.json();
+
+                if (data.status === 'success' && data.settings && data.settings.popupSettings) {
+                    const settings = data.settings.popupSettings;
+
+                    if (settings.enabled && settings.images && settings.images.length > 0) {
+                        images = settings.images;
+                        // Preload images
+                        images.forEach(src => {
+                            const img = new Image();
+                            img.src = src;
+                        });
+
+                        showPopup(0);
+                    }
+                }
+            } catch (error) {
+                console.error('Failed to load popup settings:', error);
+            }
+
+            function showPopup(index) {
+                currentIndex = index;
+                if (currentIndex >= images.length) currentIndex = 0;
+
+                popupImage.style.opacity = '0';
+
+                setTimeout(() => {
+                    popupImage.src = images[currentIndex];
+                    popupImage.onload = () => {
+                        popupImage.style.opacity = '1';
+                    };
+                    updateIndicators();
+                }, 150);
+
+                if (popupOverlay.classList.contains('hidden')) {
+                    popupOverlay.classList.remove('hidden');
+                    // Small delay to allow display:block to apply before opacity transition
+                    setTimeout(() => {
+                        popupOverlay.classList.remove('opacity-0');
+                    }, 10);
+                }
+            }
+
+            function nextImage(e) {
+                if (e) e.stopPropagation();
+                let nextIndex = currentIndex + 1;
+                if (nextIndex >= images.length) nextIndex = 0;
+                showPopup(nextIndex);
+            }
+
+            function closePopup() {
+                popupOverlay.classList.add('opacity-0');
+                setTimeout(() => {
+                    popupOverlay.classList.add('hidden');
+                }, 300);
+            }
+
+            function updateIndicators() {
+                popupIndicators.innerHTML = '';
+                if (images.length > 1) {
+                    images.forEach((_, idx) => {
+                        const dot = document.createElement('div');
+                        dot.className = `w-2 h-2 rounded-full transition-colors duration-300 ${idx === currentIndex ? 'bg-white' : 'bg-gray-500'}`;
+                        popupIndicators.appendChild(dot);
+                    });
+                }
+            }
+
+            popupClose.addEventListener('click', closePopup);
+
+            // Clicking empty space (backdrop) goes to next image
+            popupBackdropClick.addEventListener('click', nextImage);
+
+            // Clicking the image itself also goes to next (user requirement: "clicking empty space will work as next image", typically image click -> next is also expected behavior in simple carousels. adding it to image too for better UX)
+            popupContent.addEventListener('click', nextImage);
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closePopup();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') {
+                    let prev = currentIndex - 1;
+                    if (prev < 0) prev = images.length - 1;
+                    showPopup(prev);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

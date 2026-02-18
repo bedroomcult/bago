@@ -405,7 +405,7 @@
         "category": "Buffet",
         "price": 2750000,
         "originalPrice": 3050000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/01/2026-17/02/2026",
         "image": "Buffet/Dumata.webp",
         "desc": null,
         "size": "P 145 CM X L 45 CM X T 60 CM",
@@ -423,9 +423,9 @@
     {
         "name": "Dympan",
         "category": "Buffet",
-        "price": 2340000,
-        "originalPrice": 2600000,
-        "period": "18/02/2026-12/04/2026",
+        "price": 2600000,
+        "originalPrice": null,
+        "period": null,
         "image": "Buffet/Dympan.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
@@ -444,14 +444,10 @@
     {
         "name": "Fuloro Chair",
         "category": "Stool",
-        "price": 3250000,
+        "price": 2750000,
         "originalPrice": null,
-        "period": null,
         "image": "Stool/Fuloro.webp",
-        "desc": null,
-        "size": "P 154 CM X L 69 CM X T 39 CM",
-        "colors": [],
-        "hidden": false
+        "size": "P 154 CM X L 69 CM X T 39 CM"
     },
     {
         "name": "Galar Chair",
@@ -466,12 +462,9 @@
         "category": "Nakas",
         "price": 2170000,
         "originalPrice": 2415000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/08/2025-05/09/2025",
         "image": "Nakas/Gania.webp",
-        "desc": null,
-        "size": "P 130 CM X L 45 CM X T 52 CM",
-        "colors": [],
-        "hidden": false
+        "size": "P 130 CM X L 45 CM X T 52 CM"
     },
     {
         "name": "Gashbir Chair",
@@ -508,7 +501,7 @@
     {
         "name": "Hotori",
         "category": "Buffet",
-        "price": 2750000,
+        "price": 3000000,
         "originalPrice": 3420000,
         "period": "01/01/2026-17/02/2026",
         "image": "Buffet/Hotori.webp",
@@ -678,12 +671,8 @@
         "category": "Meja",
         "price": 1680000,
         "originalPrice": null,
-        "period": null,
         "image": "Meja/Kanara.webp",
-        "desc": null,
-        "size": "P 110 CM X L 55 CM X T 47 CM",
-        "colors": [],
-        "hidden": false
+        "size": "P 120 CM X L 70 CM X T 41 CM"
     },
     {
         "name": "Kane Chair",
@@ -708,8 +697,8 @@
     {
         "name": "Karo",
         "category": "Nakas",
-        "price": 792000,
-        "originalPrice": 880000,
+        "price": 880000,
+        "originalPrice": 792000,
         "period": "01/01/2026-17/02/2026",
         "image": "Nakas/Karo.webp",
         "desc": "Bahan Jati",
@@ -945,14 +934,14 @@
         "size": "P 100 CM X L 40 CM X T 90 CM"
     },
     {
-        "name": "Maksi Table (Sungkai 160 cm)",
+        "name": "Maksi Table",
         "category": "Meja, Sungkai",
         "price": 2499000,
         "originalPrice": null,
         "period": null,
         "image": "Meja/Maksi.webp",
         "desc": "Bahan Sungkai (Warna Cerah)",
-        "size": "P 160 CM X L 80 CM X T 68 CM",
+        "size": "P 56 CM X L 56 CM X T 49 CM",
         "colors": [],
         "hidden": false
     },
@@ -1013,7 +1002,7 @@
         "size": "P 140 CM X L 70 CM X T 75 CM"
     },
     {
-        "name": "Mejoe Table (Jati 120)",
+        "name": "Mejoe Table",
         "category": "Meja",
         "price": 1570000,
         "originalPrice": null,
@@ -1073,12 +1062,8 @@
         "category": "Meja",
         "price": 599000,
         "originalPrice": null,
-        "period": null,
         "image": "Meja/Mindie.webp",
-        "desc": null,
-        "size": "P 80 CM X L 50  CM X T 45 CM",
-        "colors": [],
-        "hidden": false
+        "size": "P 200 CM X L 100 CM X T 76 CM"
     },
     {
         "name": "Mioji Double",
@@ -1355,9 +1340,9 @@
     {
         "name": "Qilla Sofa",
         "category": "Sofa",
-        "price": 1870000,
+        "price": 1900000,
         "originalPrice": 2200000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/01/2026-17/02/2026",
         "image": "Sofa/Qilla Sofa.webp",
         "desc": "Kain Kimmy/Linen",
         "size": "P 130 CM X L 70 CM X T 80 CM, Stool: D 43 CM x T 43 CM, Dudukan: 45 CM",
@@ -1455,9 +1440,9 @@
     {
         "name": "Ratton",
         "category": "Buffet",
-        "price": 2340000,
+        "price": 2350000,
         "originalPrice": 2600000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/01/2026-17/02/2026",
         "image": "Buffet/Ratton.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
@@ -1660,9 +1645,9 @@
     {
         "name": "Serwood Sofa Set",
         "category": "Set, Sofa",
-        "price": 5900000,
+        "price": 6000000,
         "originalPrice": 7855000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/01/2026-17/02/2026",
         "image": "Set/Serwood Sofa Set.webp",
         "desc": "Kayu Jati",
         "size": "P 120 CM X L 60 CM X T 80 CM, Dudukan: 45 CM",
@@ -1670,16 +1655,12 @@
         "hidden": false
     },
     {
-        "name": "Serwood Table Mini (Jati)",
+        "name": "Serwood Table Mini",
         "category": "Meja",
         "price": 1350000,
         "originalPrice": null,
-        "period": null,
         "image": "Meja/Serwood Mini Table.webp",
-        "desc": null,
-        "size": "P 120 CM X L 60 CM X T 45 CM",
-        "colors": [],
-        "hidden": false
+        "size": "P 120 CM X L 60 CM X T 45 CM"
     },
     {
         "name": "Sesareng Chair",
@@ -1692,9 +1673,9 @@
     {
         "name": "Set Rotan Besar",
         "category": "Set, Rotan Sintetis",
-        "price": 2870000,
-        "originalPrice": 3193000,
-        "period": "18/02/2026-12/04/2026",
+        "price": 3193000,
+        "originalPrice": 2900000,
+        "period": "01/01/2026-17/02/2026",
         "image": "Set/Rotan Besar.webp",
         "desc": "Galar Chair + 2 Besante Chair + Hifi Table",
         "size": null,
@@ -1707,7 +1688,7 @@
         "price": 1550000,
         "originalPrice": 1733000,
         "period": "01/01/2026-17/02/2026",
-        "image": "uploaded/SetRotanKecil.jpg",
+        "image": "Set/Rotan Kecil.webp",
         "desc": "2 Karpi Chair + Round Table Rotan",
         "size": null,
         "colors": [],
@@ -1788,9 +1769,9 @@
     {
         "name": "Sofa Bed Gembul",
         "category": "Sofa",
-        "price": 2850000,
+        "price": 3000000,
         "originalPrice": 3350000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/01/2026-17/02/2026",
         "image": "Sofa/Sofa Bed Gembul.webp",
         "desc": "Kain Bludru Vegas, Isian Dacron kombinasi Silikon",
         "size": "P 170 CM X L 120 CM X T 45 CM",
@@ -1800,9 +1781,9 @@
     {
         "name": "Sofa Bed Mini",
         "category": "Sofa",
-        "price": 1600000,
+        "price": 1900000,
         "originalPrice": 2250000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/01/2026-17/02/2026",
         "image": "Sofa/Sofa Bed Mini.webp",
         "desc": null,
         "size": "P 170 CM X L 120 CM X T 45 CM",
@@ -1812,12 +1793,12 @@
     {
         "name": "Sofa L",
         "category": "Sofa",
-        "price": 3570000,
+        "price": 3800000,
         "originalPrice": 4200000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/10/2025-17/02/2026",
         "image": "Sofa/Sofa L.webp",
         "desc": "Kain Kimmy/Linen",
-        "size": "P 200 CM X L 45 CM X T 80 CM, Dudukan: T 45 CM",
+        "size": "P 200 CM X L 45 CM X T 80 CM, Dudukan: 45 CM",
         "colors": [
             {
                 "hex": "#d7c796",
@@ -1984,7 +1965,7 @@
         "hidden": false
     },
     {
-        "name": "Teyko Table (Jati 150)",
+        "name": "Teyko Table",
         "category": "Meja",
         "price": 1925000,
         "originalPrice": null,
@@ -2142,7 +2123,7 @@
         "_stagedImage": "uploaded/Sofa_2_Seat.jpg"
     },
     {
-        "name": "Dining Set Pulos 2",
+        "name": "Dining Set Pulos",
         "category": "Set",
         "price": 3000000,
         "originalPrice": 3357000,
@@ -2167,19 +2148,19 @@
         "_stagedImage": "uploaded/Dining_Set_Ropan.jpg"
     },
     {
-        "name": "Dining Set Banta + Arkoll",
+        "name": "Dining Set Banta",
         "category": "Set",
-        "price": 3450000,
-        "originalPrice": 3830000,
-        "period": "18/02/2026-12/04/2026",
+        "price": 3150000,
+        "originalPrice": 3500000,
+        "period": "01/10/2025-31/10/2025",
         "image": "uploaded/Dining_Set_Banta.webp",
         "desc": "2 Banta Chair + Mejoe Table + Arkoll Bench",
         "size": null,
-        "colors": [],
-        "hidden": false
+        "hidden": false,
+        "_stagedImage": "uploaded/Dining_Set_Banta.jpg"
     },
     {
-        "name": "Dining Set Pulos Jok 4 + Mejoe",
+        "name": "Dining Set Pulos jok",
         "category": "Set",
         "price": 5593000,
         "originalPrice": 6215000,
@@ -2191,7 +2172,7 @@
         "hidden": false
     },
     {
-        "name": "Dining Set Pulos Jok 4 + Maksi",
+        "name": "Dining Set Pulos jok 2",
         "category": "Set",
         "price": 5300000,
         "originalPrice": 6255000,
@@ -2201,130 +2182,5 @@
         "size": null,
         "colors": [],
         "hidden": false
-    },
-    {
-        "name": "Dining Set Pulos 4",
-        "category": "Set",
-        "price": 5200000,
-        "originalPrice": 6215000,
-        "period": "01/01/2026-17/02/2026",
-        "image": "uploaded/DiningSetPulos4.jpg",
-        "desc": "4 Pulos Chair + Maksi Table",
-        "size": null,
-        "colors": [],
-        "hidden": false,
-        "_stagedImage": "uploaded/temp_1767863413_6dabcaeb_Dining_Set_Pulos_4.jpg"
-    },
-    {
-        "name": "Saliru",
-        "category": "Buffet",
-        "price": 2700000,
-        "originalPrice": 3166000,
-        "period": "18/02/2026-12/04/2026",
-        "image": "uploaded/Saliru.jpg",
-        "desc": null,
-        "size": "P 120 CM X L 45 CM X T 60 CM",
-        "colors": [],
-        "hidden": false
-    },
-    {
-        "name": "Sungkai 80 cm",
-        "category": "Sungkai, Meja",
-        "price": 1699000,
-        "originalPrice": null,
-        "period": null,
-        "image": "/",
-        "desc": null,
-        "size": "P 80 CM X L 80 CM X T 58 CM",
-        "colors": [],
-        "hidden": false
-    },
-    {
-        "name": "Serwood Table Mini (Mindie)",
-        "category": "Meja",
-        "price": 900000,
-        "originalPrice": null,
-        "period": null,
-        "image": "Meja/Serwood Mini Table.webp",
-        "desc": null,
-        "size": "P 120 CM X L 60 CM X T 45 CM",
-        "colors": [],
-        "hidden": false
-    },
-    {
-        "name": "Almari Besi",
-        "category": "Cabinet",
-        "price": 1900000,
-        "originalPrice": 2285000,
-        "period": "01/01/2026-17/02/2026",
-        "image": "uploaded/AlmariBesi.jpg",
-        "desc": "Material Besi",
-        "size": "P 90 CM X L 50 CM X T 185 CM",
-        "colors": [],
-        "hidden": false
-    },
-    {
-        "name": "Fuloro + Jok",
-        "category": "",
-        "price": 3950000,
-        "originalPrice": null,
-        "period": null,
-        "image": "/",
-        "desc": null,
-        "size": null,
-        "colors": [],
-        "hidden": false
-    },
-    {
-        "name": "Besante Rotan Set",
-        "category": "Set, Rotan Sintetis",
-        "price": 1650000,
-        "originalPrice": 1733000,
-        "period": "18/02/2026-12/04/2026",
-        "image": "uploaded/BesanteRotanSet.jpg",
-        "desc": null,
-        "size": null,
-        "colors": [],
-        "hidden": false,
-        "_stagedImage": "uploaded/temp_1771401352_5506cfbe_Besante_Set.jpg"
-    },
-    {
-        "name": "Kakida Rotan Set",
-        "category": "Set, Rotan Sintetis",
-        "price": 1458000,
-        "originalPrice": 1535000,
-        "period": "18/02/2026-12/04/2026",
-        "image": "uploaded/KakidaRotanSet.jpg",
-        "desc": null,
-        "size": null,
-        "colors": [],
-        "hidden": false,
-        "_stagedImage": "uploaded/temp_1771401388_40c8a541_Kakida_Rotan_Set.jpg"
-    },
-    {
-        "name": "Lendean Dining Set",
-        "category": "Set",
-        "price": 3650000,
-        "originalPrice": 4321000,
-        "period": "18/02/2026-12/04/2026",
-        "image": "uploaded/LendeanDiningSet.jpg",
-        "desc": "4 Lendean Chair + Mejoe Table (Jati 120)",
-        "size": null,
-        "colors": [],
-        "hidden": false,
-        "_stagedImage": "uploaded/temp_1771401544_5372183d_Lendean_Dining_Set.jpg"
-    },
-    {
-        "name": "Siepin Dining Set",
-        "category": "Set",
-        "price": 3900000,
-        "originalPrice": 4625000,
-        "period": "18/02/2026-12/04/2026",
-        "image": "uploaded/SiepinDiningSet.jpg",
-        "desc": "4 Siepin Chair + Mejoe Table (Jati 120)",
-        "size": null,
-        "colors": [],
-        "hidden": false,
-        "_stagedImage": "uploaded/temp_1771401596_bb6411b0_Siepin_Dining_Set.jpg"
     }
 ]

@@ -405,7 +405,7 @@
         "category": "Buffet",
         "price": 2750000,
         "originalPrice": 3050000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/01/2026-17/02/2026",
         "image": "Buffet/Dumata.webp",
         "desc": null,
         "size": "P 145 CM X L 45 CM X T 60 CM",
@@ -423,9 +423,9 @@
     {
         "name": "Dympan",
         "category": "Buffet",
-        "price": 2340000,
-        "originalPrice": 2600000,
-        "period": "18/02/2026-12/04/2026",
+        "price": 2600000,
+        "originalPrice": null,
+        "period": null,
         "image": "Buffet/Dympan.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
@@ -466,12 +466,9 @@
         "category": "Nakas",
         "price": 2170000,
         "originalPrice": 2415000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/08/2025-05/09/2025",
         "image": "Nakas/Gania.webp",
-        "desc": null,
-        "size": "P 130 CM X L 45 CM X T 52 CM",
-        "colors": [],
-        "hidden": false
+        "size": "P 130 CM X L 45 CM X T 52 CM"
     },
     {
         "name": "Gashbir Chair",
@@ -508,7 +505,7 @@
     {
         "name": "Hotori",
         "category": "Buffet",
-        "price": 2750000,
+        "price": 3000000,
         "originalPrice": 3420000,
         "period": "01/01/2026-17/02/2026",
         "image": "Buffet/Hotori.webp",
@@ -678,12 +675,8 @@
         "category": "Meja",
         "price": 1680000,
         "originalPrice": null,
-        "period": null,
         "image": "Meja/Kanara.webp",
-        "desc": null,
-        "size": "P 110 CM X L 55 CM X T 47 CM",
-        "colors": [],
-        "hidden": false
+        "size": "P 120 CM X L 70 CM X T 41 CM"
     },
     {
         "name": "Kane Chair",
@@ -1076,7 +1069,7 @@
         "period": null,
         "image": "Meja/Mindie.webp",
         "desc": null,
-        "size": "P 80 CM X L 50  CM X T 45 CM",
+        "size": "P 80 CM X L 50  CM X T 46 CM",
         "colors": [],
         "hidden": false
     },
@@ -1355,9 +1348,9 @@
     {
         "name": "Qilla Sofa",
         "category": "Sofa",
-        "price": 1870000,
+        "price": 1900000,
         "originalPrice": 2200000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/01/2026-17/02/2026",
         "image": "Sofa/Qilla Sofa.webp",
         "desc": "Kain Kimmy/Linen",
         "size": "P 130 CM X L 70 CM X T 80 CM, Stool: D 43 CM x T 43 CM, Dudukan: 45 CM",
@@ -1455,9 +1448,9 @@
     {
         "name": "Ratton",
         "category": "Buffet",
-        "price": 2340000,
+        "price": 2350000,
         "originalPrice": 2600000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/01/2026-17/02/2026",
         "image": "Buffet/Ratton.webp",
         "desc": null,
         "size": "P 150 CM X L 45 CM X T 60 CM",
@@ -1660,9 +1653,9 @@
     {
         "name": "Serwood Sofa Set",
         "category": "Set, Sofa",
-        "price": 5900000,
+        "price": 6000000,
         "originalPrice": 7855000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/01/2026-17/02/2026",
         "image": "Set/Serwood Sofa Set.webp",
         "desc": "Kayu Jati",
         "size": "P 120 CM X L 60 CM X T 80 CM, Dudukan: 45 CM",
@@ -1692,9 +1685,9 @@
     {
         "name": "Set Rotan Besar",
         "category": "Set, Rotan Sintetis",
-        "price": 2870000,
-        "originalPrice": 3193000,
-        "period": "18/02/2026-12/04/2026",
+        "price": 3193000,
+        "originalPrice": 2900000,
+        "period": "01/01/2026-17/02/2026",
         "image": "Set/Rotan Besar.webp",
         "desc": "Galar Chair + 2 Besante Chair + Hifi Table",
         "size": null,
@@ -1788,9 +1781,9 @@
     {
         "name": "Sofa Bed Gembul",
         "category": "Sofa",
-        "price": 2850000,
+        "price": 3000000,
         "originalPrice": 3350000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/01/2026-17/02/2026",
         "image": "Sofa/Sofa Bed Gembul.webp",
         "desc": "Kain Bludru Vegas, Isian Dacron kombinasi Silikon",
         "size": "P 170 CM X L 120 CM X T 45 CM",
@@ -1802,7 +1795,7 @@
         "category": "Sofa",
         "price": 1600000,
         "originalPrice": 2250000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/01/2026-17/02/2026",
         "image": "Sofa/Sofa Bed Mini.webp",
         "desc": null,
         "size": "P 170 CM X L 120 CM X T 45 CM",
@@ -1812,12 +1805,12 @@
     {
         "name": "Sofa L",
         "category": "Sofa",
-        "price": 3570000,
+        "price": 3800000,
         "originalPrice": 4200000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/10/2025-17/02/2026",
         "image": "Sofa/Sofa L.webp",
         "desc": "Kain Kimmy/Linen",
-        "size": "P 200 CM X L 45 CM X T 80 CM, Dudukan: T 45 CM",
+        "size": "P 200 CM X L 45 CM X T 80 CM, Dudukan: 45 CM",
         "colors": [
             {
                 "hex": "#d7c796",
@@ -2167,16 +2160,16 @@
         "_stagedImage": "uploaded/Dining_Set_Ropan.jpg"
     },
     {
-        "name": "Dining Set Banta + Arkoll",
+        "name": "Dining Set Banta",
         "category": "Set",
-        "price": 3450000,
-        "originalPrice": 3830000,
-        "period": "18/02/2026-12/04/2026",
+        "price": 3150000,
+        "originalPrice": 3500000,
+        "period": "01/10/2025-31/10/2025",
         "image": "uploaded/Dining_Set_Banta.webp",
         "desc": "2 Banta Chair + Mejoe Table + Arkoll Bench",
         "size": null,
-        "colors": [],
-        "hidden": false
+        "hidden": false,
+        "_stagedImage": "uploaded/Dining_Set_Banta.jpg"
     },
     {
         "name": "Dining Set Pulos Jok 4 + Mejoe",
@@ -2218,14 +2211,15 @@
     {
         "name": "Saliru",
         "category": "Buffet",
-        "price": 2700000,
+        "price": 2800000,
         "originalPrice": 3166000,
-        "period": "18/02/2026-12/04/2026",
+        "period": "01/01/2026-17/02/2026",
         "image": "uploaded/Saliru.jpg",
         "desc": null,
         "size": "P 120 CM X L 45 CM X T 60 CM",
         "colors": [],
-        "hidden": false
+        "hidden": false,
+        "_stagedImage": "uploaded/temp_1767863562_8e644ff7_Saliru.jpg"
     },
     {
         "name": "Sungkai 80 cm",
@@ -2274,57 +2268,5 @@
         "size": null,
         "colors": [],
         "hidden": false
-    },
-    {
-        "name": "Besante Rotan Set",
-        "category": "Set, Rotan Sintetis",
-        "price": 1650000,
-        "originalPrice": 1733000,
-        "period": "18/02/2026-12/04/2026",
-        "image": "uploaded/BesanteRotanSet.jpg",
-        "desc": null,
-        "size": null,
-        "colors": [],
-        "hidden": false,
-        "_stagedImage": "uploaded/temp_1771401352_5506cfbe_Besante_Set.jpg"
-    },
-    {
-        "name": "Kakida Rotan Set",
-        "category": "Set, Rotan Sintetis",
-        "price": 1458000,
-        "originalPrice": 1535000,
-        "period": "18/02/2026-12/04/2026",
-        "image": "uploaded/KakidaRotanSet.jpg",
-        "desc": null,
-        "size": null,
-        "colors": [],
-        "hidden": false,
-        "_stagedImage": "uploaded/temp_1771401388_40c8a541_Kakida_Rotan_Set.jpg"
-    },
-    {
-        "name": "Lendean Dining Set",
-        "category": "Set",
-        "price": 3650000,
-        "originalPrice": 4321000,
-        "period": "18/02/2026-12/04/2026",
-        "image": "uploaded/LendeanDiningSet.jpg",
-        "desc": "4 Lendean Chair + Mejoe Table (Jati 120)",
-        "size": null,
-        "colors": [],
-        "hidden": false,
-        "_stagedImage": "uploaded/temp_1771401544_5372183d_Lendean_Dining_Set.jpg"
-    },
-    {
-        "name": "Siepin Dining Set",
-        "category": "Set",
-        "price": 3900000,
-        "originalPrice": 4625000,
-        "period": "18/02/2026-12/04/2026",
-        "image": "uploaded/SiepinDiningSet.jpg",
-        "desc": "4 Siepin Chair + Mejoe Table (Jati 120)",
-        "size": null,
-        "colors": [],
-        "hidden": false,
-        "_stagedImage": "uploaded/temp_1771401596_bb6411b0_Siepin_Dining_Set.jpg"
     }
 ]

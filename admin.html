@@ -452,8 +452,9 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <h2 class="text-xl font-bold mb-4 text-gray-800">Pengaturan Tampilan</h2>
+            <h2 class="text-xl font-bold mb-4 text-gray-800">Pengaturan</h2>
             <div class="space-y-4">
+                <h3 class="text-sm font-semibold text-gray-600 border-b pb-1">Tampilan Tabel</h3>
                 <label class="flex items-center gap-2">
                     <input type="checkbox" id="toggle-size-col" class="form-checkbox">
                     <span class="text-gray-700">Tampilkan Ukuran</span>
@@ -462,6 +463,30 @@
                     <input type="checkbox" id="toggle-desc-col" class="form-checkbox">
                     <span class="text-gray-700">Tampilkan Deskripsi</span>
                 </label>
+
+                <h3 class="text-sm font-semibold text-gray-600 border-b pb-1 pt-2">Kompresi Gambar</h3>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">
+                        Kualitas Kompresi: <span id="quality-value" class="font-bold text-indigo-600">90</span>%
+                    </label>
+                    <input type="range" id="compression-quality" min="10" max="100" value="90"
+                        class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                    <p class="text-xs text-gray-500 mt-1">Semakin rendah semakin kecil ukuran file, namun kualitas
+                        berkurang.</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Max Lebar (px)</label>
+                    <input type="number" id="max-width" value="1080"
+                        class="w-full border border-gray-300 rounded-md shadow-sm p-2 text-sm">
+                </div>
+
+                <div class="pt-4 border-t flex justify-end">
+                    <button id="save-settings-btn"
+                        class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 text-sm">
+                        Simpan Pengaturan
+                    </button>
+                    <p id="save-settings-status" class="text-xs text-green-600 ml-2 self-center hidden">Tersimpan!</p>
+                </div>
             </div>
         </div>
     </div>
@@ -545,6 +570,191 @@
 
             const toggleSizeCol = document.getElementById('toggle-size-col');
             const toggleDescCol = document.getElementById('toggle-desc-col');
+            const compressionQualityInput = document.getElementById('compression-quality');
+            const qualityValueDisplay = document.getElementById('quality-value');
+            const maxWidthInput = document.getElementById('max-width');
+
+            // Popup Elements
+            const popupEnabledInput = document.getElementById('popup-enabled');
+            const popupQualityInput = document.getElementById('popup-compression-quality');
+            const popupQualityDisplay = document.getElementById('popup-quality-value');
+            const popupMaxWidthInput = document.getElementById('popup-max-width');
+            const popupImagesList = document.getElementById('popup-images-list');
+            const addPopupImageBtn = document.getElementById('add-popup-image-btn');
+            const popupImageUploadInput = document.getElementById('popup-image-upload');
+
+            let popupImages = [];
+
+            const saveSettingsBtn = document.getElementById('save-settings-btn');
+            const saveSettingsStatus = document.getElementById('save-settings-status');
+
+            // Load Settings
+            async function loadSettings() {
+                try {
+                    const response = await fetch('update-db.php?action=getSettings');
+                    const data = await response.json();
+                    if (data.status === 'success' && data.settings) {
+                        // General Settings
+                        compressionQualityInput.value = data.settings.compressionQuality || 90;
+                        qualityValueDisplay.textContent = compressionQualityInput.value;
+                        maxWidthInput.value = data.settings.maxWidth || 1080;
+
+                        // Popup Settings
+                        const popupSettings = data.settings.popupSettings || {};
+                        popupEnabledInput.checked = popupSettings.enabled || false;
+                        popupQualityInput.value = popupSettings.compressionQuality || 80;
+                        popupQualityDisplay.textContent = popupQualityInput.value;
+                        popupMaxWidthInput.value = popupSettings.maxWidth || 800;
+                        popupImages = popupSettings.images || [];
+                        renderPopupImages();
+                    }
+                } catch (error) {
+                    console.error('Failed to load settings:', error);
+                }
+            }
+
+            function renderPopupImages() {
+                popupImagesList.innerHTML = '';
+                popupImages.forEach((src, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'relative group aspect-video bg-gray-100 rounded-lg overflow-hidden border';
+                    div.innerHTML = `
+                        <img src="${src}" class="w-full h-full object-cover">
+                        <button class="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity delete-popup-btn" data-path="${src}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    `;
+                    popupImagesList.appendChild(div);
+                });
+
+                // Add event listeners for delete buttons
+                document.querySelectorAll('.delete-popup-btn').forEach(btn => {
+                    btn.addEventListener('click', async (e) => {
+                        e.stopPropagation(); // Prevent bubbling
+                        if (confirm('Hapus gambar ini?')) {
+                            const path = btn.dataset.path;
+                            await deletePopupImage(path);
+                        }
+                    });
+                });
+            }
+
+            async function deletePopupImage(path) {
+                try {
+                    const formData = new FormData();
+                    formData.append('deletePopupImage', path);
+                    const response = await fetch('update-db.php', { method: 'POST', body: formData });
+                    const result = await response.json();
+                    if (result.status === 'success') {
+                        // Update local state and re-render
+                        if (result.settings && result.settings.popupSettings) {
+                            popupImages = result.settings.popupSettings.images || [];
+                            renderPopupImages();
+                        }
+                    } else {
+                        alert('Gagal menghapus gambar.');
+                    }
+                } catch (e) {
+                    console.error(e);
+                    alert('Error deleting image.');
+                }
+            }
+
+            // Popup Image Upload
+            addPopupImageBtn.addEventListener('click', () => popupImageUploadInput.click());
+
+            popupImageUploadInput.addEventListener('change', async () => {
+                if (popupImageUploadInput.files.length === 0) return;
+
+                const file = popupImageUploadInput.files[0];
+                const formData = new FormData();
+                formData.append('popupImage', file);
+
+                // Add current settings so backend knows how to compress
+                // Ideally backend reads from saved settings, but we might want to pass recent changes?
+                // For now backend reads saved settings + default. 
+                // We should probably save settings first if they changed? 
+                // The implementation in update-db.php reads generic loadSettings(), so it uses saved settings.
+                // We'll trust the saved settings or default for now.
+
+                addPopupImageBtn.disabled = true;
+                addPopupImageBtn.textContent = 'Uploading...';
+
+                try {
+                    const response = await fetch('update-db.php', { method: 'POST', body: formData });
+                    const result = await response.json();
+                    if (result.status === 'success') {
+                        if (result.settings && result.settings.popupSettings) {
+                            popupImages = result.settings.popupSettings.images || [];
+                            renderPopupImages();
+                        }
+                    } else {
+                        alert('Upload failed: ' + result.message);
+                    }
+                } catch (e) {
+                    console.error(e);
+                    alert('Error uploading popup image.');
+                } finally {
+                    addPopupImageBtn.disabled = false;
+                    addPopupImageBtn.textContent = '+ Tambah Gambar';
+                    popupImageUploadInput.value = '';
+                }
+            });
+
+            // Init Settings Load
+            loadSettings();
+
+            compressionQualityInput.addEventListener('input', () => {
+                qualityValueDisplay.textContent = compressionQualityInput.value;
+            });
+
+            popupQualityInput.addEventListener('input', () => {
+                popupQualityDisplay.textContent = popupQualityInput.value;
+            });
+
+            saveSettingsBtn.addEventListener('click', async () => {
+                const settings = {
+                    compressionQuality: parseInt(compressionQualityInput.value),
+                    maxWidth: parseInt(maxWidthInput.value),
+                    popupSettings: {
+                        enabled: popupEnabledInput.checked,
+                        compressionQuality: parseInt(popupQualityInput.value),
+                        maxWidth: parseInt(popupMaxWidthInput.value),
+                        images: popupImages
+                    }
+                };
+
+                saveSettingsBtn.disabled = true;
+                saveSettingsBtn.textContent = 'Menyimpan...';
+
+                try {
+                    const formData = new FormData();
+                    formData.append('settingsData', JSON.stringify(settings));
+
+                    const response = await fetch('update-db.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const result = await response.json();
+                    if (result.status === 'success') {
+                        saveSettingsStatus.classList.remove('hidden');
+                        setTimeout(() => {
+                            saveSettingsStatus.classList.add('hidden');
+                        }, 2000);
+                    } else {
+                        alert('Gagal menyimpan pengaturan: ' + result.message);
+                    }
+                } catch (error) {
+                    alert('Error menyimpan pengaturan.');
+                    console.error(error);
+                } finally {
+                    saveSettingsBtn.disabled = false;
+                    saveSettingsBtn.textContent = 'Simpan Pengaturan';
+                }
+            });
 
             toggleSizeCol.addEventListener('change', () => {
                 showSizeCol = toggleSizeCol.checked;
